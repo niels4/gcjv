@@ -3,8 +3,11 @@
   <description>
     Build File for minifying/compiling the clojurescript, javascript, css, and assembling all of the client
     side files together into a single page webapp.
+    If you don't have nodejs installed on your system, you can use mozilla's rhino
+    library to run the build script using Java. It will just be much slower to build this way.
   </description>
 
+  <property name="useNode" value="true" />
   <property name="src.public.dir" location="src/public" />
   <property name="deploy.public.dir" location="target/public" />
   <property name="css.dir" value="css" />
@@ -42,7 +45,11 @@
     </delete>
   </target>
 
-  <target name="build-js">
+  <target name="build-js-node" if="${useNode}">
+    <description>
+      Uses node to build the javascript application. Much faster than using java
+      and rhino.js. Will only run if the useNode property is set to true.
+    </description>
     <exec osfamily="windows" failonerror="true" executable="cmd">
       <arg line="/c node r.js -o app.build.js" />
     </exec>
@@ -51,6 +58,29 @@
     <arg value="-c" /> 
     <arg value="node r.js -o app.build.js" /> 
    </exec> 
+  </target>
+
+  <target name="build-js-java" unless="${useNode}">
+    <description>
+      Uses java and rhino to build the javascript application. Much slower than using node.
+      Since this is an Ant script, Java should already be installed on the system.
+      Will only run if useNode property is set to true.
+    </description>
+    <exec osfamily="windows" failonerror="true" executable="cmd">
+      <arg line="/c java -Xss2m -cp js.jar org.mozilla.javascript.tools.shell.Main r.js -o app.build.js" />
+    </exec>
+
+   <exec osfamily="unix" failonerror="true" executable="/bin/sh"> 
+    <arg value="-c" /> 
+    <arg value="java -Xss2m -cp js.jar org.mozilla.javascript.tools.shell.Main r.js -o app.build.js" /> 
+   </exec> 
+  </target>
+
+  <target name="build-js" depends="build-js-node, build-js-java">
+    <description>
+      Will concatenate the javascript application down to a single file, removing
+      all of the whitespace and comments.
+    </description>
   </target>
 
   <target name="webapp" depends="clean, build-js">
@@ -70,144 +100,4 @@
     <copy tofile="${deploy.jsmain.file}" file="${built.jsmain.file}"></copy>
   </target>
 
-  <!--
-  <target name="package-test" >
-    <description>
-      Moves over the files used for running the automated tests.
-    </description>
-    <copy todir="${fo-deploy.dir}">
-      <fileset dir="${src-test.webapp.dir}" includes="**/*" />
-    </copy>
-    <copy todir="${bo-deploy.dir}">
-      <fileset dir="${src-test.webapp.dir}" includes="**/*" />
-    </copy>
-    <copy todir="${fo-deploy.dir}">
-      <fileset dir="${src.webapp.dir}">
-        <include name="*_DevOnly.html" />
-      </fileset>
-    </copy>
-    <copy todir="${bo-deploy.dir}">
-      <fileset dir="${src.webapp.dir}">
-        <include name="*_DevOnly.html" />
-      </fileset>
-    </copy>
-  </target>
-
-  <target name="clean-build">
-    <description>
-      Delete all the generated files in the build directory
-    </description>
-    <mkdir dir="${build.project.dir}" />
-    <delete includeEmptyDirs="true">
-      <fileset dir="${build.project.dir}"  >
-      	<include name="js/**/*"/>
-      	<include name="css/**/*"/>
-      	<include name="*.html"/>
-    	</fileset>
-    </delete>
-  </target>
-
-  <target name="build" depends="clean-build, build-java, build-node">
-    <description>
-      Minifies all the javascript files and then concatenates them down into
-      a single file to noticably improve page load times. Checks the useNode
-      property to determine if it should run using java or node.
-    </description>
-  </target>
-
-  <target name="build-java" unless="${useNode}">
-    <exec osfamily="windows" failonerror="true" executable="cmd">
-      <arg line="/c java -Xss2m -cp js.jar org.mozilla.javascript.tools.shell.Main r.js -o app.build.js" />
-    </exec>
-
-   <exec osfamily="unix" failonerror="true" executable="/bin/sh"> 
-    <arg value="-c" /> 
-    <arg value="java -Xss2m -cp js.jar org.mozilla.javascript.tools.shell.Main r.js -o app.build.js" /> 
-   </exec> 
-  </target>
-
-  <target name="build-node" if="${useNode}">
-    <exec osfamily="windows" failonerror="true" executable="cmd">
-      <arg line="/c node r.js -o app.build.js" />
-    </exec>
-
-   <exec osfamily="unix" failonerror="true" executable="/bin/sh"> 
-    <arg value="-c" /> 
-    <arg value="node r.js -o app.build.js" /> 
-   </exec> 
-  </target>
-
-  <target name="package-min" depends="clean, build">
-    <description>
-      Moves over only the necessary minified javascript files.
-    </description>
-
-    <copy todir="${bo-deploy.dir}">
-      <fileset dir="${build.project.dir}">
-        <include name="*_DevOnly.html" />
-      </fileset>
-    </copy>
-
-    <copy todir="${fo-deploy-min.css.dir}">
-      <fileset dir="${build.project.dir}/css" includes="**/*" />
-    </copy>
-
-    <copy todir="${bo-deploy-min.css.dir}">
-      <fileset dir="${build.project.dir}/css" includes="**/*" />
-    </copy>
-
-    <copy todir="${fo-deploy-min.js.dir}">
-      <fileset refid="build.project.js.main" />
-    </copy>
-
-    <copy todir="${bo-deploy-min.js.dir}">
-      <fileset refid="build.project.js.main" />
-    </copy>
-
-  </target>
-
-  <target name="deploy">
-    <description>
-      Runs the quick deploy script of the front and backoffice web apps. For me
-      this zips up all the client side files and copies them over to the dev server.
-      On the dev server i have a script that cleans out the old client side files and
-      unzip the new ones in their place. This allows me to quickly update client code
-      without having to restart the server.
-    </description>
-		<ant antfile="../epl-front-office/build.xml" target="quick-deploy" inheritall="false" inheritrefs="false"> </ant>
-		<ant antfile="../epl-back-office/build.xml" target="quick-deploy" inheritall="false" inheritrefs="false"> </ant>
-  </target>
-
-  <target name="package-deploy" depends="package, deploy">
-    <description>
-      packages up the application and runs the quick deploy script.
-    </description>
-  </target>
-
-  <target name="package-min-deploy" depends="package-min, deploy">
-    <description>
-      first runs the minify build, then packages up the application and runs the
-      quick deploy script.
-    </description>
-  </target>
-
-  <target name="package-all-deploy" depends="package-all, deploy">
-    <description>
-      packages up the application with the test files and runs the quick deploy 
-      script.
-    </description>
-  </target>
-
-  <target name="package-all" depends="package, package-test"> </target>
-
-  <target name="package-all-min" depends="package-min, package-test">
-  </target>
-
-  <target name="package-all-min-deploy" depends="package-all-min, deploy">
-    <description>
-      first runs the minify build, then packages up the application with the test
-      files and runs the quick deploy script.
-    </description>
-  </target>
-  -->
 </project>
