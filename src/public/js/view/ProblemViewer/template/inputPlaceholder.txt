@@ -1,0 +1,6 @@
+
+    To use your own input, paste the text here or
+    drag and drop a plain text file into this box.
+
+    To use a predefined input, simply select it
+    from the input drop-down above.

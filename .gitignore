@@ -1,0 +1,8 @@
+build/
+target/
+*.swp
+*~
+.svn*
+.project
+resources/compass/.sass-cache/
+*.swo

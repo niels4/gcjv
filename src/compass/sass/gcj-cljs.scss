@@ -1,0 +1,296 @@
+@CHARSET "UTF-8";
+@import "chosen.css";
+@import "compass/css3/transform-legacy";
+
+@mixin calc($property, $expression) { 
+  #{$property}: -moz-calc(#{$expression}); 
+  #{$property}: -o-calc(#{$expression}); 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 
+
+//Ambuside by manekineko
+//http://www.colourlovers.com/palette/106467/Ambuside
+$ambucetamide: #BEEE9E;
+$ambruticin: #5AB953;
+$ambroxol: #49A34B;
+$ambucaine: #71D161;
+
+$titleHighlightColor: $ambucaine;
+$highlightColor: $ambruticin;
+$borderColor: #C3D9FF;
+$buttonTopGrad: $ambucaine;
+$buttonBottomGrad: #85EB74;
+$buttonHover: $ambruticin;
+$buttonActive: $ambroxol;
+$buttonTextHover: white;
+$buttonText: black;
+
+$mainFont: 'Droid_Sans', sans-serif;
+$tiltedMainFont: 'Droid_Ser_I', serif;
+$mainFontSerif: 'Droid_Ser', serif;
+$mainFontMono: 'Droid_Sans_Mono', monospace;
+
+@font-face {
+  font-family: "Droid_Sans";
+  src: url('fonts/Droid_Sans/DroidSans.ttf');
+}
+
+@font-face {
+  font-family: "Droid_Ser_I";
+  src: url('fonts/Droid_Serif/DroidSerif-Italic.ttf');
+}
+
+@font-face {
+  font-family: "Droid_Ser";
+  src: url('fonts/Droid_Serif/DroidSerif.ttf');
+}
+
+@font-face {
+  font-family: "Droid_Sans_Mono";
+  src: url('fonts/Droid_Sans_Mono/DroidSansMono.ttf');
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  height: 100%;
+}
+
+body > div {
+  height: 100%;
+}
+
+.gcj_cljs {
+
+  font-family: $mainFont;
+  height: 100%;
+
+  .verticalExpand {
+    @include calc(height, '100% - 6em');
+    div {
+      height: 100%;
+    }
+  }
+
+  .titleDiv {
+    display: inline-block;
+  }
+
+  .title {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    display: inline;
+  }
+  
+  .titlej {
+    font-family: $tiltedMainFont;
+    display: inline-block;
+    @include transform(1, 18deg, -0.2em, 0.2em, 0, 0);
+  }
+
+  .titleam {
+    display: inline-block;
+    @include translate(-0.2em, 0em);
+  }
+  
+  .mainContent {
+    border: 0.5em solid $borderColor;
+    margin-top: 0.3em;
+    margin-right: 1em;
+  }
+  
+  .sub-title {
+    font-size: 1em;
+    margin-top: 0em;
+    margin-bottom: 0.2em;
+    background-color: $titleHighlightColor;
+    color: white;
+    display: inline;
+    padding: 0.2em;
+    margin-left: 4em;
+  }
+  
+  .sub-titlej {
+    font-family: $tiltedMainFont;
+    display: inline-block;
+    @include transform(1, 18deg, 0.05em, 0.15em, 0, 0);
+  }
+  
+  .sub-titleLast {
+    display: inline-block;
+    @include translate(0.1em, 0em);
+  }
+  
+  .headerControls {
+    margin-left: 8%;
+    font-size: 1.5em;
+    display: inline-block;
+  }
+
+  .problemDescDiv {
+    text-align: center;
+    padding-top: 0.3em;
+  }
+
+  .problemDescLink {
+    visibility: hidden;
+    position: relative;
+    left: 1.3em;
+  }
+  select {
+    font-size: 1.2em;
+  }
+
+  div.chzn-container {
+    font-size:0.85em;
+    position: relative;
+    top: 0.175em;
+    li.highlighted {
+      background-color: $highlightColor;
+      background-image: none;
+    }
+  }
+
+  .problemSelector {
+    font-size: .85em;
+  }
+  
+  .mainContent {
+    font-size: 1.5em;
+  }
+  
+  .welcomeMessage p:first-child {
+    position: relative;
+    right: 0.35em;
+  }
+  
+  .welcomeMessage p {
+    margin: 1.6em;
+  }
+  
+  .large_cap {
+    font-size: 2em;
+    font-family: $mainFontSerif;
+    position: relative;
+    left: 0.1em;
+  }
+  
+  .closingParen {
+    font-size: 1em;
+    background-color: $titleHighlightColor;
+    color: white;
+    padding: 0.2em;
+    position: relative;
+    float: right;
+    bottom: 1.5em;
+    right: 0.15em;
+  }
+  
+  div.fileViewerControls {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    height: auto;
+    div {
+      text-align: center;
+      display: inline-block;
+      height: auto;
+    }
+    li, a {
+      text-align: left;
+    }
+  }
+  
+  .inputSelector {
+    width: 46%;
+  }
+  
+  .fileContents {
+    text-align: center;
+    @include calc(height, "50% - 1.5em");
+
+    textArea {
+      font-family: $mainFontMono;
+      border: 4px solid $borderColor;
+      display: inline-block;
+      margin: 0;
+      width: 45%;
+      height: 60%;
+      @include calc(width, "50% - 18px");
+      @include calc(height, "100% - 67px");
+      text-align: left;
+      font-size: 0.65em;
+      resize: none;
+    }
+
+    textArea.placeholderInput {
+      font-family: $mainFont;
+      font-size: 1em;
+      color: gray;
+    }
+
+    textArea[readonly] {
+      color: black;
+      background-color: #FCFCFC;
+    }
+  }
+
+  .inputSelectorDropdown {
+    text-align: left;
+    font-size: 0.7em;
+  }
+
+  .button {
+     border-top: 1px solid $borderColor;
+     background: $buttonBottomGrad;
+     background: -webkit-gradient(linear, left top, left bottom, from($buttonTopGrad), to($buttonBottomGrad));
+     background: -webkit-linear-gradient(top, $buttonTopGrad, $buttonBottomGrad);
+     background: -moz-linear-gradient(top, $buttonTopGrad, $buttonBottomGrad);
+     background: -ms-linear-gradient(top, $buttonTopGrad, $buttonBottomGrad);
+     background: -o-linear-gradient(top, $buttonTopGrad, $buttonBottomGrad);
+     padding: 0.2em 0.55em;
+     -webkit-border-radius: 14px;
+     -moz-border-radius: 14px;
+     border-radius: 14px;
+     -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+     -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+     box-shadow: rgba(0,0,0,1) 0 1px 0;
+     text-shadow: rgba(0,0,0,.4) 0 1px 0;
+     color: $buttonText;
+     vertical-align: middle;
+     }
+  .button:hover {
+     border-top-color: $borderColor;
+     background: $buttonHover;
+     color: $buttonTextHover;
+     }
+  .button:active {
+     border-top-color: $borderColor;
+     background: $buttonActive;
+     }
+
+     .runButtonDiv {
+       visibility: hidden;
+     }
+
+     .outputButtonDiv {
+       padding-left: 6.5em;
+     }
+
+     .downloadButton {
+       visibility: hidden;
+     }
+
+     .outputText {
+       padding-right: 1em;
+     }
+ }

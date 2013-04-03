@@ -1,0 +1,19 @@
+<div class="fileViewerControls">
+  <div class="inputSelector">Input: <select>
+      {{#inputFiles}}
+      <option value="{{name}}">{{name}}</option>
+      {{/inputFiles}}
+    </select>
+  </div>
+  <div class="runButtonDiv">
+    <a class="button runButton">Run it!</a>
+  </div>
+  <div class="outputButtonDiv">
+    <span class="outputText">Output:</span>
+    <a class="button downloadButton">Download</a>
+  </div>
+</div>
+<div class="fileContents">
+  <textArea class="inputFile placeholderInput" placeholder="Paste custom input here..." wrap="off"></textArea>
+  <textArea class="outputFile" readonly="readonly" wrap="off"></textArea>
+</div>
