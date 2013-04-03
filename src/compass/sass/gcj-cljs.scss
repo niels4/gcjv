@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-@import "chosen.css";
+@import "chosen";
 @import "compass/css3/transform-legacy";
 
 @mixin calc($property, $expression) { 
@@ -9,7 +9,7 @@
   #{$property}: calc(#{$expression}); 
 } 
 
-//Ambuside by manekineko
+//Ambuside by manekineko.
 //http://www.colourlovers.com/palette/106467/Ambuside
 $ambucetamide: #BEEE9E;
 $ambruticin: #5AB953;

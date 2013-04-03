@@ -1,6 +1,6 @@
 /*jslint browser: true, indent: 2, nomen: true, es5: true, devel: true */
 /*global define */
-define(['backbone', 'text!../../problems/problems.json'],
+define(['backbone', 'text!data/problems.json'],
   function (Backbone, problemsList) {
     "use strict";
     var constants, modelDefaults;

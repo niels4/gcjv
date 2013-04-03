@@ -44,6 +44,7 @@ require(['jquery', 'app/GcjSolutionViewer'],
     };
     app = gcjSolutionViewer.createApp(options);
     app.start();
+    console.log("build works");
 
     worker = new Worker('js/workers/cljsWorker.js');
     worker.addEventListener('message', function (evt) {
