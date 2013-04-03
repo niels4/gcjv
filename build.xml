@@ -35,7 +35,7 @@
 
   <target name="clean" >
     <description>
-      Delete all of the webapp files.
+      Delete all of the built files.
     </description>
     <delete includeEmptyDirs="true">
       <fileset dir="target">
