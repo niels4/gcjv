@@ -4,7 +4,8 @@
     Build File for minifying/compiling the clojurescript, javascript, css, and assembling all of the client
     side files together into a single page webapp.
     If you don't have nodejs installed on your system, you can use mozilla's rhino
-    library to run the build script using Java. It will just be much slower to build this way.
+    library to run the build script using Java (by changing the useNode property to false).
+    It will just be much slower to build this way.
 
     Other Targets:
   </description>

@@ -13,5 +13,4 @@
                 :source-paths ["src/cljs"]
                 :compiler {
                            :output-to "src/public/js/workers/cljsWorker.js"
-                           :optimizations :whitespace
-                           :pretty-print true}}]})
+                           :optimizations :advanced}}]})

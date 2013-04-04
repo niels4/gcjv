@@ -38,16 +38,11 @@ require.config({
 require(['jquery', 'app/GcjSolutionViewer'],
   function ($, gcjSolutionViewer) {
     "use strict";
-    var app, options, worker;
+    var app, options;
     options = {
       mainId: "codeJamSolutionViewer"
     };
     app = gcjSolutionViewer.createApp(options);
     app.start();
     console.log("build works");
-
-    worker = new Worker('js/workers/cljsWorker.js');
-    worker.addEventListener('message', function (evt) {
-      console.log("Message from the worker:", evt.data);
-    });
   });

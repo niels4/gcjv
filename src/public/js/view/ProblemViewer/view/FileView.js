@@ -1,5 +1,5 @@
 /*jslint browser: true, indent: 2, nomen: true, es5: true, devel: true */
-/*global define, Blob, FileReader */
+/*global define, Blob, FileReader, Worker */
 define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         'data/AppState', '../data/ProblemViewerState', 'saveAs'],
   function (_, $, Backbone, tmpl, AppState, ProblemViewerState, saveAs) {
@@ -100,8 +100,16 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         }
       },
       onRunButtonClick: function (evt) {
-        this.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
-          this.ui.inputFile.val());
+        var worker, self;
+        self = this;
+        worker = new Worker("js/workers/cljsWorker.js");
+        worker.addEventListener('message', function (evt) {
+          console.log("message received:", evt.data);
+          self.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
+            evt.data.message);
+        });
+
+        worker.postMessage({problemName: "store_credit", input: "abc123"});
       },
       onOutputTextValueChange: function () {
         if (this.shouldShowDownloadButton()) {
@@ -109,9 +117,7 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
           this.ui.downloadButton.css('visibility', 'hidden');
         } else {
           this.ui.downloadButton.css('visibility', 'visible');
-          //this val will be replaced with a call to the clojurescript function
-          //that will do the actual solving of the problem.
-          this.ui.outputFile.val(this.ui.inputFile.val());
+          this.ui.outputFile.val(this.model.get(ProblemViewerState.OUTPUT_TEXT_VALUE));
         }
       },
       shouldShowDownloadButton: function () {
