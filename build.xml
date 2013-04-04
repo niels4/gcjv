@@ -5,11 +5,14 @@
     side files together into a single page webapp.
     If you don't have nodejs installed on your system, you can use mozilla's rhino
     library to run the build script using Java. It will just be much slower to build this way.
+
+    Other Targets:
   </description>
 
   <property name="useNode" value="true" />
   <property name="src.public.dir" location="src/public" />
   <property name="deploy.public.dir" location="target/public" />
+  <property name="src.compass.dir" location="src/compass" />
   <property name="css.dir" value="css" />
   <property name="js.dir" value="js" />
   <property name="src.css.dir" location="${src.public.dir}/${css.dir}" />
@@ -35,6 +38,7 @@
 
   <target name="clean" >
     <description>
+      clean:
       Delete all of the built files.
     </description>
     <delete includeEmptyDirs="true">
@@ -47,6 +51,7 @@
 
   <target name="build-js-node" if="${useNode}">
     <description>
+      build-js-node:
       Uses node to build the javascript application. Much faster than using java
       and rhino.js. Will only run if the useNode property is set to true.
     </description>
@@ -62,9 +67,10 @@
 
   <target name="build-js-java" unless="${useNode}">
     <description>
+      build-js-java: 
       Uses java and rhino to build the javascript application. Much slower than using node.
       Since this is an Ant script, Java should already be installed on the system.
-      Will only run if useNode property is set to true.
+      Will only run if useNode property isn't set or is set to false.
     </description>
     <exec osfamily="windows" failonerror="true" executable="cmd">
       <arg line="/c java -Xss2m -cp js.jar org.mozilla.javascript.tools.shell.Main r.js -o app.build.js" />
@@ -78,16 +84,45 @@
 
   <target name="build-js" depends="build-js-node, build-js-java">
     <description>
+      build-js:
       Will concatenate the javascript application down to a single file, removing
       all of the whitespace and comments.
     </description>
   </target>
 
-  <target name="webapp" depends="clean, build-js">
+  <target name="compile-clojurescript">
     <description>
-      Assemble all of the client files into a single page web app that can be
-      hosted by a static http file server.
+      compile-clojurescript:
+      Use lein to compile the clojurescript
     </description>
+    <exec osfamily="windows" failonerror="true" executable="cmd">
+      <arg line="/c lein cljsbuild once" />
+    </exec>
+
+   <exec osfamily="unix" failonerror="true" executable="/bin/sh"> 
+    <arg value="-c" /> 
+    <arg value="lein cljsbuild once" /> 
+   </exec> 
+  </target>
+
+  <target name="compile-sass">
+    <description>
+      compile-sass:
+      Use compass to compile the css files
+    </description>
+    <exec osfamily="windows" failonerror="true" executable="cmd" dir="${src.compass.dir}">
+      <arg line="/c compass compile" />
+    </exec>
+
+   <exec osfamily="unix" failonerror="true" executable="/bin/sh" dir="${src.compass.dir}"> 
+    <arg value="-c" /> 
+    <arg value="compass compile" /> 
+   </exec> 
+  </target>
+
+  <target name="webapp" depends="clean, compile-clojurescript, compile-sass, build-js"
+    description="Assemble all of the client files into a single page web app that can be
+hosted by a static http file server.">
     <copy todir="${deploy.public.dir}">
       <fileset refid="public-deps" />
     </copy>
