@@ -4,7 +4,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src/clj"]
-  :dependencies [[org.clojure/clojure "1.5.1"]]
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [org.clojure/clojurescript "0.0-1586"]]
 
   :plugins [[lein-cljsbuild "0.3.0"]]
 
@@ -13,4 +14,4 @@
                 :source-paths ["src/cljs"]
                 :compiler {
                            :output-to "src/public/js/workers/cljsWorker.js"
-                           :optimizations :advanced}}]})
+                           :optimizations :whitespace}}]})

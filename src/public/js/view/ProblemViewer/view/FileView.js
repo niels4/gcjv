@@ -99,18 +99,6 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
           this.ui.runButtonDiv.css('visibility', 'visible');
         }
       },
-      onRunButtonClick: function (evt) {
-        var worker, self;
-        self = this;
-        worker = new Worker("js/workers/cljsWorker.js");
-        worker.addEventListener('message', function (evt) {
-          console.log("message received:", evt.data);
-          self.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
-            evt.data.message);
-        });
-
-        worker.postMessage({problemName: "store_credit", input: "abc123"});
-      },
       onOutputTextValueChange: function () {
         if (this.shouldShowDownloadButton()) {
           this.ui.outputFile.val('');
@@ -147,6 +135,23 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         };
         reader.readAsText(file);
         return false;
+      },
+      onRunButtonClick: function (evt) {
+        var worker, self;
+        self = this;
+        worker = new Worker("js/workers/cljsWorker.js");
+        worker.addEventListener('message', function (evt) {
+          console.log("message received:", evt.data);
+          self.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
+            evt.data.message);
+        });
+
+        worker.postMessage(
+          {
+            problemName: this.ui.inputFile.val(),
+            input: this.model.get(ProblemViewerState.INPUT_TEXT_VALUE)
+          }
+        );
       }
     });
   });
