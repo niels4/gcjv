@@ -10,8 +10,16 @@
   :plugins [[lein-cljsbuild "0.3.0"]]
 
   :cljsbuild {:builds
-              [{
-                :source-paths ["src/cljs"]
-                :compiler {
-                           :output-to "src/public/js/workers/cljsWorker.js"
-                           :optimizations :whitespace}}]})
+              {:prod
+                {
+                  :source-paths ["src/cljs"]
+                  :compiler {
+                             :output-to "src/public/js/workers/cljsWorker.js"
+                             :optimizations :advanced}}
+               :dev
+                {
+                  :source-paths ["src/cljs" "src/cljs-dev"]
+                  :compiler {
+                             :output-to "src/public/js/workers/cljsWorker-dev.js"
+                             :optimizations :whitespace}
+                 }}})

@@ -148,8 +148,8 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
 
         worker.postMessage(
           {
-            problemName: this.ui.inputFile.val(),
-            input: this.model.get(ProblemViewerState.INPUT_TEXT_VALUE)
+            problemName: this.appState.get(AppState.PROBLEM_SELECTED),
+            input: this.ui.inputFile.val()
           }
         );
       }

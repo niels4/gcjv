@@ -37,6 +37,11 @@
     <include name="workers/**/*" />
   </fileset>
 
+  <fileset id="built-files" dir="${src.public.dir}">
+    <include name="css/gcj-cljs.css" />
+    <include name="js/workers/*" />
+  </fileset>
+
   <target name="clean" >
     <description>
       clean:
@@ -47,6 +52,7 @@
         <include name="public/**/*"/>
         <include name="built-files/**/*"/>
       </fileset>
+      <fileset refid="built-files"></fileset>
     </delete>
   </target>
 

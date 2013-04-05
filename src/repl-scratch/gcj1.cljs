@@ -26,7 +26,7 @@ probName
 (gcj-util.gcj-solver/solve-problem "reverse_words" "some input file\n that has many lines\n and such")
 
 
-(aget js/gcj_util "gcj_solver")
+((aget (aget js/gcj_util "gcj_solver") "solve_problem") "hello" "hi man")
 
 (comment
 

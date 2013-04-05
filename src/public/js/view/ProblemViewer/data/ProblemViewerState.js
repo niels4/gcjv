@@ -29,6 +29,10 @@ define(['backbone', 'text!../template/inputPlaceholder.txt'],
         onChangeInputSelected: function (onChangeFunction) {
           return this.on("change:" + constants.INPUT_SELECTED, onChangeFunction);
         },
+        resetDefaults: function () {
+          this.set(constants.INPUT_SELECTED, constants.DEFAULT_INPUT);
+          this.set(constants.INPUT_TEXT_VALUE, constants.INPUT_PLACEHOLDER);
+        },
         onChangeOutputTextValue: function (onChangeFunction) {
           return this.on("change:" + constants.OUTPUT_TEXT_VALUE, onChangeFunction);
         },

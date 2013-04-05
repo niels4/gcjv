@@ -18,6 +18,7 @@ define(['underscore', 'backbone', './ProblemViewer/data/ProblemViewerState', 'hb
         };
       },
       onRender: function () {
+        this.model.resetDefaults();
         this.content.show(this.subViews.fileView);
         this.subViews.fileView.delegateEvents();
       }
