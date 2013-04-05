@@ -1,6 +1,6 @@
-(ns problems.store-credit.main)
+(ns problems.reverse-words.main)
 
-(def problemName "store_credit")
+(def problemName "reverse_words")
 
 (defn ^:export solve-for-input
   [input]

@@ -1,9 +1,9 @@
 (ns gcj-app
-  (:use [gcj-util.gcj-solver :only [solve-problem]]))
+  (:use [problems.reverse_words.main :only [solve-for-input]]))
 
 
 
-(solve-problem "reverse_words" "some input file\n that has many lines\n and such")
+(solve-for-input "HEYY man heres some input")
 
 (comment
 

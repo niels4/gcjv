@@ -10,5 +10,9 @@
   {
     "name": "theme_park",
     "descriptionUrl": "http://code.google.com/codejam/contest/433101/dashboard#s=p2"
+  },
+  {
+    "name": "reverse_words",
+    "descriptionUrl": "http://code.google.com/codejam/contest/351101/dashboard#s=p1"
   }
 ]

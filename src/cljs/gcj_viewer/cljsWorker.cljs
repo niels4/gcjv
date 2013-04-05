@@ -5,7 +5,12 @@
     (let
       [data (js->clj (aget event "data"))
        problemName (data "problemName")
-       input (data "input")]
+       input (data "input")
+       solve-for-input (-> js/self
+                        (aget "problems")
+                        (aget problemName)
+                        (aget "main")
+                        (aget "solve_for_input"))]
       (.postMessage js/self
-      (clj->js {:status "completed",
-       :message ((aget (aget (aget js/self "gcj_util") "gcj_solver") "solve_problem") problemName input)})))))
+        (clj->js {:status "completed",
+         :message (solve-for-input input)})))))

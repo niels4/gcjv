@@ -28936,22 +28936,26 @@ gcj_viewer.brepl_connect.breplConnect = function breplConnect() {
     return null
   }
 };
+goog.provide("problems.reverse_words.main");
+goog.require("cljs.core");
+problems.reverse_words.main.problemName = "reverse_words";
+problems.reverse_words.main.solve_for_input = function solve_for_input(input) {
+  return[cljs.core.str("Solved input for problem: "), cljs.core.str(problems.reverse_words.main.problemName), cljs.core.str("\n"), cljs.core.str(input)].join("")
+};
+goog.exportSymbol("problems.reverse_words.main.solve_for_input", problems.reverse_words.main.solve_for_input);
 goog.provide("problems.store_credit.main");
 goog.require("cljs.core");
+problems.store_credit.main.problemName = "store_credit";
 problems.store_credit.main.solve_for_input = function solve_for_input(input) {
-  return[cljs.core.str("Solved for input: "), cljs.core.str(input)].join("")
+  return[cljs.core.str("Solved input for problem: "), cljs.core.str(problems.store_credit.main.problemName), cljs.core.str("\n"), cljs.core.str(input)].join("")
 };
+goog.exportSymbol("problems.store_credit.main.solve_for_input", problems.store_credit.main.solve_for_input);
 goog.provide("gcj_viewer.cljsWorker");
 goog.require("cljs.core");
 self.addEventListener("message", function(event) {
-  var data = cljs.core.js__GT_clj(event["data"]);
-  var problemName = data.cljs$lang$arity$1 ? data.cljs$lang$arity$1("problemName") : data.call(null, "problemName");
-  var input = data.cljs$lang$arity$1 ? data.cljs$lang$arity$1("input") : data.call(null, "input");
-  return self.postMessage(cljs.core.clj__GT_js(cljs.core.ObjMap.fromObject(["\ufdd0:status", "\ufdd0:message"], {"\ufdd0:status":"completed", "\ufdd0:message":self["gcj_util"]["gcj_solver"]["solve_problem"].call(null, problemName, input)})))
+  var data = cljs.core.js__GT_clj.call(null, event["data"]);
+  var problemName = data.call(null, "problemName");
+  var input = data.call(null, "input");
+  var solve_for_input = self["problems"][problemName]["main"]["solve_for_input"];
+  return self.postMessage(cljs.core.clj__GT_js.call(null, cljs.core.ObjMap.fromObject(["\ufdd0:status", "\ufdd0:message"], {"\ufdd0:status":"completed", "\ufdd0:message":solve_for_input.call(null, input)})))
 });
-goog.provide("gcj_util.gcj_solver");
-goog.require("cljs.core");
-gcj_util.gcj_solver.solve_problem = function solve_problem(problemName, input) {
-  return[cljs.core.str("Solved sfdsf Problem "), cljs.core.str(problemName), cljs.core.str(":\n"), cljs.core.str(input)].join("")
-};
-goog.exportSymbol("gcj_util.gcj_solver.solve_problem", gcj_util.gcj_solver.solve_problem);
