@@ -28936,13 +28936,6 @@ gcj_viewer.brepl_connect.breplConnect = function breplConnect() {
     return null
   }
 };
-goog.provide("problems.reverse_words.main");
-goog.require("cljs.core");
-problems.reverse_words.main.problemName = "reverse_words";
-problems.reverse_words.main.solve_for_input = function solve_for_input(input) {
-  return[cljs.core.str("Solved input for problem: "), cljs.core.str(problems.reverse_words.main.problemName), cljs.core.str("\n"), cljs.core.str(input)].join("")
-};
-goog.exportSymbol("problems.reverse_words.main.solve_for_input", problems.reverse_words.main.solve_for_input);
 goog.provide("clojure.string");
 goog.require("cljs.core");
 goog.require("goog.string.StringBuffer");
@@ -29116,30 +29109,34 @@ clojure.string.escape = function escape(s, cmap) {
     break
   }
 };
-goog.provide("problems.store_credit.main");
+goog.provide("gcj_util.misc");
 goog.require("cljs.core");
-goog.require("clojure.string");
-goog.require("clojure.string");
-problems.store_credit.main.to_int = function to_int(numStr) {
+gcj_util.misc.to_int = function to_int(numStr) {
   return parseInt(numStr)
 };
-problems.store_credit.main.indexed_values = function() {
-  var reduceFunction = function(p__9685, nextVal) {
-    var map__9686 = p__9685;
-    var map__9686__$1 = cljs.core.seq_QMARK_.call(null, map__9686) ? cljs.core.apply.call(null, cljs.core.hash_map, map__9686) : map__9686;
-    var acc = cljs.core._lookup.call(null, map__9686__$1, "\ufdd0:acc", null);
-    var index = cljs.core._lookup.call(null, map__9686__$1, "\ufdd0:index", null);
+gcj_util.misc.indexed_values = function() {
+  var reduceFunction = function(p__10698, nextVal) {
+    var map__10699 = p__10698;
+    var map__10699__$1 = cljs.core.seq_QMARK_.call(null, map__10699) ? cljs.core.apply.call(null, cljs.core.hash_map, map__10699) : map__10699;
+    var acc = cljs.core._lookup.call(null, map__10699__$1, "\ufdd0:acc", null);
+    var index = cljs.core._lookup.call(null, map__10699__$1, "\ufdd0:index", null);
     return cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":index + 1, "\ufdd0:acc":cljs.core.conj.call(null, acc, cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:value"], {"\ufdd0:index":index, "\ufdd0:value":nextVal}))})
   };
   var initialAcc = cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":1, "\ufdd0:acc":cljs.core.PersistentVector.EMPTY});
   return cljs.core.comp.call(null, "\ufdd0:acc", cljs.core.partial.call(null, cljs.core.reduce, reduceFunction, initialAcc))
 }();
-problems.store_credit.main.cases_from_lines = function cases_from_lines(linesPerCase, lines) {
+goog.provide("gcj_util.case_reader");
+goog.require("cljs.core");
+goog.require("gcj_util.misc");
+goog.require("clojure.string");
+goog.require("clojure.string");
+goog.require("gcj_util.misc");
+gcj_util.case_reader.cases_from_lines = function cases_from_lines(linesPerCase, lines) {
   return cljs.core.partition.call(null, linesPerCase, lines)
 };
-problems.store_credit.main.raw_cases_from_lines = function raw_cases_from_lines(linesPerCase, lines) {
-  var expectedCount = problems.store_credit.main.to_int.call(null, cljs.core.first.call(null, lines));
-  var rawCases = problems.store_credit.main.indexed_values.call(null, problems.store_credit.main.cases_from_lines.call(null, linesPerCase, cljs.core.rest.call(null, lines)));
+gcj_util.case_reader.raw_cases_from_lines = function raw_cases_from_lines(linesPerCase, lines) {
+  var expectedCount = gcj_util.misc.to_int.call(null, cljs.core.first.call(null, lines));
+  var rawCases = gcj_util.misc.indexed_values.call(null, gcj_util.case_reader.cases_from_lines.call(null, linesPerCase, cljs.core.rest.call(null, lines)));
   var isCountValid = cljs.core._EQ_.call(null, expectedCount, cljs.core.count.call(null, rawCases));
   if(isCountValid) {
   }else {
@@ -29147,22 +29144,53 @@ problems.store_credit.main.raw_cases_from_lines = function raw_cases_from_lines(
   }
   return cljs.core.ObjMap.fromObject(["\ufdd0:count", "\ufdd0:rawCases", "\ufdd0:isCountValid"], {"\ufdd0:count":expectedCount, "\ufdd0:rawCases":rawCases, "\ufdd0:isCountValid":isCountValid})
 };
-problems.store_credit.main.parse_cases_from_input = function parse_cases_from_input(parseFunction, linesPerCase, input) {
-  var lines = clojure.string.split.call(null, input, /\n/);
-  var rawCases = problems.store_credit.main.raw_cases_from_lines.call(null, linesPerCase, lines);
+gcj_util.case_reader.parse_cases_from_input = function parse_cases_from_input(parseFunction, linesPerCase, input) {
+  var lines = clojure.string.split.call(null, clojure.string.trim_newline.call(null, input), /\n/);
+  var rawCases = gcj_util.case_reader.raw_cases_from_lines.call(null, linesPerCase, lines);
   return cljs.core.map.call(null, parseFunction, (new cljs.core.Keyword("\ufdd0:rawCases")).call(null, rawCases))
 };
-problems.store_credit.main.problemName = "store_credit";
-problems.store_credit.main.linesPerCase = 3;
-problems.store_credit.main.parseCase = function parseCase(p__9687) {
-  var map__9689 = p__9687;
-  var map__9689__$1 = cljs.core.seq_QMARK_.call(null, map__9689) ? cljs.core.apply.call(null, cljs.core.hash_map, map__9689) : map__9689;
-  var value = cljs.core._lookup.call(null, map__9689__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__9689__$1, "\ufdd0:index", null);
+goog.provide("problems.reverse_words.main");
+goog.require("cljs.core");
+goog.require("gcj_util.case_reader");
+goog.require("gcj_util.misc");
+goog.require("clojure.string");
+goog.require("clojure.string");
+goog.require("gcj_util.case_reader");
+goog.require("gcj_util.misc");
+problems.reverse_words.main.problemName = "reverse_words";
+problems.reverse_words.main.linesPerCase = 1;
+problems.reverse_words.main.parseCase = function parseCase(p__12947) {
+  var map__12949 = p__12947;
+  var map__12949__$1 = cljs.core.seq_QMARK_.call(null, map__12949) ? cljs.core.apply.call(null, cljs.core.hash_map, map__12949) : map__12949;
+  var value = cljs.core._lookup.call(null, map__12949__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__12949__$1, "\ufdd0:index", null);
   var lines = value;
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:lines"], {"\ufdd0:caseNumber":index, "\ufdd0:lines":lines})
 };
-problems.store_credit.main.caseParser = cljs.core.partial.call(null, problems.store_credit.main.parse_cases_from_input, problems.store_credit.main.parseCase, problems.store_credit.main.linesPerCase);
+problems.reverse_words.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.reverse_words.main.parseCase, problems.reverse_words.main.linesPerCase);
+problems.reverse_words.main.solve_for_input = function solve_for_input(input) {
+  return[cljs.core.str(problems.reverse_words.main.caseParser.call(null, input))].join("")
+};
+goog.exportSymbol("problems.reverse_words.main.solve_for_input", problems.reverse_words.main.solve_for_input);
+goog.provide("problems.store_credit.main");
+goog.require("cljs.core");
+goog.require("gcj_util.case_reader");
+goog.require("gcj_util.misc");
+goog.require("clojure.string");
+goog.require("clojure.string");
+goog.require("gcj_util.case_reader");
+goog.require("gcj_util.misc");
+problems.store_credit.main.problemName = "store_credit";
+problems.store_credit.main.linesPerCase = 3;
+problems.store_credit.main.parseCase = function parseCase(p__12133) {
+  var map__12135 = p__12133;
+  var map__12135__$1 = cljs.core.seq_QMARK_.call(null, map__12135) ? cljs.core.apply.call(null, cljs.core.hash_map, map__12135) : map__12135;
+  var value = cljs.core._lookup.call(null, map__12135__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__12135__$1, "\ufdd0:index", null);
+  var lines = value;
+  return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:lines"], {"\ufdd0:caseNumber":index, "\ufdd0:lines":lines})
+};
+problems.store_credit.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.store_credit.main.parseCase, problems.store_credit.main.linesPerCase);
 problems.store_credit.main.solve_for_input = function solve_for_input(input) {
   return[cljs.core.str(problems.store_credit.main.caseParser.call(null, input))].join("")
 };

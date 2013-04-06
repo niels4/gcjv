@@ -577,7 +577,7 @@ function wb(a, b, c) {
 }
 function xb(a, b, c) {
   var d = k;
-  s(c) && (d = O(Array.prototype.slice.call(arguments, 2), 0));
+  s(c) && (d = N(Array.prototype.slice.call(arguments, 2), 0));
   return wb.call(this, a, b, d)
 }
 xb.o = 2;
@@ -593,7 +593,7 @@ ub = function(a, b, c) {
     case 2:
       return vb.call(this, a, b);
     default:
-      return xb.g(a, b, O(arguments, 2))
+      return xb.g(a, b, N(arguments, 2))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -709,7 +709,7 @@ Ra["function"] = function(a, b) {
         return z.b ? z.b(a.qa, b) : z.call(k, a.qa, b)
       }, d = function(a, b) {
         var a = this, d = k;
-        s(b) && (d = O(Array.prototype.slice.call(arguments, 1), 0));
+        s(b) && (d = N(Array.prototype.slice.call(arguments, 1), 0));
         return c.call(this, a, d)
       };
       d.o = 1;
@@ -749,7 +749,7 @@ Ra["function"] = function(a, b) {
         return z.b ? z.b(a.qa, b) : z.call(k, a.qa, b)
       }, d = function(a, b) {
         var a = this, d = k;
-        s(b) && (d = O(Array.prototype.slice.call(arguments, 1), 0));
+        s(b) && (d = N(Array.prototype.slice.call(arguments, 1), 0));
         return c.call(this, a, d)
       };
       d.o = 1;
@@ -990,7 +990,7 @@ Vb = function(a, b) {
 Vb.a = Wb;
 Vb.b = Xb;
 Ub = Vb;
-var O, Yb = k;
+var N, Yb = k;
 function Zb(a) {
   return Ub.b(a, 0)
 }
@@ -1008,7 +1008,7 @@ Yb = function(a, b) {
 };
 Yb.a = Zb;
 Yb.b = $b;
-O = Yb;
+N = Yb;
 Sa.array = j;
 var ac = k, ac = function(a, b, c) {
   switch(arguments.length) {
@@ -1046,7 +1046,7 @@ qa.array = function(a) {
   return a.length
 };
 Za.array = function(a) {
-  return O.b(a, 0)
+  return N.b(a, 0)
 };
 Q = g;
 Qb = function(a, b, c) {
@@ -1108,7 +1108,7 @@ function fc(a, b, c) {
 }
 function gc(a, b, c) {
   var d = k;
-  s(c) && (d = O(Array.prototype.slice.call(arguments, 2), 0));
+  s(c) && (d = N(Array.prototype.slice.call(arguments, 2), 0));
   return fc.call(this, a, b, d)
 }
 gc.o = 2;
@@ -1122,7 +1122,7 @@ ec = function(a, b, c) {
     case 2:
       return ua(a, b);
     default:
-      return gc.g(a, b, O(arguments, 2))
+      return gc.g(a, b, N(arguments, 2))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -1241,7 +1241,7 @@ function sc(a, b, c, d) {
 }
 function tc(a, b, c, d) {
   var f = k;
-  s(d) && (f = O(Array.prototype.slice.call(arguments, 3), 0));
+  s(d) && (f = N(Array.prototype.slice.call(arguments, 3), 0));
   return sc.call(this, a, b, c, f)
 }
 tc.o = 3;
@@ -1255,7 +1255,7 @@ rc = function(a, b, c, d) {
     case 3:
       return Ha(a, b, c);
     default:
-      return tc.g(a, b, c, O(arguments, 3))
+      return tc.g(a, b, c, N(arguments, 3))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -1489,7 +1489,7 @@ function ed(a, b) {
 }
 function fd(a, b) {
   var c = k;
-  s(b) && (c = O(Array.prototype.slice.call(arguments, 1), 0));
+  s(b) && (c = N(Array.prototype.slice.call(arguments, 1), 0));
   return ed.call(this, a, c)
 }
 fd.o = 1;
@@ -1505,7 +1505,7 @@ cd = function(a, b) {
     case 1:
       return dd.call(this, a);
     default:
-      return fd.g(a, O(arguments, 1))
+      return fd.g(a, N(arguments, 1))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -1517,7 +1517,7 @@ cd.g = fd.g;
 bd = cd;
 var U, gd = k;
 function hd(a) {
-  return Kc(a) ? a.substring(2, a.length) : Jc(a) ? bd.g(":", O([a.substring(2, a.length)], 0)) : a == k ? "" : a.toString()
+  return Kc(a) ? a.substring(2, a.length) : Jc(a) ? bd.g(":", N([a.substring(2, a.length)], 0)) : a == k ? "" : a.toString()
 }
 function id(a, b) {
   return function(a, b) {
@@ -1532,7 +1532,7 @@ function id(a, b) {
 }
 function jd(a, b) {
   var c = k;
-  s(b) && (c = O(Array.prototype.slice.call(arguments, 1), 0));
+  s(b) && (c = N(Array.prototype.slice.call(arguments, 1), 0));
   return id.call(this, a, c)
 }
 jd.o = 1;
@@ -1548,7 +1548,7 @@ gd = function(a, b) {
     case 1:
       return hd.call(this, a);
     default:
-      return jd.g(a, O(arguments, 1))
+      return jd.g(a, N(arguments, 1))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -1576,10 +1576,10 @@ ld.c = function(a, b, c) {
 kd = ld;
 var md = g, nd, od = k;
 function pd(a) {
-  return Jc(a) ? a : Kc(a) ? bd.g("\ufdd0", O([":", kd.b(a, 2)], 0)) : bd.g("\ufdd0", O([":", a], 0))
+  return Jc(a) ? a : Kc(a) ? bd.g("\ufdd0", N([":", kd.b(a, 2)], 0)) : bd.g("\ufdd0", N([":", a], 0))
 }
 function qd(a, b) {
-  return od.a(bd.g(a, O(["/", b], 0)))
+  return od.a(bd.g(a, N(["/", b], 0)))
 }
 od = function(a, b) {
   switch(arguments.length) {
@@ -1723,7 +1723,7 @@ function Cd(a, b, c, d) {
 }
 function Dd(a, b, c, d) {
   var f = k;
-  s(d) && (f = O(Array.prototype.slice.call(arguments, 3), 0));
+  s(d) && (f = N(Array.prototype.slice.call(arguments, 3), 0));
   return Cd.call(this, a, b, c, f)
 }
 Dd.o = 3;
@@ -1743,7 +1743,7 @@ yd = function(a, b, c, d) {
     case 3:
       return Bd.call(this, a, b, c);
     default:
-      return Dd.g(a, b, c, O(arguments, 3))
+      return Dd.g(a, b, c, N(arguments, 3))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -2105,7 +2105,7 @@ function ce(a, b, c) {
 }
 function de(a, b, c) {
   var d = k;
-  s(c) && (d = O(Array.prototype.slice.call(arguments, 2), 0));
+  s(c) && (d = N(Array.prototype.slice.call(arguments, 2), 0));
   return ce.call(this, a, b, d)
 }
 de.o = 2;
@@ -2123,7 +2123,7 @@ Zd = function(a, b, c) {
     case 2:
       return be.call(this, a, b);
     default:
-      return de.g(a, b, O(arguments, 2))
+      return de.g(a, b, N(arguments, 2))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -2144,17 +2144,17 @@ function he(a, b, c, d) {
 function ie(a, b, c, d, f) {
   return S(a, S(b, S(c, S(d, Xd(f)))))
 }
-function ke(a, b, c, d, f) {
+function je(a, b, c, d, f) {
   var h = k;
-  s(f) && (h = O(Array.prototype.slice.call(arguments, 4), 0));
+  s(f) && (h = N(Array.prototype.slice.call(arguments, 4), 0));
   return ie.call(this, a, b, c, d, h)
 }
-ke.o = 4;
-ke.k = function(a) {
+je.o = 4;
+je.k = function(a) {
   var b = J(a), c = J(M(a)), d = J(M(M(a))), f = J(M(M(M(a)))), a = K(M(M(M(a))));
   return ie(b, c, d, f, a)
 };
-ke.g = ie;
+je.g = ie;
 fe = function(a, b, c, d, f) {
   switch(arguments.length) {
     case 1:
@@ -2166,12 +2166,12 @@ fe = function(a, b, c, d, f) {
     case 4:
       return he.call(this, a, b, c, d);
     default:
-      return ke.g(a, b, c, d, O(arguments, 4))
+      return je.g(a, b, c, d, N(arguments, 4))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
 fe.o = 4;
-fe.k = ke.k;
+fe.k = je.k;
 fe.a = function(a) {
   return I(a)
 };
@@ -2180,7 +2180,7 @@ fe.b = function(a, b) {
 };
 fe.c = ge;
 fe.q = he;
-fe.g = ke.g;
+fe.g = je.g;
 ee = fe;
 function le(a, b, c) {
   var d = I(c);
@@ -2228,47 +2228,47 @@ function le(a, b, c) {
   if(10 === b) {
     return a.Ua ? a.Ua(c, d, f, h, i, a, n, q, v, B) : a.Ua ? a.Ua(c, d, f, h, i, a, n, q, v, B) : a.call(k, c, d, f, h, i, a, n, q, v, B)
   }
-  var G = C(H), N = D(H);
+  var G = C(H), O = D(H);
   if(11 === b) {
     return a.Va ? a.Va(c, d, f, h, i, a, n, q, v, B, G) : a.Va ? a.Va(c, d, f, h, i, a, n, q, v, B, G) : a.call(k, c, d, f, h, i, a, n, q, v, B, G)
   }
-  var H = C(N), W = D(N);
+  var H = C(O), W = D(O);
   if(12 === b) {
     return a.Wa ? a.Wa(c, d, f, h, i, a, n, q, v, B, G, H) : a.Wa ? a.Wa(c, d, f, h, i, a, n, q, v, B, G, H) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H)
   }
-  var N = C(W), aa = D(W);
+  var O = C(W), aa = D(W);
   if(13 === b) {
-    return a.Xa ? a.Xa(c, d, f, h, i, a, n, q, v, B, G, H, N) : a.Xa ? a.Xa(c, d, f, h, i, a, n, q, v, B, G, H, N) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, N)
+    return a.Xa ? a.Xa(c, d, f, h, i, a, n, q, v, B, G, H, O) : a.Xa ? a.Xa(c, d, f, h, i, a, n, q, v, B, G, H, O) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, O)
   }
   var W = C(aa), ga = D(aa);
   if(14 === b) {
-    return a.Ya ? a.Ya(c, d, f, h, i, a, n, q, v, B, G, H, N, W) : a.Ya ? a.Ya(c, d, f, h, i, a, n, q, v, B, G, H, N, W) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, N, W)
+    return a.Ya ? a.Ya(c, d, f, h, i, a, n, q, v, B, G, H, O, W) : a.Ya ? a.Ya(c, d, f, h, i, a, n, q, v, B, G, H, O, W) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, O, W)
   }
   var aa = C(ga), ta = D(ga);
   if(15 === b) {
-    return a.Za ? a.Za(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa) : a.Za ? a.Za(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa)
+    return a.Za ? a.Za(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa) : a.Za ? a.Za(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa)
   }
   var ga = C(ta), za = D(ta);
   if(16 === b) {
-    return a.$a ? a.$a(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga) : a.$a ? a.$a(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga)
+    return a.$a ? a.$a(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga) : a.$a ? a.$a(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga)
   }
   var ta = C(za), bb = D(za);
   if(17 === b) {
-    return a.ab ? a.ab(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta) : a.ab ? a.ab(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta)
+    return a.ab ? a.ab(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta) : a.ab ? a.ab(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta)
   }
   var za = C(bb), Oc = D(bb);
   if(18 === b) {
-    return a.bb ? a.bb(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za) : a.bb ? a.bb(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za)
+    return a.bb ? a.bb(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za) : a.bb ? a.bb(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za)
   }
   bb = C(Oc);
   Oc = D(Oc);
   if(19 === b) {
-    return a.cb ? a.cb(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za, bb) : a.cb ? a.cb(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za, bb) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za, bb)
+    return a.cb ? a.cb(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za, bb) : a.cb ? a.cb(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za, bb) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za, bb)
   }
-  var je = C(Oc);
+  var ke = C(Oc);
   D(Oc);
   if(20 === b) {
-    return a.eb ? a.eb(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za, bb, je) : a.eb ? a.eb(c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za, bb, je) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, N, W, aa, ga, ta, za, bb, je)
+    return a.eb ? a.eb(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za, bb, ke) : a.eb ? a.eb(c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za, bb, ke) : a.call(k, c, d, f, h, i, a, n, q, v, B, G, H, O, W, aa, ga, ta, za, bb, ke)
   }
   e(Error("Only up to 20 arguments supported on functions"))
 }
@@ -2307,7 +2307,7 @@ function re(a, b, c, d, f, h) {
 }
 function se(a, b, c, d, f, h) {
   var i = k;
-  s(h) && (i = O(Array.prototype.slice.call(arguments, 5), 0));
+  s(h) && (i = N(Array.prototype.slice.call(arguments, 5), 0));
   return re.call(this, a, b, c, d, f, i)
 }
 se.o = 5;
@@ -2327,7 +2327,7 @@ me = function(a, b, c, d, f, h) {
     case 5:
       return qe.call(this, a, b, c, d, f);
     default:
-      return se.g(a, b, c, d, f, O(arguments, 5))
+      return se.g(a, b, c, d, f, N(arguments, 5))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -2358,7 +2358,7 @@ var ve, we = k;
 function xe(a, b) {
   function c(a, b, c, f) {
     var v = k;
-    s(f) && (v = O(Array.prototype.slice.call(arguments, 3), 0));
+    s(f) && (v = N(Array.prototype.slice.call(arguments, 3), 0));
     return d.call(this, a, b, c, v)
   }
   function d(c, d, f, q) {
@@ -2382,7 +2382,7 @@ function xe(a, b) {
       case 3:
         return a.a ? a.a(b.c ? b.c(d, f, n) : b.call(k, d, f, n)) : a.call(k, b.c ? b.c(d, f, n) : b.call(k, d, f, n));
       default:
-        return c.g(d, f, n, O(arguments, 3))
+        return c.g(d, f, n, N(arguments, 3))
     }
     e(Error("Invalid arity: " + arguments.length))
   };
@@ -2393,7 +2393,7 @@ function xe(a, b) {
 function ye(a, b, c) {
   function d(a, b, c, d) {
     var h = k;
-    s(d) && (h = O(Array.prototype.slice.call(arguments, 3), 0));
+    s(d) && (h = N(Array.prototype.slice.call(arguments, 3), 0));
     return f.call(this, a, b, c, h)
   }
   function f(d, f, h, v) {
@@ -2417,7 +2417,7 @@ function ye(a, b, c) {
       case 3:
         return a.a ? a.a(b.a ? b.a(c.c ? c.c(f, h, q) : c.call(k, f, h, q)) : b.call(k, c.c ? c.c(f, h, q) : c.call(k, f, h, q))) : a.call(k, b.a ? b.a(c.c ? c.c(f, h, q) : c.call(k, f, h, q)) : b.call(k, c.c ? c.c(f, h, q) : c.call(k, f, h, q)));
       default:
-        return d.g(f, h, q, O(arguments, 3))
+        return d.g(f, h, q, N(arguments, 3))
     }
     e(Error("Invalid arity: " + arguments.length))
   };
@@ -2428,7 +2428,7 @@ function ye(a, b, c) {
 function ze(a, b, c, d) {
   function f(a) {
     var b = k;
-    s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+    s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
     return h.call(this, b)
   }
   function h(a) {
@@ -2451,7 +2451,7 @@ function ze(a, b, c, d) {
 }
 function Ae(a, b, c, d) {
   var f = k;
-  s(d) && (f = O(Array.prototype.slice.call(arguments, 3), 0));
+  s(d) && (f = N(Array.prototype.slice.call(arguments, 3), 0));
   return ze.call(this, a, b, c, f)
 }
 Ae.o = 3;
@@ -2471,7 +2471,7 @@ we = function(a, b, c, d) {
     case 3:
       return ye.call(this, a, b, c);
     default:
-      return Ae.g(a, b, c, O(arguments, 3))
+      return Ae.g(a, b, c, N(arguments, 3))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -2489,7 +2489,7 @@ var Be, Ce = k;
 function De(a, b) {
   function c(a) {
     var b = k;
-    s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+    s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
     return d.call(this, b)
   }
   function d(c) {
@@ -2506,7 +2506,7 @@ function De(a, b) {
 function Ee(a, b, c) {
   function d(a) {
     var b = k;
-    s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+    s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
     return f.call(this, b)
   }
   function f(d) {
@@ -2523,7 +2523,7 @@ function Ee(a, b, c) {
 function Fe(a, b, c, d) {
   function f(a) {
     var b = k;
-    s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+    s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
     return h.call(this, b)
   }
   function h(f) {
@@ -2540,7 +2540,7 @@ function Fe(a, b, c, d) {
 function Ge(a, b, c, d, f) {
   function h(a) {
     var b = k;
-    s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+    s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
     return i.call(this, b)
   }
   function i(h) {
@@ -2556,7 +2556,7 @@ function Ge(a, b, c, d, f) {
 }
 function He(a, b, c, d, f) {
   var h = k;
-  s(f) && (h = O(Array.prototype.slice.call(arguments, 4), 0));
+  s(f) && (h = N(Array.prototype.slice.call(arguments, 4), 0));
   return Ge.call(this, a, b, c, d, h)
 }
 He.o = 4;
@@ -2574,7 +2574,7 @@ Ce = function(a, b, c, d, f) {
     case 4:
       return Fe.call(this, a, b, c, d);
     default:
-      return He.g(a, b, c, d, O(arguments, 4))
+      return He.g(a, b, c, d, N(arguments, 4))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -2627,11 +2627,11 @@ function Me(a, b, c, d, f) {
       var b = Ie.b(I, a);
       return te(ue, b) ? S(Ie.b(J, b), i(Ie.b(K, b))) : k
     }, k)
-  }(dc.g(f, d, O([c, b], 0))))
+  }(dc.g(f, d, N([c, b], 0))))
 }
 function Ne(a, b, c, d, f) {
   var h = k;
-  s(f) && (h = O(Array.prototype.slice.call(arguments, 4), 0));
+  s(f) && (h = N(Array.prototype.slice.call(arguments, 4), 0));
   return Me.call(this, a, b, c, d, h)
 }
 Ne.o = 4;
@@ -2649,7 +2649,7 @@ Ie = function(a, b, c, d, f) {
     case 4:
       return Le.call(this, a, b, c, d);
     default:
-      return Ne.g(a, b, c, d, O(arguments, 4))
+      return Ne.g(a, b, c, d, N(arguments, 4))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -2717,13 +2717,13 @@ function Xe(a, b) {
 }
 function Ye(a, b, c) {
   return new V(k, l, function() {
-    var d = md.b(I, dc.g(c, b, O([a], 0)));
+    var d = md.b(I, dc.g(c, b, N([a], 0)));
     return te(ue, d) ? Yd.b(md.b(J, d), z.b(We, md.b(K, d))) : k
   }, k)
 }
 function Ze(a, b, c) {
   var d = k;
-  s(c) && (d = O(Array.prototype.slice.call(arguments, 2), 0));
+  s(c) && (d = N(Array.prototype.slice.call(arguments, 2), 0));
   return Ye.call(this, a, b, d)
 }
 Ze.o = 2;
@@ -2737,7 +2737,7 @@ We = function(a, b, c) {
     case 2:
       return Xe.call(this, a, b);
     default:
-      return Ze.g(a, b, O(arguments, 2))
+      return Ze.g(a, b, N(arguments, 2))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -2980,7 +2980,7 @@ Wc = function(a) {
 };
 function Af(a) {
   var b = k;
-  s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+  s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
   return Wc(b)
 }
 Af.o = 0;
@@ -3310,7 +3310,7 @@ r.toString = function() {
 r.O = function() {
   var a = this;
   return 0 < a.keys.length ? md.b(function(b) {
-    return Af.g(O([b, a.sa[b]], 0))
+    return Af.g(N([b, a.sa[b]], 0))
   }, a.keys.sort(Nf)) : k
 };
 r.K = function() {
@@ -4471,7 +4471,7 @@ function Yg(a) {
 }
 function Zg(a) {
   var b = k;
-  s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+  s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
   return Yg.call(this, b)
 }
 Zg.o = 0;
@@ -4486,7 +4486,7 @@ function $g(a) {
 }
 function ah(a) {
   var b = k;
-  s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+  s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
   return $g.call(this, b)
 }
 ah.o = 0;
@@ -4506,7 +4506,7 @@ function bh(a) {
 }
 function ch(a) {
   var b = k;
-  s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+  s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
   return bh.call(this, b)
 }
 ch.o = 0;
@@ -4596,7 +4596,7 @@ ih = jh;
 X = function(a, b, c, d, f, h) {
   return Yd.g(zf([b]), af($e(zf([c]), md.b(function(b) {
     return a.b ? a.b(b, f) : a.call(k, b, f)
-  }, h))), O([zf([d])], 0))
+  }, h))), N([zf([d])], 0))
 };
 Y = function(a, b, c, d, f, h, i) {
   F(a, c);
@@ -4623,7 +4623,7 @@ function mh(a, b) {
 }
 function nh(a, b) {
   var c = k;
-  s(b) && (c = O(Array.prototype.slice.call(arguments, 1), 0));
+  s(b) && (c = N(Array.prototype.slice.call(arguments, 1), 0));
   return mh.call(this, a, c)
 }
 nh.o = 1;
@@ -4645,7 +4645,7 @@ var qh = function ph(b, c) {
   return b == k ? P.a("nil") : g === b ? P.a("#<undefined>") : Yd.b(w(function() {
     var d = E.c(c, "\ufdd0:meta", k);
     return w(d) ? (b ? (d = b.j & 131072, d = w(d ? d : b.sb) ? j : b.j ? l : x(Pa, b)) : d = x(Pa, b), w(d) ? uc(b) : d) : d
-  }()) ? Yd.g(zf(["^"]), ph(uc(b), c), O([zf([" "])], 0)) : k, w(function() {
+  }()) ? Yd.g(zf(["^"]), ph(uc(b), c), N([zf([" "])], 0)) : k, w(function() {
     var c = b != k;
     return c ? b.aa : c
   }()) ? b.fa(b) : w(b ? w(function() {
@@ -4664,7 +4664,7 @@ var qh = function ph(b, c) {
   w(f) && (b ? (f = b.j & 131072, f = w(f ? f : b.sb) ? j : b.j ? l : x(Pa, b)) : f = x(Pa, b), f = w(f) ? uc(b) : f);
   w(f) && (F(c, "^"), rh(uc(b), c, d), F(c, " "));
   f = b != k;
-  w(f ? b.aa : f) ? b = b.ga(b, c, d) : (b ? (f = b.j & 2147483648, f = w(f ? f : b.N) ? j : b.j ? l : x(gb, b)) : f = x(gb, b), w(f) ? b = hb(b, c, d) : (b ? (f = b.j & 536870912, f = w(f ? f : b.H) ? j : b.j ? l : x(db, b)) : f = x(db, b), b = w(f) ? z.c(nh, c, eb(b, d)) : w(b instanceof RegExp) ? nh.g(c, O(['#"', b.source, '"'], 0)) : nh.g(c, O(["#<", "" + U(b), ">"], 0))));
+  w(f ? b.aa : f) ? b = b.ga(b, c, d) : (b ? (f = b.j & 2147483648, f = w(f ? f : b.N) ? j : b.j ? l : x(gb, b)) : f = x(gb, b), w(f) ? b = hb(b, c, d) : (b ? (f = b.j & 536870912, f = w(f ? f : b.H) ? j : b.j ? l : x(db, b)) : f = x(db, b), b = w(f) ? z.c(nh, c, eb(b, d)) : w(b instanceof RegExp) ? nh.g(c, N(['#"', b.source, '"'], 0)) : nh.g(c, N(["#<", "" + U(b), ">"], 0))));
   return b
 };
 function sh(a) {
@@ -4694,7 +4694,7 @@ function sh(a) {
 }
 function th(a) {
   var b = k;
-  s(a) && (b = O(Array.prototype.slice.call(arguments, 0), 0));
+  s(a) && (b = N(Array.prototype.slice.call(arguments, 0), 0));
   return sh(b)
 }
 th.o = 0;
@@ -4869,7 +4869,7 @@ hb["boolean"] = function(a, b) {
 };
 gb.string = j;
 hb.string = function(a, b, c) {
-  return Jc(a) ? (F(b, ":"), c = dh(a), w(c) && nh.g(b, O(["" + U(c), "/"], 0)), F(b, ud(a))) : Kc(a) ? (c = dh(a), w(c) && nh.g(b, O(["" + U(c), "/"], 0)), F(b, ud(a))) : w((new Id("\ufdd0:readably")).call(k, c)) ? F(b, vh(a)) : F(b, a)
+  return Jc(a) ? (F(b, ":"), c = dh(a), w(c) && nh.g(b, N(["" + U(c), "/"], 0)), F(b, ud(a))) : Kc(a) ? (c = dh(a), w(c) && nh.g(b, N(["" + U(c), "/"], 0)), F(b, ud(a))) : w((new Id("\ufdd0:readably")).call(k, c)) ? F(b, vh(a)) : F(b, a)
 };
 zg.prototype.N = j;
 zg.prototype.A = function(a, b, c) {
@@ -4903,7 +4903,7 @@ hb.array = function(a, b, c) {
 };
 gb["function"] = j;
 hb["function"] = function(a, b) {
-  return nh.g(b, O(["#<", "" + U(a), ">"], 0))
+  return nh.g(b, N(["#<", "" + U(a), ">"], 0))
 };
 wd.prototype.N = j;
 wd.prototype.A = function(a, b) {
@@ -4924,7 +4924,7 @@ Date.prototype.A = function(a, b) {
       }
     }
   }
-  return nh.g(b, O(['#inst "', "" + U(a.getUTCFullYear()), "-", c(a.getUTCMonth() + 1, 2), "-", c(a.getUTCDate(), 2), "T", c(a.getUTCHours(), 2), ":", c(a.getUTCMinutes(), 2), ":", c(a.getUTCSeconds(), 2), ".", c(a.getUTCMilliseconds(), 3), "-", '00:00"'], 0))
+  return nh.g(b, N(['#inst "', "" + U(a.getUTCFullYear()), "-", c(a.getUTCMonth() + 1, 2), "-", c(a.getUTCDate(), 2), "T", c(a.getUTCHours(), 2), ":", c(a.getUTCMinutes(), 2), ":", c(a.getUTCSeconds(), 2), ".", c(a.getUTCMilliseconds(), 3), "-", '00:00"'], 0))
 };
 Ed.prototype.N = j;
 Ed.prototype.A = function(a, b, c) {
@@ -4966,7 +4966,7 @@ r.A = function(a, b, c) {
   return F(b, ">")
 };
 r.B = function(a, b) {
-  return Yd.g(zf(["#<Atom: "]), eb(this.state, b), O([">"], 0))
+  return Yd.g(zf(["#<Atom: "]), eb(this.state, b), N([">"], 0))
 };
 r.G = m("l");
 r.Sa = m("state");
@@ -4983,7 +4983,7 @@ function zh(a, b) {
 }
 function Ah(a, b) {
   var c = k;
-  s(b) && (c = O(Array.prototype.slice.call(arguments, 1), 0));
+  s(b) && (c = N(Array.prototype.slice.call(arguments, 1), 0));
   return zh.call(this, a, c)
 }
 Ah.o = 1;
@@ -4997,7 +4997,7 @@ xh = function(a, b) {
     case 1:
       return yh.call(this, a);
     default:
-      return Ah.g(a, O(arguments, 1))
+      return Ah.g(a, N(arguments, 1))
   }
   e(Error("Invalid arity: " + arguments.length))
 };
@@ -5032,7 +5032,7 @@ Ch._ = function(a) {
   return w(function() {
     var b = Ic(a);
     return b || (b = "number" == typeof a) ? b : (b = Jc(a)) ? b : Kc(a)
-  }()) ? Bh(a) : T.g(O([a], 0))
+  }()) ? Bh(a) : T.g(N([a], 0))
 };
 Bh._ = function(a) {
   if(Jc(a)) {
@@ -5139,7 +5139,7 @@ function Jh(a, b) {
 }
 function Kh(a, b) {
   var c = k;
-  s(b) && (c = O(Array.prototype.slice.call(arguments, 1), 0));
+  s(b) && (c = N(Array.prototype.slice.call(arguments, 1), 0));
   return Jh.call(this, a, c)
 }
 Kh.o = 1;
@@ -5149,9 +5149,6 @@ Kh.k = function(a) {
 };
 Kh.g = Jh;
 hg.a(Vf(["\ufdd0:parents", "\ufdd0:descendants", "\ufdd0:ancestors"], {"\ufdd0:parents":Uf, "\ufdd0:descendants":Uf, "\ufdd0:ancestors":Uf}));
-da("problems.reverse_words.main.solve_for_input", function(a) {
-  return[U("Solved input for problem: "), U("reverse_words"), U("\n"), U(a)].join("")
-});
 var Lh, Mh = k;
 function Nh(a, b) {
   return Wc(("" + U(a)).split(b))
@@ -5191,23 +5188,47 @@ Mh = function(a, b, c) {
 Mh.b = Nh;
 Mh.c = Oh;
 Lh = Mh;
-var Ph = ve.b("\ufdd0:acc", Be.c(oa, function(a, b) {
+function Ph(a) {
+  for(var b = a.length;;) {
+    if(0 === b) {
+      return""
+    }
+    var c = E.c(a, b - 1, k), d = tb.b(c, "\n"), c = d ? d : tb.b(c, "\r");
+    if(w(c)) {
+      b -= 1
+    }else {
+      return a.substring(0, b)
+    }
+  }
+}
+;function Qh(a) {
+  return parseInt(a)
+}
+var Rh = ve.b("\ufdd0:acc", Be.c(oa, function(a, b) {
   var c = Hc(a) ? z.b(zb, a) : a, d = E.c(c, "\ufdd0:acc", k), c = E.c(c, "\ufdd0:index", k);
   return Vf(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":c + 1, "\ufdd0:acc":dc.b(d, Vf(["\ufdd0:index", "\ufdd0:value"], {"\ufdd0:index":c, "\ufdd0:value":b}))})
 }, Vf(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":1, "\ufdd0:acc":xf})));
-function Qh(a, b) {
+function Sh(a, b) {
   return cf.b(a, b)
 }
-var Rh = Be.c(function(a, b, c) {
-  var d = Lh.b(c, /\n/), c = J(d), c = parseInt(c), b = Ph.a ? Ph.a(Qh(b, K(d))) : Ph.call(k, Qh(b, K(d)));
-  (d = tb.b(c, hc(b))) || e(Error([U("Assert failed: "), U(T.g(O(["\ufdd1'isCountValid"], 0)))].join("")));
+function Th(a, b, c) {
+  var d = Lh.b(Ph(c), /\n/), c = Qh.a ? Qh.a(J(d)) : Qh.call(k, J(d)), b = Rh.a ? Rh.a(Sh(b, K(d))) : Rh.call(k, Sh(b, K(d)));
+  (d = tb.b(c, hc(b))) || e(Error([U("Assert failed: "), U(T.g(N(["\ufdd1'isCountValid"], 0)))].join("")));
   return md.b(a, (new Id("\ufdd0:rawCases")).call(k, Vf(["\ufdd0:count", "\ufdd0:rawCases", "\ufdd0:isCountValid"], {"\ufdd0:count":c, "\ufdd0:rawCases":b, "\ufdd0:isCountValid":d})))
-}, function(a) {
+}
+;var Uh = Be.c(Th, function(a) {
+  var b = Hc(a) ? z.b(zb, a) : a, a = E.c(b, "\ufdd0:value", k), b = E.c(b, "\ufdd0:index", k);
+  return Vf(["\ufdd0:caseNumber", "\ufdd0:lines"], {"\ufdd0:caseNumber":b, "\ufdd0:lines":a})
+}, 1);
+da("problems.reverse_words.main.solve_for_input", function(a) {
+  return"" + U(Uh.a ? Uh.a(a) : Uh.call(k, a))
+});
+var Vh = Be.c(Th, function(a) {
   var b = Hc(a) ? z.b(zb, a) : a, a = E.c(b, "\ufdd0:value", k), b = E.c(b, "\ufdd0:index", k);
   return Vf(["\ufdd0:caseNumber", "\ufdd0:lines"], {"\ufdd0:caseNumber":b, "\ufdd0:lines":a})
 }, 3);
 da("problems.store_credit.main.solve_for_input", function(a) {
-  return"" + U(Rh.a ? Rh.a(a) : Rh.call(k, a))
+  return"" + U(Vh.a ? Vh.a(a) : Vh.call(k, a))
 });
 self.addEventListener("message", function(a) {
   var b = Kh(a.data), a = b.a ? b.a("problemName") : b.call(k, "problemName"), b = b.a ? b.a("input") : b.call(k, "input"), a = self.problems[a].main.solve_for_input;
