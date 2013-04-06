@@ -11,3 +11,39 @@
                                          :value nextVal})})
      initialAcc     {:index 1, :acc []}]
     (comp :acc (partial reduce reduceFunction initialAcc))))
+
+
+
+(defn pairItems
+  [item col]
+  (reduce (fn [acc nextItem]
+            (conj acc [item nextItem]))
+          [] col))
+
+(defn combinations2
+  [items]
+  (first (reduce (fn [[acc restItems] nextItem]
+            [(concat acc (pairItems nextItem restItems)) (rest restItems)])
+          [[] (rest items)] items)))
+
+;cartesian product function taken from clojure.math.combinatorics
+;written by Mark Engelberg.
+;https://github.com/clojure/math.combinatorics/blob/5cf956fbc2d7225aad8e9ed8e2670e7af64417c4/src/main/clojure/clojure/math/combinatorics.clj#L69
+(defn cartesian-product
+  "All the ways to take one item from each sequence"
+  [& seqs]
+  (let [v-original-seqs (vec seqs)
+        step
+        (fn step [v-seqs]
+          (let [increment
+                (fn [v-seqs]
+                  (loop [i (dec (count v-seqs)), v-seqs v-seqs]
+                    (if (= i -1) nil
+                      (if-let [rst (next (v-seqs i))]
+                        (assoc v-seqs i rst)
+                        (recur (dec i) (assoc v-seqs i (v-original-seqs i)))))))]
+            (when v-seqs
+              (cons (map first v-seqs)
+                    (lazy-seq (step (increment v-seqs)))))))]
+    (when (every? first seqs)
+      (lazy-seq (step v-original-seqs)))))

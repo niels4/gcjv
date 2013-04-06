@@ -139,7 +139,7 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
       onRunButtonClick: function (evt) {
         var worker, self;
         self = this;
-        worker = new Worker("js/workers/cljsWorker.js");
+        worker = new Worker("js/workers/cljsWorker.js?time=" + new Date().getTime());
         worker.addEventListener('message', function (evt) {
           console.log("message received:", evt.data);
           self.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
