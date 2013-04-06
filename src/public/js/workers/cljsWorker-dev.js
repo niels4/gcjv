@@ -28943,11 +28943,228 @@ problems.reverse_words.main.solve_for_input = function solve_for_input(input) {
   return[cljs.core.str("Solved input for problem: "), cljs.core.str(problems.reverse_words.main.problemName), cljs.core.str("\n"), cljs.core.str(input)].join("")
 };
 goog.exportSymbol("problems.reverse_words.main.solve_for_input", problems.reverse_words.main.solve_for_input);
+goog.provide("clojure.string");
+goog.require("cljs.core");
+goog.require("goog.string.StringBuffer");
+goog.require("goog.string");
+clojure.string.seq_reverse = function seq_reverse(coll) {
+  return cljs.core.reduce.call(null, cljs.core.conj, cljs.core.List.EMPTY, coll)
+};
+clojure.string.reverse = function reverse(s) {
+  return s.split("").reverse().join("")
+};
+clojure.string.replace = function replace(s, match, replacement) {
+  if(cljs.core.string_QMARK_.call(null, match)) {
+    return s.replace(new RegExp(goog.string.regExpEscape(match), "g"), replacement)
+  }else {
+    if(cljs.core.truth_(match.hasOwnProperty("source"))) {
+      return s.replace(new RegExp(match.source, "g"), replacement)
+    }else {
+      if("\ufdd0:else") {
+        throw[cljs.core.str("Invalid match arg: "), cljs.core.str(match)].join("");
+      }else {
+        return null
+      }
+    }
+  }
+};
+clojure.string.replace_first = function replace_first(s, match, replacement) {
+  return s.replace(match, replacement)
+};
+clojure.string.join = function() {
+  var join = null;
+  var join__1 = function(coll) {
+    return cljs.core.apply.call(null, cljs.core.str, coll)
+  };
+  var join__2 = function(separator, coll) {
+    return cljs.core.apply.call(null, cljs.core.str, cljs.core.interpose.call(null, separator, coll))
+  };
+  join = function(separator, coll) {
+    switch(arguments.length) {
+      case 1:
+        return join__1.call(this, separator);
+      case 2:
+        return join__2.call(this, separator, coll)
+    }
+    throw new Error("Invalid arity: " + arguments.length);
+  };
+  join.cljs$lang$arity$1 = join__1;
+  join.cljs$lang$arity$2 = join__2;
+  return join
+}();
+clojure.string.upper_case = function upper_case(s) {
+  return s.toUpperCase()
+};
+clojure.string.lower_case = function lower_case(s) {
+  return s.toLowerCase()
+};
+clojure.string.capitalize = function capitalize(s) {
+  if(cljs.core.count.call(null, s) < 2) {
+    return clojure.string.upper_case.call(null, s)
+  }else {
+    return[cljs.core.str(clojure.string.upper_case.call(null, cljs.core.subs.call(null, s, 0, 1))), cljs.core.str(clojure.string.lower_case.call(null, cljs.core.subs.call(null, s, 1)))].join("")
+  }
+};
+clojure.string.split = function() {
+  var split = null;
+  var split__2 = function(s, re) {
+    return cljs.core.vec.call(null, [cljs.core.str(s)].join("").split(re))
+  };
+  var split__3 = function(s, re, limit) {
+    if(limit < 1) {
+      return cljs.core.vec.call(null, [cljs.core.str(s)].join("").split(re))
+    }else {
+      var s__$1 = s;
+      var limit__$1 = limit;
+      var parts = cljs.core.PersistentVector.EMPTY;
+      while(true) {
+        if(cljs.core._EQ_.call(null, limit__$1, 1)) {
+          return cljs.core.conj.call(null, parts, s__$1)
+        }else {
+          var temp__4090__auto__ = cljs.core.re_find.call(null, re, s__$1);
+          if(cljs.core.truth_(temp__4090__auto__)) {
+            var m = temp__4090__auto__;
+            var index = s__$1.indexOf(m);
+            var G__6805 = s__$1.substring(index + cljs.core.count.call(null, m));
+            var G__6806 = limit__$1 - 1;
+            var G__6807 = cljs.core.conj.call(null, parts, s__$1.substring(0, index));
+            s__$1 = G__6805;
+            limit__$1 = G__6806;
+            parts = G__6807;
+            continue
+          }else {
+            return cljs.core.conj.call(null, parts, s__$1)
+          }
+        }
+        break
+      }
+    }
+  };
+  split = function(s, re, limit) {
+    switch(arguments.length) {
+      case 2:
+        return split__2.call(this, s, re);
+      case 3:
+        return split__3.call(this, s, re, limit)
+    }
+    throw new Error("Invalid arity: " + arguments.length);
+  };
+  split.cljs$lang$arity$2 = split__2;
+  split.cljs$lang$arity$3 = split__3;
+  return split
+}();
+clojure.string.split_lines = function split_lines(s) {
+  return clojure.string.split.call(null, s, /\n|\r\n/)
+};
+clojure.string.trim = function trim(s) {
+  return goog.string.trim(s)
+};
+clojure.string.triml = function triml(s) {
+  return goog.string.trimLeft(s)
+};
+clojure.string.trimr = function trimr(s) {
+  return goog.string.trimRight(s)
+};
+clojure.string.trim_newline = function trim_newline(s) {
+  var index = s.length;
+  while(true) {
+    if(index === 0) {
+      return""
+    }else {
+      var ch = cljs.core._lookup.call(null, s, index - 1, null);
+      if(cljs.core.truth_(function() {
+        var or__3943__auto__ = cljs.core._EQ_.call(null, ch, "\n");
+        if(or__3943__auto__) {
+          return or__3943__auto__
+        }else {
+          return cljs.core._EQ_.call(null, ch, "\r")
+        }
+      }())) {
+        var G__6808 = index - 1;
+        index = G__6808;
+        continue
+      }else {
+        return s.substring(0, index)
+      }
+    }
+    break
+  }
+};
+clojure.string.blank_QMARK_ = function blank_QMARK_(s) {
+  return goog.string.isEmptySafe(s)
+};
+clojure.string.escape = function escape(s, cmap) {
+  var buffer = new goog.string.StringBuffer;
+  var length = s.length;
+  var index = 0;
+  while(true) {
+    if(cljs.core._EQ_.call(null, length, index)) {
+      return buffer.toString()
+    }else {
+      var ch = s.charAt(index);
+      var temp__4090__auto___6809 = cljs.core._lookup.call(null, cmap, ch, null);
+      if(cljs.core.truth_(temp__4090__auto___6809)) {
+        var replacement_6810 = temp__4090__auto___6809;
+        buffer.append([cljs.core.str(replacement_6810)].join(""))
+      }else {
+        buffer.append(ch)
+      }
+      var G__6811 = index + 1;
+      index = G__6811;
+      continue
+    }
+    break
+  }
+};
 goog.provide("problems.store_credit.main");
 goog.require("cljs.core");
+goog.require("clojure.string");
+goog.require("clojure.string");
+problems.store_credit.main.to_int = function to_int(numStr) {
+  return parseInt(numStr)
+};
+problems.store_credit.main.indexed_values = function() {
+  var reduceFunction = function(p__9685, nextVal) {
+    var map__9686 = p__9685;
+    var map__9686__$1 = cljs.core.seq_QMARK_.call(null, map__9686) ? cljs.core.apply.call(null, cljs.core.hash_map, map__9686) : map__9686;
+    var acc = cljs.core._lookup.call(null, map__9686__$1, "\ufdd0:acc", null);
+    var index = cljs.core._lookup.call(null, map__9686__$1, "\ufdd0:index", null);
+    return cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":index + 1, "\ufdd0:acc":cljs.core.conj.call(null, acc, cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:value"], {"\ufdd0:index":index, "\ufdd0:value":nextVal}))})
+  };
+  var initialAcc = cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":1, "\ufdd0:acc":cljs.core.PersistentVector.EMPTY});
+  return cljs.core.comp.call(null, "\ufdd0:acc", cljs.core.partial.call(null, cljs.core.reduce, reduceFunction, initialAcc))
+}();
+problems.store_credit.main.cases_from_lines = function cases_from_lines(linesPerCase, lines) {
+  return cljs.core.partition.call(null, linesPerCase, lines)
+};
+problems.store_credit.main.raw_cases_from_lines = function raw_cases_from_lines(linesPerCase, lines) {
+  var expectedCount = problems.store_credit.main.to_int.call(null, cljs.core.first.call(null, lines));
+  var rawCases = problems.store_credit.main.indexed_values.call(null, problems.store_credit.main.cases_from_lines.call(null, linesPerCase, cljs.core.rest.call(null, lines)));
+  var isCountValid = cljs.core._EQ_.call(null, expectedCount, cljs.core.count.call(null, rawCases));
+  if(isCountValid) {
+  }else {
+    throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, "\ufdd1'isCountValid"))].join(""));
+  }
+  return cljs.core.ObjMap.fromObject(["\ufdd0:count", "\ufdd0:rawCases", "\ufdd0:isCountValid"], {"\ufdd0:count":expectedCount, "\ufdd0:rawCases":rawCases, "\ufdd0:isCountValid":isCountValid})
+};
+problems.store_credit.main.parse_cases_from_input = function parse_cases_from_input(parseFunction, linesPerCase, input) {
+  var lines = clojure.string.split.call(null, input, /\n/);
+  var rawCases = problems.store_credit.main.raw_cases_from_lines.call(null, linesPerCase, lines);
+  return cljs.core.map.call(null, parseFunction, (new cljs.core.Keyword("\ufdd0:rawCases")).call(null, rawCases))
+};
 problems.store_credit.main.problemName = "store_credit";
+problems.store_credit.main.linesPerCase = 3;
+problems.store_credit.main.parseCase = function parseCase(p__9687) {
+  var map__9689 = p__9687;
+  var map__9689__$1 = cljs.core.seq_QMARK_.call(null, map__9689) ? cljs.core.apply.call(null, cljs.core.hash_map, map__9689) : map__9689;
+  var value = cljs.core._lookup.call(null, map__9689__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__9689__$1, "\ufdd0:index", null);
+  var lines = value;
+  return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:lines"], {"\ufdd0:caseNumber":index, "\ufdd0:lines":lines})
+};
+problems.store_credit.main.caseParser = cljs.core.partial.call(null, problems.store_credit.main.parse_cases_from_input, problems.store_credit.main.parseCase, problems.store_credit.main.linesPerCase);
 problems.store_credit.main.solve_for_input = function solve_for_input(input) {
-  return[cljs.core.str("Solved input for problem: "), cljs.core.str(problems.store_credit.main.problemName), cljs.core.str("\n"), cljs.core.str(input)].join("")
+  return[cljs.core.str(problems.store_credit.main.caseParser.call(null, input))].join("")
 };
 goog.exportSymbol("problems.store_credit.main.solve_for_input", problems.store_credit.main.solve_for_input);
 goog.provide("gcj_viewer.cljsWorker");

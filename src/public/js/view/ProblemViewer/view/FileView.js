@@ -144,7 +144,9 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
           console.log("message received:", evt.data);
           self.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
             evt.data.message);
-          worker.terminate();
+          if (evt.data.status === "completed") {
+            worker.terminate();
+          }
         });
 
         worker.postMessage(
