@@ -10,7 +10,7 @@
   :plugins [[lein-cljsbuild "0.3.0"]
             [com.keminglabs/cljx "0.2.0"]]
 
-  :cljx {:builds [{:source-paths ["src/cljx/shared"]
+  :cljx {:builds [{:source-paths ["src/cljx/shared" "src/cljx/server"]
                    :output-path "src/cljx/generated/clj"
                    :rules cljx.rules/clj-rules}
                   

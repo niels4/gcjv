@@ -5321,7 +5321,7 @@ function ii(a) {
   return cg(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":a, "\ufdd0:result":""})
 }
 da("problems.rev_words2.main.solve_for_input", function(a) {
-  return"" + V(gi(hi, ii, a))
+  return gi(hi, ii, a)
 });
 var ji = He.c(ei, function(a) {
   var a = Jc(a) ? z.b(Bb, a) : a, b = F.c(a, "\ufdd0:value", k), a = F.c(a, "\ufdd0:index", k), b = oc.c(b, 0, k), b = Xh.b(b, /\s/);

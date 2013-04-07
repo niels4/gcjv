@@ -8,7 +8,8 @@
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]
-        [clojure.pprint :only [pprint]]))
+        [clojure.pprint :only [pprint]]
+        [gcj-viewer.file-util :only [write-solution read-input-text]]))
 
 (def problemName "rev_words2")
 
@@ -31,16 +32,19 @@
 
 (defn ^:export solve-for-input
   [input]
-  (str (solve-problem caseParser processCase input)))
+  (solve-problem caseParser processCase input))
 
 (comment
 
 ;<F5> Parse and print sample
-(def cases (caseParser (slurp "src/cljx/problems/rev_words2/input/sample.in")))
+(def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
+
+;<F6> Test sample output vs expected output
+(write-solution solve-for-input problemName "sample")
   
 ;<Refresh>
-(load-file (str "src/clj/problems/rev_words2/main.clj"))
+(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
 (in-ns 'problems.rev_words2.main)
 
 (solve-for-input (slurp "src/cljx/problems/rev_words2/input/sample.in"))
