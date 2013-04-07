@@ -21,10 +21,6 @@
      :items items}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 
-(defn solutionFilter
-  [credit [item1 item2]]
-  (= credit (+ (:value item1) (:value item2))))
-
 (defn processCase
   [{:keys [caseNumber credit items]}]
   (let
