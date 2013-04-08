@@ -16,6 +16,7 @@ define(['underscore', 'backbone', 'data/AppState', 'hbs!template/headerControls'
       },
       onShow: function () {
         this.ui.problemSelector.chosen({disable_search: true});
+        this.$el.find('.chzn-search input').attr('disabled', 'disabled');
       },
 
       onProblemSelected: function (evt) {

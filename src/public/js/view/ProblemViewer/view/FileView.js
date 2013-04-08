@@ -23,6 +23,7 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         outputFile: ".outputFile",
         inputSelector: "select",
         runButtonDiv: '.runButtonDiv',
+        runButton: '.runButton',
         downloadButton: '.downloadButton'
       },
       constants: {
@@ -40,6 +41,7 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         setTimeout(function () {
           self.ui.inputSelector.chosen({disable_search: true});
           self.ui.inputFile.val(ProblemViewerState.INPUT_PLACEHOLDER);
+          self.$el.find('.chzn-search input').attr('disabled', 'disabled');
         }, 0);
       },
 
@@ -137,19 +139,28 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         return false;
       },
       onRunButtonClick: function (evt) {
-        var worker, self;
+        var self;
         self = this;
-        worker = new Worker("js/workers/cljsWorker.js?time=" + new Date().getTime());
-        worker.addEventListener('message', function (evt) {
+        if (this.worker) {
+          console.log("Worker already in progress");
+          return;
+        }
+        this.ui.runButton.html("Running...");
+        this.ui.runButton.addClass("disabledButton");
+        this.worker = new Worker("js/workers/cljsWorker.js?time=" + new Date().getTime());
+        this.worker.addEventListener('message', function (evt) {
           console.log("message received:", evt.data);
           self.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
             evt.data.message);
           if (evt.data.status === "completed") {
-            worker.terminate();
+            self.worker.terminate();
+            self.worker = null;
+            self.ui.runButton.html("Run it!");
+            self.ui.runButton.removeClass("disabledButton");
           }
         });
 
-        worker.postMessage(
+        this.worker.postMessage(
           {
             problemName: this.appState.get(AppState.PROBLEM_SELECTED),
             input: this.ui.inputFile.val()
