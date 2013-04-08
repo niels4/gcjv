@@ -187,3 +187,86 @@
 (test-expected-output solve-for-input problemName "sample")
 (println (write-solution solve-for-input problemName "small"))
 (def largeSolution (write-solution solve-for-input problemName "large"))
+(load-file (str "src/cljx/generated/clj/problems/theme_park/main.clj"))
+(in-ns 'problems.theme_park.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [[line1 line2] value
+      [r k n] (->> (split line1 #"\s")
+                      (map to-int))
+      groups  (->> (split line2 #"\s")
+                   (map to-int)
+                   vec)]
+    {:caseNumber index
+     :times-run r
+     :capacity  k
+     :num-groups n
+     :groups groups}))
+(def caseParser (partial parse-cases-from-file parseCase linesPerCase))
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [[line1 line2] value
+      [r k n] (->> (split line1 #"\s")
+                      (map to-int))
+      groups  (->> (split line2 #"\s")
+                   (map to-int)
+                   vec)]
+    {:caseNumber index
+     :times-run r
+     :capacity  k
+     :num-groups n
+     :groups groups}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(load-file (str "src/cljx/generated/clj/problems/theme_park/main.clj"))
+(in-ns 'problems.theme_park.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(def largeSolution (write-solution solve-for-input problemName "large"))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
+(in-ns 'problems.snapper_chain.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [[line] value
+     [num-snappers times-snapped] (->> (split line #"\s")
+                                   (map to-int))]
+    {:caseNumber index
+     :num-snappers num-snappers
+     :times-snapped times-snapped}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
+(in-ns 'problems.snapper_chain.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
+(in-ns 'problems.snapper_chain.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(snaps-to-power-light 4)
+(inc (* 2 (snaps-to-power-light 4)))
+(snaps-to-power-light 1)
+(snaps-to-power-light 2)
+(snaps-to-power-light 4)
+(snaps-to-power-light 3)
+(snaps-to-power-light 5)
+(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
+(in-ns 'problems.snapper_chain.main)
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(def largeSolution (write-solution solve-for-input problemName "large"))

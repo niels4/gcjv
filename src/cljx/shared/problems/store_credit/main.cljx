@@ -29,7 +29,7 @@
      bigItems (filter #(> (:value %) halfCredit) validItems)
      smallItems (filter #(< (:value %) halfCredit) validItems)
      halfItems (filter #(= (:value %) halfCredit) validItems)
-     resultItems (if (second halfItems)
+     resultItems (if (= 2 (count halfItems))
                    halfItems
                    (->> (for [big bigItems
                               small smallItems
