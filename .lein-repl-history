@@ -123,3 +123,67 @@
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
 (test-expected-output solve-for-input problemName "sample")
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(println (write-solution solve-for-input problemName "small"))
+(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
+(in-ns 'problems.rev_words2.main)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(println (write-solution solve-for-input problemName "small"))
+(load-file (str "src/cljx/generated/clj/problems/reverse_words/main.clj"))
+(in-ns 'problems.reverse_words.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [[line] value]
+    {:caseNumber index
+     :words (split line #"\s")}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(defn processCase
+  [{:keys [caseNumber words]}]
+  (let
+    [result ""]
+    {:caseNumber caseNumber
+     :result     result}))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber words]}]
+  (let
+    [result words]
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber words]}]
+  (let
+    [result (->> words
+                 reverse
+                 )]
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber words]}]
+  (let
+    [result (->> words
+                 reverse
+                 (join " "))]
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(load-file (str "src/cljx/generated/clj/problems/reverse_words/main.clj"))
+(in-ns 'problems.reverse_words.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(def largeSolution (write-solution solve-for-input problemName "large"))

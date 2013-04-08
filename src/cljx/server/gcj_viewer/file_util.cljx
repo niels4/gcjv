@@ -1,4 +1,5 @@
-(ns gcj-viewer.file-util)
+(ns gcj-viewer.file-util
+  (:use [clojure.string :only [trim-newline]]))
 
 (def baseDir "src/cljx/shared/problems/")
 
@@ -20,13 +21,15 @@
     [inputText (read-input-text problemName inputName)
      outputFile (outputFile-name problemName inputName)
      solution (solve-for-input inputText)]
-    (spit outputFile solution)))
+    (spit outputFile solution)
+    solution))
 
 (defn test-expected-output
   [solve-for-input problemName inputName]
   (let
     [inputText (read-input-text problemName inputName)
-     expectedSolution (read-output-text problemName (str "expected-" inputName))
+     expectedSolution (trim-newline
+                        (read-output-text problemName (str "expected-" inputName)))
      solution (solve-for-input inputText)
      successMsg (if (= solution expectedSolution) "PASSED!" "FAILED!")]
     (println "Expected output:")

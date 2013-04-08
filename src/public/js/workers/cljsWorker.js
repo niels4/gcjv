@@ -5324,17 +5324,6 @@ da("problems.rev_words2.main.solve_for_input", function(a) {
   return gi(hi, ii, a)
 });
 var ji = He.c(ei, function(a) {
-  var a = Jc(a) ? z.b(Bb, a) : a, b = F.c(a, "\ufdd0:value", k), a = F.c(a, "\ufdd0:index", k), b = oc.c(b, 0, k), b = Xh.b(b, /\s/);
-  return cg(["\ufdd0:caseNumber", "\ufdd0:words"], {"\ufdd0:caseNumber":a, "\ufdd0:words":b})
-}, 1);
-function ki(a) {
-  var b = Jc(a) ? z.b(Bb, a) : a, a = F.c(b, "\ufdd0:words", k), b = F.c(b, "\ufdd0:caseNumber", k), a = Th.b(" ", Dd(a));
-  return cg(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":b, "\ufdd0:result":a})
-}
-da("problems.reverse_words.main.solve_for_input", function(a) {
-  return"" + V(gi(ji, ki, a))
-});
-var li = He.c(ei, function(a) {
   var a = Jc(a) ? z.b(Bb, a) : a, b = F.c(a, "\ufdd0:value", k), a = F.c(a, "\ufdd0:index", k), c = oc.c(b, 0, k);
   oc.c(b, 1, k);
   b = oc.c(b, 2, k);
@@ -5342,7 +5331,7 @@ var li = He.c(ei, function(a) {
   b = ci.a ? ci.a(sd.b(bi, Xh.b(b, /\s/))) : ci.call(k, sd.b(bi, Xh.b(b, /\s/)));
   return cg(["\ufdd0:caseNumber", "\ufdd0:credit", "\ufdd0:items"], {"\ufdd0:caseNumber":a, "\ufdd0:credit":c, "\ufdd0:items":b})
 }, 3);
-function mi(a) {
+function ki(a) {
   var a = Jc(a) ? z.b(Bb, a) : a, b = F.c(a, "\ufdd0:items", k), c = F.c(a, "\ufdd0:credit", k), a = F.c(a, "\ufdd0:caseNumber", k), d = jf(function(a) {
     return(new Od("\ufdd0:value")).call(k, a) < c
   }, b), f = c / 2, h = jf(function(a) {
@@ -5387,9 +5376,20 @@ function mi(a) {
   return cg(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":a, "\ufdd0:result":b})
 }
 da("problems.store_credit.main.solve_for_input", function(a) {
-  return"" + V(gi(li, mi, a))
+  return"" + V(gi(ji, ki, a))
 });
 self.addEventListener("message", function(a) {
   var b = Sh(a.data), a = b.a ? b.a("problemName") : b.call(k, "problemName"), b = b.a ? b.a("input") : b.call(k, "input"), a = self.problems[a].main.solve_for_input;
   return self.postMessage(Lh(cg(["\ufdd0:status", "\ufdd0:message"], {"\ufdd0:status":"completed", "\ufdd0:message":a.a ? a.a(b) : a.call(k, b)})))
+});
+var li = He.c(ei, function(a) {
+  var b = Jc(a) ? z.b(Bb, a) : a, a = F.c(b, "\ufdd0:value", k), b = F.c(b, "\ufdd0:index", k), a = oc.c(a, 0, k);
+  return cg(["\ufdd0:caseNumber", "\ufdd0:words"], {"\ufdd0:caseNumber":b, "\ufdd0:words":Xh.b(a, /\s/)})
+}, 1);
+function mi(a) {
+  var b = Jc(a) ? z.b(Bb, a) : a, a = F.c(b, "\ufdd0:words", k), b = F.c(b, "\ufdd0:caseNumber", k), a = Th.b(" ", Dd(a));
+  return cg(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":b, "\ufdd0:result":a})
+}
+da("problems.reverse_words.main.solve_for_input", function(a) {
+  return"" + V(gi(li, mi, a))
 });
