@@ -107,11 +107,11 @@ ka.ia.d = function(a, b, c, d, f, h, i, l) {
 };
 ka.ia.i = ka.ia.d;
 ka.ia.u = ka.ia.d;
-function la(a, b) {
+function ma(a, b) {
   a != k && this.append.apply(this, arguments)
 }
-la.prototype.Ca = "";
-la.prototype.append = function(a, b, c) {
+ma.prototype.Ca = "";
+ma.prototype.append = function(a, b, c) {
   this.Ca += a;
   if(b != k) {
     for(var d = 1;d < arguments.length;d++) {
@@ -120,7 +120,7 @@ la.prototype.append = function(a, b, c) {
   }
   return this
 };
-la.prototype.toString = n("Ca");
+ma.prototype.toString = n("Ca");
 var u;
 function x(a) {
   return a != k && a !== m
@@ -1538,7 +1538,7 @@ function ld(a, b) {
         return jd.a(a)
       }
     }
-  }.call(k, new la(jd.a(a)), b)
+  }.call(k, new ma(jd.a(a)), b)
 }
 function md(a, b) {
   var c = k;
@@ -1581,7 +1581,7 @@ function pd(a, b) {
         return id.a(a)
       }
     }
-  }.call(k, new la(nd.a(a)), b)
+  }.call(k, new ma(nd.a(a)), b)
 }
 function qd(a, b) {
   var c = k;
@@ -2293,35 +2293,35 @@ function re(a, b, c) {
   if(13 === b) {
     return a.Xa ? a.Xa(c, d, f, h, i, a, l, q, w, v, A, C, L) : a.Xa ? a.Xa(c, d, f, h, i, a, l, q, w, v, A, C, L) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L)
   }
-  var P = E(ca), ma = F(ca);
+  var P = E(ca), la = F(ca);
   if(14 === b) {
     return a.Ya ? a.Ya(c, d, f, h, i, a, l, q, w, v, A, C, L, P) : a.Ya ? a.Ya(c, d, f, h, i, a, l, q, w, v, A, C, L, P) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P)
   }
-  var ca = E(ma), za = F(ma);
+  var ca = E(la), za = F(la);
   if(15 === b) {
     return a.Za ? a.Za(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca) : a.Za ? a.Za(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca)
   }
-  var ma = E(za), Ba = F(za);
+  var la = E(za), Ba = F(za);
   if(16 === b) {
-    return a.$a ? a.$a(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma) : a.$a ? a.$a(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma)
+    return a.$a ? a.$a(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la) : a.$a ? a.$a(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la)
   }
   var za = E(Ba), hb = F(Ba);
   if(17 === b) {
-    return a.ab ? a.ab(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za) : a.ab ? a.ab(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za)
+    return a.ab ? a.ab(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za) : a.ab ? a.ab(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za)
   }
   var Ba = E(hb), bd = F(hb);
   if(18 === b) {
-    return a.bb ? a.bb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba) : a.bb ? a.bb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba)
+    return a.bb ? a.bb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba) : a.bb ? a.bb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba)
   }
   hb = E(bd);
   bd = F(bd);
   if(19 === b) {
-    return a.cb ? a.cb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba, hb) : a.cb ? a.cb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba, hb) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba, hb)
+    return a.cb ? a.cb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba, hb) : a.cb ? a.cb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba, hb) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba, hb)
   }
   var Ee = E(bd);
   F(bd);
   if(20 === b) {
-    return a.eb ? a.eb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba, hb, Ee) : a.eb ? a.eb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba, hb, Ee) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, ma, za, Ba, hb, Ee)
+    return a.eb ? a.eb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba, hb, Ee) : a.eb ? a.eb(c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba, hb, Ee) : a.call(k, c, d, f, h, i, a, l, q, w, v, A, C, L, P, ca, la, za, Ba, hb, Ee)
   }
   e(Error("Only up to 20 arguments supported on functions"))
 }
@@ -4784,7 +4784,7 @@ function Ih(a) {
   if(c ? c : na(I(a))) {
     b = ""
   }else {
-    var c = new la, d = new Eh(c);
+    var c = new ma, d = new Eh(c);
     a: {
       If(J(a), d, b);
       for(a = I(N(a));;) {
@@ -5495,33 +5495,21 @@ var Bi = Ne.c(ui, function(a) {
   return jg(["\ufdd0:caseNumber", "\ufdd0:num-snappers", "\ufdd0:times-snapped"], {"\ufdd0:caseNumber":a, "\ufdd0:num-snappers":b, "\ufdd0:times-snapped":c})
 }, 1);
 function Ci(a) {
-  var b = Kc(a) ? B.b(Q, a) : a, a = G.c(b, "\ufdd0:times-snapped", k), c = G.c(b, "\ufdd0:num-snappers", k), b = G.c(b, "\ufdd0:caseNumber", k);
+  var a = Kc(a) ? B.b(Q, a) : a, b = G.c(a, "\ufdd0:times-snapped", k), c = G.c(a, "\ufdd0:num-snappers", k), a = G.c(a, "\ufdd0:caseNumber", k);
   a: {
-    b: {
-      for(var d = 0;;) {
-        if(0 === c) {
-          c = d;
-          break b
-        }
-        d = 2 * d + 1;
-        c -= 1
-      }
-      c = g
-    }
-    for(d = c;;) {
-      if(xb.b(a, d)) {
-        a = j;
+    for(var d = 0;;) {
+      if(0 === c) {
+        c = d;
         break a
       }
-      if(a < d) {
-        a = m;
-        break a
-      }
-      d = d + 1 + c
+      d = 2 * d + 1;
+      c -= 1
     }
-    a = g
+    c = g
   }
-  return jg(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":b, "\ufdd0:result":x(a) ? "ON" : "OFF"})
+  b = (b + 1) / (c + 1);
+  b = (c = "number" == typeof b) ? (c = !isNaN(b)) ? (c = Infinity !== b) ? parseFloat(b) === parseInt(b, 10) : c : c : c;
+  return jg(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":a, "\ufdd0:result":x(b) ? "ON" : "OFF"})
 }
 ga("problems.snapper_chain.main.solve_for_input", function(a) {
   return"" + W(wi(Bi, Ci, a))

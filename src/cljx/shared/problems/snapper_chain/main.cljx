@@ -39,22 +39,15 @@
 (defn is-light-on
   [num-switches num-snaps]
   (let
-    [snaps-to-power (snaps-to-power-light num-switches)]
-    (loop
-      [last-multiple snaps-to-power]
-      (cond (= num-snaps last-multiple) true
-            (< num-snaps last-multiple) false
-            :else (recur (+ last-multiple 1 snaps-to-power))))))
-
-(defn format-state
-  [state]
-  (if state "ON" "OFF"))
+    [snaps-to-power (snaps-to-power-light num-switches)
+     snap-multiple (/ (inc num-snaps) (inc snaps-to-power))]
+    (integer? snap-multiple)))
 
 (defn processCase
   [{:keys [caseNumber num-snappers times-snapped]}]
   (let
     [light-state (is-light-on num-snappers times-snapped)
-     result (format-state light-state)]
+     result (if light-state "ON" "OFF")]
     {:caseNumber caseNumber
      :result     result}))
 

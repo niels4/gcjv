@@ -270,3 +270,21 @@
 (test-expected-output solve-for-input problemName "sample")
 (println (write-solution solve-for-input problemName "small"))
 (def largeSolution (write-solution solve-for-input problemName "large"))
+(defn is-light-on
+  [num-switches num-snaps]
+  (let
+    [snaps-to-power (snaps-to-power-light num-switches)
+     snap-multiple (/ (inc num-snaps) (inc snaps-to-power))]
+    (integer? snap-multiple)))
+(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
+(in-ns 'problems.snapper_chain.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(def largeSolution (write-solution solve-for-input problemName "large"))
+(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
+(in-ns 'problems.snapper_chain.main)
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(def largeSolution (write-solution solve-for-input problemName "large"))
