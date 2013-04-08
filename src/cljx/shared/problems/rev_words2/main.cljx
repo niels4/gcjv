@@ -9,7 +9,8 @@
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]
         [clojure.pprint :only [pprint]]
-        [gcj-viewer.file-util :only [write-solution read-input-text]]))
+        [gcj-viewer.file-util :only [write-solution read-input-text
+                                     test-expected-output]]))
 
 (def problemName "rev_words2")
 
@@ -41,7 +42,7 @@
 (pprint cases)
 
 ;<F6> Test sample output vs expected output
-(write-solution solve-for-input problemName "sample")
+(test-expected-output solve-for-input problemName "sample")
   
 ;<Refresh>
 (load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
