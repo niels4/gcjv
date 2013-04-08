@@ -141,10 +141,7 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
       onRunButtonClick: function (evt) {
         var self;
         self = this;
-        if (this.worker) {
-          console.log("Worker already in progress");
-          return;
-        }
+        if (this.worker) { return; }
         this.ui.runButton.html("Running...");
         this.ui.runButton.addClass("disabledButton");
         this.worker = new Worker("js/workers/cljsWorker.js?time=" + new Date().getTime());

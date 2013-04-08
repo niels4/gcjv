@@ -212,7 +212,7 @@ body > div {
   }
   
   .inputSelector {
-    width: 46%;
+    width: 39%;
   }
   
   .fileContents {
@@ -292,10 +292,12 @@ body > div {
 
    .runButtonDiv {
      visibility: hidden;
+     width: 20%
    }
 
    .outputButtonDiv {
-     width: 36%;
+     width: 25%;
+     white-space: nowrap;
    }
 
    .downloadButton {
