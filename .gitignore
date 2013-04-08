@@ -5,5 +5,5 @@ repl/
 *~
 .svn*
 .project
-resources/compass/.sass-cache/
+src/compass/.sass-cache/
 *.swo

@@ -5,6 +5,7 @@ define(['underscore', 'backbone', './ProblemViewer/data/ProblemViewerState', 'hb
   function (_, Backbone, ProblemViewerState, tmpl, FileView) {
     "use strict";
     return Backbone.Marionette.Layout.extend({
+      className: "problemViewerMain",
       template: tmpl,
       type: 'handlebars',
       model: new ProblemViewerState(),

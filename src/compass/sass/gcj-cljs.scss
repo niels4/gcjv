@@ -106,7 +106,7 @@ body > div {
   
   .mainContent {
     border: 0.5em solid $borderColor;
-    margin-top: 0.3em;
+    margin-top: 1.8ex;
     margin-right: 1em;
   }
   
@@ -196,6 +196,38 @@ body > div {
     bottom: 1.5em;
     right: 0.15em;
   }
+
+  .problemViewerMain {
+    position: relative;
+    bottom: 1.5ex;
+  }
+
+  div.pv_navbar {
+    text-align: center;
+    height: auto;
+    margin-bottom: 1.5ex;
+    font-size: 0.9em;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline;
+    }
+    a, a:hover {
+      border: 2px solid black;
+    }
+  }
+
+  a.solutionButton {
+    border-radius: 14px 0 0 14px;
+    margin-right: -0.15em;
+  }
+  a.sourceButton {
+    border-radius: 0 14px 14px 0;
+    margin-left: -0.15em;
+  }
   
   div.fileViewerControls {
     margin-top: 0.5em;
@@ -227,7 +259,7 @@ body > div {
       width: 45%;
       height: 60%;
       @include calc(width, "50% - 18px");
-      @include calc(height, "100% - 67px");
+      @include calc(height, "100% - 85px");
       text-align: left;
       font-size: 0.65em;
       resize: none;
@@ -279,12 +311,7 @@ body > div {
      background: $buttonActive;
      }
 
-   .disabledButton {
-     border-top-color: $borderColor;
-     background: $buttonActive;
-     color: lightgray;
-   }
-   .disabledButton:hover {
+   .disabledButton, .disabledButton:hover {
      border-top-color: $borderColor;
      background: $buttonActive;
      color: lightgray;
