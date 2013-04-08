@@ -75,7 +75,7 @@
 (def largeSolution (write-solution solve-for-input problemName "large"))
   
 ;<Refresh>
-(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
+(load-file (str "target/cljx_generated/clj/problems/snapper_chain/main.clj"))
 (in-ns 'problems.snapper_chain.main)
 
 (snaps-to-power-light 5)

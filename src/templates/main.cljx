@@ -55,7 +55,7 @@
 (def largeSolution (write-solution solve-for-input problemName "large"))
   
 ;<Refresh>
-(load-file (str "src/cljx/generated/clj/problems/{{problemName}}/main.clj"))
+(load-file (str "target/cljx_generated/clj/problems/{{problemName}}/main.clj"))
 (in-ns 'problems.{{problemName}}.main)
 
 )
