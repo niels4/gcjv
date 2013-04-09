@@ -35,7 +35,7 @@
                              :optimizations :advanced}}
                :dev
                 {
-                  :source-paths ["target/cljx_generated/cljs" "src/cljx/generated/cljs-dev"]
+                  :source-paths ["target/cljx_generated/cljs" "target/cljx_generated/cljs-dev"]
                   :compiler {
                              :output-to "src/public/js/workers/cljsWorker-dev.js"
                              :optimizations :whitespace}

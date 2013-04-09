@@ -162,8 +162,8 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         return true;
       },
       processWorkerMessage: function (evt) {
-        console.log("message received:", evt.data);
         if (evt.data.status === "completed") {
+          console.log("Solution completed:", evt.data);
           this.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
             evt.data.message);
           this.endWorker();

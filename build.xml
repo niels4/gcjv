@@ -13,7 +13,9 @@
   <property name="useNode" value="true" />
   <property name="src.public.dir" location="src/public" />
   <property name="deploy.public.dir" location="target/public" />
+  <property name="public.problemViewer.dir" location="${src.public.dir}/problemViewer" />
   <property name="src.compass.dir" location="src/compass" />
+  <property name="src.cljx.dir" location="src/cljx" />
   <property name="css.dir" value="css" />
   <property name="js.dir" value="js" />
   <property name="src.css.dir" location="${src.public.dir}/${css.dir}" />
@@ -40,6 +42,11 @@
   <fileset id="built-files" dir="${src.public.dir}">
     <include name="css/gcj-cljs.css" />
     <include name="js/workers/*" />
+  </fileset>
+
+  <fileset id="problemViewer-files" dir="${src.cljx.dir}/shared">
+    <include name="**/*.in" />
+    <include name="**/*.cljx" />
   </fileset>
 
   <target name="clean" >
@@ -125,6 +132,17 @@
     <arg value="-c" /> 
     <arg value="compass compile" /> 
    </exec> 
+  </target>
+
+  <target name="build-problemViewer-dir">
+    <description>
+      build-problemViewer-dir:
+      Assemble the source and input files for the problems to be accessable in 
+      the public directory.
+    </description>
+    <copy todir="${public.problemViewer.dir}">
+      <fileset refid="problemViewer-files" />
+    </copy>
   </target>
 
   <target name="webapp" depends="clean, compile-clojurescript, compile-sass, build-js"

@@ -13,4 +13,4 @@
                         (aget "solve_for_input"))]
       (.postMessage js/self
         (clj->js {:status "completed",
-         :message (solve-for-input input)})))))
+                  :message (solve-for-input input)})))))

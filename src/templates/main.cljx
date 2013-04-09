@@ -1,10 +1,10 @@
 ^:cljs (ns problems.{{problemName}}.main
-  (:use [gcj-util.misc :only [to-int indexed-values]]
+  (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]))
 ^:clj (ns problems.{{problemName}}.main
-  (:use [gcj-util.misc :only [to-int indexed-values]]
+  (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]
@@ -28,6 +28,7 @@
   [{:keys [caseNumber lines]}]
   (let
     [result ""]
+    (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
 

@@ -13,7 +13,7 @@ define(['backbone', 'text!data/problems.json'],
     };
 
     modelDefaults = {};
-    modelDefaults[constants.DEBUG_MODE] = false;
+    modelDefaults[constants.DEBUG_MODE] = true;
     modelDefaults[constants.PROBLEM_SELECTED] = constants.DEFAULT_SELECT_MESSAGE;
     modelDefaults[constants.PROBLEMS] = [
       { name: constants.DEFAULT_SELECT_MESSAGE,
