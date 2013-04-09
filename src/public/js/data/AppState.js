@@ -8,10 +8,12 @@ define(['backbone', 'text!data/problems.json'],
     constants = {
       DEFAULT_SELECT_MESSAGE: "Select a Problem...",
       PROBLEM_SELECTED: "problemSelected",
-      PROBLEMS: "problems"
+      PROBLEMS: "problems",
+      DEBUG_MODE: 'debugMode'
     };
 
     modelDefaults = {};
+    modelDefaults[constants.DEBUG_MODE] = false;
     modelDefaults[constants.PROBLEM_SELECTED] = constants.DEFAULT_SELECT_MESSAGE;
     modelDefaults[constants.PROBLEMS] = [
       { name: constants.DEFAULT_SELECT_MESSAGE,

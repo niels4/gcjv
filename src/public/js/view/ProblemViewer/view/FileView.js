@@ -32,7 +32,7 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
       },
       initialize: function () {
         _.bindAll(this, 'onInputSelectedChange', 'onOutputTextValueChange',
-          'onInputFileKeyup');
+          'onInputFileKeyup', 'processWorkerMessage');
         this.appState = this.options.appState;
         this.model.onChangeInputSelected(this.onInputSelectedChange);
         this.model.onChangeOutputTextValue(this.onOutputTextValueChange);
@@ -140,30 +140,40 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         return false;
       },
       onRunButtonClick: function (evt) {
-        var self;
-        self = this;
-        if (this.worker) { return; }
-        this.ui.runButton.html("Running...");
-        this.ui.runButton.addClass("disabledButton");
-        this.worker = new Worker("js/workers/cljsWorker.js?time=" + new Date().getTime());
-        this.worker.addEventListener('message', function (evt) {
-          console.log("message received:", evt.data);
-          self.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
-            evt.data.message);
-          if (evt.data.status === "completed") {
-            self.worker.terminate();
-            self.worker = null;
-            self.ui.runButton.html("Run it!");
-            self.ui.runButton.removeClass("disabledButton");
-          }
-        });
-
+        if (!this.startWorker()) { return; }
+        this.worker.addEventListener('message', this.processWorkerMessage);
         this.worker.postMessage(
           {
             problemName: this.appState.get(AppState.PROBLEM_SELECTED),
             input: this.ui.inputFile.val()
           }
         );
+      },
+      startWorker: function () {
+        var workerUrl;
+        if (this.worker) { return false; }
+        this.ui.runButton.html("Running...");
+        this.ui.runButton.addClass("disabledButton");
+        workerUrl = 'js/workers/cljsWorker.js';
+        if (this.appState.get(AppState.DEBUG_MODE)) {
+          workerUrl += "?time=" + new Date().getTime();
+        }
+        this.worker = new Worker(workerUrl);
+        return true;
+      },
+      processWorkerMessage: function (evt) {
+        console.log("message received:", evt.data);
+        if (evt.data.status === "completed") {
+          this.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
+            evt.data.message);
+          this.endWorker();
+        }
+      },
+      endWorker: function () {
+        this.worker.terminate();
+        this.worker = null;
+        this.ui.runButton.html("Run it!");
+        this.ui.runButton.removeClass("disabledButton");
       }
     });
   });
