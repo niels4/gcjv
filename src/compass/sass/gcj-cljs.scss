@@ -259,7 +259,7 @@ body > div {
       width: 45%;
       height: 60%;
       @include calc(width, "50% - 18px");
-      @include calc(height, "100% - 85px");
+      @include calc(height, "100% - 79px");
       text-align: left;
       font-size: 0.65em;
       resize: none;

@@ -112,7 +112,7 @@
 (def largeSolution (write-solution solve-for-input problemName "large"))
   
 ;<Refresh>
-(load-file (str "src/cljx/generated/clj/problems/theme_park/main.clj"))
+(load-file (str "target/cljx_generated/clj/problems/theme_park/main.clj"))
 (in-ns 'problems.theme_park.main)
 
 )

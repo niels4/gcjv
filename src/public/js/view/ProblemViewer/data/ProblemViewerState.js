@@ -6,6 +6,7 @@ define(['backbone', 'text!../template/inputPlaceholder.txt'],
     var constants, modelDefaults;
 
     constants = {
+      SUBVIEW_SELECTED: 'subviewSelected',
       INPUT_SELECTED: "inputSelected",
       INPUT_TEXT_VALUE: 'inputTextValue',
       DEFAULT_INPUT: 'custom',
@@ -25,6 +26,9 @@ define(['backbone', 'text!../template/inputPlaceholder.txt'],
         defaults: modelDefaults,
         isDefaultInputSelected: function () {
           return this.get(constants.INPUT_SELECTED) === constants.DEFAULT_INPUT;
+        },
+        onChangeSubviewSelected: function (onChangeFunction) {
+          return this.on("change:" + constants.SUBVIEW_SELECTED, onChangeFunction);
         },
         onChangeInputSelected: function (onChangeFunction) {
           return this.on("change:" + constants.INPUT_SELECTED, onChangeFunction);

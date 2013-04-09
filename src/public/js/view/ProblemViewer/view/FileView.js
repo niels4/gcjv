@@ -8,6 +8,7 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
     return Backbone.Marionette.ItemView.extend({
       template: tmpl,
       type: 'handlebars',
+      viewName: 'fileView',
       events: {
         "change select": 'onInputSelected',
         "blur .inputFile": 'onCustomTextBlur',
