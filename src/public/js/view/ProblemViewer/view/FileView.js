@@ -64,8 +64,8 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
             this.ui.runButtonDiv.css('visibility', 'visible');
           }
         } else {
-          $.ajax({url: 'problems/' + this.appState.get(AppState.PROBLEM_SELECTED)
-            + '/' + this.model.get(ProblemViewerState.INPUT_SELECTED) + '.in'}).then(function (inputText) {
+          $.ajax({url: 'problemViewer/problems/' + this.appState.get(AppState.PROBLEM_SELECTED)
+            + '/input/' + this.model.get(ProblemViewerState.INPUT_SELECTED) + '.in'}).then(function (inputText) {
             self.ui.inputFile.attr('readonly', true);
             self.ui.inputFile.val(inputText);
             self.ui.inputFile.removeClass(self.constants.placeHolderClass);
