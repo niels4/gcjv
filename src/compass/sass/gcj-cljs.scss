@@ -161,6 +161,9 @@ body > div {
       background-color: $highlightColor;
       background-image: none;
     }
+    div {
+      height: auto;
+    }
   }
 
   .problemSelector {
