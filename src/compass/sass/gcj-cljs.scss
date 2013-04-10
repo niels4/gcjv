@@ -153,6 +153,7 @@ body > div {
   }
 
   div.chzn-container {
+    text-align: left;
     font-size:0.85em;
     position: relative;
     top: 0.175em;
@@ -329,5 +330,10 @@ body > div {
 
    .downloadButton {
      visibility: hidden;
+   }
+
+   div.sourceSelectorRow {
+     height: auto;
+     text-align: center;
    }
  }

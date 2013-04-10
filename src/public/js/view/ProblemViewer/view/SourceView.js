@@ -6,6 +6,16 @@ define(['backbone', 'hbs!../template/sourceView'],
     return Backbone.Marionette.ItemView.extend({
       template: tmpl,
       type: 'handlebars',
-      viewName: 'sourceView'
+      viewName: 'sourceView',
+      ui: {
+        sourceSelector: ".sourceSelector"
+      },
+      onShow: function () {
+        var self = this;
+        setTimeout(function () {
+          self.ui.sourceSelector.chosen({disable_search: true});
+          self.$el.find('.chzn-search input').attr('disabled', 'disabled');
+        }, 0);
+      }
     });
   });

@@ -11,7 +11,9 @@ define(['backbone', 'text!../template/inputPlaceholder.txt'],
       INPUT_TEXT_VALUE: 'inputTextValue',
       DEFAULT_INPUT: 'custom',
       INPUT_PLACEHOLDER: inputPlaceholderText,
-      OUTPUT_TEXT_VALUE: 'outputTextValue'
+      OUTPUT_TEXT_VALUE: 'outputTextValue',
+      FILE_VIEW_NAME: 'fileView',
+      SOURCE_VIEW_NAME: 'sourceView'
     };
 
     modelDefaults = {};
@@ -20,6 +22,7 @@ define(['backbone', 'text!../template/inputPlaceholder.txt'],
     modelDefaults[constants.INPUT_TEXT_VALUE] = constants.INPUT_PLACEHOLDER;
     modelDefaults[constants.INPUT_SELECTED] = constants.DEFAULT_INPUT;
     modelDefaults[constants.OUTPUT_TEXT_VALUE] = '';
+    modelDefaults[constants.SUBVIEW_SELECTED] = constants.FILE_VIEW_NAME;
 
     return Backbone.Model.extend(
       {
@@ -36,6 +39,7 @@ define(['backbone', 'text!../template/inputPlaceholder.txt'],
         resetDefaults: function () {
           this.set(constants.INPUT_SELECTED, constants.DEFAULT_INPUT);
           this.set(constants.INPUT_TEXT_VALUE, constants.INPUT_PLACEHOLDER);
+          this.set(constants.SUBVIEW_SELECTED, constants.FILE_VIEW_NAME);
         },
         onChangeOutputTextValue: function (onChangeFunction) {
           return this.on("change:" + constants.OUTPUT_TEXT_VALUE, onChangeFunction);

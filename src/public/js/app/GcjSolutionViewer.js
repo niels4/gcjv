@@ -64,6 +64,7 @@ define(['backbone', 'hbs!template/layout', 'view/HeaderControls',
         } else {
           appLayout.content.$el.addClass(verticalExpandClass);
           appLayout.content.show(appViews.problemViewer);
+          appViews.problemViewer.delegateEvents();
         }
       };
 
