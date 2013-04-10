@@ -250,10 +250,6 @@ body > div {
   .inputSelector {
     width: 39%;
   }
-  
-  .fileContents {
-    text-align: center;
-    @include calc(height, "50% - 1.5em");
 
   textArea {
       font-family: $mainFontMono;
@@ -262,8 +258,6 @@ body > div {
       margin: 0;
       width: 45%;
       height: 60%;
-      @include calc(width, "50% - 18px");
-      @include calc(height, "100% - 79px");
       text-align: left;
       font-size: 0.65em;
       resize: none;
@@ -278,6 +272,14 @@ body > div {
   textArea[readonly] {
       color: black;
       background-color: #FCFCFC;
+    }
+  
+  .fileContents {
+    text-align: center;
+    @include calc(height, "50% - 1.5em");
+    textArea {
+      @include calc(width, "50% - 18px");
+      @include calc(height, "100% - 79px");
     }
   }
 
@@ -335,8 +337,18 @@ body > div {
      visibility: hidden;
    }
 
+   .sourceView {
+     text-align: center;
+   }
+
+   .sourceViewText {
+      @include calc(width, "100% - 3em");
+      @include calc(height, "100% - 8ex");
+   }
+
    div.sourceSelectorRow {
      height: auto;
      text-align: center;
+     margin-bottom: 0.6ex;
    }
  }

@@ -6,7 +6,7 @@ define(['backbone', 'hbs!../template/sourceView'],
     return Backbone.Marionette.ItemView.extend({
       template: tmpl,
       type: 'handlebars',
-      viewName: 'sourceView',
+      className: 'sourceView',
       ui: {
         sourceSelector: ".sourceSelector"
       },
