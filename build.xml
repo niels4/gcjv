@@ -27,7 +27,7 @@
 
   <fileset id="public-deps" dir="${src.public.dir}">
     <include name="*.html" />
-    <include name="problems/**/*" />
+    <include name="problemViewer/**/*" />
   </fileset>
 
   <fileset id="css-deps" dir="${src.css.dir}">
@@ -42,6 +42,7 @@
   <fileset id="built-files" dir="${src.public.dir}">
     <include name="css/gcj-cljs.css" />
     <include name="js/workers/*" />
+    <include name="problemViewer/**/*" />
   </fileset>
 
   <fileset id="problemViewer-files" dir="${src.cljx.dir}/shared">
@@ -145,7 +146,7 @@
     </copy>
   </target>
 
-  <target name="webapp" depends="clean, compile-clojurescript, compile-sass, build-js"
+  <target name="webapp" depends="clean, build-problemViewer-dir,compile-clojurescript, compile-sass, build-js"
     description="Assemble all of the client files into a single page web app that can be
 hosted by a static http file server.">
     <copy todir="${deploy.public.dir}">

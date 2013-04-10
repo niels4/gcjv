@@ -31,7 +31,7 @@ define(['jquery', 'backbone', 'hbs!../template/sourceView', 'syntaxHighlighter',
         $.ajax({url: textUrl}).then(function (inputText) {
           self.$el.find('.syntaxHighlighterContainer').remove();
           self.$el.append('<pre class="brush: clj"></pre>');
-          self.$el.find('pre').html(inputText);
+          self.$el.find('pre').text(inputText);
           SyntaxHighlighter.highlight();
           self.$el.find('div.syntaxhighlighter').parent().addClass('syntaxHighlighterContainer');
         });
