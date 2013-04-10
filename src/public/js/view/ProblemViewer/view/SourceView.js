@@ -1,7 +1,8 @@
 /*jslint browser: true, indent: 2, nomen: true, es5: true, devel: true */
 /*global define */
-define(['jquery', 'backbone', 'hbs!../template/sourceView'],
-  function ($, Backbone, tmpl) {
+define(['jquery', 'backbone', 'hbs!../template/sourceView', 'syntaxHighlighter',
+        'clojureBrush'],
+  function ($, Backbone, tmpl, SyntaxHighlighter) {
     "use strict";
     return Backbone.Marionette.ItemView.extend({
       template: tmpl,
@@ -24,11 +25,15 @@ define(['jquery', 'backbone', 'hbs!../template/sourceView'],
       },
 
       updateSourceText: function () {
-        var textUrl, self;
+        var textUrl, self, parentEle;
         self = this;
         textUrl = "problemViewer/" + this.ui.sourceSelector.val();
         $.ajax({url: textUrl}).then(function (inputText) {
-          self.ui.sourceText.val(inputText);
+          self.$el.find('.syntaxHighlighterContainer').remove();
+          self.$el.append('<pre class="brush: clj"></pre>');
+          self.$el.find('pre').html(inputText);
+          SyntaxHighlighter.highlight();
+          self.$el.find('div.syntaxhighlighter').parent().addClass('syntaxHighlighterContainer');
         });
       }
     });

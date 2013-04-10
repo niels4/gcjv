@@ -11,7 +11,9 @@ require.config({
     Handlebars : 'lib/require/hbs/Handlebars',
     hbs        : 'lib/require/hbs',
     chosen     : 'lib/jquery/chosen.jquery.min',
-    saveAs     : 'lib/FileSaver'
+    saveAs     : 'lib/FileSaver',
+    syntaxHighlighter: 'lib/shCore',
+    clojureBrush: 'lib/shBrushClojure'
   },
   shim : {
     underscore : {
@@ -30,6 +32,12 @@ require.config({
     },
     saveAs : {
       exports: 'saveAs'
+    },
+    syntaxHighlighter : {
+      exports: 'SyntaxHighlighter'
+    },
+    clojureBrush: {
+      deps: ['syntaxHighlighter']
     }
   },
   deps : ['text', 'jquery', 'underscore', 'backbone.marionette.handlebars', 'chosen']

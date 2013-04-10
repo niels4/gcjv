@@ -1,5 +1,7 @@
 @CHARSET "UTF-8";
 @import "chosen";
+@import "shCore";
+@import "shCoreDefault";
 @import "compass/css3/transform-legacy";
 
 @mixin calc($property, $expression) { 
@@ -251,13 +253,11 @@ body > div {
     width: 39%;
   }
 
-  textArea {
+  textArea, div.syntaxhighlighter {
       font-family: $mainFontMono;
       border: 4px solid $borderColor;
       display: inline-block;
       margin: 0;
-      width: 45%;
-      height: 60%;
       text-align: left;
       font-size: 0.65em;
       resize: none;
@@ -339,12 +339,17 @@ body > div {
 
    .sourceView {
      text-align: center;
+     div.syntaxhighlighter {
+       height: 100%;
+       width: 100%;
+     }
    }
 
-   .sourceViewText {
-      @include calc(width, "100% - 3em");
-      @include calc(height, "100% - 8ex");
-   }
+   div.syntaxHighlighterContainer {
+      margin: auto;
+      @include calc(width, "100% - 2em");
+      @include calc(height, "100% - 6ex");
+     }
 
    div.sourceSelectorRow {
      height: auto;
