@@ -1,9 +1,9 @@
-^:cljs (ns problems.{{problemName}}.main
+^:cljs (ns problems.rope_intranet.main
   (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]))
-^:clj (ns problems.{{problemName}}.main
+^:clj (ns problems.rope_intranet.main
   (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
@@ -12,22 +12,35 @@
         [gcj-viewer.file-util :only [write-solution read-input-text
                                      test-expected-output]]))
 
-(def problemName "{{problemName}}")
+(def problemName "rope_intranet")
 
-(def linesPerCase 1)
+(def linesPerCase :var)
 
 (defn parseCase
   [{:keys [index value]}]
   (let
-    [lines value]
+    [lines value
+     wires (for [line (rest lines)]
+             (let [[lheight rheight] (split line #"\s")]
+               {:l (to-int lheight) :r (to-int rheight)}))]
     {:caseNumber index
-     :lines lines}))
+     :wires wires}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 
+(defn intersectCount
+  [[acc restWires] nextWire]
+  (if (empty? restWires)
+    acc
+    [(+ acc (->> restWires
+                 (filter #(< (:r %) (:r nextWire)))
+                 count))
+     (rest restWires)]))
+
 (defn processCase
-  [{:keys [caseNumber lines]}]
+  [{:keys [caseNumber wires]}]
   (let
-    [result ""]
+    [wires (sort-by :l  wires)
+     result (reduce intersectCount [0 (rest wires)] wires)]
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
@@ -56,7 +69,7 @@
 (def largeSolution (write-solution solve-for-input problemName "large"))
   
 ;<Refresh>
-(load-file (str "target/cljx_generated/clj/problems/{{problemName}}/main.clj"))
-(in-ns 'problems.{{problemName}}.main)
+(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
+(in-ns 'problems.rope_intranet.main)
 
 )

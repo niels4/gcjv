@@ -161,7 +161,10 @@ define(['underscore', 'jquery', 'backbone', 'hbs!../template/fileView',
         return true;
       },
       processWorkerMessage: function (evt) {
-        if (evt.data.status === "completed") {
+        console.log("Message received:", evt.data);
+        if (evt.data.status === "running") {
+          this.ui.outputFile.val(evt.data.message);
+        } else if (evt.data.status === "completed") {
           console.log("Solution completed:", evt.data);
           this.model.set(ProblemViewerState.OUTPUT_TEXT_VALUE,
             evt.data.message);

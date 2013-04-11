@@ -19,15 +19,28 @@
 (defn parseCase
   [{:keys [index value]}]
   (let
-    [lines value]
+    [lines value
+     wires (for [line (rest lines)]
+             (let [[lheight rheight] (split line #"\s")]
+               {:l (to-int lheight) :r (to-int rheight)}))]
     {:caseNumber index
-     :lines lines}))
+     :wires wires}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 
+(defn intersectCount
+  [[acc restWires] nextWire]
+  (if (empty? restWires)
+    acc
+    [(+ acc (->> restWires
+                 (filter #(< (:r %) (:r nextWire)))
+                 count))
+     (rest restWires)]))
+
 (defn processCase
-  [{:keys [caseNumber lines]}]
+  [{:keys [caseNumber wires]}]
   (let
-    [result ""]
+    [wires (sort-by :l  wires)
+     result (reduce intersectCount [0 (rest wires)] wires)]
     (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))

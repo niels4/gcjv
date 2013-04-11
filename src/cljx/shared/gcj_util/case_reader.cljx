@@ -23,8 +23,9 @@
                        first
                        (#(split % #"\s"))
                        last
-                       to-int)
-         [groupedLines restOfFile] (split-at numLines (rest lines))]
+                       to-int
+                       inc) ;account for the line we are on
+         [groupedLines restOfFile] (split-at numLines lines)]
         (recur (conj acc groupedLines) restOfFile)))))
 
 (defn raw-cases-from-lines 
