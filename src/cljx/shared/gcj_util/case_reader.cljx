@@ -2,9 +2,30 @@
   (:use [gcj-util.misc :only [to-int indexed-values]]
         [clojure.string :only [split trim-newline]]))
 
-(defn cases-from-lines
+(defmulti cases-from-lines
+  (fn [linesPerCase lines]
+    (if (keyword? linesPerCase) linesPerCase))
+  :default :fixed)
+
+(defmethod cases-from-lines :fixed
   [linesPerCase lines]
   (partition linesPerCase lines))
+
+(defmethod cases-from-lines :var
+  [linesPerCase lines]
+  (loop
+    [acc []
+     lines lines]
+    (if (empty? lines)
+      acc
+      (let
+        [numLines (->> lines ;take the last int on the first line of each case
+                       first
+                       (#(split % #"\s"))
+                       last
+                       to-int)
+         [groupedLines restOfFile] (split-at numLines (rest lines))]
+        (recur (conj acc groupedLines) restOfFile)))))
 
 (defn raw-cases-from-lines 
   [linesPerCase lines]

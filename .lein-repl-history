@@ -307,3 +307,7 @@
 (test-expected-output solve-for-input problemName "sample")
 (println (write-solution solve-for-input problemName "small"))
 (def largeSolution (write-solution solve-for-input problemName "large"))
+(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
+(in-ns 'problems.rope_intranet.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
