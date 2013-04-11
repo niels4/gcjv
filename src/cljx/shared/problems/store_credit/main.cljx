@@ -1,4 +1,4 @@
-(ns problems.store-credit.main
+(ns problems.store_credit.main
   (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]

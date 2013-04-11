@@ -146,6 +146,54 @@
     </copy>
   </target>
 
+
+  <property name="exported_solution.dir" location="target/exported_solutions/${problemName}" />
+  <property name="src.problem.dir" location="${src.cljx.dir}/shared/problems/${problemName}" />
+
+  <target name="clean-solution" if="problemName">
+    <delete includeEmptyDirs="true">
+      <fileset dir="${exported_solution.dir}" includes="**/*"/>
+    </delete>
+  </target>
+
+  <target name="export-solution-files" if="problemName">
+    <echo message="The problem name is ${problemName}" />
+    <copy todir="${exported_solution.dir}">
+      <fileset dir="src/templates/exported_solution" includes="**/*" />
+    </copy>
+    <copy todir="${exported_solution.dir}/src/cljx">
+      <fileset dir="src/cljx/shared">
+        <include name="gcj_util/**/*" />
+        <include name="problems/${problemName}/*.cljx" />
+      </fileset>
+    </copy>
+    <copy todir="${exported_solution.dir}/input">
+      <fileset dir="${src.problem.dir}/input" includes="*.in" />
+    </copy>
+    <replace file="${exported_solution.dir}/src/lein_tasks/leiningen/solve.clj"
+      token="{{problemName}}" value="${problemName}" />
+  </target>
+
+  <target name="build-exported-cljx" if="problemName">
+    <description>
+      build-exported-cljx
+      Use lein to compile the cljx into clj files in the exported project.
+    </description>
+    <exec osfamily="windows" failonerror="true" executable="cmd" dir="${exported_solution.dir}">
+      <arg line="/c lein cljx once" />
+    </exec>
+
+   <exec osfamily="unix" failonerror="true" executable="/bin/sh" dir="${exported_solution.dir}"> 
+    <arg value="-c" /> 
+    <arg value="lein cljx once" /> 
+   </exec> 
+  </target>
+
+  <target name="export-solution" if="problemName"
+    depends="clean-solution, export-solution-files, build-exported-cljx"
+    description="Export the solution as a simple to use clojure project">
+  </target>
+
   <target name="webapp" depends="clean, build-problemViewer-dir,compile-clojurescript, compile-sass, build-js"
     description="Assemble all of the client files into a single page web app that can be
 hosted by a static http file server.">

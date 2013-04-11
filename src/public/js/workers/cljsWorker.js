@@ -5759,6 +5759,74 @@ ga("problems.theme_park.main.solve_for_input", function(a) {
   return"" + W(dj(ej, gj, a))
 });
 var hj = Ue.c(bj, function(a) {
+  var a = Lc(a) ? z.b(O, a) : a, b = F.c(a, "\ufdd0:value", l), a = F.c(a, "\ufdd0:index", l), b = V.c(b, 0, l), c = Ad.b(Ui, Oi.b(b, /\s/)), b = V.c(c, 0, l), c = V.c(c, 1, l);
+  return Y(["\ufdd0:caseNumber", "\ufdd0:num-snappers", "\ufdd0:times-snapped"], {"\ufdd0:caseNumber":a, "\ufdd0:num-snappers":b, "\ufdd0:times-snapped":c})
+}, 1);
+function ij(a) {
+  var a = Lc(a) ? z.b(O, a) : a, b = F.c(a, "\ufdd0:times-snapped", l), c = F.c(a, "\ufdd0:num-snappers", l), a = F.c(a, "\ufdd0:caseNumber", l);
+  a: {
+    for(var d = 0;;) {
+      if(0 === c) {
+        c = d;
+        break a
+      }
+      d = 2 * d + 1;
+      c -= 1
+    }
+    c = g
+  }
+  b = (b + 1) / (c + 1);
+  b = (c = "number" == typeof b) ? (c = !isNaN(b)) ? (c = Infinity !== b) ? parseFloat(b) === parseInt(b, 10) : c : c : c;
+  return Y(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":a, "\ufdd0:result":u(b) ? "ON" : "OFF"})
+}
+ga("problems.snapper_chain.main.solve_for_input", function(a) {
+  return"" + W(dj(hj, ij, a))
+});
+self.addEventListener("message", function(a) {
+  var b = oi(a.data), a = b.a ? b.a("problemName") : b.call(l, "problemName"), b = b.a ? b.a("input") : b.call(l, "input"), a = self.problems[a].main.solve_for_input;
+  return self.postMessage(hi(Y(["\ufdd0:status", "\ufdd0:message"], {"\ufdd0:status":"completed", "\ufdd0:message":a.a ? a.a(b) : a.call(l, b)})))
+});
+var jj = Ue.c(bj, function(a) {
+  var b = Lc(a) ? z.b(O, a) : a, a = F.c(b, "\ufdd0:value", l), b = F.c(b, "\ufdd0:index", l), a = function d(a) {
+    return new X(l, m, function() {
+      for(;;) {
+        var b = H(a);
+        if(b) {
+          var i = I(b), b = R, j = Oi.b(i, /\s/), i = V.c(j, 0, l), j = V.c(j, 1, l);
+          return b(Y(["\ufdd0:l", "\ufdd0:r"], {"\ufdd0:l":parseInt(i), "\ufdd0:r":parseInt(j)}), d(J(a)))
+        }
+        return l
+      }
+    }, l)
+  }(J(a));
+  return Y(["\ufdd0:caseNumber", "\ufdd0:wires"], {"\ufdd0:caseNumber":b, "\ufdd0:wires":a})
+}, "\ufdd0:var");
+function kj(a, b) {
+  var c = V.c(a, 0, l), d = V.c(a, 1, l);
+  return Ec(d) ? c : Wf([c + U(wf(function(a) {
+    return(new Wd("\ufdd0:r")).call(l, a) < (new Wd("\ufdd0:r")).call(l, b)
+  }, d)), J(d)])
+}
+function lj(a) {
+  var a = Lc(a) ? z.b(O, a) : a, b = F.c(a, "\ufdd0:wires", l), a = F.c(a, "\ufdd0:caseNumber", l), b = ad.b("\ufdd0:l", b), b = sa.c(kj, Wf([0, J(b)]), b);
+  Ti([W("Completed Case #"), W(a)].join(""));
+  return Y(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":a, "\ufdd0:result":b})
+}
+ga("problems.rope_intranet.main.solve_for_input", function(a) {
+  return"" + W(dj(jj, lj, a))
+});
+var mj = Ue.c(bj, function(a) {
+  var b = Lc(a) ? z.b(O, a) : a, a = F.c(b, "\ufdd0:value", l), b = F.c(b, "\ufdd0:index", l), a = V.c(a, 0, l);
+  return Y(["\ufdd0:caseNumber", "\ufdd0:words"], {"\ufdd0:caseNumber":b, "\ufdd0:words":Oi.b(a, /\s/)})
+}, 1);
+function nj(a) {
+  var b = Lc(a) ? z.b(O, a) : a, a = F.c(b, "\ufdd0:words", l), b = F.c(b, "\ufdd0:caseNumber", l), a = Ki.b(" ", Ld(a));
+  return Y(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":b, "\ufdd0:result":a})
+}
+ga("problems.reverse_words.main.solve_for_input", function(a) {
+  return"" + W(dj(mj, nj, a))
+});
+var oj = Ue.c(bj, function(a) {
   var a = Lc(a) ? z.b(O, a) : a, b = F.c(a, "\ufdd0:value", l), a = F.c(a, "\ufdd0:index", l), c = V.c(b, 0, l);
   V.c(b, 1, l);
   b = V.c(b, 2, l);
@@ -5766,7 +5834,7 @@ var hj = Ue.c(bj, function(a) {
   b = Vi.a ? Vi.a(Ad.b(Ui, Oi.b(b, /\s/))) : Vi.call(l, Ad.b(Ui, Oi.b(b, /\s/)));
   return Y(["\ufdd0:caseNumber", "\ufdd0:credit", "\ufdd0:items"], {"\ufdd0:caseNumber":a, "\ufdd0:credit":c, "\ufdd0:items":b})
 }, 3);
-function ij(a) {
+function pj(a) {
   var a = Lc(a) ? z.b(O, a) : a, b = F.c(a, "\ufdd0:items", l), c = F.c(a, "\ufdd0:credit", l), a = F.c(a, "\ufdd0:caseNumber", l), d = wf(function(a) {
     return(new Wd("\ufdd0:value")).call(l, a) < c
   }, b), f = c / 2, h = wf(function(a) {
@@ -5812,73 +5880,5 @@ function ij(a) {
   return Y(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":a, "\ufdd0:result":b})
 }
 ga("problems.store_credit.main.solve_for_input", function(a) {
-  return"" + W(dj(hj, ij, a))
-});
-var jj = Ue.c(bj, function(a) {
-  var a = Lc(a) ? z.b(O, a) : a, b = F.c(a, "\ufdd0:value", l), a = F.c(a, "\ufdd0:index", l), b = V.c(b, 0, l), c = Ad.b(Ui, Oi.b(b, /\s/)), b = V.c(c, 0, l), c = V.c(c, 1, l);
-  return Y(["\ufdd0:caseNumber", "\ufdd0:num-snappers", "\ufdd0:times-snapped"], {"\ufdd0:caseNumber":a, "\ufdd0:num-snappers":b, "\ufdd0:times-snapped":c})
-}, 1);
-function kj(a) {
-  var a = Lc(a) ? z.b(O, a) : a, b = F.c(a, "\ufdd0:times-snapped", l), c = F.c(a, "\ufdd0:num-snappers", l), a = F.c(a, "\ufdd0:caseNumber", l);
-  a: {
-    for(var d = 0;;) {
-      if(0 === c) {
-        c = d;
-        break a
-      }
-      d = 2 * d + 1;
-      c -= 1
-    }
-    c = g
-  }
-  b = (b + 1) / (c + 1);
-  b = (c = "number" == typeof b) ? (c = !isNaN(b)) ? (c = Infinity !== b) ? parseFloat(b) === parseInt(b, 10) : c : c : c;
-  return Y(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":a, "\ufdd0:result":u(b) ? "ON" : "OFF"})
-}
-ga("problems.snapper_chain.main.solve_for_input", function(a) {
-  return"" + W(dj(jj, kj, a))
-});
-self.addEventListener("message", function(a) {
-  var b = oi(a.data), a = b.a ? b.a("problemName") : b.call(l, "problemName"), b = b.a ? b.a("input") : b.call(l, "input"), a = self.problems[a].main.solve_for_input;
-  return self.postMessage(hi(Y(["\ufdd0:status", "\ufdd0:message"], {"\ufdd0:status":"completed", "\ufdd0:message":a.a ? a.a(b) : a.call(l, b)})))
-});
-var lj = Ue.c(bj, function(a) {
-  var b = Lc(a) ? z.b(O, a) : a, a = F.c(b, "\ufdd0:value", l), b = F.c(b, "\ufdd0:index", l), a = function d(a) {
-    return new X(l, m, function() {
-      for(;;) {
-        var b = H(a);
-        if(b) {
-          var i = I(b), b = R, j = Oi.b(i, /\s/), i = V.c(j, 0, l), j = V.c(j, 1, l);
-          return b(Y(["\ufdd0:l", "\ufdd0:r"], {"\ufdd0:l":parseInt(i), "\ufdd0:r":parseInt(j)}), d(J(a)))
-        }
-        return l
-      }
-    }, l)
-  }(J(a));
-  return Y(["\ufdd0:caseNumber", "\ufdd0:wires"], {"\ufdd0:caseNumber":b, "\ufdd0:wires":a})
-}, "\ufdd0:var");
-function mj(a, b) {
-  var c = V.c(a, 0, l), d = V.c(a, 1, l);
-  return Ec(d) ? c : Wf([c + U(wf(function(a) {
-    return(new Wd("\ufdd0:r")).call(l, a) < (new Wd("\ufdd0:r")).call(l, b)
-  }, d)), J(d)])
-}
-function nj(a) {
-  var a = Lc(a) ? z.b(O, a) : a, b = F.c(a, "\ufdd0:wires", l), a = F.c(a, "\ufdd0:caseNumber", l), b = ad.b("\ufdd0:l", b), b = sa.c(mj, Wf([0, J(b)]), b);
-  Ti([W("Completed Case #"), W(a)].join(""));
-  return Y(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":a, "\ufdd0:result":b})
-}
-ga("problems.rope_intranet.main.solve_for_input", function(a) {
-  return"" + W(dj(lj, nj, a))
-});
-var oj = Ue.c(bj, function(a) {
-  var b = Lc(a) ? z.b(O, a) : a, a = F.c(b, "\ufdd0:value", l), b = F.c(b, "\ufdd0:index", l), a = V.c(a, 0, l);
-  return Y(["\ufdd0:caseNumber", "\ufdd0:words"], {"\ufdd0:caseNumber":b, "\ufdd0:words":Oi.b(a, /\s/)})
-}, 1);
-function pj(a) {
-  var b = Lc(a) ? z.b(O, a) : a, a = F.c(b, "\ufdd0:words", l), b = F.c(b, "\ufdd0:caseNumber", l), a = Ki.b(" ", Ld(a));
-  return Y(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":b, "\ufdd0:result":a})
-}
-ga("problems.reverse_words.main.solve_for_input", function(a) {
   return"" + W(dj(oj, pj, a))
 });
