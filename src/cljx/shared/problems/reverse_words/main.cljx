@@ -57,7 +57,7 @@
 (def largeSolution (write-solution solve-for-input problemName "large"))
   
 ;<Refresh>
-(load-file (str "src/cljx/generated/clj/problems/reverse_words/main.clj"))
+(load-file (str "target/cljx_generated/clj/problems/reverse_words/main.clj"))
 (in-ns 'problems.reverse_words.main)
 
 )
