@@ -35,6 +35,16 @@
        to-int
        inc))
 
+(defmethod numLines-from-lines :var2
+  [linesPerCase lines]
+  "take the last int on the first line of each case and add one more line"
+  (->> lines
+       first
+       (#(split % #"\s"))
+       last
+       to-int
+       (+ 2)))
+
 (defmethod cases-from-lines :var
   [linesPerCase lines]
   (loop
