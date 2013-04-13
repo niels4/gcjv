@@ -1,500 +1,500 @@
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (slurp "src/cljx/problems/rev_words2/input/sample.in")))
-(pprint cases)
-(load-file (str "src/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (slurp "src/cljx/problems/rev_words2/input/sample.in")))
-(pprint cases)
-(load-file (str "src/clj/problems/rev_words2/main.clj"))
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (slurp "src/cljx/problems/rev_words2/input/sample.in")))
-(pprint cases)
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (slurp "src/cljx/shared/problems/rev_words2/input/sample.in")))
-(pprint cases)
-(write-solution solve-for-input "sample")
-(write-solution solve-for-input problemName "sample")
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(write-solution solve-for-input problemName "sample")
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(write-solution solve-for-input problemName "sample")
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(write-solution solve-for-input problemName "sample")
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(def cases (caseParser (read-input-text problemName "small")))
-(pprint cases)
-(def cases (caseParser (read-input-text problemName "small")))
-(pprint cases)
-(println (write-solution solve-for-input problemName "small"))
-(load-file (str "src/cljx/generated/clj/problems/rev_words2/main.clj"))
-(in-ns 'problems.rev_words2.main)
-(def cases (caseParser (read-input-text problemName "small")))
-(pprint cases)
-(println (write-solution solve-for-input problemName "small"))
-(load-file (str "src/cljx/generated/clj/problems/reverse_words/main.clj"))
-(in-ns 'problems.reverse_words.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [[line] value]
-    {:caseNumber index
-     :words (split line #"\s")}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(defn processCase
-  [{:keys [caseNumber words]}]
-  (let
-    [result ""]
-    {:caseNumber caseNumber
-     :result     result}))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber words]}]
-  (let
-    [result words]
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber words]}]
-  (let
-    [result (->> words
-                 reverse
-                 )]
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber words]}]
-  (let
-    [result (->> words
-                 reverse
-                 (join " "))]
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "src/cljx/generated/clj/problems/reverse_words/main.clj"))
-(in-ns 'problems.reverse_words.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(load-file (str "src/cljx/generated/clj/problems/theme_park/main.clj"))
-(in-ns 'problems.theme_park.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [[line1 line2] value
-      [r k n] (->> (split line1 #"\s")
-                      (map to-int))
-      groups  (->> (split line2 #"\s")
-                   (map to-int)
-                   vec)]
-    {:caseNumber index
-     :times-run r
-     :capacity  k
-     :num-groups n
-     :groups groups}))
-(def caseParser (partial parse-cases-from-file parseCase linesPerCase))
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [[line1 line2] value
-      [r k n] (->> (split line1 #"\s")
-                      (map to-int))
-      groups  (->> (split line2 #"\s")
-                   (map to-int)
-                   vec)]
-    {:caseNumber index
-     :times-run r
-     :capacity  k
-     :num-groups n
-     :groups groups}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(load-file (str "src/cljx/generated/clj/problems/theme_park/main.clj"))
-(in-ns 'problems.theme_park.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
-(in-ns 'problems.snapper_chain.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
+(:board (first cases))
 (defn parseCase
   [{:keys [index value]}]
   (let
-    [[line] value
-     [num-snappers times-snapped] (->> (split line #"\s")
-                                   (map to-int))]
+    [[line1 line2 line3 line4 line5] value
+     lineToVec (fn [line]
+                 (vec line))
+     board (vec (map lineToVec [line1 line2 line3 line4]))]
     {:caseNumber index
-     :num-snappers num-snappers
-     :times-snapped times-snapped}))
+     :board board}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
-(in-ns 'problems.snapper_chain.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
-(in-ns 'problems.snapper_chain.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(snaps-to-power-light 4)
-(inc (* 2 (snaps-to-power-light 4)))
-(snaps-to-power-light 1)
-(snaps-to-power-light 2)
-(snaps-to-power-light 4)
-(snaps-to-power-light 3)
-(snaps-to-power-light 5)
-(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
-(in-ns 'problems.snapper_chain.main)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(defn is-light-on
-  [num-switches num-snaps]
-  (let
-    [snaps-to-power (snaps-to-power-light num-switches)
-     snap-multiple (/ (inc num-snaps) (inc snaps-to-power))]
-    (integer? snap-multiple)))
-(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
-(in-ns 'problems.snapper_chain.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
-(in-ns 'problems.snapper_chain.main)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(load-file (str "src/cljx/generated/clj/problems/snapper_chain/main.clj"))
-(in-ns 'problems.snapper_chain.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/snapper_chain/main.clj"))
-(in-ns 'problems.snapper_chain.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(println (write-solution solve-for-input problemName "small"))
-(load-file (str "src/cljx/generated/clj/problems/theme_park/main.clj"))
-(in-ns 'problems.theme_park.main)
-(println (write-solution solve-for-input problemName "small"))
-(load-file (str "target/cljx_generated/clj/problems/theme_park/main.clj"))
-(in-ns 'problems.theme_park.main)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
-(in-ns 'problems.rope_intranet.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
+(:board (first cases))
 (defn parseCase
   [{:keys [index value]}]
   (let
-    [lines value
-     wires (for [line (rest lines)]
-             (let [[lheight rheight] (split line #"\s")]
-               {:lheight lheight :rheight rheight}))]
+    [[line1 line2 line3 line4 line5] value
+     board (vec (map vec [line1 line2 line3 line4]))]
     {:caseNumber index
-     :wires wires}))
+     :board board}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines value
-     wires (for [line (rest lines)]
-             (let [[lheight rheight] (split line #"\s")]
-               {:lheight lheight :rheight rheight}))]
-    {:caseNumber index
-     :lines lines
-     :wires wires}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines value
-     wires (for [line (rest lines)]
-             (let [[lheight rheight] (split line #"\s")]
-               {:lheight lheight :rheight rheight}))]
-    {:caseNumber index
-     :lines lines
-     :wires wires}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(reload-all)
-(in-ns 'problems.rope_intranet.main :reload-all)
-(in-ns 'problems.rope_intranet.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
-(in-ns 'problems.rope_intranet.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
-(in-ns 'problems.rope_intranet.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines value
-     wires (for [line (rest lines)]
-             (let [[lheight rheight] (split line #"\s")]
-               {:l lheight :r rheight}))]
-    {:caseNumber index
-     :wires wires}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(:board (first cases))
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber wires]}]
-  (let
-    [
-     result wires]
-    (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber wires]}]
-  (let
-    [
-     result (str wires)]
-    (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber wires]}]
-  (let
-    [
-     result (pprint wires)]
-    (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber wires]}]
-  (let
-    [wires (sort :l wires)
-     result (pprint wires)]
-    (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber wires]}]
-  (let
-    [wires (sort :l < wires)
-     result (pprint wires)]
-    (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber wires]}]
-  (let
-    [wires (sort (comp < :l) wires)
-     result (pprint wires)]
-    (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines value
-     wires (for [line (rest lines)]
-             (let [[lheight rheight] (split line #"\s")]
-               {:l (to-int lheight) :r (to-int rheight)}))]
-    {:caseNumber index
-     :wires wires}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber wires]}]
-  (let
-    [wires (sort-by :l  wires)
-     result (pprint wires)]
-    (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn intersectCount
-  [[acc restWires] nextWire]
-  (if (empty? restWires)
-    acc
-    [(+ acc (->> restWires
-                 (filter #(< (:r %) (:r nextWire)))
-                 count))
-     (rest restWires)]))
-(defn processCase
-  [{:keys [caseNumber wires]}]
-  (let
-    [wires (sort-by :l  wires)
-     intersections (reduce intersectCount [0 (rest wires)] wires)
-     result intersections]
-    (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
+(def board (:board (first cases)))
+board
+(board 1)
+(board 0)
+((board 0) 1)
+((board 0(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))) 1)
+(in-ns 'problems.tic-tac-toe-tomek.main)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
-(in-ns 'problems.rope_intranet.main)
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
-(in-ns 'problems.rope_intranet.main)
-(test-expected-output solve-for-input problemName "sample")
+(def rows (:rows (first cases)))
+[0..3]
+(range 3)
+(defn rowsToCols
+  [rows]
+  (for [rowIndex (range 4)
+        row rows]
+    (row rowIndex)))
 (defn processCase
-  [{:keys [caseNumber wires]}]
+  [{:keys [caseNumber rows]}]
   (let
-    [ result (->> wires
-                  (sort-by :l)
-                  (reduce intersectCount [0 (rest wires)]))]
-    (print-status (str "Completed Case #" caseNumber))
+    cols (rowsToCols rows)
+    [result cols]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
-(defn intersectCount
-  [[acc restWires] nextWire]
-  (if (empty? restWires)
-    acc
-    [(+ acc (->> restWires
-                 (filter #(< (:r %) (:r nextWire)))
-                 count))
-     (rest restWires)]))
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
-(in-ns 'problems.rope_intranet.main)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
-(in-ns 'problems.rope_intranet.main)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
 (defn processCase
-  [{:keys [caseNumber wires]}]
+  [{:keys [caseNumber rows]}]
   (let
-    [wires (sort-by :l  wires)
-     result (reduce intersectCount [0 (rest wires)] wires)]
+    [cols (rowsToCols rows)
+     result cols]
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
 (test-expected-output solve-for-input problemName "sample")
-(load-file (str "target/cljx_generated/clj/problems/rope_intranet/main.clj"))
-(in-ns 'problems.rope_intranet.main)
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     result (pprint cols)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase(defn rowsToCols
+  [rows]
+  (for [rowIndex (range 4)]
+    (for [row rows]
+      (row rowIndex))))
+(test-expected-output solve-for-input problemName "sample")
+)
+(defn rowsToCols
+  [rows]
+  (for [rowIndex (range 4)]
+    (for [row rows]
+      (row rowIndex))))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     result (pprint cols)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn rowsToCols
+  [rows]
+  (vec (for [rowIndex (range 4)]
+    (vec (for [row rows]
+      (row rowIndex))))))
+(test-expected-output solve-for-input problemName "sample")
+(defn diagonalsFromBoard
+  [rows]
+  (vec (for [rowIndex (range 4)]
+         ((rows rowIndex) rowIndex))))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     result (pprint diagonals)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn diagonalsFromBoard
+  [rows]
+  (vec (for [rowIndex (range 4)]
+         (concat (vec ((rows rowIndex) rowIndex))
+                 (vec ((rows rowIndex) (- 3 rowIndex)))))))
+(test-expected-output solve-for-input problemName "sample")
+(defn diagonalsFromBoard
+  [rows]
+  (vec (for [rowIndex (range 4)]
+         [((rows rowIndex) rowIndex)
+          ((rows rowIndex) (- 3 rowIndex))])))
+(test-expected-output solve-for-input problemName "sample")
+(defn diagonalsFromBoard
+  [rows]
+  [(vec (for [rowIndex (range 4)]
+         ((rows rowIndex) rowIndex)))
+   (vec (for [rowIndex (range 4)]
+         ((rows rowIndex) (- 3 rowIndex))))])
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     result (pprint diagonals)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     result (pprint possibleWins)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn xWinFilter
+  [possibleWin]
+  (every? %(or (= % \X) (= % \T)) possibleWin))
+(defn xWinFilter
+  [possibleWin]
+  (every? #(or (= % \X) (= % \T)) possibleWin))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter xWinFilter possibleWins)
+     result (pprint possibleWins)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter xWinFilter possibleWins)
+     result (pprint (empty? xWins))]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter xWinFilter possibleWins)
+     result (empty? xWins)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter (partial xWinFilter \X) possibleWins)
+     result (empty? xWins)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter (partial winFilter \X) possibleWins)
+     result (empty? xWins)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(defn winFilter
+  [symb possibleWin]
+  (every? #(or (= % symb) (= % \T)) possibleWin))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter (partial winFilter \X) possibleWins)
+     result (empty? xWins)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn boardFull?
+  [rows]
+  (for [row rows]
+    (every? #(not= % \.) row)))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter (partial winFilter \X) possibleWins)
+     yWins (filter (partial winFilter \Y) possibleWins)
+     boardFull (boardFull? rows)
+     result boardFull]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn boardFull?
+  [rows]
+  (every? (for [row rows]
+    (every? #(not= % \.) row))))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter (partial winFilter \X) possibleWins)
+     yWins (filter (partial winFilter \Y) possibleWins)
+     boardFull (boardFull? rows)
+     result boardFull]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn boardFull?
+  [rows]
+  (every? #(%) (for [row rows]
+    (every? #(not= % \.) row))))
+(test-expected-output solve-for-input problemName "sample")
+(defn boardFull?
+  [rows]
+  (every? #(not= \.)
+          (for [row rows
+                symb row]
+               symb)))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWins (filter (partial winFilter \X) possibleWins)
+     yWins (filter (partial winFilter \Y) possibleWins)
+     boardFull (boardFull? rows)
+     result boardFull]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(test-expected-output solve-for-input problemName "sample")
+(defn boardFull?
+  [rows]
+  (every? #(not= \. %)
+          (for [row rows
+                symb row]
+               symb)))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWon (seq (filter (partial winFilter \X) possibleWins))
+     yWon (seq (filter (partial winFilter \Y) possibleWins))
+     boardFull (boardFull? rows)
+     result (cond xWon "X won"
+                  yWon "Y won")]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWon (seq (filter (partial winFilter \X) possibleWins))
+     yWon (seq (filter (partial winFilter \Y) possibleWins))
+     boardFull (boardFull? rows)
+     result (cond (or xWon yWon) (if xWon) "X won" "Y won")]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWon (seq (filter (partial winFilter \X) possibleWins))
+     yWon (seq (filter (partial winFilter \Y) possibleWins))
+     boardFull (boardFull? rows)
+     result (cond (or xWon yWon) (if xWon "X won" "Y won"))]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     diagonals (diagonalsFromBoard rows)
+     possibleWins (concat rows cols diagonals)
+     xWon (seq (filter (partial winFilter \X) possibleWins))
+     oWon (seq (filter (partial winFilter \O) possibleWins))
+     boardFull (boardFull? rows)
+     result (cond (or xWon oWon) (if xWon "X won" "O won")
+                  boardFull "Draw"
+                  :else "Game has not completed")]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
 (test-expected-output solve-for-input problemName "sample")
 (println (write-solution solve-for-input problemName "small"))
-(def largeSolution (write-solution solve-for-input problemName "large"))
-(subs "hellothere.in" 3)
-(subs "hellothere.in" -3)
-(len "hellothere.in")
-(length "hellothere.in")
-(count "hellothere.in")
-(subs "hellothere.in" (- (count "hellothere.in") 3)
-)
-(subs "hellothere.in" 0 (- (count "hellothere.in") 3))
-(refresh)
-(load-file (str "src/cljx/generated/clj/problems/reverse_words/main.clj"))
-(in-ns 'problems.reverse_words.main)
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(load-file (str "src/cljx/generated/clj/problems/reverse_words/main.clj"))
-(in-ns 'problems.reverse_words.main)
+(def rows (:rows (first cases)))
+(test-expected-output solve-for-input problemName "sample")
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(load-file (str "src/cljx/generated/clj/problems/reverse_words/main.clj"))
-(in-ns 'problems.reverse_words.main)
+(def rows (:rows (first cases)))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(test-expected-output solve-for-input problemName "sample")
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(test-expected-output solve-for-input problemName "sample")
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(println (write-solution solve-for-input problemName "small"))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(test-expected-output solve-for-input problemName "sample")
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(test-expected-output solve-for-input problemName "sample")
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(test-expected-output solve-for-input problemName "sample")
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+(def hey (comp not empty?))
+(hey "hello")
+(hey "")
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (first cases)))
+;<F5> Parse and print sample
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(load-file (str "target/cljx/generated_clj/problems/reverse_words/main.clj"))
-(in-ns 'problems.reverse_words.main)
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/reverse_words/main.clj"))
-(in-ns 'problems.reverse_words.main)
+(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
+(in-ns 'problems.tic-tac-toe-tomek.main)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
+ls
+..
+(load-file (str "target/cljx_generated/clj/problems/tic_tac_toe_tomek/main.clj"))
+(in-ns 'problems.tic_tac_toe_tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(load-file (str "target/cljx_generated/clj/problems/tic_tac_toe_tomek/main.clj"))
+(in-ns 'problems.tic_tac_toe_tomek.main)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
 (test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber words]}]
-  (let
-    [result (->> words
-                 (join " "))]
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber words]}]
-  (let
-    [result (->> words
-                 reverse
-                 (join " "))]
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
+(in-ns 'problems.lawnmower.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
+(in-ns 'problems.lawnmower.main)
+(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
+(in-ns 'problems.lawnmower.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)

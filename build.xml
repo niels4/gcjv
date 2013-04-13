@@ -151,6 +151,7 @@
   <property name="src.problem.dir" location="${src.cljx.dir}/shared/problems/${problemName}" />
 
   <target name="clean-solution" if="problemName">
+    <mkdir dir="${exported_solution.dir}" />
     <delete includeEmptyDirs="true">
       <fileset dir="${exported_solution.dir}" includes="**/*"/>
     </delete>
@@ -162,6 +163,7 @@
       <fileset dir="src/templates/exported_solution" includes="**/*" />
     </copy>
     <copy todir="${exported_solution.dir}/src/cljx">
+      <fileset dir="src/cljx/server" includes="**/*"/>
       <fileset dir="src/cljx/shared">
         <include name="gcj_util/**/*" />
         <include name="problems/${problemName}/*.cljx" />

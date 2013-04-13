@@ -4,12 +4,36 @@
 
 (defmulti cases-from-lines
   (fn [linesPerCase lines]
-    (if (keyword? linesPerCase) linesPerCase))
+    (if (keyword? linesPerCase) :var))
   :default :fixed)
 
 (defmethod cases-from-lines :fixed
   [linesPerCase lines]
   (partition linesPerCase lines))
+
+(defmulti numLines-from-lines
+  (fn [linesPerCase lines]
+    linesPerCase))
+
+(defmethod numLines-from-lines :var
+  [linesPerCase lines]
+  "take the last int on the first line of each case"
+  (->> lines
+       first
+       (#(split % #"\s"))
+       last
+       to-int
+       inc))
+
+(defmethod numLines-from-lines :var1
+  [linesPerCase lines]
+  "take the first int on the first line of each case"
+  (->> lines
+       first
+       (#(split % #"\s"))
+       first
+       to-int
+       inc))
 
 (defmethod cases-from-lines :var
   [linesPerCase lines]
@@ -19,12 +43,7 @@
     (if (empty? lines)
       acc
       (let
-        [numLines (->> lines ;take the last int on the first line of each case
-                       first
-                       (#(split % #"\s"))
-                       last
-                       to-int
-                       inc) ;account for the line we are on
+        [numLines (numLines-from-lines linesPerCase lines)
          [groupedLines restOfFile] (split-at numLines lines)]
         (recur (conj acc groupedLines) restOfFile)))))
 

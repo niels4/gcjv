@@ -22138,9 +22138,9 @@ clojure.browser.event.event_types = function event_types(this$) {
   }()) {
     return this$.clojure$browser$event$EventType$event_types$arity$1(this$)
   }else {
-    var x__2514__auto__ = this$ == null ? null : this$;
+    var x__2512__auto__ = this$ == null ? null : this$;
     return function() {
-      var or__3943__auto__ = clojure.browser.event.event_types[goog.typeOf(x__2514__auto__)];
+      var or__3943__auto__ = clojure.browser.event.event_types[goog.typeOf(x__2512__auto__)];
       if(or__3943__auto__) {
         return or__3943__auto__
       }else {
@@ -22148,7 +22148,7 @@ clojure.browser.event.event_types = function event_types(this$) {
         if(or__3943__auto____$1) {
           return or__3943__auto____$1
         }else {
-          throw cljs.core.missing_protocol.call(null, "EventType.event-types", this$);
+          throw cljs.core.missing_protocol("EventType.event-types", this$);
         }
       }
     }().call(null, this$)
@@ -22156,29 +22156,29 @@ clojure.browser.event.event_types = function event_types(this$) {
 };
 Element.prototype.clojure$browser$event$EventType$ = true;
 Element.prototype.clojure$browser$event$EventType$event_types$arity$1 = function(this$) {
-  return cljs.core.into.call(null, cljs.core.ObjMap.EMPTY, cljs.core.map.call(null, function(p__3060) {
-    var vec__3061 = p__3060;
-    var k = cljs.core.nth.call(null, vec__3061, 0, null);
-    var v = cljs.core.nth.call(null, vec__3061, 1, null);
-    return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null, k.toLowerCase()), v], true)
-  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.events.EventType))))
+  return cljs.core.into(cljs.core.ObjMap.EMPTY, cljs.core.map.cljs$lang$arity$2(function(p__3336) {
+    var vec__3337 = p__3336;
+    var k = cljs.core.nth.cljs$lang$arity$3(vec__3337, 0, null);
+    var v = cljs.core.nth.cljs$lang$arity$3(vec__3337, 1, null);
+    return cljs.core.PersistentVector.fromArray([cljs.core.keyword.cljs$lang$arity$1(k.toLowerCase()), v], true)
+  }, cljs.core.merge.cljs$lang$arity$variadic(cljs.core.array_seq([cljs.core.js__GT_clj(goog.events.EventType)], 0))))
 };
 goog.events.EventTarget.prototype.clojure$browser$event$EventType$ = true;
 goog.events.EventTarget.prototype.clojure$browser$event$EventType$event_types$arity$1 = function(this$) {
-  return cljs.core.into.call(null, cljs.core.ObjMap.EMPTY, cljs.core.map.call(null, function(p__3062) {
-    var vec__3063 = p__3062;
-    var k = cljs.core.nth.call(null, vec__3063, 0, null);
-    var v = cljs.core.nth.call(null, vec__3063, 1, null);
-    return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null, k.toLowerCase()), v], true)
-  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.events.EventType))))
+  return cljs.core.into(cljs.core.ObjMap.EMPTY, cljs.core.map.cljs$lang$arity$2(function(p__3338) {
+    var vec__3339 = p__3338;
+    var k = cljs.core.nth.cljs$lang$arity$3(vec__3339, 0, null);
+    var v = cljs.core.nth.cljs$lang$arity$3(vec__3339, 1, null);
+    return cljs.core.PersistentVector.fromArray([cljs.core.keyword.cljs$lang$arity$1(k.toLowerCase()), v], true)
+  }, cljs.core.merge.cljs$lang$arity$variadic(cljs.core.array_seq([cljs.core.js__GT_clj(goog.events.EventType)], 0))))
 };
 clojure.browser.event.listen = function() {
   var listen = null;
   var listen__3 = function(src, type, fn) {
-    return listen.call(null, src, type, fn, false)
+    return listen.cljs$lang$arity$4(src, type, fn, false)
   };
   var listen__4 = function(src, type, fn, capture_QMARK_) {
-    return goog.events.listen(src, cljs.core._lookup.call(null, clojure.browser.event.event_types.call(null, src), type, type), fn, capture_QMARK_)
+    return goog.events.listen(src, cljs.core._lookup.cljs$lang$arity$3(clojure.browser.event.event_types(src), type, type), fn, capture_QMARK_)
   };
   listen = function(src, type, fn, capture_QMARK_) {
     switch(arguments.length) {
@@ -22196,10 +22196,10 @@ clojure.browser.event.listen = function() {
 clojure.browser.event.listen_once = function() {
   var listen_once = null;
   var listen_once__3 = function(src, type, fn) {
-    return listen_once.call(null, src, type, fn, false)
+    return listen_once.cljs$lang$arity$4(src, type, fn, false)
   };
   var listen_once__4 = function(src, type, fn, capture_QMARK_) {
-    return goog.events.listenOnce(src, cljs.core._lookup.call(null, clojure.browser.event.event_types.call(null, src), type, type), fn, capture_QMARK_)
+    return goog.events.listenOnce(src, cljs.core._lookup.cljs$lang$arity$3(clojure.browser.event.event_types(src), type, type), fn, capture_QMARK_)
   };
   listen_once = function(src, type, fn, capture_QMARK_) {
     switch(arguments.length) {
@@ -22217,10 +22217,10 @@ clojure.browser.event.listen_once = function() {
 clojure.browser.event.unlisten = function() {
   var unlisten = null;
   var unlisten__3 = function(src, type, fn) {
-    return unlisten.call(null, src, type, fn, false)
+    return unlisten.cljs$lang$arity$4(src, type, fn, false)
   };
   var unlisten__4 = function(src, type, fn, capture_QMARK_) {
-    return goog.events.unlisten(src, cljs.core._lookup.call(null, clojure.browser.event.event_types.call(null, src), type, type), fn, capture_QMARK_)
+    return goog.events.unlisten(src, cljs.core._lookup.cljs$lang$arity$3(clojure.browser.event.event_types(src), type, type), fn, capture_QMARK_)
   };
   unlisten = function(src, type, fn, capture_QMARK_) {
     switch(arguments.length) {
@@ -28331,12 +28331,12 @@ goog.require("goog.net.EventType");
 goog.require("goog.net.XhrIo");
 goog.require("clojure.browser.event");
 clojure.browser.net._STAR_timeout_STAR_ = 1E4;
-clojure.browser.net.event_types = cljs.core.into.call(null, cljs.core.ObjMap.EMPTY, cljs.core.map.call(null, function(p__3048) {
-  var vec__3049 = p__3048;
-  var k = cljs.core.nth.call(null, vec__3049, 0, null);
-  var v = cljs.core.nth.call(null, vec__3049, 1, null);
-  return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null, k.toLowerCase()), v], true)
-}, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.net.EventType))));
+clojure.browser.net.event_types = cljs.core.into(cljs.core.ObjMap.EMPTY, cljs.core.map.cljs$lang$arity$2(function(p__3324) {
+  var vec__3325 = p__3324;
+  var k = cljs.core.nth.cljs$lang$arity$3(vec__3325, 0, null);
+  var v = cljs.core.nth.cljs$lang$arity$3(vec__3325, 1, null);
+  return cljs.core.PersistentVector.fromArray([cljs.core.keyword.cljs$lang$arity$1(k.toLowerCase()), v], true)
+}, cljs.core.merge.cljs$lang$arity$variadic(cljs.core.array_seq([cljs.core.js__GT_clj(goog.net.EventType)], 0))));
 clojure.browser.net.IConnection = {};
 clojure.browser.net.connect = function() {
   var connect = null;
@@ -28351,9 +28351,9 @@ clojure.browser.net.connect = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$connect$arity$1(this$)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.connect[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.connect[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28361,7 +28361,7 @@ clojure.browser.net.connect = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.connect", this$);
+            throw cljs.core.missing_protocol("IConnection.connect", this$);
           }
         }
       }().call(null, this$)
@@ -28378,9 +28378,9 @@ clojure.browser.net.connect = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$connect$arity$2(this$, opt1)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.connect[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.connect[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28388,7 +28388,7 @@ clojure.browser.net.connect = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.connect", this$);
+            throw cljs.core.missing_protocol("IConnection.connect", this$);
           }
         }
       }().call(null, this$, opt1)
@@ -28405,9 +28405,9 @@ clojure.browser.net.connect = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$connect$arity$3(this$, opt1, opt2)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.connect[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.connect[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28415,7 +28415,7 @@ clojure.browser.net.connect = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.connect", this$);
+            throw cljs.core.missing_protocol("IConnection.connect", this$);
           }
         }
       }().call(null, this$, opt1, opt2)
@@ -28432,9 +28432,9 @@ clojure.browser.net.connect = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$connect$arity$4(this$, opt1, opt2, opt3)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.connect[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.connect[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28442,7 +28442,7 @@ clojure.browser.net.connect = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.connect", this$);
+            throw cljs.core.missing_protocol("IConnection.connect", this$);
           }
         }
       }().call(null, this$, opt1, opt2, opt3)
@@ -28480,9 +28480,9 @@ clojure.browser.net.transmit = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$transmit$arity$2(this$, opt)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28490,7 +28490,7 @@ clojure.browser.net.transmit = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", this$);
+            throw cljs.core.missing_protocol("IConnection.transmit", this$);
           }
         }
       }().call(null, this$, opt)
@@ -28507,9 +28507,9 @@ clojure.browser.net.transmit = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$transmit$arity$3(this$, opt, opt2)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28517,7 +28517,7 @@ clojure.browser.net.transmit = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", this$);
+            throw cljs.core.missing_protocol("IConnection.transmit", this$);
           }
         }
       }().call(null, this$, opt, opt2)
@@ -28534,9 +28534,9 @@ clojure.browser.net.transmit = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$transmit$arity$4(this$, opt, opt2, opt3)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28544,7 +28544,7 @@ clojure.browser.net.transmit = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", this$);
+            throw cljs.core.missing_protocol("IConnection.transmit", this$);
           }
         }
       }().call(null, this$, opt, opt2, opt3)
@@ -28561,9 +28561,9 @@ clojure.browser.net.transmit = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$transmit$arity$5(this$, opt, opt2, opt3, opt4)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28571,7 +28571,7 @@ clojure.browser.net.transmit = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", this$);
+            throw cljs.core.missing_protocol("IConnection.transmit", this$);
           }
         }
       }().call(null, this$, opt, opt2, opt3, opt4)
@@ -28588,9 +28588,9 @@ clojure.browser.net.transmit = function() {
     }()) {
       return this$.clojure$browser$net$IConnection$transmit$arity$6(this$, opt, opt2, opt3, opt4, opt5)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.transmit[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28598,7 +28598,7 @@ clojure.browser.net.transmit = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "IConnection.transmit", this$);
+            throw cljs.core.missing_protocol("IConnection.transmit", this$);
           }
         }
       }().call(null, this$, opt, opt2, opt3, opt4, opt5)
@@ -28637,9 +28637,9 @@ clojure.browser.net.close = function close(this$) {
   }()) {
     return this$.clojure$browser$net$IConnection$close$arity$1(this$)
   }else {
-    var x__2514__auto__ = this$ == null ? null : this$;
+    var x__2512__auto__ = this$ == null ? null : this$;
     return function() {
-      var or__3943__auto__ = clojure.browser.net.close[goog.typeOf(x__2514__auto__)];
+      var or__3943__auto__ = clojure.browser.net.close[goog.typeOf(x__2512__auto__)];
       if(or__3943__auto__) {
         return or__3943__auto__
       }else {
@@ -28647,7 +28647,7 @@ clojure.browser.net.close = function close(this$) {
         if(or__3943__auto____$1) {
           return or__3943__auto____$1
         }else {
-          throw cljs.core.missing_protocol.call(null, "IConnection.close", this$);
+          throw cljs.core.missing_protocol("IConnection.close", this$);
         }
       }
     }().call(null, this$)
@@ -28655,36 +28655,36 @@ clojure.browser.net.close = function close(this$) {
 };
 goog.net.XhrIo.prototype.clojure$browser$event$EventType$ = true;
 goog.net.XhrIo.prototype.clojure$browser$event$EventType$event_types$arity$1 = function(this$) {
-  return cljs.core.into.call(null, cljs.core.ObjMap.EMPTY, cljs.core.map.call(null, function(p__3050) {
-    var vec__3051 = p__3050;
-    var k = cljs.core.nth.call(null, vec__3051, 0, null);
-    var v = cljs.core.nth.call(null, vec__3051, 1, null);
-    return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null, k.toLowerCase()), v], true)
-  }, cljs.core.merge.call(null, cljs.core.js__GT_clj.call(null, goog.net.EventType))))
+  return cljs.core.into(cljs.core.ObjMap.EMPTY, cljs.core.map.cljs$lang$arity$2(function(p__3326) {
+    var vec__3327 = p__3326;
+    var k = cljs.core.nth.cljs$lang$arity$3(vec__3327, 0, null);
+    var v = cljs.core.nth.cljs$lang$arity$3(vec__3327, 1, null);
+    return cljs.core.PersistentVector.fromArray([cljs.core.keyword.cljs$lang$arity$1(k.toLowerCase()), v], true)
+  }, cljs.core.merge.cljs$lang$arity$variadic(cljs.core.array_seq([cljs.core.js__GT_clj(goog.net.EventType)], 0))))
 };
 goog.net.XhrIo.prototype.clojure$browser$net$IConnection$ = true;
 goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$2 = function(this$, uri) {
-  return clojure.browser.net.transmit.call(null, this$, uri, "GET", null, null, clojure.browser.net._STAR_timeout_STAR_)
+  return clojure.browser.net.transmit.cljs$lang$arity$6(this$, uri, "GET", null, null, clojure.browser.net._STAR_timeout_STAR_)
 };
 goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$3 = function(this$, uri, method) {
-  return clojure.browser.net.transmit.call(null, this$, uri, method, null, null, clojure.browser.net._STAR_timeout_STAR_)
+  return clojure.browser.net.transmit.cljs$lang$arity$6(this$, uri, method, null, null, clojure.browser.net._STAR_timeout_STAR_)
 };
 goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$4 = function(this$, uri, method, content) {
-  return clojure.browser.net.transmit.call(null, this$, uri, method, content, null, clojure.browser.net._STAR_timeout_STAR_)
+  return clojure.browser.net.transmit.cljs$lang$arity$6(this$, uri, method, content, null, clojure.browser.net._STAR_timeout_STAR_)
 };
 goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$5 = function(this$, uri, method, content, headers) {
-  return clojure.browser.net.transmit.call(null, this$, uri, method, content, headers, clojure.browser.net._STAR_timeout_STAR_)
+  return clojure.browser.net.transmit.cljs$lang$arity$6(this$, uri, method, content, headers, clojure.browser.net._STAR_timeout_STAR_)
 };
 goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$6 = function(this$, uri, method, content, headers, timeout) {
   this$.setTimeoutInterval(timeout);
   return this$.send(uri, method, content, headers)
 };
-clojure.browser.net.xpc_config_fields = cljs.core.into.call(null, cljs.core.ObjMap.EMPTY, cljs.core.map.call(null, function(p__3052) {
-  var vec__3053 = p__3052;
-  var k = cljs.core.nth.call(null, vec__3053, 0, null);
-  var v = cljs.core.nth.call(null, vec__3053, 1, null);
-  return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null, k.toLowerCase()), v], true)
-}, cljs.core.js__GT_clj.call(null, goog.net.xpc.CfgFields)));
+clojure.browser.net.xpc_config_fields = cljs.core.into(cljs.core.ObjMap.EMPTY, cljs.core.map.cljs$lang$arity$2(function(p__3328) {
+  var vec__3329 = p__3328;
+  var k = cljs.core.nth.cljs$lang$arity$3(vec__3329, 0, null);
+  var v = cljs.core.nth.cljs$lang$arity$3(vec__3329, 1, null);
+  return cljs.core.PersistentVector.fromArray([cljs.core.keyword.cljs$lang$arity$1(k.toLowerCase()), v], true)
+}, cljs.core.js__GT_clj(goog.net.xpc.CfgFields)));
 clojure.browser.net.xhr_connection = function xhr_connection() {
   return new goog.net.XhrIo
 };
@@ -28702,9 +28702,9 @@ clojure.browser.net.register_service = function() {
     }()) {
       return this$.clojure$browser$net$ICrossPageChannel$register_service$arity$3(this$, service_name, fn)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.register_service[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.register_service[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28712,7 +28712,7 @@ clojure.browser.net.register_service = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "ICrossPageChannel.register-service", this$);
+            throw cljs.core.missing_protocol("ICrossPageChannel.register-service", this$);
           }
         }
       }().call(null, this$, service_name, fn)
@@ -28729,9 +28729,9 @@ clojure.browser.net.register_service = function() {
     }()) {
       return this$.clojure$browser$net$ICrossPageChannel$register_service$arity$4(this$, service_name, fn, encode_json_QMARK_)
     }else {
-      var x__2514__auto__ = this$ == null ? null : this$;
+      var x__2512__auto__ = this$ == null ? null : this$;
       return function() {
-        var or__3943__auto__ = clojure.browser.net.register_service[goog.typeOf(x__2514__auto__)];
+        var or__3943__auto__ = clojure.browser.net.register_service[goog.typeOf(x__2512__auto__)];
         if(or__3943__auto__) {
           return or__3943__auto__
         }else {
@@ -28739,7 +28739,7 @@ clojure.browser.net.register_service = function() {
           if(or__3943__auto____$1) {
             return or__3943__auto____$1
           }else {
-            throw cljs.core.missing_protocol.call(null, "ICrossPageChannel.register-service", this$);
+            throw cljs.core.missing_protocol("ICrossPageChannel.register-service", this$);
           }
         }
       }().call(null, this$, service_name, fn, encode_json_QMARK_)
@@ -28760,30 +28760,30 @@ clojure.browser.net.register_service = function() {
 }();
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$ = true;
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$1 = function(this$) {
-  return clojure.browser.net.connect.call(null, this$, null)
+  return clojure.browser.net.connect.cljs$lang$arity$2(this$, null)
 };
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$2 = function(this$, on_connect_fn) {
   return this$.connect(on_connect_fn)
 };
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$3 = function(this$, on_connect_fn, config_iframe_fn) {
-  return clojure.browser.net.connect.call(null, this$, on_connect_fn, config_iframe_fn, document.body)
+  return clojure.browser.net.connect.cljs$lang$arity$4(this$, on_connect_fn, config_iframe_fn, document.body)
 };
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$4 = function(this$, on_connect_fn, config_iframe_fn, iframe_parent) {
   this$.createPeerIframe(iframe_parent, config_iframe_fn);
   return this$.connect(on_connect_fn)
 };
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$transmit$arity$3 = function(this$, service_name, payload) {
-  return this$.send(cljs.core.name.call(null, service_name), payload)
+  return this$.send(cljs.core.name(service_name), payload)
 };
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$close$arity$1 = function(this$) {
   return this$.close(cljs.core.List.EMPTY)
 };
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$ = true;
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$register_service$arity$3 = function(this$, service_name, fn) {
-  return clojure.browser.net.register_service.call(null, this$, service_name, fn, false)
+  return clojure.browser.net.register_service.cljs$lang$arity$4(this$, service_name, fn, false)
 };
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$register_service$arity$4 = function(this$, service_name, fn, encode_json_QMARK_) {
-  return this$.registerService(cljs.core.name.call(null, service_name), fn, encode_json_QMARK_)
+  return this$.registerService(cljs.core.name(service_name), fn, encode_json_QMARK_)
 };
 clojure.browser.net.xpc_connection = function() {
   var xpc_connection = null;
@@ -28797,16 +28797,16 @@ clojure.browser.net.xpc_connection = function() {
     }
   };
   var xpc_connection__1 = function(config) {
-    return new goog.net.xpc.CrossPageChannel(cljs.core.reduce.call(null, function(sum, p__3057) {
-      var vec__3058 = p__3057;
-      var k = cljs.core.nth.call(null, vec__3058, 0, null);
-      var v = cljs.core.nth.call(null, vec__3058, 1, null);
-      var temp__4090__auto__ = cljs.core._lookup.call(null, clojure.browser.net.xpc_config_fields, k, null);
+    return new goog.net.xpc.CrossPageChannel(cljs.core.reduce.cljs$lang$arity$3(function(sum, p__3333) {
+      var vec__3334 = p__3333;
+      var k = cljs.core.nth.cljs$lang$arity$3(vec__3334, 0, null);
+      var v = cljs.core.nth.cljs$lang$arity$3(vec__3334, 1, null);
+      var temp__4090__auto__ = cljs.core._lookup.cljs$lang$arity$3(clojure.browser.net.xpc_config_fields, k, null);
       if(cljs.core.truth_(temp__4090__auto__)) {
         var field = temp__4090__auto__;
-        var G__3059 = sum;
-        G__3059[field] = v;
-        return G__3059
+        var G__3335 = sum;
+        G__3335[field] = v;
+        return G__3335
       }else {
         return sum
       }
@@ -28829,12 +28829,12 @@ goog.provide("clojure.browser.repl");
 goog.require("cljs.core");
 goog.require("clojure.browser.event");
 goog.require("clojure.browser.net");
-clojure.browser.repl.xpc_connection = cljs.core.atom.call(null, null);
+clojure.browser.repl.xpc_connection = cljs.core.atom.cljs$lang$arity$1(null);
 clojure.browser.repl.repl_print = function repl_print(data) {
-  var temp__4090__auto__ = cljs.core.deref.call(null, clojure.browser.repl.xpc_connection);
+  var temp__4090__auto__ = cljs.core.deref(clojure.browser.repl.xpc_connection);
   if(cljs.core.truth_(temp__4090__auto__)) {
     var conn = temp__4090__auto__;
-    return clojure.browser.net.transmit.call(null, conn, "\ufdd0:print", cljs.core.pr_str.call(null, data))
+    return clojure.browser.net.transmit.cljs$lang$arity$3(conn, "\ufdd0'print", cljs.core.pr_str.cljs$lang$arity$variadic(cljs.core.array_seq([data], 0)))
   }else {
     return null
   }
@@ -28842,40 +28842,40 @@ clojure.browser.repl.repl_print = function repl_print(data) {
 clojure.browser.repl.evaluate_javascript = function evaluate_javascript(conn, block) {
   var result = function() {
     try {
-      return cljs.core.ObjMap.fromObject(["\ufdd0:status", "\ufdd0:value"], {"\ufdd0:status":"\ufdd0:success", "\ufdd0:value":[cljs.core.str(eval(block))].join("")})
-    }catch(e3047) {
-      if(cljs.core.instance_QMARK_.call(null, Error, e3047)) {
-        var e = e3047;
-        return cljs.core.ObjMap.fromObject(["\ufdd0:status", "\ufdd0:value", "\ufdd0:stacktrace"], {"\ufdd0:status":"\ufdd0:exception", "\ufdd0:value":cljs.core.pr_str.call(null, e), "\ufdd0:stacktrace":cljs.core.truth_(e.hasOwnProperty("stack")) ? e.stack : "No stacktrace available."})
+      return cljs.core.ObjMap.fromObject(["\ufdd0'status", "\ufdd0'value"], {"\ufdd0'status":"\ufdd0'success", "\ufdd0'value":[cljs.core.str(eval(block))].join("")})
+    }catch(e3323) {
+      if(cljs.core.instance_QMARK_(Error, e3323)) {
+        var e = e3323;
+        return cljs.core.ObjMap.fromObject(["\ufdd0'status", "\ufdd0'value", "\ufdd0'stacktrace"], {"\ufdd0'status":"\ufdd0'exception", "\ufdd0'value":cljs.core.pr_str.cljs$lang$arity$variadic(cljs.core.array_seq([e], 0)), "\ufdd0'stacktrace":cljs.core.truth_(e.hasOwnProperty("stack")) ? e.stack : "No stacktrace available."})
       }else {
-        if("\ufdd0:else") {
-          throw e3047;
+        if("\ufdd0'else") {
+          throw e3323;
         }else {
           return null
         }
       }
     }
   }();
-  return cljs.core.pr_str.call(null, result)
+  return cljs.core.pr_str.cljs$lang$arity$variadic(cljs.core.array_seq([result], 0))
 };
 clojure.browser.repl.send_result = function send_result(connection, url, data) {
-  return clojure.browser.net.transmit.call(null, connection, url, "POST", data, null, 0)
+  return clojure.browser.net.transmit.cljs$lang$arity$6(connection, url, "POST", data, null, 0)
 };
 clojure.browser.repl.send_print = function() {
   var send_print = null;
   var send_print__2 = function(url, data) {
-    return send_print.call(null, url, data, 0)
+    return send_print.cljs$lang$arity$3(url, data, 0)
   };
   var send_print__3 = function(url, data, n) {
-    var conn = clojure.browser.net.xhr_connection.call(null);
-    clojure.browser.event.listen.call(null, conn, "\ufdd0:error", function(_) {
+    var conn = clojure.browser.net.xhr_connection();
+    clojure.browser.event.listen.cljs$lang$arity$3(conn, "\ufdd0'error", function(_) {
       if(n < 10) {
-        return send_print.call(null, url, data, n + 1)
+        return send_print.cljs$lang$arity$3(url, data, n + 1)
       }else {
         return console.log([cljs.core.str("Could not send "), cljs.core.str(data), cljs.core.str(" after "), cljs.core.str(n), cljs.core.str(" attempts.")].join(""))
       }
     });
-    return clojure.browser.net.transmit.call(null, conn, url, "POST", data, null, 0)
+    return clojure.browser.net.transmit.cljs$lang$arity$6(conn, url, "POST", data, null, 0)
   };
   send_print = function(url, data, n) {
     switch(arguments.length) {
@@ -28890,39 +28890,39 @@ clojure.browser.repl.send_print = function() {
   send_print.cljs$lang$arity$3 = send_print__3;
   return send_print
 }();
-clojure.browser.repl.order = cljs.core.atom.call(null, 0);
+clojure.browser.repl.order = cljs.core.atom.cljs$lang$arity$1(0);
 clojure.browser.repl.wrap_message = function wrap_message(t, data) {
-  return cljs.core.pr_str.call(null, cljs.core.ObjMap.fromObject(["\ufdd0:type", "\ufdd0:content", "\ufdd0:order"], {"\ufdd0:type":t, "\ufdd0:content":data, "\ufdd0:order":cljs.core.swap_BANG_.call(null, clojure.browser.repl.order, cljs.core.inc)}))
+  return cljs.core.pr_str.cljs$lang$arity$variadic(cljs.core.array_seq([cljs.core.ObjMap.fromObject(["\ufdd0'type", "\ufdd0'content", "\ufdd0'order"], {"\ufdd0'type":t, "\ufdd0'content":data, "\ufdd0'order":cljs.core.swap_BANG_.cljs$lang$arity$2(clojure.browser.repl.order, cljs.core.inc)})], 0))
 };
 clojure.browser.repl.start_evaluator = function start_evaluator(url) {
-  var temp__4090__auto__ = clojure.browser.net.xpc_connection.call(null);
+  var temp__4090__auto__ = clojure.browser.net.xpc_connection.cljs$lang$arity$0();
   if(cljs.core.truth_(temp__4090__auto__)) {
     var repl_connection = temp__4090__auto__;
-    var connection = clojure.browser.net.xhr_connection.call(null);
-    clojure.browser.event.listen.call(null, connection, "\ufdd0:success", function(e) {
-      return clojure.browser.net.transmit.call(null, repl_connection, "\ufdd0:evaluate-javascript", e.currentTarget.getResponseText(cljs.core.List.EMPTY))
+    var connection = clojure.browser.net.xhr_connection();
+    clojure.browser.event.listen.cljs$lang$arity$3(connection, "\ufdd0'success", function(e) {
+      return clojure.browser.net.transmit.cljs$lang$arity$3(repl_connection, "\ufdd0'evaluate-javascript", e.currentTarget.getResponseText(cljs.core.List.EMPTY))
     });
-    clojure.browser.net.register_service.call(null, repl_connection, "\ufdd0:send-result", function(data) {
-      return clojure.browser.repl.send_result.call(null, connection, url, clojure.browser.repl.wrap_message.call(null, "\ufdd0:result", data))
+    clojure.browser.net.register_service.cljs$lang$arity$3(repl_connection, "\ufdd0'send-result", function(data) {
+      return clojure.browser.repl.send_result(connection, url, clojure.browser.repl.wrap_message("\ufdd0'result", data))
     });
-    clojure.browser.net.register_service.call(null, repl_connection, "\ufdd0:print", function(data) {
-      return clojure.browser.repl.send_print.call(null, url, clojure.browser.repl.wrap_message.call(null, "\ufdd0:print", data))
+    clojure.browser.net.register_service.cljs$lang$arity$3(repl_connection, "\ufdd0'print", function(data) {
+      return clojure.browser.repl.send_print.cljs$lang$arity$2(url, clojure.browser.repl.wrap_message("\ufdd0'print", data))
     });
-    clojure.browser.net.connect.call(null, repl_connection, cljs.core.constantly.call(null, null));
+    clojure.browser.net.connect.cljs$lang$arity$2(repl_connection, cljs.core.constantly(null));
     return setTimeout(function() {
-      return clojure.browser.repl.send_result.call(null, connection, url, clojure.browser.repl.wrap_message.call(null, "\ufdd0:ready", "ready"))
+      return clojure.browser.repl.send_result(connection, url, clojure.browser.repl.wrap_message("\ufdd0'ready", "ready"))
     }, 50)
   }else {
     return alert("No 'xpc' param provided to child iframe.")
   }
 };
 clojure.browser.repl.connect = function connect(repl_server_url) {
-  var repl_connection = clojure.browser.net.xpc_connection.call(null, cljs.core.ObjMap.fromObject(["\ufdd0:peer_uri"], {"\ufdd0:peer_uri":repl_server_url}));
-  cljs.core.swap_BANG_.call(null, clojure.browser.repl.xpc_connection, cljs.core.constantly.call(null, repl_connection));
-  clojure.browser.net.register_service.call(null, repl_connection, "\ufdd0:evaluate-javascript", function(js) {
-    return clojure.browser.net.transmit.call(null, repl_connection, "\ufdd0:send-result", clojure.browser.repl.evaluate_javascript.call(null, repl_connection, js))
+  var repl_connection = clojure.browser.net.xpc_connection.cljs$lang$arity$1(cljs.core.ObjMap.fromObject(["\ufdd0'peer_uri"], {"\ufdd0'peer_uri":repl_server_url}));
+  cljs.core.swap_BANG_.cljs$lang$arity$2(clojure.browser.repl.xpc_connection, cljs.core.constantly(repl_connection));
+  clojure.browser.net.register_service.cljs$lang$arity$3(repl_connection, "\ufdd0'evaluate-javascript", function(js) {
+    return clojure.browser.net.transmit.cljs$lang$arity$3(repl_connection, "\ufdd0'send-result", clojure.browser.repl.evaluate_javascript(repl_connection, js))
   });
-  return clojure.browser.net.connect.call(null, repl_connection, cljs.core.constantly.call(null, null), function(iframe) {
+  return clojure.browser.net.connect.cljs$lang$arity$3(repl_connection, cljs.core.constantly(null), function(iframe) {
     return iframe.style.display = "none"
   })
 };
@@ -29018,12 +29018,12 @@ clojure.string.split = function() {
           if(cljs.core.truth_(temp__4090__auto__)) {
             var m = temp__4090__auto__;
             var index = s__$1.indexOf(m);
-            var G__3039 = s__$1.substring(index + cljs.core.count.call(null, m));
-            var G__3040 = limit__$1 - 1;
-            var G__3041 = cljs.core.conj.call(null, parts, s__$1.substring(0, index));
-            s__$1 = G__3039;
-            limit__$1 = G__3040;
-            parts = G__3041;
+            var G__6805 = s__$1.substring(index + cljs.core.count.call(null, m));
+            var G__6806 = limit__$1 - 1;
+            var G__6807 = cljs.core.conj.call(null, parts, s__$1.substring(0, index));
+            s__$1 = G__6805;
+            limit__$1 = G__6806;
+            parts = G__6807;
             continue
           }else {
             return cljs.core.conj.call(null, parts, s__$1)
@@ -29073,8 +29073,8 @@ clojure.string.trim_newline = function trim_newline(s) {
           return cljs.core._EQ_.call(null, ch, "\r")
         }
       }())) {
-        var G__3042 = index - 1;
-        index = G__3042;
+        var G__6808 = index - 1;
+        index = G__6808;
         continue
       }else {
         return s.substring(0, index)
@@ -29095,39 +29095,19 @@ clojure.string.escape = function escape(s, cmap) {
       return buffer.toString()
     }else {
       var ch = s.charAt(index);
-      var temp__4090__auto___3043 = cljs.core._lookup.call(null, cmap, ch, null);
-      if(cljs.core.truth_(temp__4090__auto___3043)) {
-        var replacement_3044 = temp__4090__auto___3043;
-        buffer.append([cljs.core.str(replacement_3044)].join(""))
+      var temp__4090__auto___6809 = cljs.core._lookup.call(null, cmap, ch, null);
+      if(cljs.core.truth_(temp__4090__auto___6809)) {
+        var replacement_6810 = temp__4090__auto___6809;
+        buffer.append([cljs.core.str(replacement_6810)].join(""))
       }else {
         buffer.append(ch)
       }
-      var G__3045 = index + 1;
-      index = G__3045;
+      var G__6811 = index + 1;
+      index = G__6811;
       continue
     }
     break
   }
-};
-goog.provide("gcj_util.case_solver");
-goog.require("cljs.core");
-goog.require("clojure.string");
-goog.require("clojure.string");
-gcj_util.case_solver.result_to_line = function result_to_line(p__5896) {
-  var map__5898 = p__5896;
-  var map__5898__$1 = cljs.core.seq_QMARK_.call(null, map__5898) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5898) : map__5898;
-  var result = cljs.core._lookup.call(null, map__5898__$1, "\ufdd0:result", null);
-  var caseNumber = cljs.core._lookup.call(null, map__5898__$1, "\ufdd0:caseNumber", null);
-  return[cljs.core.str("Case #"), cljs.core.str(caseNumber), cljs.core.str(": "), cljs.core.str(result)].join("")
-};
-gcj_util.case_solver.format_results = function format_results(results) {
-  var formattedResult = cljs.core.apply.call(null, cljs.core.str, clojure.string.join.call(null, "\n", cljs.core.map.call(null, gcj_util.case_solver.result_to_line, results)));
-  return formattedResult
-};
-gcj_util.case_solver.solve_problem = function solve_problem(caseParser, processCase, input) {
-  var cases = caseParser.call(null, input);
-  var results = cljs.core.map.call(null, processCase, cases);
-  return gcj_util.case_solver.format_results.call(null, results)
 };
 goog.provide("gcj_util.misc");
 goog.require("cljs.core");
@@ -29138,11 +29118,11 @@ gcj_util.misc.to_int = function to_int(numStr) {
   return parseInt(numStr)
 };
 gcj_util.misc.indexed_values = function() {
-  var reduceFunction = function(p__5899, nextVal) {
-    var map__5900 = p__5899;
-    var map__5900__$1 = cljs.core.seq_QMARK_.call(null, map__5900) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5900) : map__5900;
-    var acc = cljs.core._lookup.call(null, map__5900__$1, "\ufdd0:acc", null);
-    var index = cljs.core._lookup.call(null, map__5900__$1, "\ufdd0:index", null);
+  var reduceFunction = function(p__40679, nextVal) {
+    var map__40680 = p__40679;
+    var map__40680__$1 = cljs.core.seq_QMARK_.call(null, map__40680) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40680) : map__40680;
+    var acc = cljs.core._lookup.call(null, map__40680__$1, "\ufdd0:acc", null);
+    var index = cljs.core._lookup.call(null, map__40680__$1, "\ufdd0:index", null);
     return cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":index + 1, "\ufdd0:acc":cljs.core.conj.call(null, acc, cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:value"], {"\ufdd0:index":index, "\ufdd0:value":nextVal}))})
   };
   var initialAcc = cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":1, "\ufdd0:acc":cljs.core.PersistentVector.EMPTY});
@@ -29162,7 +29142,7 @@ gcj_util.case_reader.cases_from_lines = function() {
   var hierarchy__2690__auto__ = cljs.core._lookup.call(null, cljs.core.ObjMap.fromObject(["\ufdd0:default"], {"\ufdd0:default":"\ufdd0:fixed"}), "\ufdd0:hierarchy", cljs.core.global_hierarchy);
   return new cljs.core.MultiFn("cases-from-lines", function(linesPerCase, lines) {
     if(cljs.core.keyword_QMARK_.call(null, linesPerCase)) {
-      return linesPerCase
+      return"\ufdd0:var"
     }else {
       return null
     }
@@ -29171,6 +29151,26 @@ gcj_util.case_reader.cases_from_lines = function() {
 cljs.core._add_method.call(null, gcj_util.case_reader.cases_from_lines, "\ufdd0:fixed", function(linesPerCase, lines) {
   return cljs.core.partition.call(null, linesPerCase, lines)
 });
+gcj_util.case_reader.numLines_from_lines = function() {
+  var method_table__2686__auto__ = cljs.core.atom.call(null, cljs.core.ObjMap.EMPTY);
+  var prefer_table__2687__auto__ = cljs.core.atom.call(null, cljs.core.ObjMap.EMPTY);
+  var method_cache__2688__auto__ = cljs.core.atom.call(null, cljs.core.ObjMap.EMPTY);
+  var cached_hierarchy__2689__auto__ = cljs.core.atom.call(null, cljs.core.ObjMap.EMPTY);
+  var hierarchy__2690__auto__ = cljs.core._lookup.call(null, cljs.core.ObjMap.EMPTY, "\ufdd0:hierarchy", cljs.core.global_hierarchy);
+  return new cljs.core.MultiFn("numLines-from-lines", function(linesPerCase, lines) {
+    return linesPerCase
+  }, "\ufdd0:default", hierarchy__2690__auto__, method_table__2686__auto__, prefer_table__2687__auto__, method_cache__2688__auto__, cached_hierarchy__2689__auto__)
+}();
+cljs.core._add_method.call(null, gcj_util.case_reader.numLines_from_lines, "\ufdd0:var", function(linesPerCase, lines) {
+  return gcj_util.misc.to_int.call(null, cljs.core.last.call(null, function(p1__2577474_SHARP_) {
+    return clojure.string.split.call(null, p1__2577474_SHARP_, /\s/)
+  }.call(null, cljs.core.first.call(null, lines)))) + 1
+});
+cljs.core._add_method.call(null, gcj_util.case_reader.numLines_from_lines, "\ufdd0:var1", function(linesPerCase, lines) {
+  return gcj_util.misc.to_int.call(null, cljs.core.first.call(null, function(p1__2578099_SHARP_) {
+    return clojure.string.split.call(null, p1__2578099_SHARP_, /\s/)
+  }.call(null, cljs.core.first.call(null, lines)))) + 1
+});
 cljs.core._add_method.call(null, gcj_util.case_reader.cases_from_lines, "\ufdd0:var", function(linesPerCase, lines) {
   var acc = cljs.core.PersistentVector.EMPTY;
   var lines__$1 = lines;
@@ -29178,18 +29178,14 @@ cljs.core._add_method.call(null, gcj_util.case_reader.cases_from_lines, "\ufdd0:
     if(cljs.core.empty_QMARK_.call(null, lines__$1)) {
       return acc
     }else {
-      var numLines = gcj_util.misc.to_int.call(null, cljs.core.last.call(null, function(acc, lines__$1) {
-        return function(p1__365103_SHARP_) {
-          return clojure.string.split.call(null, p1__365103_SHARP_, /\s/)
-        }
-      }(acc, lines__$1).call(null, cljs.core.first.call(null, lines__$1)))) + 1;
-      var vec__5901 = cljs.core.split_at.call(null, numLines, lines__$1);
-      var groupedLines = cljs.core.nth.call(null, vec__5901, 0, null);
-      var restOfFile = cljs.core.nth.call(null, vec__5901, 1, null);
-      var G__5902 = cljs.core.conj.call(null, acc, groupedLines);
-      var G__5903 = restOfFile;
-      acc = G__5902;
-      lines__$1 = G__5903;
+      var numLines = gcj_util.case_reader.numLines_from_lines.call(null, linesPerCase, lines__$1);
+      var vec__40681 = cljs.core.split_at.call(null, numLines, lines__$1);
+      var groupedLines = cljs.core.nth.call(null, vec__40681, 0, null);
+      var restOfFile = cljs.core.nth.call(null, vec__40681, 1, null);
+      var G__40682 = cljs.core.conj.call(null, acc, groupedLines);
+      var G__40683 = restOfFile;
+      acc = G__40682;
+      lines__$1 = G__40683;
       continue
     }
     break
@@ -29210,7 +29206,27 @@ gcj_util.case_reader.parse_cases_from_input = function parse_cases_from_input(pa
   var rawCases = gcj_util.case_reader.raw_cases_from_lines.call(null, linesPerCase, lines);
   return cljs.core.map.call(null, parseFunction, (new cljs.core.Keyword("\ufdd0:rawCases")).call(null, rawCases))
 };
-goog.provide("problems.rev_words2.main");
+goog.provide("gcj_util.case_solver");
+goog.require("cljs.core");
+goog.require("clojure.string");
+goog.require("clojure.string");
+gcj_util.case_solver.result_to_line = function result_to_line(p__40676) {
+  var map__40678 = p__40676;
+  var map__40678__$1 = cljs.core.seq_QMARK_.call(null, map__40678) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40678) : map__40678;
+  var result = cljs.core._lookup.call(null, map__40678__$1, "\ufdd0:result", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40678__$1, "\ufdd0:caseNumber", null);
+  return[cljs.core.str("Case #"), cljs.core.str(caseNumber), cljs.core.str(": "), cljs.core.str(result)].join("")
+};
+gcj_util.case_solver.format_results = function format_results(results) {
+  var formattedResult = cljs.core.apply.call(null, cljs.core.str, clojure.string.join.call(null, "\n", cljs.core.map.call(null, gcj_util.case_solver.result_to_line, results)));
+  return formattedResult
+};
+gcj_util.case_solver.solve_problem = function solve_problem(caseParser, processCase, input) {
+  var cases = caseParser.call(null, input);
+  var results = cljs.core.map.call(null, processCase, cases);
+  return gcj_util.case_solver.format_results.call(null, results)
+};
+goog.provide("problems.tic_tac_toe_tomek.main");
 goog.require("cljs.core");
 goog.require("gcj_util.case_reader");
 goog.require("gcj_util.case_solver");
@@ -29220,29 +29236,222 @@ goog.require("clojure.string");
 goog.require("gcj_util.case_solver");
 goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
-problems.rev_words2.main.problemName = "rev_words2";
-problems.rev_words2.main.linesPerCase = 1;
-problems.rev_words2.main.parseCase = function parseCase(p__3615) {
-  var map__3617 = p__3615;
-  var map__3617__$1 = cljs.core.seq_QMARK_.call(null, map__3617) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3617) : map__3617;
-  var value = cljs.core._lookup.call(null, map__3617__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3617__$1, "\ufdd0:index", null);
+problems.tic_tac_toe_tomek.main.problemName = "tic-tac-toe-tomek";
+problems.tic_tac_toe_tomek.main.linesPerCase = 4;
+problems.tic_tac_toe_tomek.main.parseCase = function parseCase(p__40777) {
+  var map__40780 = p__40777;
+  var map__40780__$1 = cljs.core.seq_QMARK_.call(null, map__40780) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40780) : map__40780;
+  var value = cljs.core._lookup.call(null, map__40780__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__40780__$1, "\ufdd0:index", null);
+  var vec__40781 = value;
+  var line1 = cljs.core.nth.call(null, vec__40781, 0, null);
+  var line2 = cljs.core.nth.call(null, vec__40781, 1, null);
+  var line3 = cljs.core.nth.call(null, vec__40781, 2, null);
+  var line4 = cljs.core.nth.call(null, vec__40781, 3, null);
+  var rows = cljs.core.vec.call(null, cljs.core.map.call(null, cljs.core.vec, cljs.core.PersistentVector.fromArray([line1, line2, line3, line4], true)));
+  return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:rows"], {"\ufdd0:caseNumber":index, "\ufdd0:rows":rows})
+};
+problems.tic_tac_toe_tomek.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.tic_tac_toe_tomek.main.parseCase, problems.tic_tac_toe_tomek.main.linesPerCase);
+problems.tic_tac_toe_tomek.main.rowsToCols = function rowsToCols(rows) {
+  return cljs.core.vec.call(null, function() {
+    var iter__2611__auto__ = function iter__40788(s__40789) {
+      return new cljs.core.LazySeq(null, false, function() {
+        var s__40789__$1 = s__40789;
+        while(true) {
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__40789__$1);
+          if(temp__4092__auto__) {
+            var xs__4579__auto__ = temp__4092__auto__;
+            var rowIndex = cljs.core.first.call(null, xs__4579__auto__);
+            return cljs.core.cons.call(null, cljs.core.vec.call(null, function() {
+              var iter__2611__auto__ = function(rowIndex, xs__4579__auto__, temp__4092__auto__) {
+                return function iter__40792(s__40793) {
+                  return new cljs.core.LazySeq(null, false, function(rowIndex, xs__4579__auto__, temp__4092__auto__) {
+                    return function() {
+                      var s__40793__$1 = s__40793;
+                      while(true) {
+                        var temp__4092__auto____$1 = cljs.core.seq.call(null, s__40793__$1);
+                        if(temp__4092__auto____$1) {
+                          var xs__4579__auto____$1 = temp__4092__auto____$1;
+                          var row = cljs.core.first.call(null, xs__4579__auto____$1);
+                          return cljs.core.cons.call(null, row.call(null, rowIndex), iter__40792.call(null, cljs.core.rest.call(null, s__40793__$1)))
+                        }else {
+                          return null
+                        }
+                        break
+                      }
+                    }
+                  }(rowIndex, xs__4579__auto__, temp__4092__auto__), null)
+                }
+              }(rowIndex, xs__4579__auto__, temp__4092__auto__);
+              return iter__2611__auto__.call(null, rows)
+            }()), iter__40788.call(null, cljs.core.rest.call(null, s__40789__$1)))
+          }else {
+            return null
+          }
+          break
+        }
+      }, null)
+    };
+    return iter__2611__auto__.call(null, cljs.core.range.call(null, 4))
+  }())
+};
+problems.tic_tac_toe_tomek.main.diagonalsFromBoard = function diagonalsFromBoard(rows) {
+  return cljs.core.PersistentVector.fromArray([cljs.core.vec.call(null, function() {
+    var iter__2611__auto__ = function iter__40798(s__40799) {
+      return new cljs.core.LazySeq(null, false, function() {
+        var s__40799__$1 = s__40799;
+        while(true) {
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__40799__$1);
+          if(temp__4092__auto__) {
+            var xs__4579__auto__ = temp__4092__auto__;
+            var rowIndex = cljs.core.first.call(null, xs__4579__auto__);
+            return cljs.core.cons.call(null, rows.call(null, rowIndex).call(null, rowIndex), iter__40798.call(null, cljs.core.rest.call(null, s__40799__$1)))
+          }else {
+            return null
+          }
+          break
+        }
+      }, null)
+    };
+    return iter__2611__auto__.call(null, cljs.core.range.call(null, 4))
+  }()), cljs.core.vec.call(null, function() {
+    var iter__2611__auto__ = function iter__40800(s__40801) {
+      return new cljs.core.LazySeq(null, false, function() {
+        var s__40801__$1 = s__40801;
+        while(true) {
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__40801__$1);
+          if(temp__4092__auto__) {
+            var xs__4579__auto__ = temp__4092__auto__;
+            var rowIndex = cljs.core.first.call(null, xs__4579__auto__);
+            return cljs.core.cons.call(null, rows.call(null, rowIndex).call(null, 3 - rowIndex), iter__40800.call(null, cljs.core.rest.call(null, s__40801__$1)))
+          }else {
+            return null
+          }
+          break
+        }
+      }, null)
+    };
+    return iter__2611__auto__.call(null, cljs.core.range.call(null, 4))
+  }())], true)
+};
+problems.tic_tac_toe_tomek.main.winFilter = function winFilter(symb, possibleWin) {
+  return cljs.core.every_QMARK_.call(null, function(p1__2621629_SHARP_) {
+    var or__3943__auto__ = cljs.core._EQ_.call(null, p1__2621629_SHARP_, symb);
+    if(or__3943__auto__) {
+      return or__3943__auto__
+    }else {
+      return cljs.core._EQ_.call(null, p1__2621629_SHARP_, "T")
+    }
+  }, possibleWin)
+};
+problems.tic_tac_toe_tomek.main.boardFull_QMARK_ = function boardFull_QMARK_(rows) {
+  return cljs.core.every_QMARK_.call(null, function(p1__2622228_SHARP_) {
+    return cljs.core.not_EQ_.call(null, ".", p1__2622228_SHARP_)
+  }, function() {
+    var iter__2611__auto__ = function iter__40806(s__40807) {
+      return new cljs.core.LazySeq(null, false, function() {
+        var s__40807__$1 = s__40807;
+        while(true) {
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__40807__$1);
+          if(temp__4092__auto__) {
+            var xs__4579__auto__ = temp__4092__auto__;
+            var row = cljs.core.first.call(null, xs__4579__auto__);
+            var iterys__2609__auto__ = function(s__40807__$1, row, xs__4579__auto__, temp__4092__auto__) {
+              return function iter__40808(s__40809) {
+                return new cljs.core.LazySeq(null, false, function(s__40807__$1, row, xs__4579__auto__, temp__4092__auto__) {
+                  return function() {
+                    var s__40809__$1 = s__40809;
+                    while(true) {
+                      var temp__4092__auto____$1 = cljs.core.seq.call(null, s__40809__$1);
+                      if(temp__4092__auto____$1) {
+                        var xs__4579__auto____$1 = temp__4092__auto____$1;
+                        var symb = cljs.core.first.call(null, xs__4579__auto____$1);
+                        return cljs.core.cons.call(null, symb, iter__40808.call(null, cljs.core.rest.call(null, s__40809__$1)))
+                      }else {
+                        return null
+                      }
+                      break
+                    }
+                  }
+                }(s__40807__$1, row, xs__4579__auto__, temp__4092__auto__), null)
+              }
+            }(s__40807__$1, row, xs__4579__auto__, temp__4092__auto__);
+            var fs__2610__auto__ = cljs.core.seq.call(null, iterys__2609__auto__.call(null, row));
+            if(fs__2610__auto__) {
+              return cljs.core.concat.call(null, fs__2610__auto__, iter__40806.call(null, cljs.core.rest.call(null, s__40807__$1)))
+            }else {
+              var G__40810 = cljs.core.rest.call(null, s__40807__$1);
+              s__40807__$1 = G__40810;
+              continue
+            }
+          }else {
+            return null
+          }
+          break
+        }
+      }, null)
+    };
+    return iter__2611__auto__.call(null, rows)
+  }())
+};
+problems.tic_tac_toe_tomek.main.processCase = function processCase(p__40811) {
+  var map__40813 = p__40811;
+  var map__40813__$1 = cljs.core.seq_QMARK_.call(null, map__40813) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40813) : map__40813;
+  var rows = cljs.core._lookup.call(null, map__40813__$1, "\ufdd0:rows", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40813__$1, "\ufdd0:caseNumber", null);
+  var cols = problems.tic_tac_toe_tomek.main.rowsToCols.call(null, rows);
+  var diagonals = problems.tic_tac_toe_tomek.main.diagonalsFromBoard.call(null, rows);
+  var possibleWins = cljs.core.concat.call(null, rows, cols, diagonals);
+  var xWon = cljs.core.seq.call(null, cljs.core.filter.call(null, cljs.core.partial.call(null, problems.tic_tac_toe_tomek.main.winFilter, "X"), possibleWins));
+  var oWon = cljs.core.seq.call(null, cljs.core.filter.call(null, cljs.core.partial.call(null, problems.tic_tac_toe_tomek.main.winFilter, "O"), possibleWins));
+  var boardFull = problems.tic_tac_toe_tomek.main.boardFull_QMARK_.call(null, rows);
+  var result = cljs.core.truth_(function() {
+    var or__3943__auto__ = xWon;
+    if(or__3943__auto__) {
+      return or__3943__auto__
+    }else {
+      return oWon
+    }
+  }()) ? xWon ? "X won" : "O won" : cljs.core.truth_(boardFull) ? "Draw" : "\ufdd0:else" ? "Game has not completed" : null;
+  return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":result})
+};
+problems.tic_tac_toe_tomek.main.solve_for_input = function solve_for_input(input) {
+  return[cljs.core.str(gcj_util.case_solver.solve_problem.call(null, problems.tic_tac_toe_tomek.main.caseParser, problems.tic_tac_toe_tomek.main.processCase, input))].join("")
+};
+goog.exportSymbol("problems.tic_tac_toe_tomek.main.solve_for_input", problems.tic_tac_toe_tomek.main.solve_for_input);
+goog.provide("problems.lawnmower.main");
+goog.require("cljs.core");
+goog.require("gcj_util.case_reader");
+goog.require("gcj_util.case_solver");
+goog.require("gcj_util.misc");
+goog.require("clojure.string");
+goog.require("clojure.string");
+goog.require("gcj_util.case_solver");
+goog.require("gcj_util.case_reader");
+goog.require("gcj_util.misc");
+problems.lawnmower.main.problemName = "lawnmower";
+problems.lawnmower.main.linesPerCase = "\ufdd0:var1";
+problems.lawnmower.main.parseCase = function parseCase(p__40696) {
+  var map__40698 = p__40696;
+  var map__40698__$1 = cljs.core.seq_QMARK_.call(null, map__40698) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40698) : map__40698;
+  var value = cljs.core._lookup.call(null, map__40698__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__40698__$1, "\ufdd0:index", null);
   var lines = value;
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:lines"], {"\ufdd0:caseNumber":index, "\ufdd0:lines":lines})
 };
-problems.rev_words2.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.rev_words2.main.parseCase, problems.rev_words2.main.linesPerCase);
-problems.rev_words2.main.processCase = function processCase(p__3618) {
-  var map__3620 = p__3618;
-  var map__3620__$1 = cljs.core.seq_QMARK_.call(null, map__3620) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3620) : map__3620;
-  var lines = cljs.core._lookup.call(null, map__3620__$1, "\ufdd0:lines", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3620__$1, "\ufdd0:caseNumber", null);
+problems.lawnmower.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.lawnmower.main.parseCase, problems.lawnmower.main.linesPerCase);
+problems.lawnmower.main.processCase = function processCase(p__40699) {
+  var map__40701 = p__40699;
+  var map__40701__$1 = cljs.core.seq_QMARK_.call(null, map__40701) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40701) : map__40701;
+  var lines = cljs.core._lookup.call(null, map__40701__$1, "\ufdd0:lines", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40701__$1, "\ufdd0:caseNumber", null);
   var result = "";
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":result})
 };
-problems.rev_words2.main.solve_for_input = function solve_for_input(input) {
-  return[cljs.core.str(gcj_util.case_solver.solve_problem.call(null, problems.rev_words2.main.caseParser, problems.rev_words2.main.processCase, input))].join("")
+problems.lawnmower.main.solve_for_input = function solve_for_input(input) {
+  return[cljs.core.str(gcj_util.case_solver.solve_problem.call(null, problems.lawnmower.main.caseParser, problems.lawnmower.main.processCase, input))].join("")
 };
-goog.exportSymbol("problems.rev_words2.main.solve_for_input", problems.rev_words2.main.solve_for_input);
+goog.exportSymbol("problems.lawnmower.main.solve_for_input", problems.lawnmower.main.solve_for_input);
 goog.provide("problems.snapper_chain.main");
 goog.require("cljs.core");
 goog.require("gcj_util.case_reader");
@@ -29255,16 +29464,16 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.snapper_chain.main.problemName = "snapper_chain";
 problems.snapper_chain.main.linesPerCase = 1;
-problems.snapper_chain.main.parseCase = function parseCase(p__5904) {
-  var map__5908 = p__5904;
-  var map__5908__$1 = cljs.core.seq_QMARK_.call(null, map__5908) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5908) : map__5908;
-  var value = cljs.core._lookup.call(null, map__5908__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__5908__$1, "\ufdd0:index", null);
-  var vec__5909 = value;
-  var line = cljs.core.nth.call(null, vec__5909, 0, null);
-  var vec__5910 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line, /\s/));
-  var num_snappers = cljs.core.nth.call(null, vec__5910, 0, null);
-  var times_snapped = cljs.core.nth.call(null, vec__5910, 1, null);
+problems.snapper_chain.main.parseCase = function parseCase(p__40684) {
+  var map__40688 = p__40684;
+  var map__40688__$1 = cljs.core.seq_QMARK_.call(null, map__40688) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40688) : map__40688;
+  var value = cljs.core._lookup.call(null, map__40688__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__40688__$1, "\ufdd0:index", null);
+  var vec__40689 = value;
+  var line = cljs.core.nth.call(null, vec__40689, 0, null);
+  var vec__40690 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line, /\s/));
+  var num_snappers = cljs.core.nth.call(null, vec__40690, 0, null);
+  var times_snapped = cljs.core.nth.call(null, vec__40690, 1, null);
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:num-snappers", "\ufdd0:times-snapped"], {"\ufdd0:caseNumber":index, "\ufdd0:num-snappers":num_snappers, "\ufdd0:times-snapped":times_snapped})
 };
 problems.snapper_chain.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.snapper_chain.main.parseCase, problems.snapper_chain.main.linesPerCase);
@@ -29275,10 +29484,10 @@ problems.snapper_chain.main.snaps_to_power_light = function snaps_to_power_light
     if(num_switches__$1 === 0) {
       return snap_count
     }else {
-      var G__5911 = num_switches__$1 - 1;
-      var G__5912 = 2 * snap_count + 1;
-      num_switches__$1 = G__5911;
-      snap_count = G__5912;
+      var G__40691 = num_switches__$1 - 1;
+      var G__40692 = 2 * snap_count + 1;
+      num_switches__$1 = G__40691;
+      snap_count = G__40692;
       continue
     }
     break
@@ -29289,12 +29498,12 @@ problems.snapper_chain.main.is_light_on = function is_light_on(num_switches, num
   var snap_multiple = (num_snaps + 1) / (snaps_to_power + 1);
   return cljs.core.integer_QMARK_.call(null, snap_multiple)
 };
-problems.snapper_chain.main.processCase = function processCase(p__5913) {
-  var map__5915 = p__5913;
-  var map__5915__$1 = cljs.core.seq_QMARK_.call(null, map__5915) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5915) : map__5915;
-  var times_snapped = cljs.core._lookup.call(null, map__5915__$1, "\ufdd0:times-snapped", null);
-  var num_snappers = cljs.core._lookup.call(null, map__5915__$1, "\ufdd0:num-snappers", null);
-  var caseNumber = cljs.core._lookup.call(null, map__5915__$1, "\ufdd0:caseNumber", null);
+problems.snapper_chain.main.processCase = function processCase(p__40693) {
+  var map__40695 = p__40693;
+  var map__40695__$1 = cljs.core.seq_QMARK_.call(null, map__40695) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40695) : map__40695;
+  var times_snapped = cljs.core._lookup.call(null, map__40695__$1, "\ufdd0:times-snapped", null);
+  var num_snappers = cljs.core._lookup.call(null, map__40695__$1, "\ufdd0:num-snappers", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40695__$1, "\ufdd0:caseNumber", null);
   var light_state = problems.snapper_chain.main.is_light_on.call(null, num_snappers, times_snapped);
   var result = cljs.core.truth_(light_state) ? "ON" : "OFF";
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":result})
@@ -29324,18 +29533,18 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.theme_park.main.problemName = "theme_park";
 problems.theme_park.main.linesPerCase = 2;
-problems.theme_park.main.parseCase = function parseCase(p__5959) {
-  var map__5963 = p__5959;
-  var map__5963__$1 = cljs.core.seq_QMARK_.call(null, map__5963) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5963) : map__5963;
-  var value = cljs.core._lookup.call(null, map__5963__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__5963__$1, "\ufdd0:index", null);
-  var vec__5964 = value;
-  var line1 = cljs.core.nth.call(null, vec__5964, 0, null);
-  var line2 = cljs.core.nth.call(null, vec__5964, 1, null);
-  var vec__5965 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line1, /\s/));
-  var r = cljs.core.nth.call(null, vec__5965, 0, null);
-  var k = cljs.core.nth.call(null, vec__5965, 1, null);
-  var n = cljs.core.nth.call(null, vec__5965, 2, null);
+problems.theme_park.main.parseCase = function parseCase(p__40745) {
+  var map__40749 = p__40745;
+  var map__40749__$1 = cljs.core.seq_QMARK_.call(null, map__40749) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40749) : map__40749;
+  var value = cljs.core._lookup.call(null, map__40749__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__40749__$1, "\ufdd0:index", null);
+  var vec__40750 = value;
+  var line1 = cljs.core.nth.call(null, vec__40750, 0, null);
+  var line2 = cljs.core.nth.call(null, vec__40750, 1, null);
+  var vec__40751 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line1, /\s/));
+  var r = cljs.core.nth.call(null, vec__40751, 0, null);
+  var k = cljs.core.nth.call(null, vec__40751, 1, null);
+  var n = cljs.core.nth.call(null, vec__40751, 2, null);
   var groups = cljs.core.vec.call(null, cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line2, /\s/)));
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:times-run", "\ufdd0:capacity", "\ufdd0:num-groups", "\ufdd0:groups"], {"\ufdd0:caseNumber":index, "\ufdd0:times-run":r, "\ufdd0:capacity":k, "\ufdd0:num-groups":n, "\ufdd0:groups":groups})
 };
@@ -29355,14 +29564,14 @@ problems.theme_park.main.load_groups = function load_groups(groups, capacity, gr
     }())) {
       return cljs.core.PersistentVector.fromArray([capacity, position], true)
     }else {
-      var G__5966 = groups;
-      var G__5967 = next_capacity;
-      var G__5968 = groups_to_load - 1;
-      var G__5969 = next_pos;
-      groups = G__5966;
-      capacity = G__5967;
-      groups_to_load = G__5968;
-      position = G__5969;
+      var G__40752 = groups;
+      var G__40753 = next_capacity;
+      var G__40754 = groups_to_load - 1;
+      var G__40755 = next_pos;
+      groups = G__40752;
+      capacity = G__40753;
+      groups_to_load = G__40754;
+      position = G__40755;
       continue
     }
     break
@@ -29395,62 +29604,62 @@ problems.theme_park.main.run_coaster = function run_coaster(load_func, groups, c
           return and__3941__auto__
         }
       }())) {
-        var map__5972 = pos_match;
-        var map__5972__$1 = cljs.core.seq_QMARK_.call(null, map__5972) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5972) : map__5972;
-        var total_loop_money = cljs.core._lookup.call(null, map__5972__$1, "\ufdd0:total-loop-money", null);
-        var times_left = cljs.core._lookup.call(null, map__5972__$1, "\ufdd0:times-left", null);
-        var loop_times = cljs.core._lookup.call(null, map__5972__$1, "\ufdd0:loop-times", null);
-        var loop_money = cljs.core._lookup.call(null, map__5972__$1, "\ufdd0:loop-money", null);
-        var loop_length = cljs.core._lookup.call(null, map__5972__$1, "\ufdd0:loop-length", null);
-        var G__5974 = load_func;
-        var G__5975 = groups;
-        var G__5976 = capacity;
-        var G__5977 = times_left;
-        var G__5978 = total_loop_money + money_made;
-        var G__5979 = position;
-        var G__5980 = prev_positions;
-        load_func = G__5974;
-        groups = G__5975;
-        capacity = G__5976;
-        times_to_run = G__5977;
-        money_made = G__5978;
-        position = G__5979;
-        prev_positions = G__5980;
+        var map__40758 = pos_match;
+        var map__40758__$1 = cljs.core.seq_QMARK_.call(null, map__40758) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40758) : map__40758;
+        var total_loop_money = cljs.core._lookup.call(null, map__40758__$1, "\ufdd0:total-loop-money", null);
+        var times_left = cljs.core._lookup.call(null, map__40758__$1, "\ufdd0:times-left", null);
+        var loop_times = cljs.core._lookup.call(null, map__40758__$1, "\ufdd0:loop-times", null);
+        var loop_money = cljs.core._lookup.call(null, map__40758__$1, "\ufdd0:loop-money", null);
+        var loop_length = cljs.core._lookup.call(null, map__40758__$1, "\ufdd0:loop-length", null);
+        var G__40760 = load_func;
+        var G__40761 = groups;
+        var G__40762 = capacity;
+        var G__40763 = times_left;
+        var G__40764 = total_loop_money + money_made;
+        var G__40765 = position;
+        var G__40766 = prev_positions;
+        load_func = G__40760;
+        groups = G__40761;
+        capacity = G__40762;
+        times_to_run = G__40763;
+        money_made = G__40764;
+        position = G__40765;
+        prev_positions = G__40766;
         continue
       }else {
         var prev_positions__$1 = cljs.core.assoc.call(null, prev_positions, position, cljs.core.ObjMap.fromObject(["\ufdd0:money-made", "\ufdd0:times-to-run"], {"\ufdd0:money-made":money_made, "\ufdd0:times-to-run":times_to_run}));
-        var vec__5973 = load_func.call(null, position);
-        var empty_seats = cljs.core.nth.call(null, vec__5973, 0, null);
-        var next_pos = cljs.core.nth.call(null, vec__5973, 1, null);
+        var vec__40759 = load_func.call(null, position);
+        var empty_seats = cljs.core.nth.call(null, vec__40759, 0, null);
+        var next_pos = cljs.core.nth.call(null, vec__40759, 1, null);
         var run_money = capacity - empty_seats;
-        var G__5981 = load_func;
-        var G__5982 = groups;
-        var G__5983 = capacity;
-        var G__5984 = times_to_run - 1;
-        var G__5985 = run_money + money_made;
-        var G__5986 = next_pos;
-        var G__5987 = prev_positions__$1;
-        load_func = G__5981;
-        groups = G__5982;
-        capacity = G__5983;
-        times_to_run = G__5984;
-        money_made = G__5985;
-        position = G__5986;
-        prev_positions = G__5987;
+        var G__40767 = load_func;
+        var G__40768 = groups;
+        var G__40769 = capacity;
+        var G__40770 = times_to_run - 1;
+        var G__40771 = run_money + money_made;
+        var G__40772 = next_pos;
+        var G__40773 = prev_positions__$1;
+        load_func = G__40767;
+        groups = G__40768;
+        capacity = G__40769;
+        times_to_run = G__40770;
+        money_made = G__40771;
+        position = G__40772;
+        prev_positions = G__40773;
         continue
       }
     }
     break
   }
 };
-problems.theme_park.main.processCase = function processCase(p__5988) {
-  var map__5990 = p__5988;
-  var map__5990__$1 = cljs.core.seq_QMARK_.call(null, map__5990) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5990) : map__5990;
-  var num_groups = cljs.core._lookup.call(null, map__5990__$1, "\ufdd0:num-groups", null);
-  var groups = cljs.core._lookup.call(null, map__5990__$1, "\ufdd0:groups", null);
-  var capacity = cljs.core._lookup.call(null, map__5990__$1, "\ufdd0:capacity", null);
-  var times_run = cljs.core._lookup.call(null, map__5990__$1, "\ufdd0:times-run", null);
-  var caseNumber = cljs.core._lookup.call(null, map__5990__$1, "\ufdd0:caseNumber", null);
+problems.theme_park.main.processCase = function processCase(p__40774) {
+  var map__40776 = p__40774;
+  var map__40776__$1 = cljs.core.seq_QMARK_.call(null, map__40776) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40776) : map__40776;
+  var num_groups = cljs.core._lookup.call(null, map__40776__$1, "\ufdd0:num-groups", null);
+  var groups = cljs.core._lookup.call(null, map__40776__$1, "\ufdd0:groups", null);
+  var capacity = cljs.core._lookup.call(null, map__40776__$1, "\ufdd0:capacity", null);
+  var times_run = cljs.core._lookup.call(null, map__40776__$1, "\ufdd0:times-run", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40776__$1, "\ufdd0:caseNumber", null);
   var load_func = cljs.core.memoize.call(null, cljs.core.partial.call(null, problems.theme_park.main.load_groups, groups, capacity, cljs.core.count.call(null, groups)));
   var result = problems.theme_park.main.run_coaster.call(null, load_func, groups, capacity, times_run, 0, 0, cljs.core.ObjMap.EMPTY);
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":[cljs.core.str(result)].join("")})
@@ -29471,29 +29680,29 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.rope_intranet.main.problemName = "rope_intranet";
 problems.rope_intranet.main.linesPerCase = "\ufdd0:var";
-problems.rope_intranet.main.parseCase = function parseCase(p__5916) {
-  var map__5922 = p__5916;
-  var map__5922__$1 = cljs.core.seq_QMARK_.call(null, map__5922) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5922) : map__5922;
-  var value = cljs.core._lookup.call(null, map__5922__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__5922__$1, "\ufdd0:index", null);
+problems.rope_intranet.main.parseCase = function parseCase(p__40702) {
+  var map__40708 = p__40702;
+  var map__40708__$1 = cljs.core.seq_QMARK_.call(null, map__40708) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40708) : map__40708;
+  var value = cljs.core._lookup.call(null, map__40708__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__40708__$1, "\ufdd0:index", null);
   var lines = value;
   var wires = function() {
     var iter__2611__auto__ = function(lines) {
-      return function iter__5923(s__5924) {
+      return function iter__40709(s__40710) {
         return new cljs.core.LazySeq(null, false, function(lines) {
           return function() {
-            var s__5924__$1 = s__5924;
+            var s__40710__$1 = s__40710;
             while(true) {
-              var temp__4092__auto__ = cljs.core.seq.call(null, s__5924__$1);
+              var temp__4092__auto__ = cljs.core.seq.call(null, s__40710__$1);
               if(temp__4092__auto__) {
                 var xs__4579__auto__ = temp__4092__auto__;
                 var line = cljs.core.first.call(null, xs__4579__auto__);
                 return cljs.core.cons.call(null, function() {
-                  var vec__5926 = clojure.string.split.call(null, line, /\s/);
-                  var lheight = cljs.core.nth.call(null, vec__5926, 0, null);
-                  var rheight = cljs.core.nth.call(null, vec__5926, 1, null);
+                  var vec__40712 = clojure.string.split.call(null, line, /\s/);
+                  var lheight = cljs.core.nth.call(null, vec__40712, 0, null);
+                  var rheight = cljs.core.nth.call(null, vec__40712, 1, null);
                   return cljs.core.ObjMap.fromObject(["\ufdd0:l", "\ufdd0:r"], {"\ufdd0:l":gcj_util.misc.to_int.call(null, lheight), "\ufdd0:r":gcj_util.misc.to_int.call(null, rheight)})
-                }(), iter__5923.call(null, cljs.core.rest.call(null, s__5924__$1)))
+                }(), iter__40709.call(null, cljs.core.rest.call(null, s__40710__$1)))
               }else {
                 return null
               }
@@ -29508,23 +29717,23 @@ problems.rope_intranet.main.parseCase = function parseCase(p__5916) {
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:wires"], {"\ufdd0:caseNumber":index, "\ufdd0:wires":wires})
 };
 problems.rope_intranet.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.rope_intranet.main.parseCase, problems.rope_intranet.main.linesPerCase);
-problems.rope_intranet.main.intersectCount = function intersectCount(p__5927, nextWire) {
-  var vec__5929 = p__5927;
-  var acc = cljs.core.nth.call(null, vec__5929, 0, null);
-  var restWires = cljs.core.nth.call(null, vec__5929, 1, null);
+problems.rope_intranet.main.intersectCount = function intersectCount(p__40713, nextWire) {
+  var vec__40715 = p__40713;
+  var acc = cljs.core.nth.call(null, vec__40715, 0, null);
+  var restWires = cljs.core.nth.call(null, vec__40715, 1, null);
   if(cljs.core.empty_QMARK_.call(null, restWires)) {
     return acc
   }else {
-    return cljs.core.PersistentVector.fromArray([acc + cljs.core.count.call(null, cljs.core.filter.call(null, function(p1__377844_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:r")).call(null, p1__377844_SHARP_) < (new cljs.core.Keyword("\ufdd0:r")).call(null, nextWire)
+    return cljs.core.PersistentVector.fromArray([acc + cljs.core.count.call(null, cljs.core.filter.call(null, function(p1__2594480_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:r")).call(null, p1__2594480_SHARP_) < (new cljs.core.Keyword("\ufdd0:r")).call(null, nextWire)
     }, restWires)), cljs.core.rest.call(null, restWires)], true)
   }
 };
-problems.rope_intranet.main.processCase = function processCase(p__5930) {
-  var map__5932 = p__5930;
-  var map__5932__$1 = cljs.core.seq_QMARK_.call(null, map__5932) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5932) : map__5932;
-  var wires = cljs.core._lookup.call(null, map__5932__$1, "\ufdd0:wires", null);
-  var caseNumber = cljs.core._lookup.call(null, map__5932__$1, "\ufdd0:caseNumber", null);
+problems.rope_intranet.main.processCase = function processCase(p__40716) {
+  var map__40718 = p__40716;
+  var map__40718__$1 = cljs.core.seq_QMARK_.call(null, map__40718) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40718) : map__40718;
+  var wires = cljs.core._lookup.call(null, map__40718__$1, "\ufdd0:wires", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40718__$1, "\ufdd0:caseNumber", null);
   var wires__$1 = cljs.core.sort_by.call(null, "\ufdd0:l", wires);
   var result = cljs.core.reduce.call(null, problems.rope_intranet.main.intersectCount, cljs.core.PersistentVector.fromArray([0, cljs.core.rest.call(null, wires__$1)], true), wires__$1);
   gcj_util.misc.print_status.call(null, [cljs.core.str("Completed Case #"), cljs.core.str(caseNumber)].join(""));
@@ -29546,21 +29755,21 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.reverse_words.main.problemName = "reverse_words";
 problems.reverse_words.main.linesPerCase = 1;
-problems.reverse_words.main.parseCase = function parseCase(p__5951) {
-  var map__5954 = p__5951;
-  var map__5954__$1 = cljs.core.seq_QMARK_.call(null, map__5954) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5954) : map__5954;
-  var value = cljs.core._lookup.call(null, map__5954__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__5954__$1, "\ufdd0:index", null);
-  var vec__5955 = value;
-  var line = cljs.core.nth.call(null, vec__5955, 0, null);
+problems.reverse_words.main.parseCase = function parseCase(p__40737) {
+  var map__40740 = p__40737;
+  var map__40740__$1 = cljs.core.seq_QMARK_.call(null, map__40740) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40740) : map__40740;
+  var value = cljs.core._lookup.call(null, map__40740__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__40740__$1, "\ufdd0:index", null);
+  var vec__40741 = value;
+  var line = cljs.core.nth.call(null, vec__40741, 0, null);
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:words"], {"\ufdd0:caseNumber":index, "\ufdd0:words":clojure.string.split.call(null, line, /\s/)})
 };
 problems.reverse_words.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.reverse_words.main.parseCase, problems.reverse_words.main.linesPerCase);
-problems.reverse_words.main.processCase = function processCase(p__5956) {
-  var map__5958 = p__5956;
-  var map__5958__$1 = cljs.core.seq_QMARK_.call(null, map__5958) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5958) : map__5958;
-  var words = cljs.core._lookup.call(null, map__5958__$1, "\ufdd0:words", null);
-  var caseNumber = cljs.core._lookup.call(null, map__5958__$1, "\ufdd0:caseNumber", null);
+problems.reverse_words.main.processCase = function processCase(p__40742) {
+  var map__40744 = p__40742;
+  var map__40744__$1 = cljs.core.seq_QMARK_.call(null, map__40744) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40744) : map__40744;
+  var words = cljs.core._lookup.call(null, map__40744__$1, "\ufdd0:words", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40744__$1, "\ufdd0:caseNumber", null);
   var result = clojure.string.join.call(null, " ", cljs.core.reverse.call(null, words));
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":result})
 };
@@ -29580,71 +29789,71 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.store_credit.main.problemName = "store_credit";
 problems.store_credit.main.linesPerCase = 3;
-problems.store_credit.main.parseCase = function parseCase(p__5933) {
-  var map__5936 = p__5933;
-  var map__5936__$1 = cljs.core.seq_QMARK_.call(null, map__5936) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5936) : map__5936;
-  var value = cljs.core._lookup.call(null, map__5936__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__5936__$1, "\ufdd0:index", null);
-  var vec__5937 = value;
-  var line1 = cljs.core.nth.call(null, vec__5937, 0, null);
-  var line2 = cljs.core.nth.call(null, vec__5937, 1, null);
-  var line3 = cljs.core.nth.call(null, vec__5937, 2, null);
+problems.store_credit.main.parseCase = function parseCase(p__40719) {
+  var map__40722 = p__40719;
+  var map__40722__$1 = cljs.core.seq_QMARK_.call(null, map__40722) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40722) : map__40722;
+  var value = cljs.core._lookup.call(null, map__40722__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__40722__$1, "\ufdd0:index", null);
+  var vec__40723 = value;
+  var line1 = cljs.core.nth.call(null, vec__40723, 0, null);
+  var line2 = cljs.core.nth.call(null, vec__40723, 1, null);
+  var line3 = cljs.core.nth.call(null, vec__40723, 2, null);
   var credit = gcj_util.misc.to_int.call(null, line1);
   var items = gcj_util.misc.indexed_values.call(null, cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line3, /\s/)));
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:credit", "\ufdd0:items"], {"\ufdd0:caseNumber":index, "\ufdd0:credit":credit, "\ufdd0:items":items})
 };
 problems.store_credit.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.store_credit.main.parseCase, problems.store_credit.main.linesPerCase);
-problems.store_credit.main.processCase = function processCase(p__5938) {
-  var map__5944 = p__5938;
-  var map__5944__$1 = cljs.core.seq_QMARK_.call(null, map__5944) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5944) : map__5944;
-  var items = cljs.core._lookup.call(null, map__5944__$1, "\ufdd0:items", null);
-  var credit = cljs.core._lookup.call(null, map__5944__$1, "\ufdd0:credit", null);
-  var caseNumber = cljs.core._lookup.call(null, map__5944__$1, "\ufdd0:caseNumber", null);
-  var validItems = cljs.core.filter.call(null, function(p1__387335_SHARP_) {
-    return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__387335_SHARP_) < credit
+problems.store_credit.main.processCase = function processCase(p__40724) {
+  var map__40730 = p__40724;
+  var map__40730__$1 = cljs.core.seq_QMARK_.call(null, map__40730) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40730) : map__40730;
+  var items = cljs.core._lookup.call(null, map__40730__$1, "\ufdd0:items", null);
+  var credit = cljs.core._lookup.call(null, map__40730__$1, "\ufdd0:credit", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40730__$1, "\ufdd0:caseNumber", null);
+  var validItems = cljs.core.filter.call(null, function(p1__2603971_SHARP_) {
+    return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2603971_SHARP_) < credit
   }, items);
   var halfCredit = credit / 2;
   var bigItems = cljs.core.filter.call(null, function(validItems, halfCredit) {
-    return function(p1__387336_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__387336_SHARP_) > halfCredit
+    return function(p1__2603972_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2603972_SHARP_) > halfCredit
     }
   }(validItems, halfCredit), validItems);
   var smallItems = cljs.core.filter.call(null, function(validItems, halfCredit, bigItems) {
-    return function(p1__387337_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__387337_SHARP_) < halfCredit
+    return function(p1__2603973_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2603973_SHARP_) < halfCredit
     }
   }(validItems, halfCredit, bigItems), validItems);
   var halfItems = cljs.core.filter.call(null, function(validItems, halfCredit, bigItems, smallItems) {
-    return function(p1__387338_SHARP_) {
-      return cljs.core._EQ_.call(null, (new cljs.core.Keyword("\ufdd0:value")).call(null, p1__387338_SHARP_), halfCredit)
+    return function(p1__2603974_SHARP_) {
+      return cljs.core._EQ_.call(null, (new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2603974_SHARP_), halfCredit)
     }
   }(validItems, halfCredit, bigItems, smallItems), validItems);
   var resultItems = cljs.core._EQ_.call(null, 2, cljs.core.count.call(null, halfItems)) ? halfItems : cljs.core.first.call(null, function() {
     var iter__2611__auto__ = function(validItems, halfCredit, bigItems, smallItems, halfItems) {
-      return function iter__5945(s__5946) {
+      return function iter__40731(s__40732) {
         return new cljs.core.LazySeq(null, false, function(validItems, halfCredit, bigItems, smallItems, halfItems) {
           return function() {
-            var s__5946__$1 = s__5946;
+            var s__40732__$1 = s__40732;
             while(true) {
-              var temp__4092__auto__ = cljs.core.seq.call(null, s__5946__$1);
+              var temp__4092__auto__ = cljs.core.seq.call(null, s__40732__$1);
               if(temp__4092__auto__) {
                 var xs__4579__auto__ = temp__4092__auto__;
                 var big = cljs.core.first.call(null, xs__4579__auto__);
-                var iterys__2609__auto__ = function(s__5946__$1, big, xs__4579__auto__, temp__4092__auto__, validItems, halfCredit, bigItems, smallItems, halfItems) {
-                  return function iter__5947(s__5948) {
-                    return new cljs.core.LazySeq(null, false, function(s__5946__$1, big, xs__4579__auto__, temp__4092__auto__, validItems, halfCredit, bigItems, smallItems, halfItems) {
+                var iterys__2609__auto__ = function(s__40732__$1, big, xs__4579__auto__, temp__4092__auto__, validItems, halfCredit, bigItems, smallItems, halfItems) {
+                  return function iter__40733(s__40734) {
+                    return new cljs.core.LazySeq(null, false, function(s__40732__$1, big, xs__4579__auto__, temp__4092__auto__, validItems, halfCredit, bigItems, smallItems, halfItems) {
                       return function() {
-                        var s__5948__$1 = s__5948;
+                        var s__40734__$1 = s__40734;
                         while(true) {
-                          var temp__4092__auto____$1 = cljs.core.seq.call(null, s__5948__$1);
+                          var temp__4092__auto____$1 = cljs.core.seq.call(null, s__40734__$1);
                           if(temp__4092__auto____$1) {
                             var xs__4579__auto____$1 = temp__4092__auto____$1;
                             var small = cljs.core.first.call(null, xs__4579__auto____$1);
                             if(cljs.core._EQ_.call(null, credit, (new cljs.core.Keyword("\ufdd0:value")).call(null, big) + (new cljs.core.Keyword("\ufdd0:value")).call(null, small))) {
-                              return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray([big, small], true), iter__5947.call(null, cljs.core.rest.call(null, s__5948__$1)))
+                              return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray([big, small], true), iter__40733.call(null, cljs.core.rest.call(null, s__40734__$1)))
                             }else {
-                              var G__5949 = cljs.core.rest.call(null, s__5948__$1);
-                              s__5948__$1 = G__5949;
+                              var G__40735 = cljs.core.rest.call(null, s__40734__$1);
+                              s__40734__$1 = G__40735;
                               continue
                             }
                           }else {
@@ -29653,15 +29862,15 @@ problems.store_credit.main.processCase = function processCase(p__5938) {
                           break
                         }
                       }
-                    }(s__5946__$1, big, xs__4579__auto__, temp__4092__auto__, validItems, halfCredit, bigItems, smallItems, halfItems), null)
+                    }(s__40732__$1, big, xs__4579__auto__, temp__4092__auto__, validItems, halfCredit, bigItems, smallItems, halfItems), null)
                   }
-                }(s__5946__$1, big, xs__4579__auto__, temp__4092__auto__, validItems, halfCredit, bigItems, smallItems, halfItems);
+                }(s__40732__$1, big, xs__4579__auto__, temp__4092__auto__, validItems, halfCredit, bigItems, smallItems, halfItems);
                 var fs__2610__auto__ = cljs.core.seq.call(null, iterys__2609__auto__.call(null, smallItems));
                 if(fs__2610__auto__) {
-                  return cljs.core.concat.call(null, fs__2610__auto__, iter__5945.call(null, cljs.core.rest.call(null, s__5946__$1)))
+                  return cljs.core.concat.call(null, fs__2610__auto__, iter__40731.call(null, cljs.core.rest.call(null, s__40732__$1)))
                 }else {
-                  var G__5950 = cljs.core.rest.call(null, s__5946__$1);
-                  s__5946__$1 = G__5950;
+                  var G__40736 = cljs.core.rest.call(null, s__40732__$1);
+                  s__40732__$1 = G__40736;
                   continue
                 }
               }else {
@@ -29683,3 +29892,196 @@ problems.store_credit.main.solve_for_input = function solve_for_input(input) {
   return[cljs.core.str(gcj_util.case_solver.solve_problem.call(null, problems.store_credit.main.caseParser, problems.store_credit.main.processCase, input))].join("")
 };
 goog.exportSymbol("problems.store_credit.main.solve_for_input", problems.store_credit.main.solve_for_input);
+goog.provide("problems.tic_tac_toe_tomek.main");
+goog.require("cljs.core");
+goog.require("gcj_util.case_reader");
+goog.require("gcj_util.case_solver");
+goog.require("gcj_util.misc");
+goog.require("clojure.string");
+goog.require("clojure.string");
+goog.require("gcj_util.case_solver");
+goog.require("gcj_util.case_reader");
+goog.require("gcj_util.misc");
+problems.tic_tac_toe_tomek.main.problemName = "tic_tac_toe_tomek";
+problems.tic_tac_toe_tomek.main.linesPerCase = 4;
+problems.tic_tac_toe_tomek.main.parseCase = function parseCase(p__40814) {
+  var map__40817 = p__40814;
+  var map__40817__$1 = cljs.core.seq_QMARK_.call(null, map__40817) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40817) : map__40817;
+  var value = cljs.core._lookup.call(null, map__40817__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__40817__$1, "\ufdd0:index", null);
+  var vec__40818 = value;
+  var line1 = cljs.core.nth.call(null, vec__40818, 0, null);
+  var line2 = cljs.core.nth.call(null, vec__40818, 1, null);
+  var line3 = cljs.core.nth.call(null, vec__40818, 2, null);
+  var line4 = cljs.core.nth.call(null, vec__40818, 3, null);
+  var rows = cljs.core.vec.call(null, cljs.core.map.call(null, cljs.core.vec, cljs.core.PersistentVector.fromArray([line1, line2, line3, line4], true)));
+  return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:rows"], {"\ufdd0:caseNumber":index, "\ufdd0:rows":rows})
+};
+problems.tic_tac_toe_tomek.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.tic_tac_toe_tomek.main.parseCase, problems.tic_tac_toe_tomek.main.linesPerCase);
+problems.tic_tac_toe_tomek.main.rowsToCols = function rowsToCols(rows) {
+  return cljs.core.vec.call(null, function() {
+    var iter__2611__auto__ = function iter__40825(s__40826) {
+      return new cljs.core.LazySeq(null, false, function() {
+        var s__40826__$1 = s__40826;
+        while(true) {
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__40826__$1);
+          if(temp__4092__auto__) {
+            var xs__4579__auto__ = temp__4092__auto__;
+            var rowIndex = cljs.core.first.call(null, xs__4579__auto__);
+            return cljs.core.cons.call(null, cljs.core.vec.call(null, function() {
+              var iter__2611__auto__ = function(rowIndex, xs__4579__auto__, temp__4092__auto__) {
+                return function iter__40829(s__40830) {
+                  return new cljs.core.LazySeq(null, false, function(rowIndex, xs__4579__auto__, temp__4092__auto__) {
+                    return function() {
+                      var s__40830__$1 = s__40830;
+                      while(true) {
+                        var temp__4092__auto____$1 = cljs.core.seq.call(null, s__40830__$1);
+                        if(temp__4092__auto____$1) {
+                          var xs__4579__auto____$1 = temp__4092__auto____$1;
+                          var row = cljs.core.first.call(null, xs__4579__auto____$1);
+                          return cljs.core.cons.call(null, row.call(null, rowIndex), iter__40829.call(null, cljs.core.rest.call(null, s__40830__$1)))
+                        }else {
+                          return null
+                        }
+                        break
+                      }
+                    }
+                  }(rowIndex, xs__4579__auto__, temp__4092__auto__), null)
+                }
+              }(rowIndex, xs__4579__auto__, temp__4092__auto__);
+              return iter__2611__auto__.call(null, rows)
+            }()), iter__40825.call(null, cljs.core.rest.call(null, s__40826__$1)))
+          }else {
+            return null
+          }
+          break
+        }
+      }, null)
+    };
+    return iter__2611__auto__.call(null, cljs.core.range.call(null, 4))
+  }())
+};
+problems.tic_tac_toe_tomek.main.diagonalsFromBoard = function diagonalsFromBoard(rows) {
+  return cljs.core.PersistentVector.fromArray([cljs.core.vec.call(null, function() {
+    var iter__2611__auto__ = function iter__40835(s__40836) {
+      return new cljs.core.LazySeq(null, false, function() {
+        var s__40836__$1 = s__40836;
+        while(true) {
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__40836__$1);
+          if(temp__4092__auto__) {
+            var xs__4579__auto__ = temp__4092__auto__;
+            var rowIndex = cljs.core.first.call(null, xs__4579__auto__);
+            return cljs.core.cons.call(null, rows.call(null, rowIndex).call(null, rowIndex), iter__40835.call(null, cljs.core.rest.call(null, s__40836__$1)))
+          }else {
+            return null
+          }
+          break
+        }
+      }, null)
+    };
+    return iter__2611__auto__.call(null, cljs.core.range.call(null, 4))
+  }()), cljs.core.vec.call(null, function() {
+    var iter__2611__auto__ = function iter__40837(s__40838) {
+      return new cljs.core.LazySeq(null, false, function() {
+        var s__40838__$1 = s__40838;
+        while(true) {
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__40838__$1);
+          if(temp__4092__auto__) {
+            var xs__4579__auto__ = temp__4092__auto__;
+            var rowIndex = cljs.core.first.call(null, xs__4579__auto__);
+            return cljs.core.cons.call(null, rows.call(null, rowIndex).call(null, 3 - rowIndex), iter__40837.call(null, cljs.core.rest.call(null, s__40838__$1)))
+          }else {
+            return null
+          }
+          break
+        }
+      }, null)
+    };
+    return iter__2611__auto__.call(null, cljs.core.range.call(null, 4))
+  }())], true)
+};
+problems.tic_tac_toe_tomek.main.winFilter = function winFilter(symb, possibleWin) {
+  return cljs.core.every_QMARK_.call(null, function(p1__2630835_SHARP_) {
+    var or__3943__auto__ = cljs.core._EQ_.call(null, p1__2630835_SHARP_, symb);
+    if(or__3943__auto__) {
+      return or__3943__auto__
+    }else {
+      return cljs.core._EQ_.call(null, p1__2630835_SHARP_, "T")
+    }
+  }, possibleWin)
+};
+problems.tic_tac_toe_tomek.main.boardFull_QMARK_ = function boardFull_QMARK_(rows) {
+  return cljs.core.every_QMARK_.call(null, function(p1__2631434_SHARP_) {
+    return cljs.core.not_EQ_.call(null, ".", p1__2631434_SHARP_)
+  }, function() {
+    var iter__2611__auto__ = function iter__40843(s__40844) {
+      return new cljs.core.LazySeq(null, false, function() {
+        var s__40844__$1 = s__40844;
+        while(true) {
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__40844__$1);
+          if(temp__4092__auto__) {
+            var xs__4579__auto__ = temp__4092__auto__;
+            var row = cljs.core.first.call(null, xs__4579__auto__);
+            var iterys__2609__auto__ = function(s__40844__$1, row, xs__4579__auto__, temp__4092__auto__) {
+              return function iter__40845(s__40846) {
+                return new cljs.core.LazySeq(null, false, function(s__40844__$1, row, xs__4579__auto__, temp__4092__auto__) {
+                  return function() {
+                    var s__40846__$1 = s__40846;
+                    while(true) {
+                      var temp__4092__auto____$1 = cljs.core.seq.call(null, s__40846__$1);
+                      if(temp__4092__auto____$1) {
+                        var xs__4579__auto____$1 = temp__4092__auto____$1;
+                        var symb = cljs.core.first.call(null, xs__4579__auto____$1);
+                        return cljs.core.cons.call(null, symb, iter__40845.call(null, cljs.core.rest.call(null, s__40846__$1)))
+                      }else {
+                        return null
+                      }
+                      break
+                    }
+                  }
+                }(s__40844__$1, row, xs__4579__auto__, temp__4092__auto__), null)
+              }
+            }(s__40844__$1, row, xs__4579__auto__, temp__4092__auto__);
+            var fs__2610__auto__ = cljs.core.seq.call(null, iterys__2609__auto__.call(null, row));
+            if(fs__2610__auto__) {
+              return cljs.core.concat.call(null, fs__2610__auto__, iter__40843.call(null, cljs.core.rest.call(null, s__40844__$1)))
+            }else {
+              var G__40847 = cljs.core.rest.call(null, s__40844__$1);
+              s__40844__$1 = G__40847;
+              continue
+            }
+          }else {
+            return null
+          }
+          break
+        }
+      }, null)
+    };
+    return iter__2611__auto__.call(null, rows)
+  }())
+};
+problems.tic_tac_toe_tomek.main.processCase = function processCase(p__40848) {
+  var map__40850 = p__40848;
+  var map__40850__$1 = cljs.core.seq_QMARK_.call(null, map__40850) ? cljs.core.apply.call(null, cljs.core.hash_map, map__40850) : map__40850;
+  var rows = cljs.core._lookup.call(null, map__40850__$1, "\ufdd0:rows", null);
+  var caseNumber = cljs.core._lookup.call(null, map__40850__$1, "\ufdd0:caseNumber", null);
+  var cols = problems.tic_tac_toe_tomek.main.rowsToCols.call(null, rows);
+  var diagonals = problems.tic_tac_toe_tomek.main.diagonalsFromBoard.call(null, rows);
+  var possibleWins = cljs.core.concat.call(null, rows, cols, diagonals);
+  var xWon = cljs.core.seq.call(null, cljs.core.filter.call(null, cljs.core.partial.call(null, problems.tic_tac_toe_tomek.main.winFilter, "X"), possibleWins));
+  var oWon = cljs.core.seq.call(null, cljs.core.filter.call(null, cljs.core.partial.call(null, problems.tic_tac_toe_tomek.main.winFilter, "O"), possibleWins));
+  var boardFull = problems.tic_tac_toe_tomek.main.boardFull_QMARK_.call(null, rows);
+  var result = cljs.core.truth_(function() {
+    var or__3943__auto__ = xWon;
+    if(or__3943__auto__) {
+      return or__3943__auto__
+    }else {
+      return oWon
+    }
+  }()) ? xWon ? "X won" : "O won" : cljs.core.truth_(boardFull) ? "Draw" : "\ufdd0:else" ? "Game has not completed" : null;
+  return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":result})
+};
+problems.tic_tac_toe_tomek.main.solve_for_input = function solve_for_input(input) {
+  return[cljs.core.str(gcj_util.case_solver.solve_problem.call(null, problems.tic_tac_toe_tomek.main.caseParser, problems.tic_tac_toe_tomek.main.processCase, input))].join("")
+};
+goog.exportSymbol("problems.tic_tac_toe_tomek.main.solve_for_input", problems.tic_tac_toe_tomek.main.solve_for_input);
