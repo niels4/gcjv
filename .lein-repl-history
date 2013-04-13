@@ -1,412 +1,3 @@
-(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
-(in-ns 'problems.tic-tac-toe-tomek.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (first cases)))
-(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
-(in-ns 'problems.tic-tac-toe-tomek.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (first cases)))
-(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
-(in-ns 'problems.tic-tac-toe-tomek.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (first cases)))
-(def hey (comp not empty?))
-(hey "hello")
-(hey "")
-(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
-(in-ns 'problems.tic-tac-toe-tomek.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (first cases)))
-;<F5> Parse and print sample
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
-(in-ns 'problems.tic-tac-toe-tomek.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
-(in-ns 'problems.tic-tac-toe-tomek.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-ls
-..
-(load-file (str "target/cljx_generated/clj/problems/tic_tac_toe_tomek/main.clj"))
-(in-ns 'problems.tic_tac_toe_tomek.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/tic_tac_toe_tomek/main.clj"))
-(in-ns 'problems.tic_tac_toe_tomek.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(println (write-solution solve-for-input problemName "small"))
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines value
-     rows (->> (rest lines)
-               (#(split % #"\s"))
-               (map to-int)
-               vec)]
-    {:caseNumber index
-     :rows rows}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines value
-     rows (for [line (rest lines)]
-               (->> (split line #"\s")
-                    (map to-int)
-                    vec))]
-    {:caseNumber index
-     :rows rows}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines value
-     rows (vec (for [line (rest lines)]
-                 (->> (split line #"\s")
-                      (map to-int)
-                      vec)))]
-    {:caseNumber index
-     :rows rows}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def row2 ((:rows (second cases)) 1))
-row2
-;<F5> Parse and print sample
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def row2 ((:rows (second cases)) 1))
-(max row2)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def row2 ((:rows (second cases)) 1))
-(max row2)
-(apply max row2)
-(def trows [])
-(every? #(= % 2) trows)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines value
-     rows (vec (for [line (rest lines)]
-                 (->> (split line #"\s")
-                      (map to-int)
-                      indexed-values
-                      vec)))]
-    {:caseNumber index
-     :rows rows}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def row2 ((:rows (second cases)) 1))
-(apply max row2)
-(apply max (map :value row2))
-(defn rowsToCols
-  [rows]
-  (vec (for [rowIndex (range 4)]
-    (vec (for [row rows]
-      (:value (row rowIndex)))))))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (second cases)))
-(def row2 ((:rows (second cases)) 1))
-(apply max (map :value row2))
-(rowsToCols rows)
-(defn rowsToCols
-  [rows]
-  (vec (for [rowIndex (range (count rows))]
-    (vec (for [row rows]
-      (:value (row rowIndex)))))))
-(rowsToCols rows)
-(defn colValid?
-  [cols index height]
-  (every? #(<= % height) (cols index)))
-(def cols (rowsToCols rows))
-cols
-(def cols (rowsToCols rows))
-(colValid? cols 2 2)
-(def cols (rowsToCols rows))
-(colValid? cols 2 1)
-(defn processCase
-  [{:keys [caseNumber rows]}]
-  (let
-    [cols (rowsToCols rows)
-     rowsValid (map (partial rowValid? cols) rows)
-     result (pprint rowsValid)]
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(defn rowValid?
-  [cols row]
-  (let
-    [maxHeight (apply max (map :value row))]))
-(defn rowValid?
-  [cols row]
-  (let
-    [maxHeight (apply max (map :value row))]
-    maxHeight))
-(defn processCase
-  [{:keys [caseNumber rows]}]
-  (let
-    [cols (rowsToCols rows)
-     rowsValid (map (partial rowValid? cols) rows)
-     result (pprint rowsValid)]
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (second cases)))
-(def row2 ((:rows (second cases)) 1))
-(apply max (map :value row2))
-(test-expected-output solve-for-input problemName "sample")
-(defn rowValid?
-  [cols row]
-  (let
-    [maxHeight (apply max (map :value row))
-     colsToCheck (->> row
-                   (filter #(< % maxHeight))
-                   (map :index))]
-    maxHeight))
-(defn processCase
-  [{:keys [caseNumber rows]}]
-  (let
-    [cols (rowsToCols rows)
-     rowsValid (map (partial rowValid? cols) rows)
-     result (pprint rowsValid)]
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn rowValid?
-  [cols row]
-  (let
-    [maxHeight (apply max (map :value row))
-     colsToCheck (filter #(< % maxHeight) row)]
-    (every? (partial colValid? cols) colsToCheck)))
-(defn processCase
-  [{:keys [caseNumber rows]}]
-  (let
-    [cols (rowsToCols rows)
-     rowsValid (map (partial rowValid? cols) rows)
-     result (pprint rowsValid)]
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (second cases)))
-(def row2 ((:rows (second cases)) 1))
-(apply max (map :value row2))
-(test-expected-output solve-for-input problemName "sample")
-(defn rowValid?
-  [cols row]
-  (let
-    [maxHeight (apply max (map :value row))
-     colsToCheck (filter #(< (:value %) maxHeight) row)]
-    (every? (partial colValid? cols) colsToCheck)))
-(test-expected-output solve-for-input problemName "sample")
-(defn colValid?
-  [cols {:keys [index value]}]
-  (every? #(<= % value) (cols (dec index))))
-(defn rowValid?
-  [cols row]
-  (let
-    [maxHeight (apply max (map :value row))
-     colsToCheck (filter #(< (:value %) maxHeight) row)]
-    (every? (partial colValid? cols) colsToCheck)))
-(test-expected-output solve-for-input problemName "sample")
-(defn rowValid?
-  [cols row]
-  (let
-    [maxHeight (apply max (map :value row))
-     colsToCheck (filter #(< (:value %) maxHeight) row)
-     test (pprint colsToCheck)]
-    (every? (partial colValid? cols) colsToCheck)))
-(test-expected-output solve-for-input problemName "sample")
-(defn colValid?
-  [cols {:keys [index value]}]
-  (every? #(<= % value) (cols (dec index))))
-(defn rowValid?
-  [cols row]
-  (let
-    [maxHeight (apply max (map :value row))
-     colsToCheck (filter #(< (:value %) maxHeight) row)
-     test (pprint colsToCheck)]
-    (every? (partial colValid? cols) colsToCheck)))
-(defn colValid?
-  [cols {:keys [index value]}
-   test (pprint cols)
-   test (pprint index)]
-  (every? #(<= % value) (cols (dec index))))
-(test-expected-output solve-for-input problemName "sample")
-(range 1)
-(test-expected-output solve-for-input problemName "sample")
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(defn colValid?
-  [cols {:keys [index value]}]
-  (do
-    (println "colValid? " index)
-    (pprint cols)
-    (every? #(<= % value) (cols (dec index)))))
-(test-expected-output solve-for-input problemName "sample")
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (nth cases 3)))
-(def row2 ((:rows (second cases)) 1))
-(apply max (map :value row2))
-rows
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (nth cases 2)))
-(def cols (rowsToCols rows))
-cols
-(defn rowsToCols
-  [rows]
-  (vec (for [rowIndex (range (count (rows 0)))]
-    (vec (for [row rows]
-      (:value (row rowIndex)))))))
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def rows (:rows (nth cases 2)))
-(test-expected-output solve-for-input problemName "sample")
-(def cols (rowsToCols rows))
-(colValid? cols 2 1)
-(def cols (rowsToCols rows))
-(colValid? cols {:index 1 :value 2})
-(def cols (rowsToCols rows))
-(colValid? cols {:index 1 :value 1})
-(def cols (rowsToCols rows))
-(colValid? cols {:index 2 :value 1})
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
-(in-ns 'problems.lawnmower.main)
-(test-expected-output solve-for-input problemName "sample")
-(def s1 #{1 2 3 4 5 10})
-s1
-(s1 5)
-(if (s1 5) true false)
-(if (s1 9) true false)
-10
-10E4
-10E14
-10E100
-1E10
-(inc 1E10)
-(inc 1E3)
-(range 1E2)
-(* 1E10 1E10)
-(* 1E50 1E50)
-(sqrt 100)
-(Math/sqrt 100)
-(Math/sqrt 1E10)
-(Math/sqrt 1E100)
-(inc Math/sqrt 1E100)
-(inc (Math/sqrt 1E100))
-(load-file (str "target/cljx_generated/clj/problems/fair_and_square/main.clj"))
-(in-ns 'problems.fair_and_square.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(->> (range)
-     (take-while #(< % 1E4)))
-(->> (range)
-     (map #(* % %))
-     (take-while #(< % 1E4)))
-(->> (range)
-     (map #(* % %))
-     (take-while #(<= % 1E4)))
-(->> (range)
-     (map #(* % %))
-     (take-while #(<= % 1E4)))
-(->> (range)
-     (take-while #(<= (* % %) 1E4)))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [[line] value
-     [start end] (map to-int (split line #"\s"))]
-    {:caseNumber index
-     :start start
-     :end end}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(reverse "1233")
-(rseq "1233")
-(rseq (seq "1233"))
-(->> (range)
-     (filter palindrome?)
-     (take-while #(<= (* % %) 1E4)))
-(defn palindrome?
-  [value]
-  (= (reverse (str x) (seq (str x)))))
-(defn palindrome?
-  [value]
-  (= (reverse (str value) (seq (str value)))))
-(->> (range)
-     (filter palindrome?)
-     (take-while #(<= (* % %) 1E4)))
-(defn palindrome?
-  [value]
-  (= (reverse (str value)) (seq (str value))))
-(->> (range)
-     (filter palindrome?)
-     (take-while #(<= (* % %) 1E4)))
-(->> (range)
-     (filter palindrome?)
-     (take-while #(<= (* % %) 1E4))
-     count)
-(->> (range)
-     (filter palindrome?)
-     (take-while #(<= (* % %) 1E14))
-     count)
-(->> (range)
-     (filter palindrome?)
-     (take-while #(<= (* % %) 1E100))
-     count)
-(Math.sqrt 1E100)
-(Math/sqrt 1E100)
-(defn fair-and-square?
-  [value]
   (and (palindrome? value) (palindrome? (* value value))))
 (->> (range)
      (filter  fair-and-square?)
@@ -498,3 +89,412 @@ s1
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
+(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
+(in-ns 'problems.treasure.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(count (range 1E10))
+1E3
+(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
+(in-ns 'problems.treasure.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [lines (rest value)
+     keysHeld (map to-int (split (first lines) #"\s"))
+     chests (for [chest (rest lines)]
+                 (let
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
+                   {:lockType lockType
+                    :keysInside keysInside}))]
+    {:caseNumber index
+     :keysHeld keysHeld
+     :chests chests}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [lines (rest value)
+     keysHeld (map to-int (split (first lines) #"\s"))
+     chests (for [chest (rest lines)]
+                 (let
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
+                   {:lockType lockType
+                    :keysInside (seq keysInside)}))]
+    {:caseNumber index
+     :keysHeld keysHeld
+     :chests chests}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [lines (rest value)
+     keysHeld (map to-int (split (first lines) #"\s"))
+     chests (for [chest (rest lines)]
+                 (let
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
+                   {:lockType lockType
+                    :keysInside keysInside}))]
+    {:caseNumber index
+     :keysHeld keysHeld
+     :chests chests}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [lines (rest value)
+     keysHeld (map to-int (split (first lines) #"\s"))
+     chests (for [chest (rest lines)]
+                 (let
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
+                   {:lockType lockType
+                    :keysInside keysInside}))]
+    {:caseNumber index
+     :keysHeld keysHeld
+     :chests (indexed-values chests)}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def la [1 2 3 4 5 5 9])
+(contains? 3 la)
+(contains? la 3)
+(contains? la 8)
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (conj acc {nextKey nextKeyTotal}))))))
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (conj keysHeld {nextKey nextKeyTotal}))))))
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     paths (find-paths keysList chests)
+     result ""]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     result ""]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     result ""]
+    (pprint keysHeld)
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (conj keysHeld {nextKey nextKeyTotal})
+            (conj keysHeld (nextKey 1)))))))
+(test-expected-output solve-for-input problemName "sample")
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [lines (rest value)
+     keysList (map to-int (split (first lines) #"\s"))
+     chests (for [chest (rest lines)]
+                 (let
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
+                   {:lockType lockType
+                    :keysInside keysInside}))]
+    {:caseNumber index
+     :keysList keysList
+     :chests (indexed-values chests)}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [lines (rest value)
+     keysList (map to-int (split (first lines) #"\s"))
+     chests (for [chest (rest lines)]
+                 (let
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
+                   {:lockType lockType
+                    :keysInside keysInside}))]
+    {:caseNumber index
+     :keysList keysList
+     :chests (indexed-values chests)}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(reduce + 1 [2 3 4 ]
+)
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (conj keysHeld {nextKey nextKeyTotal})
+            (conj keysHeld {nextKey 1}))))))
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     result ""]
+    (pprint keysHeld)
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (conj keysHeld [nextKey nextKeyTotal])
+            (conj keysHeld [nextKey 1]))))))
+(test-expected-output solve-for-input problemName "sample")
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (assoc keysHeld {nextKey nextKeyTotal})
+            (assoc keysHeld {nextKey 1}))))))
+(test-expected-output solve-for-input problemName "sample")
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (assoc keysHeld [nextKey nextKeyTotal])
+            (assoc keysHeld [nextKey 1]))))))
+(test-expected-output solve-for-input problemName "sample")
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (assoc keysHeld nextKey nextKeyTotal)
+            (assoc keysHeld nextKey 1))))))
+(test-expected-output solve-for-input problemName "sample")
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (get keysHeld nextKey)]
+        (if (nextKeyTotal)
+            (assoc keysHeld nextKey nextKeyTotal)
+            (assoc keysHeld nextKey 1))))))
+(test-expected-output solve-for-input problemName "sample")
+(def m1 assoc {} 3 5)
+(def m1 (assoc {} 3 5))
+m1
+(get m1 3)
+(get m1 2)
+(m1 2)
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (get keysHeld nextKey)]
+        (if nextKeyTotal
+            (assoc keysHeld nextKey (inc nextKeyTotal))
+            (assoc keysHeld nextKey 1))))))
+(test-expected-output solve-for-input problemName "sample")
+(defn removeKeyHeld
+  [keysHeld keyType]
+  (let
+    [keyTotal (get keysHeld keyType)]
+    (if (= 1 keyTotal)
+      (dissoc keysHeld keyType)
+      (assoc keysHeld keyType (dec keyTotal)))))
+(lazy-seq [])
+(cons 4 (lazy-seq []))
+(cons 5 (cons 4 (lazy-seq [])))
+(take (cons 5 (cons 4 (lazy-seq []))) 1)
+(take 1 (cons 5 (cons 4 (lazy-seq []))))
+(take 2 (cons 5 (cons 4 (lazy-seq []))))
+(take 3 (cons 5 (cons 4 (lazy-seq []))))
+(def ls (cons 4 (cons 5 (lazy-seq [false]))))
+(first ls)
+(def ls (cons 4 (cons 5 (lazy-seq [false]))))
+(last ls)
+(def ls (cons 4 (cons 5 (lazy-seq [false]))))
+(def lastls (last ls))
+(def ls (cons 4 (cons 5 (lazy-seq [false]))))
+(def lastls (last ls))
+(if lastls true false)
+(def ls (cons 4 (cons 5 (lazy-seq []))))
+(def lastls (last ls))
+(if lastls true false)
+(def ls (cons 4 (cons 5 (lazy-seq [(empty? `())]))))
+(def lastls (last ls))
+(if lastls true false)
+(def ls (cons 4 (cons 5 (lazy-seq [(empty? `(1))]))))
+(def lastls (last ls))
+(if lastls true false)
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (for [{:keys [index value]} chests]
+      (let
+        [{:keys [lockType keysInside]}]
+        (if (keysList lockType)
+          (let
+            [keysHeld (removeKeyHeld keysHeld lockType)
+             keysHeld (addToKeysHeld keysHeld keysInside)
+             chests (dissoc chests index)]
+            (cons index (find-paths keysHeld chests))))))))
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (for [{:keys [index value]} chests]
+      (let
+        [{:keys [lockType keysInside]} value]
+        (if (keysList lockType)
+          (let
+            [keysHeld (removeKeyHeld keysHeld lockType)
+             keysHeld (addToKeysHeld keysHeld keysInside)
+             chests (dissoc chests index)]
+            (cons index (find-paths keysHeld chests))))))))
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (for [{:keys [index value]} chests]
+      (let
+        [{:keys [lockType keysInside]} value]
+        (if (keysHeld lockType)
+          (let
+            [keysHeld (removeKeyHeld keysHeld lockType)
+             keysHeld (addToKeysHeld keysHeld keysInside)
+             chests (dissoc chests index)]
+            (cons index (find-paths keysHeld chests))))))))
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     paths (find-paths keysHeld chests)
+     result ""]
+    (pprint keysHeld)
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     paths (find-paths keysHeld chests)
+     result ""]
+    (pprint paths)
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(def v1 [1 2 3 3 4 8])
+(contains? v1 3)
+(def v1 [1 2 3 3 4 8])
+(contains? v1 3)
+(remove v1 3)
+v1
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [lines (rest value)
+     keysList (map to-int (split (first lines) #"\s"))
+     chests (for [chest (rest lines)]
+                 (let
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
+                   {:lockType lockType
+                    :keysInside keysInside}))]
+    {:caseNumber index
+     :keysList keysList
+     :chests (set (indexed-values chests))}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def v1 #{1 2 3 3 4 8})
+(contains? v1 3)
+(remove v1 3)
+(def v1 #{1 2 3 3 4 8})
+(contains? v1 3)
+(dissoc v1 3)
+(def v1 #{1 2 3 3 4 8})
+(contains? v1 3)
+(dissoc v1 3)
+(def v1 #{1 2 3 3 4 8})
+(contains? v1 3)
+(def v1 #{1 2 3 3 4 8})
+(def v1 #{1 2 3 3 4 8} )
+#{3 4 5}
+(def eee #{3 4 5}_
+(def eee #{3 4 5}_)
+)
+(def eee #{3 4 5})
+eee
+(def v1 #{1 2 3 3 4 8})
+(def v1 #{1 2 3 4 8})
+(contains? v1 3)
+(dissoc v1 3)
+(def v1 #{1 2 3 4 8})
+v1
+(contains? v1 3)
+(remove v1 3)
+(disj v1 3)
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (for [{:keys [index value]} chests]
+      (let
+        [{:keys [lockType keysInside]} value]
+        (if (keysHeld lockType)
+          (let
+            [keysHeld (removeKeyHeld keysHeld lockType)
+             keysHeld (addToKeysHeld keysHeld keysInside)
+             chests (disj chests chest)]
+            (cons index (find-paths keysHeld chests))))))))
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (for [{:keys [index value] :as chest} chests]
+      (let
+        [{:keys [lockType keysInside]} value]
+        (if (keysHeld lockType)
+          (let
+            [keysHeld (removeKeyHeld keysHeld lockType)
+             keysHeld (addToKeysHeld keysHeld keysInside)
+             chests (disj chests chest)]
+            (cons index (find-paths keysHeld chests))))))))
+(test-expected-output solve-for-input problemName "sample")

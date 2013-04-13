@@ -20,21 +20,35 @@
   [{:keys [index value]}]
   (let
     [lines (rest value)
-     keyTypes (map to-int (split (first lines) #"\s"))
+     keysList (map to-int (split (first lines) #"\s"))
      chests (for [chest (rest lines)]
                  (let
-                   [[lockType numKeys & keyTypes] (map to-int (split chest #"\s"))]
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
                    {:lockType lockType
-                    :keyTypes keyTypes}))]
+                    :keysInside keysInside}))]
     {:caseNumber index
-     :keyTypes keyTypes
-     :chests chests}))
+     :keysList keysList
+     :chests (indexed-values chests)}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 
+(def addToKeysHeld
+  (partial reduce
+    (fn [keysHeld nextKey]
+      (let [nextKeyTotal (get keysHeld nextKey)]
+        (if nextKeyTotal
+            (assoc keysHeld nextKey (inc nextKeyTotal))
+            (assoc keysHeld nextKey 1))))))
+
+(defn find-paths
+  [keysList chests]
+  keysList)
+
 (defn processCase
-  [{:keys [caseNumber lines]}]
+  [{:keys [caseNumber keysList chests]}]
   (let
-    [result ""]
+    [keysHeld (addToKeysHeld {} keysList)
+     result ""]
+    (pprint keysHeld)
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
@@ -65,5 +79,7 @@
 ;<Refresh>
 (load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
 (in-ns 'problems.treasure.main)
+
+(def m1 (assoc {} 3 5))
 
 )
