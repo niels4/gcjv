@@ -1,222 +1,12 @@
-  (and (palindrome? value) (palindrome? (* value value))))
-(->> (range)
-     (filter  fair-and-square?)
-     (take-while (<= 1E50))
-     count)
-)
-(defn fair-and-square?
-  [value]
-  (and (palindrome? value) (palindrome? (* value value))))
-(->> (range)
-     (filter  fair-and-square?)
-     (take-while (<= 1E50))
-     count)
-(->> (range)
-     (filter  fair-and-square?)
-     (take-while #(<= % 1E50))
-     count)
-(->> (range)
-     (filter  fair-and-square?)
-     (take-while #(<= % 1E10))
-     count)
-(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
-(in-ns 'problems.treasure.main)
-(def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
-(in-ns 'problems.treasure.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
-(in-ns 'problems.treasure.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keyTypes (map to-int (split (first lines) #"\s"))]
-    {:caseNumber index
-     :keyTypes keyTypes}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keyTypes (map to-int (split (first lines) #"\s"))]
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keyTypes] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keyTypes keyTypes}))
-    {:caseNumber index
-     :keyTypes keyTypes
-     :chests chests}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keyTypes (map to-int (split (first lines) #"\s"))]
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keyTypes] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keyTypes keyTypes}))
-    {:caseNumber index
-     :keyTypes keyTypes
-     :chests chests}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keyTypes (map to-int (split (first lines) #"\s"))
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keyTypes] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keyTypes keyTypes}))]
-    {:caseNumber index
-     :keyTypes keyTypes
-     :chests chests}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
-(in-ns 'problems.treasure.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(count (range 1E10))
-1E3
-(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
-(in-ns 'problems.treasure.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keysHeld (map to-int (split (first lines) #"\s"))
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keysInside keysInside}))]
-    {:caseNumber index
-     :keysHeld keysHeld
-     :chests chests}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keysHeld (map to-int (split (first lines) #"\s"))
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keysInside (seq keysInside)}))]
-    {:caseNumber index
-     :keysHeld keysHeld
-     :chests chests}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keysHeld (map to-int (split (first lines) #"\s"))
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keysInside keysInside}))]
-    {:caseNumber index
-     :keysHeld keysHeld
-     :chests chests}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keysHeld (map to-int (split (first lines) #"\s"))
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keysInside keysInside}))]
-    {:caseNumber index
-     :keysHeld keysHeld
-     :chests (indexed-values chests)}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(def la [1 2 3 4 5 5 9])
-(contains? 3 la)
-(contains? la 3)
-(contains? la 8)
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (conj acc {nextKey nextKeyTotal}))))))
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (conj keysHeld {nextKey nextKeyTotal}))))))
-(defn processCase
-  [{:keys [caseNumber keysList chests]}]
-  (let
-    [keysHeld (addToKeysHeld {} keysList)
-     paths (find-paths keysList chests)
-     result ""]
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(defn processCase
-  [{:keys [caseNumber keysList chests]}]
-  (let
-    [keysHeld (addToKeysHeld {} keysList)
-     result ""]
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber keysList chests]}]
-  (let
-    [keysHeld (addToKeysHeld {} keysList)
-     result ""]
-    (pprint keysHeld)
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (conj keysHeld {nextKey nextKeyTotal})
-            (conj keysHeld (nextKey 1)))))))
 (test-expected-output solve-for-input problemName "sample")
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
+(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
+(in-ns 'problems.treasure.main)
+(compare 1 2)
+(compare 1 1)
+(compare 3 4)
 (defn parseCase
   [{:keys [index value]}]
   (let
@@ -229,204 +19,28 @@
                     :keysInside keysInside}))]
     {:caseNumber index
      :keysList keysList
-     :chests (indexed-values chests)}))
+     :chests (sorted-set-by (fn [l r] (compare (:index l) (:index r)))
+                                      (indexed-values chests))}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
+(in-ns 'problems.treasure.main)
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keysList (map to-int (split (first lines) #"\s"))
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keysInside keysInside}))]
-    {:caseNumber index
-     :keysList keysList
-     :chests (indexed-values chests)}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(reduce + 1 [2 3 4 ]
-)
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (conj keysHeld {nextKey nextKeyTotal})
-            (conj keysHeld {nextKey 1}))))))
-(defn processCase
-  [{:keys [caseNumber keysList chests]}]
-  (let
-    [keysHeld (addToKeysHeld {} keysList)
-     result ""]
-    (pprint keysHeld)
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (conj keysHeld [nextKey nextKeyTotal])
-            (conj keysHeld [nextKey 1]))))))
-(test-expected-output solve-for-input problemName "sample")
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (assoc keysHeld {nextKey nextKeyTotal})
-            (assoc keysHeld {nextKey 1}))))))
-(test-expected-output solve-for-input problemName "sample")
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (assoc keysHeld [nextKey nextKeyTotal])
-            (assoc keysHeld [nextKey 1]))))))
-(test-expected-output solve-for-input problemName "sample")
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (assoc keysHeld nextKey nextKeyTotal)
-            (assoc keysHeld nextKey 1))))))
-(test-expected-output solve-for-input problemName "sample")
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (get keysHeld nextKey)]
-        (if (nextKeyTotal)
-            (assoc keysHeld nextKey nextKeyTotal)
-            (assoc keysHeld nextKey 1))))))
-(test-expected-output solve-for-input problemName "sample")
-(def m1 assoc {} 3 5)
-(def m1 (assoc {} 3 5))
-m1
-(get m1 3)
-(get m1 2)
-(m1 2)
-(def addToKeysHeld
-  (partial reduce
-    (fn [keysHeld nextKey]
-      (let [nextKeyTotal (get keysHeld nextKey)]
-        (if nextKeyTotal
-            (assoc keysHeld nextKey (inc nextKeyTotal))
-            (assoc keysHeld nextKey 1))))))
-(test-expected-output solve-for-input problemName "sample")
-(defn removeKeyHeld
-  [keysHeld keyType]
-  (let
-    [keyTotal (get keysHeld keyType)]
-    (if (= 1 keyTotal)
-      (dissoc keysHeld keyType)
-      (assoc keysHeld keyType (dec keyTotal)))))
-(lazy-seq [])
-(cons 4 (lazy-seq []))
-(cons 5 (cons 4 (lazy-seq [])))
-(take (cons 5 (cons 4 (lazy-seq []))) 1)
-(take 1 (cons 5 (cons 4 (lazy-seq []))))
-(take 2 (cons 5 (cons 4 (lazy-seq []))))
-(take 3 (cons 5 (cons 4 (lazy-seq []))))
-(def ls (cons 4 (cons 5 (lazy-seq [false]))))
-(first ls)
-(def ls (cons 4 (cons 5 (lazy-seq [false]))))
-(last ls)
-(def ls (cons 4 (cons 5 (lazy-seq [false]))))
-(def lastls (last ls))
-(def ls (cons 4 (cons 5 (lazy-seq [false]))))
-(def lastls (last ls))
-(if lastls true false)
-(def ls (cons 4 (cons 5 (lazy-seq []))))
-(def lastls (last ls))
-(if lastls true false)
-(def ls (cons 4 (cons 5 (lazy-seq [(empty? `())]))))
-(def lastls (last ls))
-(if lastls true false)
-(def ls (cons 4 (cons 5 (lazy-seq [(empty? `(1))]))))
-(def lastls (last ls))
-(if lastls true false)
-(defn find-paths
-  [keysHeld chests]
-  (if (empty? keysHeld)
-      (lazy-seq [(empty? chests)])
-      (for [{:keys [index value]} chests]
-      (let
-        [{:keys [lockType keysInside]}]
-        (if (keysList lockType)
-          (let
-            [keysHeld (removeKeyHeld keysHeld lockType)
-             keysHeld (addToKeysHeld keysHeld keysInside)
-             chests (dissoc chests index)]
-            (cons index (find-paths keysHeld chests))))))))
-(defn find-paths
-  [keysHeld chests]
-  (if (empty? keysHeld)
-      (lazy-seq [(empty? chests)])
-      (for [{:keys [index value]} chests]
-      (let
-        [{:keys [lockType keysInside]} value]
-        (if (keysList lockType)
-          (let
-            [keysHeld (removeKeyHeld keysHeld lockType)
-             keysHeld (addToKeysHeld keysHeld keysInside)
-             chests (dissoc chests index)]
-            (cons index (find-paths keysHeld chests))))))))
-(defn find-paths
-  [keysHeld chests]
-  (if (empty? keysHeld)
-      (lazy-seq [(empty? chests)])
-      (for [{:keys [index value]} chests]
-      (let
-        [{:keys [lockType keysInside]} value]
-        (if (keysHeld lockType)
-          (let
-            [keysHeld (removeKeyHeld keysHeld lockType)
-             keysHeld (addToKeysHeld keysHeld keysInside)
-             chests (dissoc chests index)]
-            (cons index (find-paths keysHeld chests))))))))
-(defn processCase
-  [{:keys [caseNumber keysList chests]}]
-  (let
-    [keysHeld (addToKeysHeld {} keysList)
-     paths (find-paths keysHeld chests)
-     result ""]
-    (pprint keysHeld)
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
 (test-expected-output solve-for-input problemName "sample")
 (defn processCase
   [{:keys [caseNumber keysList chests]}]
   (let
     [keysHeld (addToKeysHeld {} keysList)
      paths (find-paths keysHeld chests)
+     validPaths (filter last paths)
      result ""]
     (pprint paths)
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
 (test-expected-output solve-for-input problemName "sample")
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(def v1 [1 2 3 3 4 8])
-(contains? v1 3)
-(def v1 [1 2 3 3 4 8])
-(contains? v1 3)
-(remove v1 3)
-v1
+cases
+(:chests (first cases))
 (defn parseCase
   [{:keys [index value]}]
   (let
@@ -439,51 +53,25 @@ v1
                     :keysInside keysInside}))]
     {:caseNumber index
      :keysList keysList
-     :chests (set (indexed-values chests))}))
+     :chests (apply sorted-set-by (fn [l r] (compare (:index l) (:index r)))
+                                      (indexed-values chests))}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
-(def v1 #{1 2 3 3 4 8})
-(contains? v1 3)
-(remove v1 3)
-(def v1 #{1 2 3 3 4 8})
-(contains? v1 3)
-(dissoc v1 3)
-(def v1 #{1 2 3 3 4 8})
-(contains? v1 3)
-(dissoc v1 3)
-(def v1 #{1 2 3 3 4 8})
-(contains? v1 3)
-(def v1 #{1 2 3 3 4 8})
-(def v1 #{1 2 3 3 4 8} )
-#{3 4 5}
-(def eee #{3 4 5}_
-(def eee #{3 4 5}_)
-)
-(def eee #{3 4 5})
-eee
-(def v1 #{1 2 3 3 4 8})
-(def v1 #{1 2 3 4 8})
-(contains? v1 3)
-(dissoc v1 3)
-(def v1 #{1 2 3 4 8})
-v1
-(contains? v1 3)
-(remove v1 3)
-(disj v1 3)
-(defn find-paths
-  [keysHeld chests]
-  (if (empty? keysHeld)
-      (lazy-seq [(empty? chests)])
-      (for [{:keys [index value]} chests]
-      (let
-        [{:keys [lockType keysInside]} value]
-        (if (keysHeld lockType)
-          (let
-            [keysHeld (removeKeyHeld keysHeld lockType)
-             keysHeld (addToKeysHeld keysHeld keysInside)
-             chests (disj chests chest)]
-            (cons index (find-paths keysHeld chests))))))))
+(test-expected-output solve-for-input problemName "sample")
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(:chests (first cases))
+(contains? (:chests (first cases)) {:index 1})
+(disj (:chests (first cases)) {:index 1})
+(disj (:chests (first cases)) {:index 4})
+(disj (:chests (first cases)) {:index 3})
+(disj (:chests (first cases)) {:index 2})
+(test-expected-output solve-for-input problemName "sample")
+(def ls (cons 4 (cons 5 (lazy-seq [(empty? `(1))]))))
+(def lastls (last ls))
+(if lastls true false)
+ls
 (defn find-paths
   [keysHeld chests]
   (if (empty? keysHeld)
@@ -496,5 +84,417 @@ v1
             [keysHeld (removeKeyHeld keysHeld lockType)
              keysHeld (addToKeysHeld keysHeld keysInside)
              chests (disj chests chest)]
-            (cons index (find-paths keysHeld chests))))))))
+            (cons index (flatten find-paths keysHeld chests))))))))
 (test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (for [{:keys [index value] :as chest} chests]
+      (let
+        [{:keys [lockType keysInside]} value]
+        (if (keysHeld lockType)
+          (let
+            [keysHeld (removeKeyHeld keysHeld lockType)
+             keysHeld (addToKeysHeld keysHeld keysInside)
+             chests (disj chests chest)]
+            (cons index (flatten (find-paths keysHeld chests)))))))))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (map (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)]
+                  (cons index (find-paths keysHeld chests))))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (map (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)]
+                  (cons index (find-paths keysHeld chests))))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (map (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)]
+                  (cons index (flatten (find-paths keysHeld chests)))))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (map (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)]
+                  (cons index (find-paths keysHeld chests))))))
+           chests)))
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (map (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)]
+                  (cons index (find-paths keysHeld chests))))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (mapcat (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)]
+                  (cons index (find-paths keysHeld chests))))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (mapcat (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)
+                   paths (find-paths keysHeld chests)]
+                  (if (seq paths)
+                    (cons index (find-paths keysHeld chests))
+                    nil)))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (mapcat (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)
+                   paths (find-paths keysHeld chests)]
+                  (if (seq paths)
+                    (cons index (find-paths keysHeld chests))
+                    nil)))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (lazy-seq [(empty? chests)])
+      (mapcat (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)
+                   paths (find-paths keysHeld chests)]
+                  (if (seq paths)
+                    (cons index (find-paths keysHeld chests))
+                    nil)))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (if (empty? chests)
+        (lazy-seq [false])
+        nil)
+      (mapcat (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)
+                   paths (find-paths keysHeld chests)]
+                  (if (seq paths)
+                    (cons index (find-paths keysHeld chests))
+                    nil)))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     paths (find-paths keysHeld chests)
+     bestPath (take-while #(%) paths)
+     validPaths (filter last paths)
+     result ""]
+    (pprint paths)
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     paths (find-paths keysHeld chests)
+     bestPath (take-while #(%) paths)
+     validPaths (filter last paths)
+     result ""]
+    (pprint bestPath)
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     paths (find-paths keysHeld chests)
+     bestPath (take-while identity paths)
+     validPaths (filter last paths)
+     result ""]
+    (pprint bestPath)
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     paths (find-paths keysHeld chests)
+     bestPath (take-while identity paths)
+     validPaths (filter last paths)
+     result (join " " bestPath)]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(defn processCase
+  [{:keys [caseNumber keysList chests]}]
+  (let
+    [keysHeld (addToKeysHeld {} keysList)
+     paths (find-paths keysHeld chests)
+     bestPath (take-while identity paths)
+     validPaths (filter last paths)
+     result (if (seq bestPath)
+              (join " " bestPath)
+              "IMPOSSIBLE")]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
+    {:caseNumber caseNumber
+     :result     result}))
+(test-expected-output solve-for-input problemName "sample")
+(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
+(in-ns 'problems.treasure.main)
+(test-expected-output solve-for-input problemName "sample")
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
+(in-ns 'problems.treasure.main)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+     validPaths (filter last paths)(defn find-paths
+  [keysHeld chests]
+  (if (or (empty? keysHeld) (empty? chests))
+      (if (empty? chests)
+        (lazy-seq [false])
+        nil)
+      (mapcat (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)
+                   paths (find-paths keysHeld chests)]
+                  (if (seq paths)
+                    (cons index (find-paths keysHeld chests))
+                    nil)))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
+(in-ns 'problems.treasure.main)
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(defn find-paths
+  [keysHeld chests]
+  (if (empty? keysHeld)
+      (if (empty? chests)
+        (lazy-seq [false])
+        nil)
+      (mapcat (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)
+                   paths (find-paths keysHeld chests)]
+                  (if (seq paths)
+                    (cons index (find-paths keysHeld chests))
+                    nil)))))
+           chests)))
+(test-expected-output solve-for-input problemName "sample")
+(println (write-solution solve-for-input problemName "small"))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(defn parseCase
+  [{:keys [index value]}]
+  (let
+    [lines (rest value)
+     keysList (map to-int (split (first lines) #"\s"))
+     chests (for [chest (rest lines)]
+                 (let
+                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
+                   {:lockType lockType
+                    :keysInside keysInside}))]
+    {:caseNumber index
+     :keysList keysList
+     :chests (apply sorted-set-by (fn [l r] (compare (:index r) (:index l)))
+                                      (indexed-values chests))}))
+(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(test-expected-output solve-for-input problemName "sample")
+(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
+(in-ns 'problems.treasure.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(load-file (str "target/cljx_generated/clj/problems/fair_and_square/main.clj"))
+(in-ns 'problems.fair_and_square.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(Math/sqrt 999)
+(Math/sqrt 989)
+(Math/sqrt 981)
+(* 31 31)
+(* 33 33)
+(* 29 29)
+(* 22 22)
+(* 1111 1111)
+(* 2222 2222)
+(* 3333 3333)
+(Math/sqrt 1111)
+(/ 1111 11)
+(/ 2222 11)
+(/ 3333 11)
+(* 200 11)
+(* 2200 2200)
+(* 11 11)
+(* 111 111)
+(* 121 121)
+(* 212 212)
+(/ 212 11)
+(* 303 303)
+(* 313 313)
+(* 222 222)
+(* 212 212)
+(* 2322 232)
+(* 232 232)
+(* 242 242)
+(* 121 121)
+(* 1221 1221)
+(* 121 121)
+(* 101 101)
+(* 202 202)
+(* 1111 1111)
+(* 1001 1001)
+(* 2002 2002)
+(* 3003 3003)
+(* 2002 2002)
+(* 2112 2112)
+(* 22 22)
+(* 20102 20102)
+(* 131 131)
+(* 141 141)
+(* 151 151)
+(* 151 161)
+(* 161 161)
+(* 191 191)
+(* 202 191)
+(* 202 202)
+(defn sq [n] (* n n))
+(sq 202)
+(sq 212)
+(sq 222)
+(sq 232)
+(sq 1001)
+(sq 1111)
+(sq 1221)
+(sq 1331)
+(sq 1441)
+(sq 2002)
+(sq 2112)
+(sq 10001)
+(sq 10101)
+(sq 11011)
+(sq 11111)
+(sq 20002)
+(sq 20102)
+(sq 20202)
+(sq 20102)
+(sq 10201)
+(sq 12021)
+(sq 12221)
+(sq 11211)
+(sq 20002)
+(sq 20102)
+(sq 22022)
+(sq 22122)

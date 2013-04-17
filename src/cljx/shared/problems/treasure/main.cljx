@@ -28,7 +28,8 @@
                     :keysInside keysInside}))]
     {:caseNumber index
      :keysList keysList
-     :chests (indexed-values chests)}))
+     :chests (apply sorted-set-by (fn [l r] (compare (:index l) (:index r)))
+                                      (indexed-values chests))}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 
 (def addToKeysHeld
@@ -39,16 +40,44 @@
             (assoc keysHeld nextKey (inc nextKeyTotal))
             (assoc keysHeld nextKey 1))))))
 
+(defn removeKeyHeld
+  [keysHeld keyType]
+  (let
+    [keyTotal (get keysHeld keyType)]
+    (if (= 1 keyTotal)
+      (dissoc keysHeld keyType)
+      (assoc keysHeld keyType (dec keyTotal)))))
+
 (defn find-paths
-  [keysList chests]
-  keysList)
+  [keysHeld chests]
+  (if (or (empty? keysHeld) (empty? chests))
+      (if (empty? chests)
+        (lazy-seq [false])
+        nil)
+      (mapcat (fn [{:keys [index value] :as chest}]
+             (let
+              [{:keys [lockType keysInside]} value]
+              (if (keysHeld lockType)
+                (let
+                  [keysHeld (removeKeyHeld keysHeld lockType)
+                   keysHeld (addToKeysHeld keysHeld keysInside)
+                   chests (disj chests chest)
+                   paths (find-paths keysHeld chests)]
+                  (if (seq paths)
+                    (cons index (find-paths keysHeld chests))
+                    nil)))))
+           chests)))
 
 (defn processCase
   [{:keys [caseNumber keysList chests]}]
   (let
     [keysHeld (addToKeysHeld {} keysList)
-     result ""]
-    (pprint keysHeld)
+     paths (find-paths keysHeld chests)
+     bestPath (take-while identity paths)
+     validPaths (filter last paths)
+     result (if (seq bestPath)
+              (join " " bestPath)
+              "IMPOSSIBLE")]
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
@@ -62,6 +91,8 @@
 ;<F5> Parse and print sample
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
+
+(disj (:chests (first cases)) {:index 2})
 
 ;<F6> Test sample output vs expected output
 (test-expected-output solve-for-input problemName "sample")
@@ -80,6 +111,14 @@
 (load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
 (in-ns 'problems.treasure.main)
 
-(def m1 (assoc {} 3 5))
+(def ls (cons 4 (cons 5 (lazy-seq [(empty? `(1))]))))
+(def lastls (last ls))
+(if lastls true false)
+
+(def v1 #{1 2 3 4 8})
+
+(contains? v1 3)
+
+(disj v1 3)
 
 )
