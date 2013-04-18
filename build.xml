@@ -59,6 +59,7 @@
       <fileset dir="target">
         <include name="public/**/*"/>
         <include name="built-files/**/*"/>
+        <include name="cljx_generated/**/*"/>
       </fileset>
       <fileset refid="built-files"></fileset>
     </delete>

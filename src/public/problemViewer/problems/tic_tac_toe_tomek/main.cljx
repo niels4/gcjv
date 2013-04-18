@@ -1,9 +1,9 @@
-^:cljs (ns problems.tic-tac-toe-tomek.main
+^:cljs (ns problems.tic_tac_toe_tomek.main
   (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]))
-^:clj (ns problems.tic-tac-toe-tomek.main
+^:clj (ns problems.tic_tac_toe_tomek.main
   (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
@@ -12,7 +12,7 @@
         [gcj-viewer.file-util :only [write-solution read-input-text
                                      test-expected-output]]))
 
-(def problemName "tic-tac-toe-tomek")
+(def problemName "tic_tac_toe_tomek")
 
 (def linesPerCase 4)
 
@@ -82,14 +82,14 @@
 (def cases (caseParser (read-input-text problemName "small")))
 (pprint cases)
 
-;<S-F6> Solve small and copy output file location to cliprows
+;<S-F6> Solve small and copy output file location to clipboard
 (println (write-solution solve-for-input problemName "small"))
 
-;<C-F6> Solve large and copy output file location to cliprows
+;<C-F6> Solve large and copy output file location to clipboard
 (def largeSolution (write-solution solve-for-input problemName "large"))
   
 ;<Refresh>
-(load-file (str "target/cljx_generated/clj/problems/tic-tac-toe-tomek/main.clj"))
-(in-ns 'problems.tic-tac-toe-tomek.main)
+(load-file (str "target/cljx_generated/clj/problems/tic_tac_toe_tomek/main.clj"))
+(in-ns 'problems.tic_tac_toe_tomek.main)
 
 )

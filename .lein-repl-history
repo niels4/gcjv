@@ -1,39 +1,3 @@
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
-(in-ns 'problems.treasure.main)
-(compare 1 2)
-(compare 1 1)
-(compare 3 4)
-(defn parseCase
-  [{:keys [index value]}]
-  (let
-    [lines (rest value)
-     keysList (map to-int (split (first lines) #"\s"))
-     chests (for [chest (rest lines)]
-                 (let
-                   [[lockType numKeys & keysInside] (map to-int (split chest #"\s"))]
-                   {:lockType lockType
-                    :keysInside keysInside}))]
-    {:caseNumber index
-     :keysList keysList
-     :chests (sorted-set-by (fn [l r] (compare (:index l) (:index r)))
-                                      (indexed-values chests))}))
-(def caseParser (partial parse-cases-from-input parseCase linesPerCase))
-(load-file (str "target/cljx_generated/clj/problems/treasure/main.clj"))
-(in-ns 'problems.treasure.main)
-(def cases (caseParser (read-input-text problemName "sample")))
-(pprint cases)
-(test-expected-output solve-for-input problemName "sample")
-(defn processCase
-  [{:keys [caseNumber keysList chests]}]
-  (let
-    [keysHeld (addToKeysHeld {} keysList)
-     paths (find-paths keysHeld chests)
-     validPaths (filter last paths)
-     result ""]
     (pprint paths)
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
@@ -498,3 +462,39 @@ ls
 (sq 20102)
 (sq 22022)
 (sq 22122)
+(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
+(in-ns 'problems.lawnmower.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def rows (:rows (nth cases 2)))
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(load-file (str "target/cljx_generated/clj/problems/tic_tac_toe_tomek/main.clj"))
+(in-ns 'problems.tic_tac_toe_tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(if (seq "hello") true false)
+(if (seq "") true false)
+(load-file (str "target/cljx_generated/clj/problems/tic_tac_toe_tomek/main.clj"))
+(in-ns 'problems.tic_tac_toe_tomek.main)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(load-file (str "target/cljx_generated/clj/problems/tic_tac_toe_tomek/main.clj"))
+(in-ns 'problems.tic_tac_toe_tomek.main)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "sample")))
+(pprint cases)
+(def cases (caseParser (read-input-text problemName "small")))
+(pprint cases)
+(def largeSolution (write-solution solve-for-input problemName "large"))

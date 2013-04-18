@@ -48,7 +48,6 @@
   (let
     [light-state (is-light-on num-snappers times-snapped)
      result (if light-state "ON" "OFF")]
-    (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
 

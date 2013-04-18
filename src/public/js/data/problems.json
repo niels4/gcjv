@@ -18,5 +18,13 @@
   {
     "name": "rope_intranet",
     "descriptionUrl": "http://code.google.com/codejam/contest/619102/dashboard#s=p0"
+  },
+  {
+    "name": "tic_tac_toe_tomek",
+    "descriptionUrl": "http://code.google.com/codejam/contest/2270488/dashboard"
+  },
+  {
+    "name": "lawnmower",
+    "descriptionUrl": "http://code.google.com/codejam/contest/2270488/dashboard#s=p1"
   }
 ]

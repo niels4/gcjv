@@ -41,7 +41,7 @@
   (let
     [wires (sort-by :l  wires)
      result (reduce intersectCount [0 (rest wires)] wires)]
-    ^:clj (print-status (str "Completed Case #" caseNumber))
+    (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
 

@@ -12,6 +12,12 @@
         [gcj-viewer.file-util :only [write-solution read-input-text
                                      test-expected-output]]))
 
+;; For some reason this problem generates slightly different results in the browser
+;; than it does in the JVM for just some of the cases. I suspect the rem and quot
+;; functions might behave differently in clojurescript than they do in the JVM  
+;; I'll have to look into this later when I have more time
+;; The JVM version gives the correct answer, the clojurescript version is off slightly
+
 (def problemName "theme_park")
 
 (def linesPerCase 2)

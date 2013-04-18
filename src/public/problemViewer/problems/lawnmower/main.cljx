@@ -1,10 +1,10 @@
-^:cljs (ns problems.reverse_words.main
-  (:use [gcj-util.misc :only [to-int indexed-values]]
+^:cljs (ns problems.lawnmower.main
+  (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]))
-^:clj (ns problems.reverse_words.main
-  (:use [gcj-util.misc :only [to-int indexed-values]]
+^:clj (ns problems.lawnmower.main
+  (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]
@@ -12,24 +12,47 @@
         [gcj-viewer.file-util :only [write-solution read-input-text
                                      test-expected-output]]))
 
-(def problemName "reverse_words")
+(def problemName "lawnmower")
 
-(def linesPerCase 1)
+(def linesPerCase :var1)
 
 (defn parseCase
   [{:keys [index value]}]
   (let
-    [[line] value]
+    [lines value
+     rows (vec (for [line (rest lines)]
+                 (->> (split line #"\s")
+                      (map to-int)
+                      indexed-values
+                      vec)))]
     {:caseNumber index
-     :words (split line #"\s")}))
+     :rows rows}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 
-(defn processCase
-  [{:keys [caseNumber words]}]
+(defn rowsToCols
+  [rows]
+  (vec (for [rowIndex (range (count (rows 0)))]
+    (vec (for [row rows]
+      (:value (row rowIndex)))))))
+
+(defn colValid?
+  [cols {:keys [index value]}]
+  (every? #(<= % value) (cols (dec index))))
+
+(defn rowValid?
+  [cols row]
   (let
-    [result (->> words
-                 reverse
-                 (join " "))]
+    [maxHeight (apply max (map :value row))
+     colsToCheck (filter #(< (:value %) maxHeight) row)]
+    (every? (partial colValid? cols) colsToCheck)))
+
+(defn processCase
+  [{:keys [caseNumber rows]}]
+  (let
+    [cols (rowsToCols rows)
+     isValid (every? (partial rowValid? cols) rows)
+     result (if isValid "YES" "NO")]
+    ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
 
@@ -42,6 +65,10 @@
 ;<F5> Parse and print sample
 (def cases (caseParser (read-input-text problemName "sample")))
 (pprint cases)
+(def rows (:rows (nth cases 2)))
+
+(def cols (rowsToCols rows))
+(colValid? cols {:index 2 :value 1})
 
 ;<F6> Test sample output vs expected output
 (test-expected-output solve-for-input problemName "sample")
@@ -57,7 +84,7 @@
 (def largeSolution (write-solution solve-for-input problemName "large"))
   
 ;<Refresh>
-(load-file (str "target/cljx_generated/clj/problems/reverse_words/main.clj"))
-(in-ns 'problems.reverse_words.main)
+(load-file (str "target/cljx_generated/clj/problems/lawnmower/main.clj"))
+(in-ns 'problems.lawnmower.main)
 
 )
