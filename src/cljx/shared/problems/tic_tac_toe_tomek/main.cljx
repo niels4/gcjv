@@ -19,8 +19,8 @@
 (defn parseCase
   [{:keys [index value]}]
   (let
-    [[line1 line2 line3 line4] value
-     rows (vec (map vec [line1 line2 line3 line4]))]
+    [lines value
+     rows (vec (map vec lines))]
     {:caseNumber index
      :rows rows}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))

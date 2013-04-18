@@ -32,8 +32,8 @@
                         (read-output-text problemName (str "expected-" inputName)))
      solution (solve-for-input inputText)
      successMsg (if (= solution expectedSolution) "PASSED!" "FAILED!")]
-    (println "Expected output:")
+    (println "Expected output: ")
     (println expectedSolution)
-    (println "Actual output:")
+    (println "Actual output: ")
     (println solution)
     (println "GCJ Test Sample: " successMsg)))

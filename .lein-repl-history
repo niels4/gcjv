@@ -1,10 +1,3 @@
-    (pprint paths)
-    ^:clj (print-status (str "Completed Case #" caseNumber))
-    {:caseNumber caseNumber
-     :result     result}))
-(test-expected-output solve-for-input problemName "sample")
-cases
-(:chests (first cases))
 (defn parseCase
   [{:keys [index value]}]
   (let
@@ -498,3 +491,10 @@ ls
 (def cases (caseParser (read-input-text problemName "small")))
 (pprint cases)
 (def largeSolution (write-solution solve-for-input problemName "large"))
+(all-ns)
+(in-ns 'problems.snapper_chain.main)
+problemName
+(load-file (str "target/cljx_generated/clj/problems/snapper_chain/main.clj"))
+(in-ns 'problems.snapper_chain.main)
+problemName
+(pprint (fn [a] a))

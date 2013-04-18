@@ -15,7 +15,7 @@ define(['underscore', 'backbone', 'text!data/problems.json'],
     problemsList = _.sortBy(JSON.parse(problemsListJson), "name");
 
     modelDefaults = {};
-    modelDefaults[constants.DEBUG_MODE] = true;
+    modelDefaults[constants.DEBUG_MODE] = false;
     modelDefaults[constants.PROBLEM_SELECTED] = constants.DEFAULT_SELECT_MESSAGE;
     modelDefaults[constants.PROBLEMS] = [
       { name: constants.DEFAULT_SELECT_MESSAGE,

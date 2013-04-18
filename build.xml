@@ -26,7 +26,7 @@
   <property name="deploy.jsmain.file" location="${deploy.js.dir}/main.js" />
 
   <fileset id="public-deps" dir="${src.public.dir}">
-    <include name="*.html" />
+    <include name="index.html" />
     <include name="problemViewer/**/*" />
   </fileset>
 
@@ -36,7 +36,7 @@
 
   <fileset id="js-deps" dir="${src.js.dir}">
     <include name="lib/require/require.js" />
-    <include name="workers/**/*" />
+    <include name="workers/cljsWorker.js" />
   </fileset>
 
   <fileset id="built-files" dir="${src.public.dir}">
@@ -106,7 +106,22 @@
     </description>
   </target>
 
-  <target name="compile-clojurescript">
+  <target name="compile-cljx">
+    <description>
+      compile-cljx:
+      Use lein to compile the cljs and clj files from the cljx files.
+    </description>
+    <exec osfamily="windows" failonerror="true" executable="cmd">
+      <arg line="/c lein cljx once" />
+    </exec>
+
+   <exec osfamily="unix" failonerror="true" executable="/bin/sh"> 
+    <arg value="-c" /> 
+    <arg value="lein cljx once" /> 
+   </exec> 
+  </target>
+
+  <target name="compile-clojurescript" depends="compile-cljx">
     <description>
       compile-clojurescript:
       Use lein to compile the clojurescript
