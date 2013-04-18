@@ -1,9 +1,9 @@
 /*jslint browser: true, indent: 2, nomen: true, es5: true, devel: true */
 /*global define */
-define(['backbone', 'text!data/problems.json'],
-  function (Backbone, problemsList) {
+define(['underscore', 'backbone', 'text!data/problems.json'],
+  function (_, Backbone, problemsListJson) {
     "use strict";
-    var constants, modelDefaults;
+    var constants, modelDefaults, problemsList;
 
     constants = {
       DEFAULT_SELECT_MESSAGE: "Select a Problem...",
@@ -12,12 +12,14 @@ define(['backbone', 'text!data/problems.json'],
       DEBUG_MODE: 'debugMode'
     };
 
+    problemsList = _.sortBy(JSON.parse(problemsListJson), "name");
+
     modelDefaults = {};
     modelDefaults[constants.DEBUG_MODE] = true;
     modelDefaults[constants.PROBLEM_SELECTED] = constants.DEFAULT_SELECT_MESSAGE;
     modelDefaults[constants.PROBLEMS] = [
       { name: constants.DEFAULT_SELECT_MESSAGE,
-        descriptionUrl: ""}].concat(JSON.parse(problemsList));
+        descriptionUrl: ""}].concat(problemsList);
 
     return Backbone.Model.extend(
       {
