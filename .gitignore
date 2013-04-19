@@ -1,7 +1,7 @@
 target/
 out/
 repl/
-.sass-cache/*
+.sass-cache*
 .svn*
 .lein-repl-history
 *.swp
