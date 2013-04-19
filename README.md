@@ -1,7 +1,11 @@
 # Code Jam Solution Viewer
 <br />
 
-This application started off as a way to learn clojure syntax and functional programming
+This application can be hosted entirely as static files in any HTTP server.
+Here is an example of the app hosted using Google Drive:
+[Code Jam Solution Viewer](https://googledrive.com/host/0B2DTdtklfWDyWXBueGRCVmdSTTQ/index.html)
+
+This project started off as a way to learn clojure syntax and functional programming
 concepts. Originally, it only ran on the JVM. I then had the idea of creating a browser
 based UI for running the solutions and viewing the source code. My first thought was to
 create a rest service in clojure that takes the problem name and input text as parameters,
@@ -23,11 +27,6 @@ The Run Button starts the worker and passes it a message containing the problem 
 Then, when the clojurescript worker computes a response, it passes the output in a message back
 to the javascript environment that invoked it. The text field for displaying the output text
 is then updated with the message contents.
-
-This application can be hosted entirely as static files in any HTTP server.
-Here is an example of the app hosted using Google Drive:
-[Code Jam Solution Viewer](https://googledrive.com/host/0B2DTdtklfWDyWXBueGRCVmdSTTQ/index.html)
-
 
 
 ## To Run Web-App:
