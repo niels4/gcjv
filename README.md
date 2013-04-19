@@ -1,13 +1,32 @@
 # Code Jam Solution Viewer
 <br />
 
-    This application started off as a way to learn clojure syntax and functional programming concepts. Originally, it only ran on the JVM. I then had the idea of creating a browser based UI for running the solutions and viewing the source code. My first thought was to create a rest service in clojure that takes the problem name and input text as parameters, runs the corresponding solve function against the input, and returns the results.  But that was too straight forward and easy, and it also required investment in a web server that could host the webservices that would be doing all of the computing.  Instead, I decided to convert all of my clojure code into code that could be compiled and ran in both the browser and the JVM. I used the [cljx plugin](https://github.com/lynaghk/cljx) for leiningen to handle the minor implementation differences between the two.
-    
-    The clojurescript code is compiled down to a single js file using the lein cljsbuild plugin.  Instead of being loaded into the page, the file is loaded as a web worker script. This creates something that can be thought of as a mini clojurescript server running as a background process in the user's browser. The services can be started and stopped by creating a new worker and then calling the terminate function on the worker. Messages can be sent and received between the javascript environment and the clojurescript web worker environment, much like messages are passed back and forth when making ajax calls to a REST service. The Run Button starts the worker and passes it a message containing the problem name and input. Then, when the clojurescript worker computes a response, it passes the output in a message back to the javascript environment that invoked it. The text field for displaying the output text is then updated with the message contents.
+This application started off as a way to learn clojure syntax and functional programming
+concepts. Originally, it only ran on the JVM. I then had the idea of creating a browser
+based UI for running the solutions and viewing the source code. My first thought was to
+create a rest service in clojure that takes the problem name and input text as parameters,
+runs the corresponding solve function against the input, and returns the results.
+But that was too straight forward and easy, and it also required investment in a web
+server that could host the webservices that would be doing all of the computing.
+Instead, I decided to convert all of my clojure code into code that could be compiled
+and ran in both the browser and the JVM. I used the [cljx plugin](https://github.com/lynaghk/cljx)
+for leiningen to handle the minor implementation differences between the two.
 
-    This application can be hosted entirely as static files in any HTTP server.
-    Here is an example of the app hosted using Google Drive:
-    [Code Jam Solution Viewer](https://googledrive.com/host/0B2DTdtklfWDyWXBueGRCVmdSTTQ/index.html)
+The clojurescript code is compiled down to a single js file using the lein cljsbuild
+plugin. Instead of being loaded into the page, the file is loaded as a web worker script.
+This creates something that can be thought of as a mini clojurescript server running
+as a background process in the user's browser. The services can be started and stopped
+by creating a new worker and then calling the terminate function on the worker. Messages
+can be sent and received between the javascript environment and the clojurescript web worker
+environment, much like messages are passed back and forth when making ajax calls to a REST service.
+The Run Button starts the worker and passes it a message containing the problem name and input.
+Then, when the clojurescript worker computes a response, it passes the output in a message back
+to the javascript environment that invoked it. The text field for displaying the output text
+is then updated with the message contents.
+
+This application can be hosted entirely as static files in any HTTP server.
+Here is an example of the app hosted using Google Drive:
+[Code Jam Solution Viewer](https://googledrive.com/host/0B2DTdtklfWDyWXBueGRCVmdSTTQ/index.html)
 
 
 
