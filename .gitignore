@@ -1,9 +1,10 @@
 target/
 out/
 repl/
+.lein-repl-history
 *.swp
 *~
 .svn*
 .project
-src/compass/.sass-cache/
+.sass-cache/*
 *.swo
