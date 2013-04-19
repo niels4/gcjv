@@ -6,7 +6,8 @@
     The clojurescript code is compiled down to a single js file using the lein cljsbuild plugin.  Instead of being loaded into the page, the file is loaded as a web worker script. This creates something that can be thought of as a mini clojurescript server running as a background process in the user's browser. The services can be started and stopped by creating a new worker and then calling the terminate function on the worker. Messages can be sent and received between the javascript environment and the clojurescript web worker environment, much like messages are passed back and forth when making ajax calls to a REST service. The Run Button starts the worker and passes it a message containing the problem name and input. Then, when the clojurescript worker computes a response, it passes the output in a message back to the javascript environment that invoked it. The text field for displaying the output text is then updated with the message contents.
 
     This application can be hosted entirely as static files in any HTTP server.
-    Here is an example of the app hosted using Google Drive.
+    Here is an example of the app hosted using Google Drive:
+    [Code Jam Solution Viewer](https://googledrive.com/host/0B2DTdtklfWDyWXBueGRCVmdSTTQ/index.html)
 
 
 
