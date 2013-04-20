@@ -54,12 +54,12 @@ Example With Python:
 
 ### Usage
 
-    From the root of the project directory, type:
-    lein solve <problem_name> <input_name>
+From the root of the project directory, type:
+> lein solve <problem_name> <input_name>
     
 #### Example:
-    The following command will solve the snapper chain problem using the file src/cljx/shared /problems/snapper_chain/input/large.in as its input.
-    The output will be the file src/cljx/shared/problems/snapper_chain/output/large.out
+The following command will solve the snapper chain problem using the file src/cljx/shared /problems/snapper_chain/input/large.in as its input.
+The output will be the file src/cljx/shared/problems/snapper_chain/output/large.out
 > lein solve snapper_chain large
 
 
