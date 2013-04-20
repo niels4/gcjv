@@ -10,7 +10,7 @@ concepts. Originally, it only ran on the JVM. I then had the idea of creating a 
 based UI for running the solutions and viewing the source code. My first thought was to
 create a rest service in clojure that takes the problem name and input text as parameters,
 runs the corresponding solve function against the input, and returns the results.
-But that was too straight forward and easy, and it also required investment in a web
+But that was too straight forward and easy, and it also required an investment in a web
 server that could host the webservices that would be doing all of the computing.
 Instead, I decided to convert all of my clojure code into code that could be compiled
 and ran in both the browser and the JVM. I used the [cljx plugin](https://github.com/lynaghk/cljx)
@@ -64,7 +64,7 @@ Example With Python:
 
 
 
-## To Build:
+## To Build Minified Web App:
 
 ### Requirements:
 * Compass (which requires ruby) to build the css files
@@ -84,7 +84,8 @@ Example With Python:
 ### Building:
 
 With all of the build tools installed, to build the minified web app, simply type:
-  ANT
+  > ANT
+The built web app will be in the target/public directory.
 
 ## Advanced Workflow:
 
