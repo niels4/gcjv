@@ -55,7 +55,7 @@ Example With Python:
 ### Usage
 
 From the root of the project directory, type:
-> lein solve <problem_name> <input_name>
+> lein solve \<problem_name\> \<input_name\>
     
 #### Example:
 The following command will solve the snapper chain problem using the file src/cljx/shared /problems/snapper_chain/input/large.in as its input.
@@ -85,6 +85,7 @@ The output will be the file src/cljx/shared/problems/snapper_chain/output/large.
 
 With all of the build tools installed, to build the minified web app, simply type:
   > ANT
+
 The built web app will be in the target/public directory.
 
 ## Advanced Workflow:
