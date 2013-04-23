@@ -38,12 +38,7 @@
 (defmethod numLines-from-lines :var2
   [linesPerCase lines]
   "take the last int on the first line of each case and add one more line"
-  (->> lines
-       first
-       (#(split % #"\s"))
-       last
-       to-int
-       (+ 2)))
+  (inc (numLines-from-lines :var lines)))
 
 (defmethod cases-from-lines :var
   [linesPerCase lines]
@@ -76,6 +71,6 @@
     [lines (-> input
                trim-newline
                (split #"\n")
-               (#(filter seq %)))
+               (#(filter (comp not empty?) %)))
      rawCases (raw-cases-from-lines linesPerCase lines)]
     (map parseFunction (:rawCases rawCases))))
