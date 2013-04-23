@@ -20,7 +20,7 @@
   [{:keys [index value]}]
   (let
     [[line] value
-     [start end] (map to-int (split line #"\s"))]
+     [start end] (map bigint (split line #"\s"))]
     {:caseNumber index
      :start start
      :end end}))
@@ -30,10 +30,21 @@
   [value]
   (= (reverse (str value)) (seq (str value))))
 
+(defn fair-and-square?
+  [value]
+  (and (palindrome? value) (palindrome? (* value value))))
+
+(defn num-palindromes [n]
+  (->> (drop 1 (range))
+     (filter  fair-and-square?)
+     (map #(* % %))
+     (take-while #(<= % n))
+     count))
+
 (defn processCase
   [{:keys [caseNumber start end]}]
   (let
-    [result ""]
+    [result (- (num-palindromes end) (num-palindromes (dec start)))]
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
@@ -65,14 +76,20 @@
 (load-file (str "target/cljx_generated/clj/problems/fair_and_square/main.clj"))
 (in-ns 'problems.fair_and_square.main)
 
-(defn fair-and-square?
-  [value]
-  (and (palindrome? value) (palindrome? (* value value))))
+(defn fas-diff [start end]
+  (- (num-palindromes end) (num-palindromes (dec start))))
 
+(fas-diff 100 1000)
 
-(->> (range)
-     (filter  fair-and-square?)
-     (take-while #(<= % 1E10))
-     count)
+(defn sq [n] (* n n))
+
+(sq 11)
+(sq 22) 
+
+(palindrome? 22)
+
+(Math/sqrt 121)
+
+(take 20 (range 1 -1))
 
 )
