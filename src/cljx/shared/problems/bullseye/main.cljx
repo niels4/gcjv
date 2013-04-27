@@ -1,9 +1,9 @@
-^:cljs (ns problems.fair_and_square.main
+^:cljs (ns problems.bullseye.main
   (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
         [clojure.string :only [split join]]))
-^:clj (ns problems.fair_and_square.main
+^:clj (ns problems.bullseye.main
   (:use [gcj-util.misc :only [to-int indexed-values print-status]]
         [gcj-util.case-reader :only [parse-cases-from-input]]
         [gcj-util.case-solver :only [solve-problem]]
@@ -12,7 +12,7 @@
         [gcj-viewer.file-util :only [write-solution read-input-text
                                      test-expected-output]]))
 
-(def problemName "fair_and_square")
+(def problemName "bullseye")
 
 (def linesPerCase 1)
 
@@ -20,43 +20,33 @@
   [{:keys [index value]}]
   (let
     [[line] value
-     [start end] (map bigint (split line #"\s"))]
+     [r t] (map bigint (split line #"\s"))]
     {:caseNumber index
-     :start start
-     :end end}))
+     :r r
+     :t t}))
 (def caseParser (partial parse-cases-from-input parseCase linesPerCase))
 
-(defn palindrome?
-  [value]
-  (= (reverse (str value)) (seq (str value))))
+(def pi Math/PI)
 
-(defn fas-root?
-  [value]
-  (and (palindrome? value) (palindrome? (* value value))))
-
-(defn create-fas-count-map [n]
-  (loop
-    [fas-seq (->> (iterate inc 1)
-                  (filter fas-root?)
-                  (map #(* % %)))
-     fas-counts (sorted-map 0 0) 
-     cur-count 1]
-    (let
-      [nextFasNum (first fas-seq)]
-      (if (> nextFasNum n)
-          fas-counts
-          (recur (rest fas-seq)
-                 (assoc fas-counts nextFasNum cur-count)
-                 (inc cur-count))))))
-
-(def fas-count-map (create-fas-count-map 1E14))
+(defn ring-area
+  [r]
+  (let
+    [r2-2 (* (inc r) (inc r))
+     r1-2 (* r r)]
+    (- r2-2 r1-2)))
 
 (defn processCase
-  [{:keys [caseNumber start end]}]
+  [{:keys [caseNumber r t]}]
   (let
-    [endCount (second (first (rsubseq fas-count-map <= end)))
-     startCount (second (first (rsubseq fas-count-map < start)))
-     result (- endCount startCount)]
+    [result (loop
+              [paint-area t
+               r r
+               circles 0]
+              (let
+                [circle-area (- (* (inc r) pi) (* r pi))]
+                (if (< paint-area circle-area)
+                  circles
+                  (recur (- paint-area circle-area) (+ r 2) (inc circles)))))]
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
      :result     result}))
@@ -85,12 +75,11 @@
 (def largeSolution (write-solution solve-for-input problemName "large"))
   
 ;<Refresh>
-(load-file (str "target/cljx_generated/clj/problems/fair_and_square/main.clj"))
-(in-ns 'problems.fair_and_square.main)
+(load-file (str "target/cljx_generated/clj/problems/bullseye/main.clj"))
+(in-ns 'problems.bullseye.main)
 
-(def fas-roots (->> (iterate inc 1)
-                  (filter fas-root?)))
+(->> (iterate (partial + 2) 1)
+     (take 20)
+     (map #(println (str % ": "(ring-area %)))))
 
-(take 100 fas-roots)
-     
 )
