@@ -38,18 +38,23 @@
 (defn processCase
   [{:keys [caseNumber r t]}]
   (let
-    [result (loop
-              [paint-area t
-               r r
-               circles 0]
-              (let
-                [circle-area (- (* (inc r) pi) (* r pi))]
-                (if (< paint-area circle-area)
-                  circles
-                  (recur (- paint-area circle-area) (+ r 2) (inc circles)))))]
+    [area0 (* r r)
+     n0 (bigint (/ (inc r) 2))
+     n0 (if (even? r)
+          (+ 2 n0)
+          n0)
+     target-area (+ (* 2 t) area0 (* 4 n0))
+     max-r (Math/sqrt target-area)
+     max-n (bigint (/ (inc max-r) 2))
+     result {:n0 n0
+             :area0 area0
+             :target-area target-area
+             :max-r max-r
+             :max-n max-n
+             :answer (str (bigint (- max-n n0)))}]
     ^:clj (print-status (str "Completed Case #" caseNumber))
     {:caseNumber caseNumber
-     :result     result}))
+     :result     (:answer result)}))
 
 (defn ^:export solve-for-input
   [input]

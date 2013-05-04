@@ -179,7 +179,9 @@
       <fileset dir="src/templates/exported_solution" includes="**/*" />
     </copy>
     <copy todir="${exported_solution.dir}/src/cljx">
-      <fileset dir="src/cljx/server" includes="**/*"/>
+      <fileset dir="src/cljx/server">
+        <include name="gcj_viewer/*" />
+      </fileset>
       <fileset dir="src/cljx/shared">
         <include name="gcj_util/**/*" />
         <include name="problems/${problemName}/*.cljx" />
