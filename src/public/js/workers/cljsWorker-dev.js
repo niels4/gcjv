@@ -29309,11 +29309,11 @@ goog.provide("gcj_util.case_solver");
 goog.require("cljs.core");
 goog.require("clojure.string");
 goog.require("clojure.string");
-gcj_util.case_solver.result_to_line = function result_to_line(p__3651) {
-  var map__3653 = p__3651;
-  var map__3653__$1 = cljs.core.seq_QMARK_.call(null, map__3653) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3653) : map__3653;
-  var result = cljs.core._lookup.call(null, map__3653__$1, "\ufdd0:result", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3653__$1, "\ufdd0:caseNumber", null);
+gcj_util.case_solver.result_to_line = function result_to_line(p__3435) {
+  var map__3437 = p__3435;
+  var map__3437__$1 = cljs.core.seq_QMARK_.call(null, map__3437) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3437) : map__3437;
+  var result = cljs.core._lookup.call(null, map__3437__$1, "\ufdd0:result", null);
+  var caseNumber = cljs.core._lookup.call(null, map__3437__$1, "\ufdd0:caseNumber", null);
   return[cljs.core.str("Case #"), cljs.core.str(caseNumber), cljs.core.str(": "), cljs.core.str(result)].join("")
 };
 gcj_util.case_solver.format_results = function format_results(results) {
@@ -29485,15 +29485,15 @@ problems.lawnmower.main.colValid_QMARK_ = function colValid_QMARK_(cols, p__3504
   var map__3506__$1 = cljs.core.seq_QMARK_.call(null, map__3506) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3506) : map__3506;
   var value = cljs.core._lookup.call(null, map__3506__$1, "\ufdd0:value", null);
   var index = cljs.core._lookup.call(null, map__3506__$1, "\ufdd0:index", null);
-  return cljs.core.every_QMARK_.call(null, function(p1__2385909_SHARP_) {
-    return p1__2385909_SHARP_ <= value
+  return cljs.core.every_QMARK_.call(null, function(p1__86809_SHARP_) {
+    return p1__86809_SHARP_ <= value
   }, cols.call(null, index - 1))
 };
 problems.lawnmower.main.rowValid_QMARK_ = function rowValid_QMARK_(cols, row) {
   var maxHeight = cljs.core.apply.call(null, cljs.core.max, cljs.core.map.call(null, "\ufdd0:value", row));
   var colsToCheck = cljs.core.filter.call(null, function(maxHeight) {
-    return function(p1__2386586_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2386586_SHARP_) < maxHeight
+    return function(p1__87486_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__87486_SHARP_) < maxHeight
     }
   }(maxHeight), row);
   return cljs.core.every_QMARK_.call(null, cljs.core.partial.call(null, problems.lawnmower.main.colValid_QMARK_, cols), colsToCheck)
@@ -29782,8 +29782,8 @@ problems.rope_intranet.main.intersectCount = function intersectCount(p__3521, ne
   if(cljs.core.empty_QMARK_.call(null, restWires)) {
     return acc
   }else {
-    return cljs.core.PersistentVector.fromArray([acc + cljs.core.count.call(null, cljs.core.filter.call(null, function(p1__2395427_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:r")).call(null, p1__2395427_SHARP_) < (new cljs.core.Keyword("\ufdd0:r")).call(null, nextWire)
+    return cljs.core.PersistentVector.fromArray([acc + cljs.core.count.call(null, cljs.core.filter.call(null, function(p1__96327_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:r")).call(null, p1__96327_SHARP_) < (new cljs.core.Keyword("\ufdd0:r")).call(null, nextWire)
     }, restWires)), cljs.core.rest.call(null, restWires)], true)
   }
 };
@@ -29867,23 +29867,23 @@ problems.store_credit.main.processCase = function processCase(p__3545) {
   var items = cljs.core._lookup.call(null, map__3551__$1, "\ufdd0:items", null);
   var credit = cljs.core._lookup.call(null, map__3551__$1, "\ufdd0:credit", null);
   var caseNumber = cljs.core._lookup.call(null, map__3551__$1, "\ufdd0:caseNumber", null);
-  var validItems = cljs.core.filter.call(null, function(p1__2404918_SHARP_) {
-    return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2404918_SHARP_) < credit
+  var validItems = cljs.core.filter.call(null, function(p1__105818_SHARP_) {
+    return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__105818_SHARP_) < credit
   }, items);
   var halfCredit = credit / 2;
   var bigItems = cljs.core.filter.call(null, function(validItems, halfCredit) {
-    return function(p1__2404919_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2404919_SHARP_) > halfCredit
+    return function(p1__105819_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__105819_SHARP_) > halfCredit
     }
   }(validItems, halfCredit), validItems);
   var smallItems = cljs.core.filter.call(null, function(validItems, halfCredit, bigItems) {
-    return function(p1__2404920_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2404920_SHARP_) < halfCredit
+    return function(p1__105820_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__105820_SHARP_) < halfCredit
     }
   }(validItems, halfCredit, bigItems), validItems);
   var halfItems = cljs.core.filter.call(null, function(validItems, halfCredit, bigItems, smallItems) {
-    return function(p1__2404921_SHARP_) {
-      return cljs.core._EQ_.call(null, (new cljs.core.Keyword("\ufdd0:value")).call(null, p1__2404921_SHARP_), halfCredit)
+    return function(p1__105821_SHARP_) {
+      return cljs.core._EQ_.call(null, (new cljs.core.Keyword("\ufdd0:value")).call(null, p1__105821_SHARP_), halfCredit)
     }
   }(validItems, halfCredit, bigItems, smallItems), validItems);
   var resultItems = cljs.core._EQ_.call(null, 2, cljs.core.count.call(null, halfItems)) ? halfItems : cljs.core.first.call(null, function() {
@@ -30043,18 +30043,18 @@ problems.tic_tac_toe_tomek.main.diagonalsFromBoard = function diagonalsFromBoard
   }())], true)
 };
 problems.tic_tac_toe_tomek.main.winFilter = function winFilter(symb, possibleWin) {
-  return cljs.core.every_QMARK_.call(null, function(p1__2422368_SHARP_) {
-    var or__3824__auto__ = cljs.core._EQ_.call(null, p1__2422368_SHARP_, symb);
+  return cljs.core.every_QMARK_.call(null, function(p1__123268_SHARP_) {
+    var or__3824__auto__ = cljs.core._EQ_.call(null, p1__123268_SHARP_, symb);
     if(or__3824__auto__) {
       return or__3824__auto__
     }else {
-      return cljs.core._EQ_.call(null, p1__2422368_SHARP_, "T")
+      return cljs.core._EQ_.call(null, p1__123268_SHARP_, "T")
     }
   }, possibleWin)
 };
 problems.tic_tac_toe_tomek.main.boardFull_QMARK_ = function boardFull_QMARK_(rows) {
-  return cljs.core.every_QMARK_.call(null, function(p1__2422967_SHARP_) {
-    return cljs.core.not_EQ_.call(null, ".", p1__2422967_SHARP_)
+  return cljs.core.every_QMARK_.call(null, function(p1__123867_SHARP_) {
+    return cljs.core.not_EQ_.call(null, ".", p1__123867_SHARP_)
   }, function() {
     var iter__3120__auto__ = function iter__3625(s__3626) {
       return new cljs.core.LazySeq(null, false, function() {
