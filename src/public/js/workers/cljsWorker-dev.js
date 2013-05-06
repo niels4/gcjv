@@ -29211,11 +29211,11 @@ gcj_util.misc.to_int = function to_int(numStr) {
   return parseInt(numStr)
 };
 gcj_util.misc.indexed_values = function() {
-  var reduceFunction = function(p__3438, nextVal) {
-    var map__3439 = p__3438;
-    var map__3439__$1 = cljs.core.seq_QMARK_.call(null, map__3439) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3439) : map__3439;
-    var acc = cljs.core._lookup.call(null, map__3439__$1, "\ufdd0:acc", null);
-    var index = cljs.core._lookup.call(null, map__3439__$1, "\ufdd0:index", null);
+  var reduceFunction = function(p__4238, nextVal) {
+    var map__4239 = p__4238;
+    var map__4239__$1 = cljs.core.seq_QMARK_.call(null, map__4239) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4239) : map__4239;
+    var acc = cljs.core._lookup.call(null, map__4239__$1, "\ufdd0:acc", null);
+    var index = cljs.core._lookup.call(null, map__4239__$1, "\ufdd0:index", null);
     return cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":index + 1, "\ufdd0:acc":cljs.core.conj.call(null, acc, cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:value"], {"\ufdd0:index":index, "\ufdd0:value":nextVal}))})
   };
   var initialAcc = cljs.core.ObjMap.fromObject(["\ufdd0:index", "\ufdd0:acc"], {"\ufdd0:index":1, "\ufdd0:acc":cljs.core.PersistentVector.EMPTY});
@@ -29228,8 +29228,8 @@ goog.require("clojure.string");
 goog.require("clojure.string");
 goog.require("gcj_util.misc");
 gcj_util.case_reader.numLines_from_lines0 = function numLines_from_lines0(position_func, linesPerCase, lines) {
-  return gcj_util.misc.to_int.call(null, position_func.call(null, function(p1__57815_SHARP_) {
-    return clojure.string.split.call(null, p1__57815_SHARP_, /\s/)
+  return gcj_util.misc.to_int.call(null, position_func.call(null, function(p1__196013_SHARP_) {
+    return clojure.string.split.call(null, p1__196013_SHARP_, /\s/)
   }.call(null, cljs.core.first.call(null, lines)))) + 1
 };
 gcj_util.case_reader.numLines_from_lines = function() {
@@ -29276,13 +29276,13 @@ cljs.core._add_method.call(null, gcj_util.case_reader.cases_from_lines, "\ufdd0:
       return acc
     }else {
       var numLines = gcj_util.case_reader.numLines_from_lines.call(null, linesPerCase, lines__$1);
-      var vec__3440 = cljs.core.split_at.call(null, numLines, lines__$1);
-      var groupedLines = cljs.core.nth.call(null, vec__3440, 0, null);
-      var restOfFile = cljs.core.nth.call(null, vec__3440, 1, null);
-      var G__3441 = cljs.core.conj.call(null, acc, groupedLines);
-      var G__3442 = restOfFile;
-      acc = G__3441;
-      lines__$1 = G__3442;
+      var vec__4240 = cljs.core.split_at.call(null, numLines, lines__$1);
+      var groupedLines = cljs.core.nth.call(null, vec__4240, 0, null);
+      var restOfFile = cljs.core.nth.call(null, vec__4240, 1, null);
+      var G__4241 = cljs.core.conj.call(null, acc, groupedLines);
+      var G__4242 = restOfFile;
+      acc = G__4241;
+      lines__$1 = G__4242;
       continue
     }
     break
@@ -29299,8 +29299,8 @@ gcj_util.case_reader.raw_cases_from_lines = function raw_cases_from_lines(linesP
   return cljs.core.ObjMap.fromObject(["\ufdd0:count", "\ufdd0:rawCases", "\ufdd0:isCountValid"], {"\ufdd0:count":expectedCount, "\ufdd0:rawCases":rawCases, "\ufdd0:isCountValid":isCountValid})
 };
 gcj_util.case_reader.parse_cases_from_input = function parse_cases_from_input(parseFunction, linesPerCase, input) {
-  var lines = function(p1__62678_SHARP_) {
-    return cljs.core.filter.call(null, cljs.core.comp.call(null, cljs.core.not, cljs.core.empty_QMARK_), p1__62678_SHARP_)
+  var lines = function(p1__200876_SHARP_) {
+    return cljs.core.filter.call(null, cljs.core.seq, p1__200876_SHARP_)
   }.call(null, clojure.string.split.call(null, clojure.string.trim_newline.call(null, input), /\n/));
   var rawCases = gcj_util.case_reader.raw_cases_from_lines.call(null, linesPerCase, lines);
   return cljs.core.map.call(null, parseFunction, (new cljs.core.Keyword("\ufdd0:rawCases")).call(null, rawCases))
@@ -29309,11 +29309,11 @@ goog.provide("gcj_util.case_solver");
 goog.require("cljs.core");
 goog.require("clojure.string");
 goog.require("clojure.string");
-gcj_util.case_solver.result_to_line = function result_to_line(p__3435) {
-  var map__3437 = p__3435;
-  var map__3437__$1 = cljs.core.seq_QMARK_.call(null, map__3437) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3437) : map__3437;
-  var result = cljs.core._lookup.call(null, map__3437__$1, "\ufdd0:result", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3437__$1, "\ufdd0:caseNumber", null);
+gcj_util.case_solver.result_to_line = function result_to_line(p__4235) {
+  var map__4237 = p__4235;
+  var map__4237__$1 = cljs.core.seq_QMARK_.call(null, map__4237) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4237) : map__4237;
+  var result = cljs.core._lookup.call(null, map__4237__$1, "\ufdd0:result", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4237__$1, "\ufdd0:caseNumber", null);
   return[cljs.core.str("Case #"), cljs.core.str(caseNumber), cljs.core.str(": "), cljs.core.str(result)].join("")
 };
 gcj_util.case_solver.format_results = function format_results(results) {
@@ -29337,16 +29337,16 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.fair_and_square.main.problemName = "fair_and_square";
 problems.fair_and_square.main.linesPerCase = 1;
-problems.fair_and_square.main.parseCase = function parseCase(p__3527) {
-  var map__3531 = p__3527;
-  var map__3531__$1 = cljs.core.seq_QMARK_.call(null, map__3531) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3531) : map__3531;
-  var value = cljs.core._lookup.call(null, map__3531__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3531__$1, "\ufdd0:index", null);
-  var vec__3532 = value;
-  var line = cljs.core.nth.call(null, vec__3532, 0, null);
-  var vec__3533 = cljs.core.map.call(null, problems.fair_and_square.main.bigint, clojure.string.split.call(null, line, /\s/));
-  var start = cljs.core.nth.call(null, vec__3533, 0, null);
-  var end = cljs.core.nth.call(null, vec__3533, 1, null);
+problems.fair_and_square.main.parseCase = function parseCase(p__4327) {
+  var map__4331 = p__4327;
+  var map__4331__$1 = cljs.core.seq_QMARK_.call(null, map__4331) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4331) : map__4331;
+  var value = cljs.core._lookup.call(null, map__4331__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4331__$1, "\ufdd0:index", null);
+  var vec__4332 = value;
+  var line = cljs.core.nth.call(null, vec__4332, 0, null);
+  var vec__4333 = cljs.core.map.call(null, problems.fair_and_square.main.bigint, clojure.string.split.call(null, line, /\s/));
+  var start = cljs.core.nth.call(null, vec__4333, 0, null);
+  var end = cljs.core.nth.call(null, vec__4333, 1, null);
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:start", "\ufdd0:end"], {"\ufdd0:caseNumber":index, "\ufdd0:start":start, "\ufdd0:end":end})
 };
 problems.fair_and_square.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.fair_and_square.main.parseCase, problems.fair_and_square.main.linesPerCase);
@@ -29362,8 +29362,8 @@ problems.fair_and_square.main.fas_root_QMARK_ = function fas_root_QMARK_(value) 
   }
 };
 problems.fair_and_square.main.create_fas_count_map = function create_fas_count_map(n) {
-  var fas_seq = cljs.core.map.call(null, function(p1__79138_SHARP_) {
-    return p1__79138_SHARP_ * p1__79138_SHARP_
+  var fas_seq = cljs.core.map.call(null, function(p1__217258_SHARP_) {
+    return p1__217258_SHARP_ * p1__217258_SHARP_
   }, cljs.core.filter.call(null, problems.fair_and_square.main.fas_root_QMARK_, cljs.core.iterate.call(null, cljs.core.inc, 1)));
   var fas_counts = cljs.core.sorted_map.call(null, 0, 0);
   var cur_count = 1;
@@ -29372,24 +29372,24 @@ problems.fair_and_square.main.create_fas_count_map = function create_fas_count_m
     if(nextFasNum > n) {
       return fas_counts
     }else {
-      var G__3534 = cljs.core.rest.call(null, fas_seq);
-      var G__3535 = cljs.core.assoc.call(null, fas_counts, nextFasNum, cur_count);
-      var G__3536 = cur_count + 1;
-      fas_seq = G__3534;
-      fas_counts = G__3535;
-      cur_count = G__3536;
+      var G__4334 = cljs.core.rest.call(null, fas_seq);
+      var G__4335 = cljs.core.assoc.call(null, fas_counts, nextFasNum, cur_count);
+      var G__4336 = cur_count + 1;
+      fas_seq = G__4334;
+      fas_counts = G__4335;
+      cur_count = G__4336;
       continue
     }
     break
   }
 };
 problems.fair_and_square.main.fas_count_map = problems.fair_and_square.main.create_fas_count_map.call(null, 1E14);
-problems.fair_and_square.main.processCase = function processCase(p__3537) {
-  var map__3539 = p__3537;
-  var map__3539__$1 = cljs.core.seq_QMARK_.call(null, map__3539) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3539) : map__3539;
-  var end = cljs.core._lookup.call(null, map__3539__$1, "\ufdd0:end", null);
-  var start = cljs.core._lookup.call(null, map__3539__$1, "\ufdd0:start", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3539__$1, "\ufdd0:caseNumber", null);
+problems.fair_and_square.main.processCase = function processCase(p__4337) {
+  var map__4339 = p__4337;
+  var map__4339__$1 = cljs.core.seq_QMARK_.call(null, map__4339) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4339) : map__4339;
+  var end = cljs.core._lookup.call(null, map__4339__$1, "\ufdd0:end", null);
+  var start = cljs.core._lookup.call(null, map__4339__$1, "\ufdd0:start", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4339__$1, "\ufdd0:caseNumber", null);
   var endCount = cljs.core.second.call(null, cljs.core.first.call(null, cljs.core.rsubseq.call(null, problems.fair_and_square.main.fas_count_map, cljs.core._LT__EQ_, end)));
   var startCount = cljs.core.second.call(null, cljs.core.first.call(null, cljs.core.rsubseq.call(null, problems.fair_and_square.main.fas_count_map, cljs.core._LT_, start)));
   var result = endCount - startCount;
@@ -29411,22 +29411,22 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.lawnmower.main.problemName = "lawnmower";
 problems.lawnmower.main.linesPerCase = "\ufdd0:var1";
-problems.lawnmower.main.parseCase = function parseCase(p__3485) {
-  var map__3489 = p__3485;
-  var map__3489__$1 = cljs.core.seq_QMARK_.call(null, map__3489) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3489) : map__3489;
-  var value = cljs.core._lookup.call(null, map__3489__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3489__$1, "\ufdd0:index", null);
+problems.lawnmower.main.parseCase = function parseCase(p__4285) {
+  var map__4289 = p__4285;
+  var map__4289__$1 = cljs.core.seq_QMARK_.call(null, map__4289) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4289) : map__4289;
+  var value = cljs.core._lookup.call(null, map__4289__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4289__$1, "\ufdd0:index", null);
   var lines = value;
   var rows = cljs.core.vec.call(null, function() {
     var iter__3120__auto__ = function(lines) {
-      return function iter__3490(s__3491) {
+      return function iter__4290(s__4291) {
         return new cljs.core.LazySeq(null, false, function(lines) {
           return function() {
-            var s__3491__$1 = s__3491;
+            var s__4291__$1 = s__4291;
             while(true) {
-              if(cljs.core.seq.call(null, s__3491__$1)) {
-                var line = cljs.core.first.call(null, s__3491__$1);
-                return cljs.core.cons.call(null, cljs.core.vec.call(null, gcj_util.misc.indexed_values.call(null, cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line, /\s/)))), iter__3490.call(null, cljs.core.rest.call(null, s__3491__$1)))
+              if(cljs.core.seq.call(null, s__4291__$1)) {
+                var line = cljs.core.first.call(null, s__4291__$1);
+                return cljs.core.cons.call(null, cljs.core.vec.call(null, gcj_util.misc.indexed_values.call(null, cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line, /\s/)))), iter__4290.call(null, cljs.core.rest.call(null, s__4291__$1)))
               }else {
                 return null
               }
@@ -29443,22 +29443,22 @@ problems.lawnmower.main.parseCase = function parseCase(p__3485) {
 problems.lawnmower.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.lawnmower.main.parseCase, problems.lawnmower.main.linesPerCase);
 problems.lawnmower.main.rowsToCols = function rowsToCols(rows) {
   return cljs.core.vec.call(null, function() {
-    var iter__3120__auto__ = function iter__3498(s__3499) {
+    var iter__3120__auto__ = function iter__4298(s__4299) {
       return new cljs.core.LazySeq(null, false, function() {
-        var s__3499__$1 = s__3499;
+        var s__4299__$1 = s__4299;
         while(true) {
-          if(cljs.core.seq.call(null, s__3499__$1)) {
-            var rowIndex = cljs.core.first.call(null, s__3499__$1);
+          if(cljs.core.seq.call(null, s__4299__$1)) {
+            var rowIndex = cljs.core.first.call(null, s__4299__$1);
             return cljs.core.cons.call(null, cljs.core.vec.call(null, function() {
               var iter__3120__auto__ = function(rowIndex) {
-                return function iter__3502(s__3503) {
+                return function iter__4302(s__4303) {
                   return new cljs.core.LazySeq(null, false, function(rowIndex) {
                     return function() {
-                      var s__3503__$1 = s__3503;
+                      var s__4303__$1 = s__4303;
                       while(true) {
-                        if(cljs.core.seq.call(null, s__3503__$1)) {
-                          var row = cljs.core.first.call(null, s__3503__$1);
-                          return cljs.core.cons.call(null, (new cljs.core.Keyword("\ufdd0:value")).call(null, row.call(null, rowIndex)), iter__3502.call(null, cljs.core.rest.call(null, s__3503__$1)))
+                        if(cljs.core.seq.call(null, s__4303__$1)) {
+                          var row = cljs.core.first.call(null, s__4303__$1);
+                          return cljs.core.cons.call(null, (new cljs.core.Keyword("\ufdd0:value")).call(null, row.call(null, rowIndex)), iter__4302.call(null, cljs.core.rest.call(null, s__4303__$1)))
                         }else {
                           return null
                         }
@@ -29469,7 +29469,7 @@ problems.lawnmower.main.rowsToCols = function rowsToCols(rows) {
                 }
               }(rowIndex);
               return iter__3120__auto__.call(null, rows)
-            }()), iter__3498.call(null, cljs.core.rest.call(null, s__3499__$1)))
+            }()), iter__4298.call(null, cljs.core.rest.call(null, s__4299__$1)))
           }else {
             return null
           }
@@ -29480,29 +29480,29 @@ problems.lawnmower.main.rowsToCols = function rowsToCols(rows) {
     return iter__3120__auto__.call(null, cljs.core.range.call(null, cljs.core.count.call(null, rows.call(null, 0))))
   }())
 };
-problems.lawnmower.main.colValid_QMARK_ = function colValid_QMARK_(cols, p__3504) {
-  var map__3506 = p__3504;
-  var map__3506__$1 = cljs.core.seq_QMARK_.call(null, map__3506) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3506) : map__3506;
-  var value = cljs.core._lookup.call(null, map__3506__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3506__$1, "\ufdd0:index", null);
-  return cljs.core.every_QMARK_.call(null, function(p1__86809_SHARP_) {
-    return p1__86809_SHARP_ <= value
+problems.lawnmower.main.colValid_QMARK_ = function colValid_QMARK_(cols, p__4304) {
+  var map__4306 = p__4304;
+  var map__4306__$1 = cljs.core.seq_QMARK_.call(null, map__4306) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4306) : map__4306;
+  var value = cljs.core._lookup.call(null, map__4306__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4306__$1, "\ufdd0:index", null);
+  return cljs.core.every_QMARK_.call(null, function(p1__224929_SHARP_) {
+    return p1__224929_SHARP_ <= value
   }, cols.call(null, index - 1))
 };
 problems.lawnmower.main.rowValid_QMARK_ = function rowValid_QMARK_(cols, row) {
   var maxHeight = cljs.core.apply.call(null, cljs.core.max, cljs.core.map.call(null, "\ufdd0:value", row));
   var colsToCheck = cljs.core.filter.call(null, function(maxHeight) {
-    return function(p1__87486_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__87486_SHARP_) < maxHeight
+    return function(p1__225606_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__225606_SHARP_) < maxHeight
     }
   }(maxHeight), row);
   return cljs.core.every_QMARK_.call(null, cljs.core.partial.call(null, problems.lawnmower.main.colValid_QMARK_, cols), colsToCheck)
 };
-problems.lawnmower.main.processCase = function processCase(p__3507) {
-  var map__3509 = p__3507;
-  var map__3509__$1 = cljs.core.seq_QMARK_.call(null, map__3509) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3509) : map__3509;
-  var rows = cljs.core._lookup.call(null, map__3509__$1, "\ufdd0:rows", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3509__$1, "\ufdd0:caseNumber", null);
+problems.lawnmower.main.processCase = function processCase(p__4307) {
+  var map__4309 = p__4307;
+  var map__4309__$1 = cljs.core.seq_QMARK_.call(null, map__4309) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4309) : map__4309;
+  var rows = cljs.core._lookup.call(null, map__4309__$1, "\ufdd0:rows", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4309__$1, "\ufdd0:caseNumber", null);
   var cols = problems.lawnmower.main.rowsToCols.call(null, rows);
   var isValid = cljs.core.every_QMARK_.call(null, cljs.core.partial.call(null, problems.lawnmower.main.rowValid_QMARK_, cols), rows);
   var result = isValid ? "YES" : "NO";
@@ -29524,16 +29524,16 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.snapper_chain.main.problemName = "snapper_chain";
 problems.snapper_chain.main.linesPerCase = 1;
-problems.snapper_chain.main.parseCase = function parseCase(p__3473) {
-  var map__3477 = p__3473;
-  var map__3477__$1 = cljs.core.seq_QMARK_.call(null, map__3477) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3477) : map__3477;
-  var value = cljs.core._lookup.call(null, map__3477__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3477__$1, "\ufdd0:index", null);
-  var vec__3478 = value;
-  var line = cljs.core.nth.call(null, vec__3478, 0, null);
-  var vec__3479 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line, /\s/));
-  var num_snappers = cljs.core.nth.call(null, vec__3479, 0, null);
-  var times_snapped = cljs.core.nth.call(null, vec__3479, 1, null);
+problems.snapper_chain.main.parseCase = function parseCase(p__4273) {
+  var map__4277 = p__4273;
+  var map__4277__$1 = cljs.core.seq_QMARK_.call(null, map__4277) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4277) : map__4277;
+  var value = cljs.core._lookup.call(null, map__4277__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4277__$1, "\ufdd0:index", null);
+  var vec__4278 = value;
+  var line = cljs.core.nth.call(null, vec__4278, 0, null);
+  var vec__4279 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line, /\s/));
+  var num_snappers = cljs.core.nth.call(null, vec__4279, 0, null);
+  var times_snapped = cljs.core.nth.call(null, vec__4279, 1, null);
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:num-snappers", "\ufdd0:times-snapped"], {"\ufdd0:caseNumber":index, "\ufdd0:num-snappers":num_snappers, "\ufdd0:times-snapped":times_snapped})
 };
 problems.snapper_chain.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.snapper_chain.main.parseCase, problems.snapper_chain.main.linesPerCase);
@@ -29544,10 +29544,10 @@ problems.snapper_chain.main.snaps_to_power_light = function snaps_to_power_light
     if(num_switches__$1 === 0) {
       return snap_count
     }else {
-      var G__3480 = num_switches__$1 - 1;
-      var G__3481 = 2 * snap_count + 1;
-      num_switches__$1 = G__3480;
-      snap_count = G__3481;
+      var G__4280 = num_switches__$1 - 1;
+      var G__4281 = 2 * snap_count + 1;
+      num_switches__$1 = G__4280;
+      snap_count = G__4281;
       continue
     }
     break
@@ -29558,12 +29558,12 @@ problems.snapper_chain.main.is_light_on = function is_light_on(num_switches, num
   var snap_multiple = (num_snaps + 1) / (snaps_to_power + 1);
   return cljs.core.integer_QMARK_.call(null, snap_multiple)
 };
-problems.snapper_chain.main.processCase = function processCase(p__3482) {
-  var map__3484 = p__3482;
-  var map__3484__$1 = cljs.core.seq_QMARK_.call(null, map__3484) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3484) : map__3484;
-  var times_snapped = cljs.core._lookup.call(null, map__3484__$1, "\ufdd0:times-snapped", null);
-  var num_snappers = cljs.core._lookup.call(null, map__3484__$1, "\ufdd0:num-snappers", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3484__$1, "\ufdd0:caseNumber", null);
+problems.snapper_chain.main.processCase = function processCase(p__4282) {
+  var map__4284 = p__4282;
+  var map__4284__$1 = cljs.core.seq_QMARK_.call(null, map__4284) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4284) : map__4284;
+  var times_snapped = cljs.core._lookup.call(null, map__4284__$1, "\ufdd0:times-snapped", null);
+  var num_snappers = cljs.core._lookup.call(null, map__4284__$1, "\ufdd0:num-snappers", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4284__$1, "\ufdd0:caseNumber", null);
   var light_state = problems.snapper_chain.main.is_light_on.call(null, num_snappers, times_snapped);
   var result = cljs.core.truth_(light_state) ? "ON" : "OFF";
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":result})
@@ -29593,18 +29593,18 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.theme_park.main.problemName = "theme_park";
 problems.theme_park.main.linesPerCase = 2;
-problems.theme_park.main.parseCase = function parseCase(p__3566) {
-  var map__3570 = p__3566;
-  var map__3570__$1 = cljs.core.seq_QMARK_.call(null, map__3570) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3570) : map__3570;
-  var value = cljs.core._lookup.call(null, map__3570__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3570__$1, "\ufdd0:index", null);
-  var vec__3571 = value;
-  var line1 = cljs.core.nth.call(null, vec__3571, 0, null);
-  var line2 = cljs.core.nth.call(null, vec__3571, 1, null);
-  var vec__3572 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line1, /\s/));
-  var r = cljs.core.nth.call(null, vec__3572, 0, null);
-  var k = cljs.core.nth.call(null, vec__3572, 1, null);
-  var n = cljs.core.nth.call(null, vec__3572, 2, null);
+problems.theme_park.main.parseCase = function parseCase(p__4366) {
+  var map__4370 = p__4366;
+  var map__4370__$1 = cljs.core.seq_QMARK_.call(null, map__4370) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4370) : map__4370;
+  var value = cljs.core._lookup.call(null, map__4370__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4370__$1, "\ufdd0:index", null);
+  var vec__4371 = value;
+  var line1 = cljs.core.nth.call(null, vec__4371, 0, null);
+  var line2 = cljs.core.nth.call(null, vec__4371, 1, null);
+  var vec__4372 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line1, /\s/));
+  var r = cljs.core.nth.call(null, vec__4372, 0, null);
+  var k = cljs.core.nth.call(null, vec__4372, 1, null);
+  var n = cljs.core.nth.call(null, vec__4372, 2, null);
   var groups = cljs.core.vec.call(null, cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line2, /\s/)));
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:times-run", "\ufdd0:capacity", "\ufdd0:num-groups", "\ufdd0:groups"], {"\ufdd0:caseNumber":index, "\ufdd0:times-run":r, "\ufdd0:capacity":k, "\ufdd0:num-groups":n, "\ufdd0:groups":groups})
 };
@@ -29624,14 +29624,14 @@ problems.theme_park.main.load_groups = function load_groups(groups, capacity, gr
     }())) {
       return cljs.core.PersistentVector.fromArray([capacity, position], true)
     }else {
-      var G__3573 = groups;
-      var G__3574 = next_capacity;
-      var G__3575 = groups_to_load - 1;
-      var G__3576 = next_pos;
-      groups = G__3573;
-      capacity = G__3574;
-      groups_to_load = G__3575;
-      position = G__3576;
+      var G__4373 = groups;
+      var G__4374 = next_capacity;
+      var G__4375 = groups_to_load - 1;
+      var G__4376 = next_pos;
+      groups = G__4373;
+      capacity = G__4374;
+      groups_to_load = G__4375;
+      position = G__4376;
       continue
     }
     break
@@ -29664,62 +29664,62 @@ problems.theme_park.main.run_coaster = function run_coaster(load_func, groups, c
           return and__3822__auto__
         }
       }())) {
-        var map__3579 = pos_match;
-        var map__3579__$1 = cljs.core.seq_QMARK_.call(null, map__3579) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3579) : map__3579;
-        var total_loop_money = cljs.core._lookup.call(null, map__3579__$1, "\ufdd0:total-loop-money", null);
-        var times_left = cljs.core._lookup.call(null, map__3579__$1, "\ufdd0:times-left", null);
-        var loop_times = cljs.core._lookup.call(null, map__3579__$1, "\ufdd0:loop-times", null);
-        var loop_money = cljs.core._lookup.call(null, map__3579__$1, "\ufdd0:loop-money", null);
-        var loop_length = cljs.core._lookup.call(null, map__3579__$1, "\ufdd0:loop-length", null);
-        var G__3581 = load_func;
-        var G__3582 = groups;
-        var G__3583 = capacity;
-        var G__3584 = times_left;
-        var G__3585 = total_loop_money + money_made;
-        var G__3586 = position;
-        var G__3587 = prev_positions;
-        load_func = G__3581;
-        groups = G__3582;
-        capacity = G__3583;
-        times_to_run = G__3584;
-        money_made = G__3585;
-        position = G__3586;
-        prev_positions = G__3587;
+        var map__4379 = pos_match;
+        var map__4379__$1 = cljs.core.seq_QMARK_.call(null, map__4379) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4379) : map__4379;
+        var total_loop_money = cljs.core._lookup.call(null, map__4379__$1, "\ufdd0:total-loop-money", null);
+        var times_left = cljs.core._lookup.call(null, map__4379__$1, "\ufdd0:times-left", null);
+        var loop_times = cljs.core._lookup.call(null, map__4379__$1, "\ufdd0:loop-times", null);
+        var loop_money = cljs.core._lookup.call(null, map__4379__$1, "\ufdd0:loop-money", null);
+        var loop_length = cljs.core._lookup.call(null, map__4379__$1, "\ufdd0:loop-length", null);
+        var G__4381 = load_func;
+        var G__4382 = groups;
+        var G__4383 = capacity;
+        var G__4384 = times_left;
+        var G__4385 = total_loop_money + money_made;
+        var G__4386 = position;
+        var G__4387 = prev_positions;
+        load_func = G__4381;
+        groups = G__4382;
+        capacity = G__4383;
+        times_to_run = G__4384;
+        money_made = G__4385;
+        position = G__4386;
+        prev_positions = G__4387;
         continue
       }else {
         var prev_positions__$1 = cljs.core.assoc.call(null, prev_positions, position, cljs.core.ObjMap.fromObject(["\ufdd0:money-made", "\ufdd0:times-to-run"], {"\ufdd0:money-made":money_made, "\ufdd0:times-to-run":times_to_run}));
-        var vec__3580 = load_func.call(null, position);
-        var empty_seats = cljs.core.nth.call(null, vec__3580, 0, null);
-        var next_pos = cljs.core.nth.call(null, vec__3580, 1, null);
+        var vec__4380 = load_func.call(null, position);
+        var empty_seats = cljs.core.nth.call(null, vec__4380, 0, null);
+        var next_pos = cljs.core.nth.call(null, vec__4380, 1, null);
         var run_money = capacity - empty_seats;
-        var G__3588 = load_func;
-        var G__3589 = groups;
-        var G__3590 = capacity;
-        var G__3591 = times_to_run - 1;
-        var G__3592 = run_money + money_made;
-        var G__3593 = next_pos;
-        var G__3594 = prev_positions__$1;
-        load_func = G__3588;
-        groups = G__3589;
-        capacity = G__3590;
-        times_to_run = G__3591;
-        money_made = G__3592;
-        position = G__3593;
-        prev_positions = G__3594;
+        var G__4388 = load_func;
+        var G__4389 = groups;
+        var G__4390 = capacity;
+        var G__4391 = times_to_run - 1;
+        var G__4392 = run_money + money_made;
+        var G__4393 = next_pos;
+        var G__4394 = prev_positions__$1;
+        load_func = G__4388;
+        groups = G__4389;
+        capacity = G__4390;
+        times_to_run = G__4391;
+        money_made = G__4392;
+        position = G__4393;
+        prev_positions = G__4394;
         continue
       }
     }
     break
   }
 };
-problems.theme_park.main.processCase = function processCase(p__3595) {
-  var map__3597 = p__3595;
-  var map__3597__$1 = cljs.core.seq_QMARK_.call(null, map__3597) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3597) : map__3597;
-  var num_groups = cljs.core._lookup.call(null, map__3597__$1, "\ufdd0:num-groups", null);
-  var groups = cljs.core._lookup.call(null, map__3597__$1, "\ufdd0:groups", null);
-  var capacity = cljs.core._lookup.call(null, map__3597__$1, "\ufdd0:capacity", null);
-  var times_run = cljs.core._lookup.call(null, map__3597__$1, "\ufdd0:times-run", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3597__$1, "\ufdd0:caseNumber", null);
+problems.theme_park.main.processCase = function processCase(p__4395) {
+  var map__4397 = p__4395;
+  var map__4397__$1 = cljs.core.seq_QMARK_.call(null, map__4397) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4397) : map__4397;
+  var num_groups = cljs.core._lookup.call(null, map__4397__$1, "\ufdd0:num-groups", null);
+  var groups = cljs.core._lookup.call(null, map__4397__$1, "\ufdd0:groups", null);
+  var capacity = cljs.core._lookup.call(null, map__4397__$1, "\ufdd0:capacity", null);
+  var times_run = cljs.core._lookup.call(null, map__4397__$1, "\ufdd0:times-run", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4397__$1, "\ufdd0:caseNumber", null);
   var load_func = cljs.core.memoize.call(null, cljs.core.partial.call(null, problems.theme_park.main.load_groups, groups, capacity, cljs.core.count.call(null, groups)));
   var result = problems.theme_park.main.run_coaster.call(null, load_func, groups, capacity, times_run, 0, 0, cljs.core.ObjMap.EMPTY);
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":[cljs.core.str(result)].join("")})
@@ -29740,27 +29740,27 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.rope_intranet.main.problemName = "rope_intranet";
 problems.rope_intranet.main.linesPerCase = "\ufdd0:var";
-problems.rope_intranet.main.parseCase = function parseCase(p__3510) {
-  var map__3516 = p__3510;
-  var map__3516__$1 = cljs.core.seq_QMARK_.call(null, map__3516) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3516) : map__3516;
-  var value = cljs.core._lookup.call(null, map__3516__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3516__$1, "\ufdd0:index", null);
+problems.rope_intranet.main.parseCase = function parseCase(p__4310) {
+  var map__4316 = p__4310;
+  var map__4316__$1 = cljs.core.seq_QMARK_.call(null, map__4316) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4316) : map__4316;
+  var value = cljs.core._lookup.call(null, map__4316__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4316__$1, "\ufdd0:index", null);
   var lines = value;
   var wires = function() {
     var iter__3120__auto__ = function(lines) {
-      return function iter__3517(s__3518) {
+      return function iter__4317(s__4318) {
         return new cljs.core.LazySeq(null, false, function(lines) {
           return function() {
-            var s__3518__$1 = s__3518;
+            var s__4318__$1 = s__4318;
             while(true) {
-              if(cljs.core.seq.call(null, s__3518__$1)) {
-                var line = cljs.core.first.call(null, s__3518__$1);
+              if(cljs.core.seq.call(null, s__4318__$1)) {
+                var line = cljs.core.first.call(null, s__4318__$1);
                 return cljs.core.cons.call(null, function() {
-                  var vec__3520 = clojure.string.split.call(null, line, /\s/);
-                  var lheight = cljs.core.nth.call(null, vec__3520, 0, null);
-                  var rheight = cljs.core.nth.call(null, vec__3520, 1, null);
+                  var vec__4320 = clojure.string.split.call(null, line, /\s/);
+                  var lheight = cljs.core.nth.call(null, vec__4320, 0, null);
+                  var rheight = cljs.core.nth.call(null, vec__4320, 1, null);
                   return cljs.core.ObjMap.fromObject(["\ufdd0:l", "\ufdd0:r"], {"\ufdd0:l":gcj_util.misc.to_int.call(null, lheight), "\ufdd0:r":gcj_util.misc.to_int.call(null, rheight)})
-                }(), iter__3517.call(null, cljs.core.rest.call(null, s__3518__$1)))
+                }(), iter__4317.call(null, cljs.core.rest.call(null, s__4318__$1)))
               }else {
                 return null
               }
@@ -29775,23 +29775,23 @@ problems.rope_intranet.main.parseCase = function parseCase(p__3510) {
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:wires"], {"\ufdd0:caseNumber":index, "\ufdd0:wires":wires})
 };
 problems.rope_intranet.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.rope_intranet.main.parseCase, problems.rope_intranet.main.linesPerCase);
-problems.rope_intranet.main.intersectCount = function intersectCount(p__3521, nextWire) {
-  var vec__3523 = p__3521;
-  var acc = cljs.core.nth.call(null, vec__3523, 0, null);
-  var restWires = cljs.core.nth.call(null, vec__3523, 1, null);
+problems.rope_intranet.main.intersectCount = function intersectCount(p__4321, nextWire) {
+  var vec__4323 = p__4321;
+  var acc = cljs.core.nth.call(null, vec__4323, 0, null);
+  var restWires = cljs.core.nth.call(null, vec__4323, 1, null);
   if(cljs.core.empty_QMARK_.call(null, restWires)) {
     return acc
   }else {
-    return cljs.core.PersistentVector.fromArray([acc + cljs.core.count.call(null, cljs.core.filter.call(null, function(p1__96327_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:r")).call(null, p1__96327_SHARP_) < (new cljs.core.Keyword("\ufdd0:r")).call(null, nextWire)
+    return cljs.core.PersistentVector.fromArray([acc + cljs.core.count.call(null, cljs.core.filter.call(null, function(p1__234447_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:r")).call(null, p1__234447_SHARP_) < (new cljs.core.Keyword("\ufdd0:r")).call(null, nextWire)
     }, restWires)), cljs.core.rest.call(null, restWires)], true)
   }
 };
-problems.rope_intranet.main.processCase = function processCase(p__3524) {
-  var map__3526 = p__3524;
-  var map__3526__$1 = cljs.core.seq_QMARK_.call(null, map__3526) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3526) : map__3526;
-  var wires = cljs.core._lookup.call(null, map__3526__$1, "\ufdd0:wires", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3526__$1, "\ufdd0:caseNumber", null);
+problems.rope_intranet.main.processCase = function processCase(p__4324) {
+  var map__4326 = p__4324;
+  var map__4326__$1 = cljs.core.seq_QMARK_.call(null, map__4326) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4326) : map__4326;
+  var wires = cljs.core._lookup.call(null, map__4326__$1, "\ufdd0:wires", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4326__$1, "\ufdd0:caseNumber", null);
   var wires__$1 = cljs.core.sort_by.call(null, "\ufdd0:l", wires);
   var result = cljs.core.reduce.call(null, problems.rope_intranet.main.intersectCount, cljs.core.PersistentVector.fromArray([0, cljs.core.rest.call(null, wires__$1)], true), wires__$1);
   gcj_util.misc.print_status.call(null, [cljs.core.str("Completed Case #"), cljs.core.str(caseNumber)].join(""));
@@ -29813,21 +29813,21 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.reverse_words.main.problemName = "reverse_words";
 problems.reverse_words.main.linesPerCase = 1;
-problems.reverse_words.main.parseCase = function parseCase(p__3558) {
-  var map__3561 = p__3558;
-  var map__3561__$1 = cljs.core.seq_QMARK_.call(null, map__3561) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3561) : map__3561;
-  var value = cljs.core._lookup.call(null, map__3561__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3561__$1, "\ufdd0:index", null);
-  var vec__3562 = value;
-  var line = cljs.core.nth.call(null, vec__3562, 0, null);
+problems.reverse_words.main.parseCase = function parseCase(p__4358) {
+  var map__4361 = p__4358;
+  var map__4361__$1 = cljs.core.seq_QMARK_.call(null, map__4361) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4361) : map__4361;
+  var value = cljs.core._lookup.call(null, map__4361__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4361__$1, "\ufdd0:index", null);
+  var vec__4362 = value;
+  var line = cljs.core.nth.call(null, vec__4362, 0, null);
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:words"], {"\ufdd0:caseNumber":index, "\ufdd0:words":clojure.string.split.call(null, line, /\s/)})
 };
 problems.reverse_words.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.reverse_words.main.parseCase, problems.reverse_words.main.linesPerCase);
-problems.reverse_words.main.processCase = function processCase(p__3563) {
-  var map__3565 = p__3563;
-  var map__3565__$1 = cljs.core.seq_QMARK_.call(null, map__3565) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3565) : map__3565;
-  var words = cljs.core._lookup.call(null, map__3565__$1, "\ufdd0:words", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3565__$1, "\ufdd0:caseNumber", null);
+problems.reverse_words.main.processCase = function processCase(p__4363) {
+  var map__4365 = p__4363;
+  var map__4365__$1 = cljs.core.seq_QMARK_.call(null, map__4365) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4365) : map__4365;
+  var words = cljs.core._lookup.call(null, map__4365__$1, "\ufdd0:words", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4365__$1, "\ufdd0:caseNumber", null);
   var result = clojure.string.join.call(null, " ", cljs.core.reverse.call(null, words));
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:result"], {"\ufdd0:caseNumber":caseNumber, "\ufdd0:result":result})
 };
@@ -29847,67 +29847,67 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.store_credit.main.problemName = "store_credit";
 problems.store_credit.main.linesPerCase = 3;
-problems.store_credit.main.parseCase = function parseCase(p__3540) {
-  var map__3543 = p__3540;
-  var map__3543__$1 = cljs.core.seq_QMARK_.call(null, map__3543) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3543) : map__3543;
-  var value = cljs.core._lookup.call(null, map__3543__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3543__$1, "\ufdd0:index", null);
-  var vec__3544 = value;
-  var line1 = cljs.core.nth.call(null, vec__3544, 0, null);
-  var line2 = cljs.core.nth.call(null, vec__3544, 1, null);
-  var line3 = cljs.core.nth.call(null, vec__3544, 2, null);
+problems.store_credit.main.parseCase = function parseCase(p__4340) {
+  var map__4343 = p__4340;
+  var map__4343__$1 = cljs.core.seq_QMARK_.call(null, map__4343) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4343) : map__4343;
+  var value = cljs.core._lookup.call(null, map__4343__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4343__$1, "\ufdd0:index", null);
+  var vec__4344 = value;
+  var line1 = cljs.core.nth.call(null, vec__4344, 0, null);
+  var line2 = cljs.core.nth.call(null, vec__4344, 1, null);
+  var line3 = cljs.core.nth.call(null, vec__4344, 2, null);
   var credit = gcj_util.misc.to_int.call(null, line1);
   var items = gcj_util.misc.indexed_values.call(null, cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, line3, /\s/)));
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:credit", "\ufdd0:items"], {"\ufdd0:caseNumber":index, "\ufdd0:credit":credit, "\ufdd0:items":items})
 };
 problems.store_credit.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.store_credit.main.parseCase, problems.store_credit.main.linesPerCase);
-problems.store_credit.main.processCase = function processCase(p__3545) {
-  var map__3551 = p__3545;
-  var map__3551__$1 = cljs.core.seq_QMARK_.call(null, map__3551) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3551) : map__3551;
-  var items = cljs.core._lookup.call(null, map__3551__$1, "\ufdd0:items", null);
-  var credit = cljs.core._lookup.call(null, map__3551__$1, "\ufdd0:credit", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3551__$1, "\ufdd0:caseNumber", null);
-  var validItems = cljs.core.filter.call(null, function(p1__105818_SHARP_) {
-    return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__105818_SHARP_) < credit
+problems.store_credit.main.processCase = function processCase(p__4345) {
+  var map__4351 = p__4345;
+  var map__4351__$1 = cljs.core.seq_QMARK_.call(null, map__4351) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4351) : map__4351;
+  var items = cljs.core._lookup.call(null, map__4351__$1, "\ufdd0:items", null);
+  var credit = cljs.core._lookup.call(null, map__4351__$1, "\ufdd0:credit", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4351__$1, "\ufdd0:caseNumber", null);
+  var validItems = cljs.core.filter.call(null, function(p1__243938_SHARP_) {
+    return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__243938_SHARP_) < credit
   }, items);
   var halfCredit = credit / 2;
   var bigItems = cljs.core.filter.call(null, function(validItems, halfCredit) {
-    return function(p1__105819_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__105819_SHARP_) > halfCredit
+    return function(p1__243939_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__243939_SHARP_) > halfCredit
     }
   }(validItems, halfCredit), validItems);
   var smallItems = cljs.core.filter.call(null, function(validItems, halfCredit, bigItems) {
-    return function(p1__105820_SHARP_) {
-      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__105820_SHARP_) < halfCredit
+    return function(p1__243940_SHARP_) {
+      return(new cljs.core.Keyword("\ufdd0:value")).call(null, p1__243940_SHARP_) < halfCredit
     }
   }(validItems, halfCredit, bigItems), validItems);
   var halfItems = cljs.core.filter.call(null, function(validItems, halfCredit, bigItems, smallItems) {
-    return function(p1__105821_SHARP_) {
-      return cljs.core._EQ_.call(null, (new cljs.core.Keyword("\ufdd0:value")).call(null, p1__105821_SHARP_), halfCredit)
+    return function(p1__243941_SHARP_) {
+      return cljs.core._EQ_.call(null, (new cljs.core.Keyword("\ufdd0:value")).call(null, p1__243941_SHARP_), halfCredit)
     }
   }(validItems, halfCredit, bigItems, smallItems), validItems);
   var resultItems = cljs.core._EQ_.call(null, 2, cljs.core.count.call(null, halfItems)) ? halfItems : cljs.core.first.call(null, function() {
     var iter__3120__auto__ = function(validItems, halfCredit, bigItems, smallItems, halfItems) {
-      return function iter__3552(s__3553) {
+      return function iter__4352(s__4353) {
         return new cljs.core.LazySeq(null, false, function(validItems, halfCredit, bigItems, smallItems, halfItems) {
           return function() {
-            var s__3553__$1 = s__3553;
+            var s__4353__$1 = s__4353;
             while(true) {
-              if(cljs.core.seq.call(null, s__3553__$1)) {
-                var big = cljs.core.first.call(null, s__3553__$1);
-                var iterys__3118__auto__ = function(s__3553__$1, big, validItems, halfCredit, bigItems, smallItems, halfItems) {
-                  return function iter__3554(s__3555) {
-                    return new cljs.core.LazySeq(null, false, function(s__3553__$1, big, validItems, halfCredit, bigItems, smallItems, halfItems) {
+              if(cljs.core.seq.call(null, s__4353__$1)) {
+                var big = cljs.core.first.call(null, s__4353__$1);
+                var iterys__3118__auto__ = function(s__4353__$1, big, validItems, halfCredit, bigItems, smallItems, halfItems) {
+                  return function iter__4354(s__4355) {
+                    return new cljs.core.LazySeq(null, false, function(s__4353__$1, big, validItems, halfCredit, bigItems, smallItems, halfItems) {
                       return function() {
-                        var s__3555__$1 = s__3555;
+                        var s__4355__$1 = s__4355;
                         while(true) {
-                          if(cljs.core.seq.call(null, s__3555__$1)) {
-                            var small = cljs.core.first.call(null, s__3555__$1);
+                          if(cljs.core.seq.call(null, s__4355__$1)) {
+                            var small = cljs.core.first.call(null, s__4355__$1);
                             if(cljs.core._EQ_.call(null, credit, (new cljs.core.Keyword("\ufdd0:value")).call(null, big) + (new cljs.core.Keyword("\ufdd0:value")).call(null, small))) {
-                              return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray([big, small], true), iter__3554.call(null, cljs.core.rest.call(null, s__3555__$1)))
+                              return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray([big, small], true), iter__4354.call(null, cljs.core.rest.call(null, s__4355__$1)))
                             }else {
-                              var G__3556 = cljs.core.rest.call(null, s__3555__$1);
-                              s__3555__$1 = G__3556;
+                              var G__4356 = cljs.core.rest.call(null, s__4355__$1);
+                              s__4355__$1 = G__4356;
                               continue
                             }
                           }else {
@@ -29916,15 +29916,15 @@ problems.store_credit.main.processCase = function processCase(p__3545) {
                           break
                         }
                       }
-                    }(s__3553__$1, big, validItems, halfCredit, bigItems, smallItems, halfItems), null)
+                    }(s__4353__$1, big, validItems, halfCredit, bigItems, smallItems, halfItems), null)
                   }
-                }(s__3553__$1, big, validItems, halfCredit, bigItems, smallItems, halfItems);
+                }(s__4353__$1, big, validItems, halfCredit, bigItems, smallItems, halfItems);
                 var fs__3119__auto__ = cljs.core.seq.call(null, iterys__3118__auto__.call(null, smallItems));
                 if(fs__3119__auto__) {
-                  return cljs.core.concat.call(null, fs__3119__auto__, iter__3552.call(null, cljs.core.rest.call(null, s__3553__$1)))
+                  return cljs.core.concat.call(null, fs__3119__auto__, iter__4352.call(null, cljs.core.rest.call(null, s__4353__$1)))
                 }else {
-                  var G__3557 = cljs.core.rest.call(null, s__3553__$1);
-                  s__3553__$1 = G__3557;
+                  var G__4357 = cljs.core.rest.call(null, s__4353__$1);
+                  s__4353__$1 = G__4357;
                   continue
                 }
               }else {
@@ -29958,11 +29958,11 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.tic_tac_toe_tomek.main.problemName = "tic_tac_toe_tomek";
 problems.tic_tac_toe_tomek.main.linesPerCase = 4;
-problems.tic_tac_toe_tomek.main.parseCase = function parseCase(p__3598) {
-  var map__3600 = p__3598;
-  var map__3600__$1 = cljs.core.seq_QMARK_.call(null, map__3600) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3600) : map__3600;
-  var value = cljs.core._lookup.call(null, map__3600__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3600__$1, "\ufdd0:index", null);
+problems.tic_tac_toe_tomek.main.parseCase = function parseCase(p__4398) {
+  var map__4400 = p__4398;
+  var map__4400__$1 = cljs.core.seq_QMARK_.call(null, map__4400) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4400) : map__4400;
+  var value = cljs.core._lookup.call(null, map__4400__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4400__$1, "\ufdd0:index", null);
   var lines = value;
   var rows = cljs.core.vec.call(null, cljs.core.map.call(null, cljs.core.vec, lines));
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:rows"], {"\ufdd0:caseNumber":index, "\ufdd0:rows":rows})
@@ -29970,22 +29970,22 @@ problems.tic_tac_toe_tomek.main.parseCase = function parseCase(p__3598) {
 problems.tic_tac_toe_tomek.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.tic_tac_toe_tomek.main.parseCase, problems.tic_tac_toe_tomek.main.linesPerCase);
 problems.tic_tac_toe_tomek.main.rowsToCols = function rowsToCols(rows) {
   return cljs.core.vec.call(null, function() {
-    var iter__3120__auto__ = function iter__3607(s__3608) {
+    var iter__3120__auto__ = function iter__4407(s__4408) {
       return new cljs.core.LazySeq(null, false, function() {
-        var s__3608__$1 = s__3608;
+        var s__4408__$1 = s__4408;
         while(true) {
-          if(cljs.core.seq.call(null, s__3608__$1)) {
-            var rowIndex = cljs.core.first.call(null, s__3608__$1);
+          if(cljs.core.seq.call(null, s__4408__$1)) {
+            var rowIndex = cljs.core.first.call(null, s__4408__$1);
             return cljs.core.cons.call(null, cljs.core.vec.call(null, function() {
               var iter__3120__auto__ = function(rowIndex) {
-                return function iter__3611(s__3612) {
+                return function iter__4411(s__4412) {
                   return new cljs.core.LazySeq(null, false, function(rowIndex) {
                     return function() {
-                      var s__3612__$1 = s__3612;
+                      var s__4412__$1 = s__4412;
                       while(true) {
-                        if(cljs.core.seq.call(null, s__3612__$1)) {
-                          var row = cljs.core.first.call(null, s__3612__$1);
-                          return cljs.core.cons.call(null, row.call(null, rowIndex), iter__3611.call(null, cljs.core.rest.call(null, s__3612__$1)))
+                        if(cljs.core.seq.call(null, s__4412__$1)) {
+                          var row = cljs.core.first.call(null, s__4412__$1);
+                          return cljs.core.cons.call(null, row.call(null, rowIndex), iter__4411.call(null, cljs.core.rest.call(null, s__4412__$1)))
                         }else {
                           return null
                         }
@@ -29996,7 +29996,7 @@ problems.tic_tac_toe_tomek.main.rowsToCols = function rowsToCols(rows) {
                 }
               }(rowIndex);
               return iter__3120__auto__.call(null, rows)
-            }()), iter__3607.call(null, cljs.core.rest.call(null, s__3608__$1)))
+            }()), iter__4407.call(null, cljs.core.rest.call(null, s__4408__$1)))
           }else {
             return null
           }
@@ -30009,13 +30009,13 @@ problems.tic_tac_toe_tomek.main.rowsToCols = function rowsToCols(rows) {
 };
 problems.tic_tac_toe_tomek.main.diagonalsFromBoard = function diagonalsFromBoard(rows) {
   return cljs.core.PersistentVector.fromArray([cljs.core.vec.call(null, function() {
-    var iter__3120__auto__ = function iter__3617(s__3618) {
+    var iter__3120__auto__ = function iter__4417(s__4418) {
       return new cljs.core.LazySeq(null, false, function() {
-        var s__3618__$1 = s__3618;
+        var s__4418__$1 = s__4418;
         while(true) {
-          if(cljs.core.seq.call(null, s__3618__$1)) {
-            var rowIndex = cljs.core.first.call(null, s__3618__$1);
-            return cljs.core.cons.call(null, rows.call(null, rowIndex).call(null, rowIndex), iter__3617.call(null, cljs.core.rest.call(null, s__3618__$1)))
+          if(cljs.core.seq.call(null, s__4418__$1)) {
+            var rowIndex = cljs.core.first.call(null, s__4418__$1);
+            return cljs.core.cons.call(null, rows.call(null, rowIndex).call(null, rowIndex), iter__4417.call(null, cljs.core.rest.call(null, s__4418__$1)))
           }else {
             return null
           }
@@ -30025,13 +30025,13 @@ problems.tic_tac_toe_tomek.main.diagonalsFromBoard = function diagonalsFromBoard
     };
     return iter__3120__auto__.call(null, cljs.core.range.call(null, 4))
   }()), cljs.core.vec.call(null, function() {
-    var iter__3120__auto__ = function iter__3619(s__3620) {
+    var iter__3120__auto__ = function iter__4419(s__4420) {
       return new cljs.core.LazySeq(null, false, function() {
-        var s__3620__$1 = s__3620;
+        var s__4420__$1 = s__4420;
         while(true) {
-          if(cljs.core.seq.call(null, s__3620__$1)) {
-            var rowIndex = cljs.core.first.call(null, s__3620__$1);
-            return cljs.core.cons.call(null, rows.call(null, rowIndex).call(null, 3 - rowIndex), iter__3619.call(null, cljs.core.rest.call(null, s__3620__$1)))
+          if(cljs.core.seq.call(null, s__4420__$1)) {
+            var rowIndex = cljs.core.first.call(null, s__4420__$1);
+            return cljs.core.cons.call(null, rows.call(null, rowIndex).call(null, 3 - rowIndex), iter__4419.call(null, cljs.core.rest.call(null, s__4420__$1)))
           }else {
             return null
           }
@@ -30043,49 +30043,49 @@ problems.tic_tac_toe_tomek.main.diagonalsFromBoard = function diagonalsFromBoard
   }())], true)
 };
 problems.tic_tac_toe_tomek.main.winFilter = function winFilter(symb, possibleWin) {
-  return cljs.core.every_QMARK_.call(null, function(p1__123268_SHARP_) {
-    var or__3824__auto__ = cljs.core._EQ_.call(null, p1__123268_SHARP_, symb);
+  return cljs.core.every_QMARK_.call(null, function(p1__261388_SHARP_) {
+    var or__3824__auto__ = cljs.core._EQ_.call(null, p1__261388_SHARP_, symb);
     if(or__3824__auto__) {
       return or__3824__auto__
     }else {
-      return cljs.core._EQ_.call(null, p1__123268_SHARP_, "T")
+      return cljs.core._EQ_.call(null, p1__261388_SHARP_, "T")
     }
   }, possibleWin)
 };
 problems.tic_tac_toe_tomek.main.boardFull_QMARK_ = function boardFull_QMARK_(rows) {
-  return cljs.core.every_QMARK_.call(null, function(p1__123867_SHARP_) {
-    return cljs.core.not_EQ_.call(null, ".", p1__123867_SHARP_)
+  return cljs.core.every_QMARK_.call(null, function(p1__261987_SHARP_) {
+    return cljs.core.not_EQ_.call(null, ".", p1__261987_SHARP_)
   }, function() {
-    var iter__3120__auto__ = function iter__3625(s__3626) {
+    var iter__3120__auto__ = function iter__4425(s__4426) {
       return new cljs.core.LazySeq(null, false, function() {
-        var s__3626__$1 = s__3626;
+        var s__4426__$1 = s__4426;
         while(true) {
-          if(cljs.core.seq.call(null, s__3626__$1)) {
-            var row = cljs.core.first.call(null, s__3626__$1);
-            var iterys__3118__auto__ = function(s__3626__$1, row) {
-              return function iter__3627(s__3628) {
-                return new cljs.core.LazySeq(null, false, function(s__3626__$1, row) {
+          if(cljs.core.seq.call(null, s__4426__$1)) {
+            var row = cljs.core.first.call(null, s__4426__$1);
+            var iterys__3118__auto__ = function(s__4426__$1, row) {
+              return function iter__4427(s__4428) {
+                return new cljs.core.LazySeq(null, false, function(s__4426__$1, row) {
                   return function() {
-                    var s__3628__$1 = s__3628;
+                    var s__4428__$1 = s__4428;
                     while(true) {
-                      if(cljs.core.seq.call(null, s__3628__$1)) {
-                        var symb = cljs.core.first.call(null, s__3628__$1);
-                        return cljs.core.cons.call(null, symb, iter__3627.call(null, cljs.core.rest.call(null, s__3628__$1)))
+                      if(cljs.core.seq.call(null, s__4428__$1)) {
+                        var symb = cljs.core.first.call(null, s__4428__$1);
+                        return cljs.core.cons.call(null, symb, iter__4427.call(null, cljs.core.rest.call(null, s__4428__$1)))
                       }else {
                         return null
                       }
                       break
                     }
                   }
-                }(s__3626__$1, row), null)
+                }(s__4426__$1, row), null)
               }
-            }(s__3626__$1, row);
+            }(s__4426__$1, row);
             var fs__3119__auto__ = cljs.core.seq.call(null, iterys__3118__auto__.call(null, row));
             if(fs__3119__auto__) {
-              return cljs.core.concat.call(null, fs__3119__auto__, iter__3625.call(null, cljs.core.rest.call(null, s__3626__$1)))
+              return cljs.core.concat.call(null, fs__3119__auto__, iter__4425.call(null, cljs.core.rest.call(null, s__4426__$1)))
             }else {
-              var G__3629 = cljs.core.rest.call(null, s__3626__$1);
-              s__3626__$1 = G__3629;
+              var G__4429 = cljs.core.rest.call(null, s__4426__$1);
+              s__4426__$1 = G__4429;
               continue
             }
           }else {
@@ -30098,11 +30098,11 @@ problems.tic_tac_toe_tomek.main.boardFull_QMARK_ = function boardFull_QMARK_(row
     return iter__3120__auto__.call(null, rows)
   }())
 };
-problems.tic_tac_toe_tomek.main.processCase = function processCase(p__3630) {
-  var map__3632 = p__3630;
-  var map__3632__$1 = cljs.core.seq_QMARK_.call(null, map__3632) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3632) : map__3632;
-  var rows = cljs.core._lookup.call(null, map__3632__$1, "\ufdd0:rows", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3632__$1, "\ufdd0:caseNumber", null);
+problems.tic_tac_toe_tomek.main.processCase = function processCase(p__4430) {
+  var map__4432 = p__4430;
+  var map__4432__$1 = cljs.core.seq_QMARK_.call(null, map__4432) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4432) : map__4432;
+  var rows = cljs.core._lookup.call(null, map__4432__$1, "\ufdd0:rows", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4432__$1, "\ufdd0:caseNumber", null);
   var cols = problems.tic_tac_toe_tomek.main.rowsToCols.call(null, rows);
   var diagonals = problems.tic_tac_toe_tomek.main.diagonalsFromBoard.call(null, rows);
   var possibleWins = cljs.core.concat.call(null, rows, cols, diagonals);
@@ -30135,16 +30135,16 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.bullseye.main.problemName = "bullseye";
 problems.bullseye.main.linesPerCase = 1;
-problems.bullseye.main.parseCase = function parseCase(p__3443) {
-  var map__3447 = p__3443;
-  var map__3447__$1 = cljs.core.seq_QMARK_.call(null, map__3447) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3447) : map__3447;
-  var value = cljs.core._lookup.call(null, map__3447__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3447__$1, "\ufdd0:index", null);
-  var vec__3448 = value;
-  var line = cljs.core.nth.call(null, vec__3448, 0, null);
-  var vec__3449 = cljs.core.map.call(null, problems.bullseye.main.bigint, clojure.string.split.call(null, line, /\s/));
-  var r = cljs.core.nth.call(null, vec__3449, 0, null);
-  var t = cljs.core.nth.call(null, vec__3449, 1, null);
+problems.bullseye.main.parseCase = function parseCase(p__4243) {
+  var map__4247 = p__4243;
+  var map__4247__$1 = cljs.core.seq_QMARK_.call(null, map__4247) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4247) : map__4247;
+  var value = cljs.core._lookup.call(null, map__4247__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4247__$1, "\ufdd0:index", null);
+  var vec__4248 = value;
+  var line = cljs.core.nth.call(null, vec__4248, 0, null);
+  var vec__4249 = cljs.core.map.call(null, problems.bullseye.main.bigint, clojure.string.split.call(null, line, /\s/));
+  var r = cljs.core.nth.call(null, vec__4249, 0, null);
+  var t = cljs.core.nth.call(null, vec__4249, 1, null);
   return cljs.core.ObjMap.fromObject(["\ufdd0:caseNumber", "\ufdd0:r", "\ufdd0:t"], {"\ufdd0:caseNumber":index, "\ufdd0:r":r, "\ufdd0:t":t})
 };
 problems.bullseye.main.caseParser = cljs.core.partial.call(null, gcj_util.case_reader.parse_cases_from_input, problems.bullseye.main.parseCase, problems.bullseye.main.linesPerCase);
@@ -30154,12 +30154,12 @@ problems.bullseye.main.ring_area = function ring_area(r) {
   var r1_2 = r * r;
   return r2_2 - r1_2
 };
-problems.bullseye.main.processCase = function processCase(p__3450) {
-  var map__3452 = p__3450;
-  var map__3452__$1 = cljs.core.seq_QMARK_.call(null, map__3452) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3452) : map__3452;
-  var t = cljs.core._lookup.call(null, map__3452__$1, "\ufdd0:t", null);
-  var r = cljs.core._lookup.call(null, map__3452__$1, "\ufdd0:r", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3452__$1, "\ufdd0:caseNumber", null);
+problems.bullseye.main.processCase = function processCase(p__4250) {
+  var map__4252 = p__4250;
+  var map__4252__$1 = cljs.core.seq_QMARK_.call(null, map__4252) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4252) : map__4252;
+  var t = cljs.core._lookup.call(null, map__4252__$1, "\ufdd0:t", null);
+  var r = cljs.core._lookup.call(null, map__4252__$1, "\ufdd0:r", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4252__$1, "\ufdd0:caseNumber", null);
   var area0 = r * r;
   var n0 = problems.bullseye.main.bigint.call(null, (r + 1) / 2);
   var n0__$1 = cljs.core.even_QMARK_.call(null, r) ? 2 + n0 : n0;
@@ -30185,29 +30185,29 @@ goog.require("gcj_util.case_reader");
 goog.require("gcj_util.misc");
 problems.treasure.main.problemName = "treasure";
 problems.treasure.main.linesPerCase = "\ufdd0:var2";
-problems.treasure.main.parseCase = function parseCase(p__3453) {
-  var map__3459 = p__3453;
-  var map__3459__$1 = cljs.core.seq_QMARK_.call(null, map__3459) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3459) : map__3459;
-  var value = cljs.core._lookup.call(null, map__3459__$1, "\ufdd0:value", null);
-  var index = cljs.core._lookup.call(null, map__3459__$1, "\ufdd0:index", null);
+problems.treasure.main.parseCase = function parseCase(p__4253) {
+  var map__4259 = p__4253;
+  var map__4259__$1 = cljs.core.seq_QMARK_.call(null, map__4259) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4259) : map__4259;
+  var value = cljs.core._lookup.call(null, map__4259__$1, "\ufdd0:value", null);
+  var index = cljs.core._lookup.call(null, map__4259__$1, "\ufdd0:index", null);
   var lines = cljs.core.rest.call(null, value);
   var keysList = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, cljs.core.first.call(null, lines), /\s/));
   var chests = function() {
     var iter__3120__auto__ = function(lines, keysList) {
-      return function iter__3460(s__3461) {
+      return function iter__4260(s__4261) {
         return new cljs.core.LazySeq(null, false, function(lines, keysList) {
           return function() {
-            var s__3461__$1 = s__3461;
+            var s__4261__$1 = s__4261;
             while(true) {
-              if(cljs.core.seq.call(null, s__3461__$1)) {
-                var chest = cljs.core.first.call(null, s__3461__$1);
+              if(cljs.core.seq.call(null, s__4261__$1)) {
+                var chest = cljs.core.first.call(null, s__4261__$1);
                 return cljs.core.cons.call(null, function() {
-                  var vec__3463 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, chest, /\s/));
-                  var lockType = cljs.core.nth.call(null, vec__3463, 0, null);
-                  var numKeys = cljs.core.nth.call(null, vec__3463, 1, null);
-                  var keysInside = cljs.core.nthnext.call(null, vec__3463, 2);
+                  var vec__4263 = cljs.core.map.call(null, gcj_util.misc.to_int, clojure.string.split.call(null, chest, /\s/));
+                  var lockType = cljs.core.nth.call(null, vec__4263, 0, null);
+                  var numKeys = cljs.core.nth.call(null, vec__4263, 1, null);
+                  var keysInside = cljs.core.nthnext.call(null, vec__4263, 2);
                   return cljs.core.ObjMap.fromObject(["\ufdd0:lockType", "\ufdd0:keysInside"], {"\ufdd0:lockType":lockType, "\ufdd0:keysInside":keysInside})
-                }(), iter__3460.call(null, cljs.core.rest.call(null, s__3461__$1)))
+                }(), iter__4260.call(null, cljs.core.rest.call(null, s__4261__$1)))
               }else {
                 return null
               }
@@ -30257,16 +30257,16 @@ problems.treasure.main.find_paths = function find_paths(keysHeld, chests) {
       return null
     }
   }else {
-    return cljs.core.mapcat.call(null, function(p__3467) {
-      var map__3468 = p__3467;
-      var map__3468__$1 = cljs.core.seq_QMARK_.call(null, map__3468) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3468) : map__3468;
-      var chest = map__3468__$1;
-      var value = cljs.core._lookup.call(null, map__3468__$1, "\ufdd0:value", null);
-      var index = cljs.core._lookup.call(null, map__3468__$1, "\ufdd0:index", null);
-      var map__3469 = value;
-      var map__3469__$1 = cljs.core.seq_QMARK_.call(null, map__3469) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3469) : map__3469;
-      var keysInside = cljs.core._lookup.call(null, map__3469__$1, "\ufdd0:keysInside", null);
-      var lockType = cljs.core._lookup.call(null, map__3469__$1, "\ufdd0:lockType", null);
+    return cljs.core.mapcat.call(null, function(p__4267) {
+      var map__4268 = p__4267;
+      var map__4268__$1 = cljs.core.seq_QMARK_.call(null, map__4268) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4268) : map__4268;
+      var chest = map__4268__$1;
+      var value = cljs.core._lookup.call(null, map__4268__$1, "\ufdd0:value", null);
+      var index = cljs.core._lookup.call(null, map__4268__$1, "\ufdd0:index", null);
+      var map__4269 = value;
+      var map__4269__$1 = cljs.core.seq_QMARK_.call(null, map__4269) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4269) : map__4269;
+      var keysInside = cljs.core._lookup.call(null, map__4269__$1, "\ufdd0:keysInside", null);
+      var lockType = cljs.core._lookup.call(null, map__4269__$1, "\ufdd0:lockType", null);
       if(cljs.core.truth_(keysHeld.call(null, lockType))) {
         var keysHeld__$1 = problems.treasure.main.removeKeyHeld.call(null, keysHeld, lockType);
         var keysHeld__$2 = problems.treasure.main.addToKeysHeld.call(null, keysHeld__$1, keysInside);
@@ -30283,12 +30283,12 @@ problems.treasure.main.find_paths = function find_paths(keysHeld, chests) {
     }, chests)
   }
 };
-problems.treasure.main.processCase = function processCase(p__3470) {
-  var map__3472 = p__3470;
-  var map__3472__$1 = cljs.core.seq_QMARK_.call(null, map__3472) ? cljs.core.apply.call(null, cljs.core.hash_map, map__3472) : map__3472;
-  var chests = cljs.core._lookup.call(null, map__3472__$1, "\ufdd0:chests", null);
-  var keysList = cljs.core._lookup.call(null, map__3472__$1, "\ufdd0:keysList", null);
-  var caseNumber = cljs.core._lookup.call(null, map__3472__$1, "\ufdd0:caseNumber", null);
+problems.treasure.main.processCase = function processCase(p__4270) {
+  var map__4272 = p__4270;
+  var map__4272__$1 = cljs.core.seq_QMARK_.call(null, map__4272) ? cljs.core.apply.call(null, cljs.core.hash_map, map__4272) : map__4272;
+  var chests = cljs.core._lookup.call(null, map__4272__$1, "\ufdd0:chests", null);
+  var keysList = cljs.core._lookup.call(null, map__4272__$1, "\ufdd0:keysList", null);
+  var caseNumber = cljs.core._lookup.call(null, map__4272__$1, "\ufdd0:caseNumber", null);
   var keysHeld = problems.treasure.main.addToKeysHeld.call(null, cljs.core.ObjMap.EMPTY, keysList);
   var paths = problems.treasure.main.find_paths.call(null, keysHeld, chests);
   var bestPath = cljs.core.take_while.call(null, cljs.core.identity, paths);

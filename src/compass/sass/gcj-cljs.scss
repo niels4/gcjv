@@ -72,7 +72,6 @@ body > div {
   height: 100%;
 
   .verticalExpand {
-    height: auto;
     position: absolute;
     top: 4em;
     right: 0;
@@ -286,14 +285,14 @@ body > div {
       background-color: #FCFCFC;
     }
   
-  .fileContents {
+  div.fileContents {
     text-align: center;
+    height: auto;
     position: absolute;
-    top: 0;
+    top: 5ex;
     left: 0;
     right: 0;
     bottom: 0;
-    padding-top: 5ex;
     padding-bottom: .5ex;
     textArea {
       height: 100%;
@@ -366,12 +365,13 @@ body > div {
 
    div.syntaxHighlighterContainer {
      text-align: center;
+     height: auto;
      position: absolute;
-     top: 0;
+     top: 5ex;
      left: 0;
      right: 0;
      bottom: 0;
-     padding: 5ex .25em .25em .5ex;
+     padding: 0 .25em .25em .5ex;
   }
 
    div.sourceSelectorRow {

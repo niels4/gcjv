@@ -71,6 +71,6 @@
     [lines (-> input
                trim-newline
                (split #"\n")
-               (#(filter (comp not empty?) %)))
+               (#(filter seq %)))
      rawCases (raw-cases-from-lines linesPerCase lines)]
     (map parseFunction (:rawCases rawCases))))
