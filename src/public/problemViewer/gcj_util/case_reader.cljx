@@ -2,14 +2,15 @@
   (:use [gcj-util.misc :only [to-int indexed-values]]
         [clojure.string :only [split trim-newline]]))
 
-(defmulti cases-from-lines
-  (fn [linesPerCase lines]
-    (if (keyword? linesPerCase) :var))
-  :default :fixed)
-
-(defmethod cases-from-lines :fixed
-  [linesPerCase lines]
-  (partition linesPerCase lines))
+(defn numLines-from-lines0
+  [position-func linesPerCase lines]
+  "take the last int on the first line of each case"
+  (->> lines
+       first
+       (#(split % #"\s"))
+       position-func
+       to-int
+       inc))
 
 (defmulti numLines-from-lines
   (fn [linesPerCase lines]
@@ -18,32 +19,26 @@
 (defmethod numLines-from-lines :var
   [linesPerCase lines]
   "take the last int on the first line of each case"
-  (->> lines
-       first
-       (#(split % #"\s"))
-       last
-       to-int
-       inc))
+  (numLines-from-lines0 last linesPerCase lines))
 
 (defmethod numLines-from-lines :var1
   [linesPerCase lines]
   "take the first int on the first line of each case"
-  (->> lines
-       first
-       (#(split % #"\s"))
-       first
-       to-int
-       inc))
+  (numLines-from-lines0 first linesPerCase lines))
 
 (defmethod numLines-from-lines :var2
   [linesPerCase lines]
   "take the last int on the first line of each case and add one more line"
-  (->> lines
-       first
-       (#(split % #"\s"))
-       last
-       to-int
-       (+ 2)))
+  (inc (numLines-from-lines :var lines)))
+
+(defmulti cases-from-lines
+  (fn [linesPerCase lines]
+    (if (keyword? linesPerCase) :var))
+  :default :fixed)
+
+(defmethod cases-from-lines :fixed
+  [linesPerCase lines]
+  (partition linesPerCase lines))
 
 (defmethod cases-from-lines :var
   [linesPerCase lines]

@@ -55,8 +55,8 @@
     [cols (rowsToCols rows)
      diagonals (diagonalsFromBoard rows)
      possibleWins (concat rows cols diagonals)
-     xWon (seq (filter (partial winFilter \X) possibleWins))
-     oWon (seq (filter (partial winFilter \O) possibleWins))
+     xWon (some (partial winFilter \X) possibleWins)
+     oWon (some (partial winFilter \O) possibleWins)
      boardFull (boardFull? rows)
      result (cond (or xWon oWon) (if xWon "X won" "O won")
                   boardFull "Draw"

@@ -10,8 +10,7 @@
   (let
     [formattedResult (->> results
                    (map result-to-line)
-                   (join "\n")
-                   (apply str))]
+                   (join "\n"))]
     formattedResult))
 
 (defn solve-problem
